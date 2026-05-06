@@ -67,13 +67,16 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         <Image
           src={activeProject.thumbnail}
           alt={`Imagem de destaque do ${activeProject.title}`}
-          width={1200}
-          height={630}
+          fill
+          sizes="100vw"
           className="showcase-image"
           priority
         />
         <div className="showcase-overlay">
-          <div className="showcase-panel">
+          <div
+            key={activeProject.slug}
+            className="showcase-panel showcase-panel-enter"
+          >
             <h1>{activeProject.title}</h1>
             <p className="showcase-meta">
               {activeProject.category} • {activeProject.impactLabel}

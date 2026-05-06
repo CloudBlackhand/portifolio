@@ -6,6 +6,13 @@
   --muted: #b2b8c7;
   --brand: #7aa2ff;
   --border: #2a2e39;
+  --showcase-min-height: max(280px, 70vh);
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --showcase-min-height: max(280px, 70dvh);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,6 +70,7 @@ a {
   border-bottom: 1px solid var(--border);
   background: color-mix(in srgb, var(--background) 88%, transparent);
   backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px -20px rgb(0 0 0 / 65%);
 }
 
 .header-content {
@@ -132,13 +140,16 @@ main.container {
   border-bottom: 1px solid #202633;
   overflow: hidden;
   background: #12151e;
-  min-height: min(56vh, 520px);
+  min-height: var(--showcase-min-height);
 }
 
 .showcase-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  min-height: min(56vh, 520px);
+  min-height: 0;
   object-fit: cover;
   filter: saturate(1.03) brightness(0.78);
 }
@@ -146,41 +157,79 @@ main.container {
 .showcase-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   padding: clamp(1rem, 2.8vw, 2rem);
-  background: linear-gradient(
-    90deg,
-    rgb(9 9 11 / 84%) 0%,
-    rgb(9 9 11 / 43%) 28%,
-    rgb(9 9 11 / 8%) 62%,
-    rgb(9 9 11 / 0%) 100%
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgb(9 9 11 / 82%) 0%,
+      rgb(9 9 11 / 35%) 38%,
+      rgb(9 9 11 / 0%) 72%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(9 9 11 / 88%) 0%,
+      rgb(9 9 11 / 48%) 26%,
+      rgb(9 9 11 / 12%) 58%,
+      rgb(9 9 11 / 0%) 100%
+    );
 }
 
 .showcase-panel {
   margin-right: auto;
-  margin-top: clamp(2rem, 8vh, 6rem);
-  max-width: 420px;
+  margin-bottom: 0;
+  margin-top: auto;
+  max-width: min(420px, 92vw);
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .showcase-panel h1 {
   font-size: clamp(2.3rem, 6.6vw, 4.4rem);
-  line-height: 0.95;
-  letter-spacing: 0.01em;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
 }
 
 .showcase-meta {
-  color: #d7dce8;
-  font-size: 0.92rem;
+  color: #e2e7f2;
+  font-size: 0.875rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: -0.15rem;
+}
+
+.showcase-overlay .showcase-panel > p:not(.showcase-meta) {
+  line-height: 1.55;
+  color: rgb(232 235 243 / 92%);
 }
 
 .showcase-overlay p {
   max-width: 45ch;
+}
+
+.showcase-panel-enter {
+  animation: showcasePanelIn 0.35s ease-out both;
+}
+
+@keyframes showcasePanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-panel-enter {
+    animation: none;
+  }
 }
 
 .hero-nav {
@@ -231,6 +280,7 @@ main.container {
   position: absolute;
   left: 50%;
   bottom: 1rem;
+  z-index: 2;
   transform: translateX(-50%);
   display: flex;
   gap: 0.45rem;
@@ -248,19 +298,6 @@ main.container {
 .dot.active {
   background: #4b8dff;
   border-color: transparent;
-}
-
-.gfn-like-cta {
-  border-radius: 0;
-  min-height: 44px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  background: #80d91f;
-  color: #0f1d05;
-}
-
-.gfn-like-cta:hover {
-  background: #8ee628;
 }
 
 .favorites-strip {
@@ -382,6 +419,16 @@ main.container {
   box-shadow: 0 18px 42px -28px rgb(71 115 215 / 65%);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .interactive-card:hover {
+    transform: none;
+  }
+}
+
 .card-image {
   width: 100%;
   height: auto;
@@ -438,6 +485,23 @@ main.container {
 
 .button.primary:hover {
   background: #8cb0ff;
+}
+
+.button.primary.gfn-like-cta {
+  min-height: 44px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-color: color-mix(in srgb, var(--brand) 55%, #0a0e18);
+  box-shadow: 0 10px 28px -14px rgb(122 162 255 / 55%);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button.primary.gfn-like-cta:hover {
+  background: color-mix(in srgb, var(--brand) 88%, #fff);
+  border-color: color-mix(in srgb, var(--brand) 70%, #fff);
 }
 
 .stack {
@@ -606,11 +670,6 @@ main.container {
 }
 
 @media (max-width: 740px) {
-  .showcase-media,
-  .showcase-image {
-    min-height: 420px;
-  }
-
   .showcase-panel h1 {
     font-size: clamp(1.8rem, 9vw, 3.1rem);
   }
