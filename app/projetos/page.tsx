@@ -20,7 +20,7 @@ export default function ProjetosPage() {
 
       <div className="section-spacing card-grid">
         {projects.map((project) => (
-          <article className="card" key={project.slug}>
+          <article className="card interactive-card" key={project.slug}>
             <Image
               src={project.thumbnail}
               alt={`Miniatura do ${project.title}`}
