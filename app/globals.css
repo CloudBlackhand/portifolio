@@ -6,12 +6,13 @@
   --muted: #b2b8c7;
   --brand: #7aa2ff;
   --border: #2a2e39;
-  --showcase-min-height: max(280px, 70vh);
+  /* ~70% da altura visivel; usar dvh no mobile evita 100%-vh “fantasma” */
+  --showcase-hero-height: 70vh;
 }
 
 @supports (height: 100dvh) {
   :root {
-    --showcase-min-height: max(280px, 70dvh);
+    --showcase-hero-height: 70dvh;
   }
 }
 
@@ -140,7 +141,9 @@ main.container {
   border-bottom: 1px solid #202633;
   overflow: hidden;
   background: #12151e;
-  min-height: var(--showcase-min-height);
+  height: var(--showcase-hero-height);
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 .showcase-image {
