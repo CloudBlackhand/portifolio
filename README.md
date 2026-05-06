@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portifolio leve com Next.js
 
-## Getting Started
+Base de portifolio com foco em:
 
-First, run the development server:
+- carregamento rapido
+- renderizacao estatica
+- privacidade (sem exposicao desnecessaria de dados/codigo)
+- deploy gratuito na Vercel
+
+## Executar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: servidor local
+- `npm run lint`: validacao de codigo
+- `npm run build`: build de producao (export estatico)
+- `npm run start`: sobe app em modo prod (quando aplicavel)
 
-## Learn More
+## Estrutura principal
 
-To learn more about Next.js, take a look at the following resources:
+- `app/`: paginas (Inicio, Projetos, Detalhe, Contato)
+- `data/projects.ts`: contrato de dados com 8 placeholders
+- `public/project-thumbs/placeholder.svg`: miniatura padrao
+- `next.config.ts`: `output: "export"` para site estatico
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Checklist de privacidade
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Evitar publicar repositorios privados
+- Priorizar descricao de contexto, solucao e resultado
+- Nao incluir chaves, URLs internas ou dados pessoais sensiveis
+- Para codigo: publicar apenas quando quiser e somente em projetos publicos
 
-## Deploy on Vercel
+## Deploy na Vercel (gratuito)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Suba este projeto para um repositorio GitHub.
+2. Acesse [Vercel](https://vercel.com/new) e importe o repositorio.
+3. Framework detectado: Next.js (manter padrao).
+4. Variaveis de ambiente: nenhuma obrigatoria nesta fase.
+5. Deploy.
+6. Validar:
+   - Home, `/projetos`, `/projetos/[slug]`, `/contato`
+   - miniaturas renderizando
+   - navegacao mobile e desktop
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Opcional depois: conectar dominio proprio.
