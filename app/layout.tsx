@@ -52,8 +52,8 @@ export default function RootLayout({
         <footer className="site-footer">
           <div className="container footer-content">
             <p>
-              Estrutura inicial pronta para receber 8 projetos reais com foco em
-              resultado.
+              Vendas Hub, WAHA, MS e Melhor Preco — sistemas em uso; links de
+              codigo apenas onde o repositorio e publico.
             </p>
           </div>
         </footer>

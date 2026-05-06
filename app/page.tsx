@@ -8,24 +8,12 @@ export default function Home() {
   return (
     <section>
       <ShowcaseCarousel projects={projects} />
-      <div className="content-block section-spacing professional-intro">
-        <p className="showcase-kicker">Apresentacao profissional</p>
-        <h2>Como eu trabalho</h2>
-        <p className="muted">
-          Estruturo cada projeto com foco em tres pontos: entendimento real do
-          problema, implementacao robusta e resultado mensuravel. O objetivo
-          desta pagina e mostrar impacto sem expor detalhes sensiveis de codigo
-          ou arquitetura proprietaria.
-        </p>
-        <div className="showcase-actions">
-          <Link className="button primary" href="/projetos">
-            Ver portfolio completo
-          </Link>
-          <Link className="button" href="/contato">
-            Falar sobre um projeto
-          </Link>
-        </div>
-      </div>
+
+      <WorkTable projects={projects} />
+      <p className="muted section-spacing">
+        Quatro sistemas usados em producao: Vendas Hub, WAHA, MS e Melhor
+        Preco. Capturas de tela serao adicionadas na proxima atualizacao.
+      </p>
 
       <section className="about-section section-spacing">
         <div className="about-photo-wrap">
@@ -65,11 +53,24 @@ export default function Home() {
         </div>
       </section>
 
-      <WorkTable projects={projects} />
-      <p className="muted section-spacing">
-        Os projetos acima sao placeholders estruturais e serao substituidos por
-        estudos reais na proxima fase.
-      </p>
+      <div className="content-block section-spacing professional-intro">
+        <p className="showcase-kicker">Apresentacao profissional</p>
+        <h2>Como eu trabalho</h2>
+        <p className="muted">
+          Estruturo cada projeto com foco em tres pontos: entendimento real do
+          problema, implementacao robusta e resultado mensuravel. O objetivo
+          desta pagina e mostrar impacto sem expor detalhes sensiveis de codigo
+          ou arquitetura proprietaria.
+        </p>
+        <div className="showcase-actions">
+          <Link className="button primary" href="/projetos">
+            Ver portfolio completo
+          </Link>
+          <Link className="button" href="/contato">
+            Falar sobre um projeto
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

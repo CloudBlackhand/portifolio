@@ -13,8 +13,9 @@ export default function ProjetosPage() {
     <section>
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Grade preparada para receber os seus 8 projetos com descricao completa,
-        contexto e resultados.
+        Quatro sistemas usados em producao: hub comercial, WAHA, sistema de
+        mensagens (MS) e Melhor Preco. Miniaturas reais serao adicionadas em
+        breve.
       </p>
 
       <div className="section-spacing card-grid">
