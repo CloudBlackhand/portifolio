@@ -399,6 +399,7 @@ a {
 .favorites-strip h3 {
   font-size: 1.75rem;
   margin-bottom: 0.9rem;
+  color: var(--foreground);
 }
 
 .favorites-row {

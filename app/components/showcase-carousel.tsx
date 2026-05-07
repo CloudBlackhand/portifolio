@@ -22,7 +22,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
 
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % featuredProjects.length);
-    }, 5500);
+    }, 15000);
 
     return () => clearInterval(timer);
   }, [featuredProjects.length]);
