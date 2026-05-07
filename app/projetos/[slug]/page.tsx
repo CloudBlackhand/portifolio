@@ -53,14 +53,39 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       <div className="section-spacing">
         <Image
           src={project.thumbnail}
-          alt={`Miniatura do ${project.title}`}
+          alt={`Captura principal do ${project.title}`}
           width={1200}
           height={630}
           className="detail-image"
+          sizes="(max-width: 740px) 100vw, min(1100px, 100vw)"
+          priority
         />
       </div>
 
-      <section className="content-block">
+      {project.gallery && project.gallery.length > 0 ? (
+        <section className="content-block section-spacing">
+          <h3>Outras telas</h3>
+          <p className="muted privacy-note">
+            Capturas reais da interface em uso (versao desktop).
+          </p>
+          <div className="detail-gallery">
+            {project.gallery.map((item) => (
+              <figure key={item.src} className="detail-gallery-figure">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={1200}
+                  height={675}
+                  className="detail-image"
+                  sizes="(max-width: 740px) 100vw, 50vw"
+                />
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="content-block section-spacing">
         <h3>Descricao detalhada do produto</h3>
         <p className="muted">{project.detailedDescription}</p>
       </section>
