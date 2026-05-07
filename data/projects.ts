@@ -1,6 +1,9 @@
 export type ProjectGalleryImage = {
   src: string;
   alt: string;
+  /** Largura real do arquivo (evita upscale borrado no layout). */
+  width?: number;
+  height?: number;
 };
 
 export type Project = {
@@ -23,6 +26,9 @@ export type Project = {
   visibility: "public" | "private";
   /** Telas extras na pagina de detalhe (alem da miniatura principal). */
   gallery?: ProjectGalleryImage[];
+  /** Dimensões naturais da miniatura (PNG/JPG). Quando definido, o hero não estica além disso. */
+  thumbnailWidth?: number;
+  thumbnailHeight?: number;
 };
 
 export const projects: Project[] = [
@@ -95,7 +101,9 @@ export const projects: Project[] = [
       "Disparador de mensagens WhatsApp em producao: filas, modelos, regras e rastre do que foi enviado.",
     detailedDescription:
       "O MS e o produto que operacionaliza o envio pelo WhatsApp: quem dispara, para quem, com qual modelo, em que ordem e com registro do resultado. Centraliza filas, evita disparo duplicado sem querer e da visibilidade do que saiu do canal oficial — conectado a eventos de negocio (por exemplo, etapa de venda, lembrete, confirmacao). Nao e um rotulo generico de automacao: e um disparador de mensagens com governanca, desenhado para volume real e para integrar com o restante do ecossistema (incluindo a base de API e cadastros). Interface desktop com envio em massa (Excel, atrasos e lotes), ate tres contas com reparticao de carga e fluxo de licenca.",
-    thumbnail: "/project-thumbs/ms-envio-massa.png",
+    thumbnail: "/project-thumbs/ms/ms-envio-massa.png",
+    thumbnailWidth: 1919,
+    thumbnailHeight: 1030,
     category: "Disparo de mensagens WhatsApp",
     year: 2025,
     impactLabel: "Envio rastreavel no canal oficial",
@@ -120,13 +128,17 @@ export const projects: Project[] = [
     visibility: "public",
     gallery: [
       {
-        src: "/project-thumbs/ms-conexao-whatsapp.png",
+        src: "/project-thumbs/ms/ms-conexao-whatsapp.png",
         alt:
           "MS — conexao WhatsApp com ate tres contas e reparticao automatica do envio",
+        width: 1919,
+        height: 1031,
       },
       {
-        src: "/project-thumbs/ms-licenca.png",
+        src: "/project-thumbs/ms/ms-licenca.png",
         alt: "MS — tela de licenca e ativacao do produto",
+        width: 1919,
+        height: 1031,
       },
     ],
   },

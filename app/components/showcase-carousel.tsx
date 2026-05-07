@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
 
 type ShowcaseCarouselProps = {
@@ -64,14 +64,35 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         >
           ›
         </button>
-        <Image
-          src={activeProject.thumbnail}
-          alt={`Imagem de destaque do ${activeProject.title}`}
-          fill
-          sizes="100vw"
-          className="showcase-image"
-          priority
-        />
+        {activeProject.thumbnailWidth && activeProject.thumbnailHeight ? (
+          <div
+            className="showcase-image-slot"
+            style={
+              {
+                "--thumb-max-w": `${activeProject.thumbnailWidth}px`,
+              } as CSSProperties
+            }
+          >
+            <Image
+              src={activeProject.thumbnail}
+              alt={`Imagem de destaque do ${activeProject.title}`}
+              width={activeProject.thumbnailWidth}
+              height={activeProject.thumbnailHeight}
+              className="showcase-image-intrinsic"
+              sizes={`(max-width: ${activeProject.thumbnailWidth}px) 100vw, ${activeProject.thumbnailWidth}px`}
+              priority
+            />
+          </div>
+        ) : (
+          <Image
+            src={activeProject.thumbnail}
+            alt={`Imagem de destaque do ${activeProject.title}`}
+            fill
+            sizes="100vw"
+            className="showcase-image"
+            priority
+          />
+        )}
         <div className="showcase-overlay">
           <div
             key={activeProject.slug}
@@ -113,7 +134,19 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             ‹
           </button>
           <div className="favorites-row" ref={favoritesRowRef}>
-            {featuredProjects.map((project) => (
+            {featuredProjects.map((project) => {
+              const favW = 320;
+              const favH =
+                project.thumbnailWidth && project.thumbnailHeight
+                  ? Math.max(
+                      1,
+                      Math.round(
+                        (favW * project.thumbnailHeight) /
+                          project.thumbnailWidth,
+                      ),
+                    )
+                  : 180;
+              return (
               <Link
                 key={project.slug}
                 className="favorite-card"
@@ -123,13 +156,14 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
                 <Image
                   src={project.thumbnail}
                   alt={`Miniatura do ${project.title}`}
-                  width={320}
-                  height={180}
+                  width={favW}
+                  height={favH}
                   className="favorite-image"
                 />
                 <span>{project.title}</span>
               </Link>
-            ))}
+            );
+            })}
           </div>
           <button
             type="button"
