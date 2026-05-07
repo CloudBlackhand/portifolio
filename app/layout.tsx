@@ -52,8 +52,8 @@ export default function RootLayout({
         <footer className="site-footer">
           <div className="container footer-content">
             <p>
-              Vendas Hub, WAHA, MS e Melhor Preco — sistemas em uso; links de
-              codigo apenas onde o repositorio e publico.
+              Vendas Hub (vendas), WAHA (API WhatsApp), MS (disparo) e Melhor
+              Preco — em uso; codigo publico apenas onde o repositorio e aberto.
             </p>
           </div>
         </footer>

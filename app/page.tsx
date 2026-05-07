@@ -11,8 +11,9 @@ export default function Home() {
 
       <WorkTable projects={projects} />
       <p className="muted section-spacing">
-        Quatro sistemas usados em producao: Vendas Hub, WAHA, MS e Melhor
-        Preco. Capturas de tela serao adicionadas na proxima atualizacao.
+        Quatro sistemas em producao: Vendas Hub (gestao e cadastro de vendas),
+        WAHA (API WhatsApp), MS (disparo no WhatsApp) e Melhor Preco
+        (comparacao para decisao). Capturas de tela na proxima atualizacao.
       </p>
 
       <section className="about-section section-spacing">

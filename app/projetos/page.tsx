@@ -13,9 +13,9 @@ export default function ProjetosPage() {
     <section>
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Quatro sistemas usados em producao: hub comercial, WAHA, sistema de
-        mensagens (MS) e Melhor Preco. Miniaturas reais serao adicionadas em
-        breve.
+        Quatro sistemas em producao: cadastro e funil de vendas (Vendas Hub),
+        API WhatsApp self-hosted (WAHA), disparador de mensagens (MS) e
+        comparacao de precos (Melhor Preco). Miniaturas reais em breve.
       </p>
 
       <div className="section-spacing card-grid">
