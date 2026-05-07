@@ -1,9 +1,8 @@
 <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="800" fill="#111217"/>
-  <circle cx="400" cy="300" r="150" fill="#2A2E39"/>
-  <path d="M160 700C160 567.452 267.452 460 400 460C532.548 460 640 567.452 640 700V740H160V700Z" fill="#2A2E39"/>
-  <rect x="80" y="80" width="640" height="640" rx="24" stroke="#7AA2FF" stroke-width="6"/>
-  <text x="400" y="110" fill="#B2B8C7" font-size="28" font-family="Arial, sans-serif" text-anchor="middle">
+  <rect width="800" height="800" fill="#12141a"/>
+  <circle cx="400" cy="300" r="150" fill="#252a36"/>
+  <path d="M160 700C160 567.452 267.452 460 400 460C532.548 460 640 567.452 640 700V740H160V700Z" fill="#252a36"/>
+  <text x="400" y="120" fill="#6b7289" font-size="26" font-family="system-ui, sans-serif" text-anchor="middle">
     Substitua por sua foto profissional
   </text>
 </svg>
