@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function ContatoPage() {
   return (
-    <section>
+    <section className="page-shell">
       <h1 className="page-title">Contato</h1>
       <p className="page-subtitle">
         Este espaco prioriza comunicacao profissional com privacidade e resposta

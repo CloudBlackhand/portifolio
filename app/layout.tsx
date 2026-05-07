@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import "./globals-ep.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +33,17 @@ export default function RootLayout({
             <Link className="logo" href="/">
               Portifolio
             </Link>
-            <nav className="nav" aria-label="Navegacao principal">
+            <nav className="nav nav-with-cta" aria-label="Navegacao principal">
               <Link href="/">Inicio</Link>
               <Link href="/projetos">Projetos</Link>
               <Link href="/contato">Contato</Link>
+              <Link className="nav-cta" href="/projetos">
+                Ver trabalhos
+              </Link>
             </nav>
           </div>
         </header>
-        <main className="container">{children}</main>
+        <main className="site-main">{children}</main>
         <a
           className="whatsapp-float"
           href="https://wa.me/5521971364919"
@@ -50,10 +54,21 @@ export default function RootLayout({
           WhatsApp
         </a>
         <footer className="site-footer">
-          <div className="container footer-content">
-            <p>
-              Vendas Hub (vendas), WAHA (API WhatsApp), MS (disparo) e Melhor
-              Preco — em uso; codigo publico apenas onde o repositorio e aberto.
+          <div className="container footer-ep">
+            <div className="footer-brand">
+              <strong>Portfolio</strong>
+              <p className="footer-tagline">
+                Sistemas em producao com foco em resultado e clareza.
+              </p>
+            </div>
+            <nav className="footer-nav" aria-label="Rodape">
+              <Link href="/">Inicio</Link>
+              <Link href="/projetos">Projetos</Link>
+              <Link href="/contato">Contato</Link>
+            </nav>
+            <p className="footer-note">
+              Vendas Hub, WAHA, MS e Melhor Preco — codigo publico apenas onde o
+              repositorio e aberto.
             </p>
           </div>
         </footer>
