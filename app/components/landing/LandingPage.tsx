@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 
-const easeOut = [0.22, 1, 0.36, 1] as const;
-
 function useMotionTransition(base: { duration: number; delay?: number }) {
   const reduce = useReducedMotion();
   if (reduce) return { duration: 0 };
@@ -67,147 +65,16 @@ const stats = [
   { label: "Prioridade", value: "Resultado" },
 ];
 
-const quotes = [
-  {
-    text:
-      "Entrega alinhada ao negocio, sem enrolacao tecnica. Exatamente o que precisavamos para organizar vendas.",
-    who: "Parceiro comercial",
-    role: "Operacao B2B",
-  },
-  {
-    text:
-      "Integracao WhatsApp estavel mudou nosso ritmo de disparo e suporte.",
-    who: "Operacao",
-    role: "Mensageria em massa",
-  },
-  {
-    text:
-      "Documentacao do que foi feito e por que foi feito — raro e valioso.",
-    who: "Stakeholder",
-    role: "Produto interno",
-  },
-];
-
 type LandingPageProps = {
   projects: Project[];
 };
 
 export function LandingPage({ projects }: LandingPageProps) {
-  const reduce = useReducedMotion();
   const featured = projects.filter((p) => p.featured);
-  const filmstrip = [...featured, ...featured];
 
   return (
     <>
-      <section className="ep-hero">
-        <div className="container ep-hero-grid">
-          <div className="ep-hero-copy">
-            <motion.p
-              className="ep-eyebrow"
-              initial={reduce ? false : { opacity: 0, y: 12 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: easeOut }}
-            >
-              Portfolio profissional
-            </motion.p>
-            <motion.h1
-              className="ep-hero-title"
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.06, ease: easeOut }}
-            >
-              Sistemas reimaginados para
-              <span className="ep-hero-accent"> sua operacao</span>
-            </motion.h1>
-            <motion.p
-              className="ep-hero-lead"
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.12, ease: easeOut }}
-            >
-              Porque bons produtos merecem engenharia clara, integracao seria e
-              resultado mensuravel — sem ruído e sem atalho.
-            </motion.p>
-            <motion.div
-              className="ep-hero-cta"
-              initial={reduce ? false : { opacity: 0, y: 14 }}
-              animate={reduce ? undefined : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.18, ease: easeOut }}
-            >
-              <Link className="ep-btn ep-btn-primary" href="/projetos">
-                Ver projetos
-              </Link>
-              <a
-                className="ep-btn ep-btn-ghost"
-                href="https://wa.me/5521971364919"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Falar no WhatsApp
-              </a>
-            </motion.div>
-          </div>
-
-          <div className="ep-hero-visual" aria-hidden>
-            <div className="ep-hero-mosaic">
-              {featured.slice(0, 4).map((project, i) => (
-                <motion.div
-                  key={`${project.slug}-${i}`}
-                  className="ep-mosaic-cell"
-                  initial={reduce ? false : { opacity: 0, scale: 0.92, y: 16 }}
-                  animate={reduce ? undefined : { opacity: 1, scale: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.15 + i * 0.08,
-                    ease: easeOut,
-                  }}
-                >
-                  <Image
-                    src={project.thumbnail}
-                    alt=""
-                    width={400}
-                    height={260}
-                    className="ep-mosaic-img"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="ep-filmstrip-wrap">
-        <div className="ep-filmstrip" aria-hidden>
-          <div className="ep-filmstrip-track">
-            {filmstrip.map((project, i) => (
-              <div key={`${project.slug}-a-${i}`} className="ep-filmstrip-item">
-                <Image
-                  src={project.thumbnail}
-                  alt=""
-                  width={320}
-                  height={200}
-                  className="ep-filmstrip-img"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="ep-filmstrip-track ep-filmstrip-track--dup" aria-hidden>
-            {filmstrip.map((project, i) => (
-              <div key={`${project.slug}-b-${i}`} className="ep-filmstrip-item">
-                <Image
-                  src={project.thumbnail}
-                  alt=""
-                  width={320}
-                  height={200}
-                  className="ep-filmstrip-img"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <section className="ep-section ep-section-tint">
+      <section className="ep-section ep-section-tint ep-after-showcase">
         <div className="container">
           <Reveal>
             <p className="ep-eyebrow ep-eyebrow-dark">Experimente voce mesmo</p>
@@ -288,33 +155,6 @@ export function LandingPage({ projects }: LandingPageProps) {
                   <span className="ep-stat-label">{s.label}</span>
                 </div>
               </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ep-section ep-marquee-section">
-        <div className="container">
-          <Reveal>
-            <h2 className="ep-section-title ep-section-title-center">
-              Projetos que funcionam
-            </h2>
-            <p className="ep-section-lead ep-section-lead-center">
-              Depoimentos genericos de tom profissional — substitua por citacoes
-              reais quando quiser.
-            </p>
-          </Reveal>
-        </div>
-        <div className="ep-marquee" role="region" aria-label="Depoimentos">
-          <div className="ep-marquee-inner">
-            {[...quotes, ...quotes].map((q, i) => (
-              <blockquote key={i} className="ep-quote-card">
-                <p>&ldquo;{q.text}&rdquo;</p>
-                <footer>
-                  <strong>{q.who}</strong>
-                  <span>{q.role}</span>
-                </footer>
-              </blockquote>
             ))}
           </div>
         </div>
