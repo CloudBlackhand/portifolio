@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function ProjetosPage() {
   return (
-    <section>
+    <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
         Quatro sistemas em producao: cadastro e funil de vendas (Vendas Hub),
         API WhatsApp self-hosted (WAHA), disparador de mensagens (MS) e
-        comparacao de precos (Melhor Preco). Miniaturas reais em breve.
+        comparacao de precos (Melhor Preco). MS ja inclui capturas em alta resolucao.
       </p>
 
       <div className="section-spacing card-grid">

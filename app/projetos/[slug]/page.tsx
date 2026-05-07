@@ -51,7 +51,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
     : undefined;
 
   return (
-    <article>
+    <article className="page-shell">
       <Link className="button" href="/projetos">
         Voltar para projetos
       </Link>
