@@ -68,10 +68,10 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--background) 88%, transparent);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px -20px rgb(0 0 0 / 65%);
+  border-bottom: none;
+  background: color-mix(in srgb, var(--background) 92%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 0 rgb(255 255 255 / 05%);
 }
 
 .header-content {
@@ -106,7 +106,7 @@ main.container {
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgb(255 255 255 / 06%);
 }
 
 .footer-content {
@@ -386,17 +386,24 @@ main.container {
 }
 
 .favorite-card {
-  border: 1px solid #242936;
-  background: #0f121a;
+  border: none;
+  background: var(--surface-soft);
   color: var(--foreground);
-  border-radius: 0;
+  border-radius: 12px;
   text-align: left;
   cursor: pointer;
   scroll-snap-align: start;
+  overflow: hidden;
+  box-shadow: 0 2px 16px -6px rgb(0 0 0 / 40%);
+  transition: box-shadow 0.2s ease;
+}
+
+.favorite-card:hover {
+  box-shadow: 0 8px 28px -10px rgb(0 0 0 / 50%);
 }
 
 .favorite-card.is-active {
-  border-color: #8be137;
+  box-shadow: 0 0 0 2px rgb(122 162 255 / 35%);
 }
 
 .favorite-image {
@@ -423,23 +430,22 @@ main.container {
 }
 
 .card {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
+  border: none;
+  border-radius: 16px;
+  background: var(--surface-soft);
   overflow: hidden;
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .interactive-card {
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .interactive-card:hover {
-  transform: translateY(-4px);
-  border-color: #4f76cf;
-  box-shadow: 0 18px 42px -28px rgb(71 115 215 / 65%);
+  transform: translateY(-3px);
+  box-shadow:
+    0 20px 48px -20px rgb(0 0 0 / 55%),
+    0 0 0 1px rgb(122 162 255 / 12%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -456,7 +462,6 @@ main.container {
   width: 100%;
   height: auto;
   display: block;
-  border-bottom: 1px solid var(--border);
 }
 
 .card-body {
@@ -475,8 +480,8 @@ main.container {
 }
 
 .chip {
-  border: 1px solid var(--border);
-  background: var(--surface-soft);
+  border: none;
+  background: rgb(255 255 255 / 06%);
   border-radius: 999px;
   padding: 0.2rem 0.6rem;
   font-size: 0.75rem;
@@ -489,14 +494,15 @@ main.container {
   justify-content: center;
   min-height: 40px;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: none;
   padding: 0 0.9rem;
-  background: var(--surface-soft);
+  background: rgb(255 255 255 / 08%);
+  color: var(--foreground);
   transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background: #242936;
+  background: rgb(255 255 255 / 12%);
 }
 
 .button.primary {
@@ -529,18 +535,20 @@ main.container {
 
 .stack {
   margin-top: 1.25rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: none;
+  background: var(--surface-soft);
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .content-block {
   margin-top: 1rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  padding: 1rem;
-  border-radius: 12px;
+  border: none;
+  background: var(--surface-soft);
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  border-radius: 16px;
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .content-block h3 {
@@ -550,8 +558,9 @@ main.container {
 .detail-image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 4px 24px -14px rgb(0 0 0 / 50%);
 }
 
 .detail-image--native {
@@ -603,10 +612,11 @@ main.container {
 }
 
 .about-photo-wrap {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 16px;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--surface-soft);
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .about-photo {
@@ -617,10 +627,11 @@ main.container {
 }
 
 .about-content {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 16px;
-  background: var(--surface);
-  padding: 1rem;
+  background: var(--surface-soft);
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .about-content h2 {
@@ -629,15 +640,16 @@ main.container {
 }
 
 .table-wrap {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
+  border: none;
+  border-radius: 16px;
+  background: var(--surface-soft);
   overflow: hidden;
+  box-shadow: 0 4px 28px -12px rgb(0 0 0 / 45%);
 }
 
 .table-header {
   padding: 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgb(255 255 255 / 06%);
 }
 
 .table-header h2 {
@@ -658,7 +670,7 @@ main.container {
 .work-table td {
   text-align: left;
   padding: 0.85rem 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgb(255 255 255 / 05%);
 }
 
 .work-table tbody tr:hover {
