@@ -1,13 +1,13 @@
 :root {
-  /* Tema claro (referencia estilo Event Parlour) */
-  --background: #ffffff;
-  --surface: #ffffff;
-  --surface-soft: #f8fafc;
-  --foreground: #0f172a;
-  --muted: #64748b;
-  --brand: #6366f1;
-  --brand-strong: #4f46e5;
-  --border: #e2e8f0;
+  /* Tema escuro (landing marketing + restante do site) */
+  --background: #09090b;
+  --surface: #111217;
+  --surface-soft: #181b22;
+  --foreground: #e8ebf3;
+  --muted: #94a3b8;
+  --brand: #818cf8;
+  --brand-strong: #a5b4fc;
+  --border: #2a2e39;
   --showcase-hero-height: 70vh;
 }
 
@@ -58,9 +58,9 @@ a {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--border);
-  background: rgb(255 255 255 / 86%);
+  background: color-mix(in srgb, var(--background) 88%, transparent);
   backdrop-filter: blur(12px);
-  box-shadow: 0 8px 28px -24px rgb(15 23 42 / 18%);
+  box-shadow: 0 8px 28px -20px rgb(0 0 0 / 55%);
 }
 
 .header-content {
@@ -563,7 +563,7 @@ a {
 }
 
 .button:hover {
-  background: #e2e8f0;
+  background: #242936;
 }
 
 .button.primary {
@@ -574,7 +574,7 @@ a {
 }
 
 .button.primary:hover {
-  background: #8cb0ff;
+  background: #a5b4fc;
 }
 
 .button.primary.gfn-like-cta {
@@ -729,7 +729,7 @@ a {
 }
 
 .work-table tbody tr:hover {
-  background: #f1f5f9;
+  background: #151922;
 }
 
 .table-sort-button {
@@ -773,7 +773,7 @@ a {
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 @media (max-width: 640px) {
