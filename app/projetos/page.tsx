@@ -19,13 +19,21 @@ export default function ProjetosPage() {
       </p>
 
       <div className="section-spacing card-grid">
-        {projects.map((project) => (
+        {projects.map((project) => {
+          const cardW = 1200;
+          const cardH =
+            project.thumbnailWidth && project.thumbnailHeight
+              ? Math.round(
+                  (cardW * project.thumbnailHeight) / project.thumbnailWidth,
+                )
+              : 630;
+          return (
           <article className="card interactive-card" key={project.slug}>
             <Image
               src={project.thumbnail}
               alt={`Miniatura do ${project.title}`}
-              width={1200}
-              height={630}
+              width={cardW}
+              height={cardH}
               className="card-image"
             />
             <div className="card-body">
@@ -45,7 +53,8 @@ export default function ProjetosPage() {
               </div>
             </div>
           </article>
-        ))}
+        );
+        })}
       </div>
     </section>
   );

@@ -157,6 +157,26 @@ main.container {
   filter: saturate(1.03) brightness(0.78);
 }
 
+/* Miniaturas com resolucao fixa: nao estica alem do tamanho real do arquivo (evita blur). */
+.showcase-image-slot {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.showcase-image-intrinsic {
+  max-width: min(100%, var(--thumb-max-w)) !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+  filter: saturate(1.03) brightness(0.78);
+}
+
 .showcase-overlay {
   position: absolute;
   inset: 0;
@@ -532,6 +552,14 @@ main.container {
   height: auto;
   border-radius: 12px;
   border: 1px solid var(--border);
+}
+
+.detail-image--native {
+  width: auto;
+  max-width: min(100%, var(--detail-img-max-w, 100%));
+  height: auto;
+  display: block;
+  margin-inline: auto;
 }
 
 .detail-gallery {

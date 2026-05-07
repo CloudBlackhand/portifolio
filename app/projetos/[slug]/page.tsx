@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -41,6 +42,14 @@ export default async function ProjetoDetalhePage({ params }: Params) {
   const canShowCodeLink = project.visibility === "public" && Boolean(project.codeUrl);
   const hasDemo = Boolean(project.demoUrl);
 
+  const thumbW = project.thumbnailWidth ?? 1200;
+  const thumbH = project.thumbnailHeight ?? 630;
+  const detailThumbStyle: CSSProperties | undefined = project.thumbnailWidth
+    ? ({
+        ["--detail-img-max-w"]: `${project.thumbnailWidth}px`,
+      } as CSSProperties)
+    : undefined;
+
   return (
     <article>
       <Link className="button" href="/projetos">
@@ -54,9 +63,14 @@ export default async function ProjetoDetalhePage({ params }: Params) {
         <Image
           src={project.thumbnail}
           alt={`Captura principal do ${project.title}`}
-          width={1200}
-          height={630}
-          className="detail-image"
+          width={thumbW}
+          height={thumbH}
+          className={
+            project.thumbnailWidth
+              ? "detail-image detail-image--native"
+              : "detail-image"
+          }
+          style={detailThumbStyle}
           sizes="(max-width: 740px) 100vw, min(1100px, 100vw)"
           priority
         />
@@ -69,18 +83,32 @@ export default async function ProjetoDetalhePage({ params }: Params) {
             Capturas reais da interface em uso (versao desktop).
           </p>
           <div className="detail-gallery">
-            {project.gallery.map((item) => (
+            {project.gallery.map((item) => {
+              const gw = item.width ?? 1200;
+              const gh = item.height ?? 675;
+              const galleryStyle: CSSProperties | undefined = item.width
+                ? ({
+                    ["--detail-img-max-w"]: `${item.width}px`,
+                  } as CSSProperties)
+                : undefined;
+              return (
               <figure key={item.src} className="detail-gallery-figure">
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  width={1200}
-                  height={675}
-                  className="detail-image"
+                  width={gw}
+                  height={gh}
+                  className={
+                    item.width
+                      ? "detail-image detail-image--native"
+                      : "detail-image"
+                  }
+                  style={galleryStyle}
                   sizes="(max-width: 740px) 100vw, 50vw"
                 />
               </figure>
-            ))}
+            );
+            })}
           </div>
         </section>
       ) : null}
