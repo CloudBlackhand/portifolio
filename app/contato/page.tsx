@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contato | Cloud Service",
-  description: "Canal de contato profissional com exposicao minima de dados.",
+  description: "Canal de contato profissional com exposição mínima de dados.",
 };
 
 export default function ContatoPage() {
@@ -10,8 +10,8 @@ export default function ContatoPage() {
     <section className="page-shell">
       <h1 className="page-title">Contato</h1>
       <p className="page-subtitle">
-        Este espaco prioriza comunicacao profissional com privacidade e resposta
-        rapida para alinhamento de projetos.
+        Este espaço prioriza comunicação profissional com privacidade e resposta
+        rápida para alinhamento de projetos.
       </p>
 
       <div className="content-block section-spacing">
@@ -34,7 +34,7 @@ export default function ContatoPage() {
       <div className="content-block">
         <h3>Nota de privacidade</h3>
         <p className="muted">
-          Evite publicar telefone pessoal, endereco residencial e links sensiveis.
+          Evite publicar telefone pessoal, endereço residencial e links sensíveis.
         </p>
       </div>
     </section>

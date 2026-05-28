@@ -16,8 +16,8 @@ export default function Home() {
       <div className="container ep-table-section">
         <WorkTable projects={projects} />
         <p className="muted section-spacing">
-          Sistemas em producao e campanhas de marketing e criativo — abra cada projeto
-          para ver capturas ou pecas visuais.
+          Sistemas em produção e campanhas de marketing e criativo — abra cada projeto
+          para ver capturas ou peças visuais.
         </p>
       </div>
     </>

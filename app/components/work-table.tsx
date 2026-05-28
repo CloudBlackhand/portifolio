@@ -29,7 +29,7 @@ export function WorkTable({ projects }: WorkTableProps) {
         cell: (info) => info.getValue(),
       }),
       columnHelper.accessor("projectKind", {
-        header: "Area",
+        header: "Área",
         cell: (info) =>
           info.getValue() === "marketing" ? "Marketing" : "Sistema",
       }),
@@ -65,7 +65,7 @@ export function WorkTable({ projects }: WorkTableProps) {
       <div className="table-header">
         <h2>Resumo dos projetos</h2>
         <p className="muted">
-          Visao executiva dos projetos. Clique no cabecalho para ordenar.
+          Visão executiva dos projetos. Clique no cabeçalho para ordenar.
         </p>
       </div>
       <div className="table-scroll">

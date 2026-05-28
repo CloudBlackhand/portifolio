@@ -1,10 +1,10 @@
-## Portifolio leve com Next.js
+## Portifólio leve com Next.js
 
-Base de portifolio com foco em:
+Base de portifólio com foco em:
 
-- carregamento rapido
-- renderizacao estatica
-- privacidade (sem exposicao desnecessaria de dados/codigo)
+- carregamento rápido
+- renderização estática
+- privacidade (sem exposição desnecessária de dados/código)
 - deploy gratuito na Vercel
 
 ## Executar localmente
@@ -19,33 +19,33 @@ Abra [http://localhost:3000](http://localhost:3000).
 ## Scripts
 
 - `npm run dev`: servidor local
-- `npm run lint`: validacao de codigo
-- `npm run build`: build de producao (export estatico)
-- `npm run start`: sobe app em modo prod (quando aplicavel)
+- `npm run lint`: validação de código
+- `npm run build`: build de produção (export estático)
+- `npm run start`: sobe app em modo prod (quando aplicável)
 
 ## Estrutura principal
 
-- `app/`: paginas (Inicio, Projetos, Detalhe, Contato)
+- `app/`: páginas (Início, Projetos, Detalhe, Contato)
 - `data/projects.ts`: contrato de dados com 8 placeholders
-- `public/project-thumbs/placeholder.svg`: miniatura padrao
-- `next.config.ts`: `output: "export"` para site estatico
+- `public/project-thumbs/placeholder.svg`: miniatura padrão
+- `next.config.ts`: `output: "export"` para site estático
 
 ## Checklist de privacidade
 
-- Manter repositorios de produto privados no GitHub
-- Priorizar descricao de contexto, solucao e resultado (sem links de codigo no site)
-- Nao incluir chaves, URLs internas ou dados pessoais sensiveis
+- Manter repositórios de produto privados no GitHub
+- Priorizar descrição de contexto, solução e resultado (sem links de código no site)
+- Não incluir chaves, URLs internas ou dados pessoais sensíveis
 
 ## Deploy na Vercel (gratuito)
 
-1. Suba este projeto para um repositorio GitHub.
-2. Acesse [Vercel](https://vercel.com/new) e importe o repositorio.
-3. Framework detectado: Next.js (manter padrao).
-4. Variaveis de ambiente: nenhuma obrigatoria nesta fase.
+1. Suba este projeto para um repositório GitHub.
+2. Acesse [Vercel](https://vercel.com/new) e importe o repositório.
+3. Framework detectado: Next.js (manter padrão).
+4. Variáveis de ambiente: nenhuma obrigatória nesta fase.
 5. Deploy.
 6. Validar:
    - Home, `/projetos`, `/projetos/[slug]`, `/contato`
    - miniaturas renderizando
-   - navegacao mobile e desktop
+   - navegação mobile e desktop
 
-Opcional depois: conectar dominio proprio.
+Opcional depois: conectar domínio próprio.

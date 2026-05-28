@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Projeto nao encontrado | Cloud Service",
+      title: "Projeto não encontrado | Cloud Service",
     };
   }
 
@@ -80,7 +80,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           src={project.thumbnail}
           alt={
             marketing
-              ? `Peca principal — ${project.title}`
+              ? `Peça principal — ${project.title}`
               : `Captura principal do ${project.title}`
           }
           width={thumbW}
@@ -102,11 +102,11 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {project.gallery && project.gallery.length > 0 ? (
         <section className="content-block section-spacing">
-          <h3>{marketing ? "Outras pecas" : "Outras telas"}</h3>
+          <h3>{marketing ? "Outras peças" : "Outras telas"}</h3>
           <p className="muted privacy-note">
             {marketing
-              ? "Variacoes da campanha em formato para Instagram e redes."
-              : "Capturas reais da interface em uso (versao desktop)."}
+              ? "Variações da campanha em formato para Instagram e redes."
+              : "Capturas reais da interface em uso (versão desktop)."}
           </p>
           <div
             className={
@@ -151,7 +151,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
 
       <section className="content-block section-spacing">
-        <h3>{marketing ? "Sobre o trabalho" : "Descricao detalhada do produto"}</h3>
+        <h3>{marketing ? "Sobre o trabalho" : "Descrição detalhada do produto"}</h3>
         <p className="muted">{project.detailedDescription}</p>
       </section>
 
@@ -160,7 +160,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           <h3>Experimente</h3>
           {!hasLiveLink ? (
             <p className="muted">
-              O link para ver o sistema no ar sera publicado em breve.
+              O link para ver o sistema no ar será publicado em breve.
             </p>
           ) : (
             <div className="link-row">
