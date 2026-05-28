@@ -106,7 +106,7 @@ export function LandingPage({ projects }: LandingPageProps) {
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
                     Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — sistemas usados de
-                    verdade, com links publicos quando o repositorio e aberto.
+                    verdade, com link para ver no ar ou falar com o bot quando disponivel.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa
