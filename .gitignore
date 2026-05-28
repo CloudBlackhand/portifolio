@@ -20,6 +20,10 @@
 # production
 /build
 
+# fotos e arquivos locais em media/ (nao publicar no site)
+/media/*
+!/media/.gitkeep
+
 # misc
 .DS_Store
 *.pem
