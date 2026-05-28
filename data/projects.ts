@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "Sistema completo de cadastro e gestao de vendas: oportunidades, equipe e acompanhamento do funil em um so lugar.",
     detailedDescription:
       "O Vendas Hub e o ponto central da operacao comercial: cadastro de clientes e negocios, registro de etapas do funil, responsaveis e historico do que foi feito em cada oportunidade. Foi pensado como um sistema de vendas de verdade — nao so uma listagem, mas regras de preenchimento, visao por vendedor ou time e leitura rapida do que precisa de atencao. Tudo isso em producao, com interface voltada a quem vive de meta e follow-up diario.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/vendas-hub.svg",
     category: "Gestao e cadastro de vendas",
     year: 2026,
     impactLabel: "Funil e cadastro integrados",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "WhatsApp personalizado em ambiente proprio: conecte um numero da empresa e integre bots, disparadores e outros sistemas com seguranca.",
     detailedDescription:
       "Este sistema permite usar um numero de WhatsApp da empresa de forma controlada e personalizada. Voce faz o login do numero (como no app) e passa a ter um canal seguro via HTTPS para conectar outras solucoes: bots de atendimento, disparo de mensagens, alertas, cadastros e qualquer fluxo que precise falar com o cliente no WhatsApp. A ideia e ter uma base unica e confiavel, sem depender de ferramentas fechadas de terceiros, e permitir que cada produto do ecossistema use o mesmo numero oficial com regras claras, monitoramento e estabilidade para operacao do dia a dia.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/sistema-https-whatsapp.svg",
     category: "WhatsApp personalizado",
     year: 2025,
     impactLabel: "Numero oficial integrado",
@@ -149,7 +149,7 @@ export const projects: Project[] = [
       "Ferramenta de comparacao e apoio a decisao de compra e margem, com dados reunidos para analise rapida.",
     detailedDescription:
       "O Melhor Preco ajuda a comparar cenarios de custo e revenda antes de comprar ou precificar: entrada de dados organizada, visao do que pesa na margem e leitura objetiva para quem decide no operacional. Foi usado no cotidiano para reduzir decisao no feeling e concentrar numeros em um fluxo so — sempre com foco em consistencia entre consultas e velocidade para repetir a analise sempre que o mercado mudar.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/melhor-preco.svg",
     category: "Precificacao e comparacao",
     year: 2024,
     impactLabel: "Decisao mais clara na compra",

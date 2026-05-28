@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, sans-serif">MELHOR PRECO</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, sans-serif">Comparacao e decisao de compra</text>
+  <rect x="88" y="160" width="520" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="108" y="195" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Cenario A</text>
+  <rect x="108" y="220" width="80" height="220" rx="8" fill="#2a3140"/>
+  <rect x="208" y="280" width="80" height="160" rx="8" fill="#3d4659"/>
+  <rect x="308" y="240" width="80" height="200" rx="8" fill="#4b8dff"/>
+  <rect x="408" y="300" width="80" height="140" rx="8" fill="#242936"/>
+  <line x1="108" y1="460" x2="488" y2="460" stroke="#2a2e39" stroke-width="2"/>
+  <text x="108" y="490" fill="#25d366" font-size="18" font-weight="bold" font-family="Arial, sans-serif">Melhor margem: Cenario A</text>
+  <rect x="640" y="160" width="460" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="660" y="195" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Comparativo rapido</text>
+  <rect x="660" y="220" width="400" height="52" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="2"/>
+  <text x="680" y="252" fill="#e8ebf3" font-size="15" font-family="Arial, sans-serif">Fornecedor A  R$ 89,90</text>
+  <text x="980" y="252" fill="#25d366" font-size="14" font-weight="bold" font-family="Arial, sans-serif">+12%</text>
+  <rect x="660" y="288" width="400" height="52" rx="10" fill="#1e2430"/>
+  <text x="680" y="320" fill="#e8ebf3" font-size="15" font-family="Arial, sans-serif">Fornecedor B  R$ 94,50</text>
+  <rect x="660" y="356" width="400" height="52" rx="10" fill="#1e2430"/>
+  <text x="680" y="388" fill="#e8ebf3" font-size="15" font-family="Arial, sans-serif">Fornecedor C  R$ 97,20</text>
+  <rect x="660" y="430" width="180" height="44" rx="10" fill="#4b8dff"/>
+  <text x="700" y="458" fill="#0a0e18" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Analisar</text>
+  <circle cx="1000" cy="452" r="36" fill="#1e2430" stroke="#7aa2ff" stroke-width="2"/>
+  <text x="988" y="460" fill="#7aa2ff" font-size="22" font-weight="bold" font-family="Arial, sans-serif">%</text>
+</svg>

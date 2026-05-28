@@ -1,0 +1,39 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, sans-serif">VENDAS HUB</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, sans-serif">Funil e cadastro de vendas</text>
+  <rect x="88" y="160" width="720" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="108" y="180" width="140" height="320" rx="10" fill="#151922"/>
+  <rect x="118" y="200" width="100" height="12" rx="4" fill="#3d4659"/>
+  <rect x="118" y="240" width="110" height="48" rx="8" fill="#1e2430" stroke="#4b8dff" stroke-width="2"/>
+  <rect x="118" y="300" width="110" height="48" rx="8" fill="#1a1f2a"/>
+  <rect x="118" y="360" width="110" height="48" rx="8" fill="#1a1f2a"/>
+  <rect x="118" y="420" width="110" height="48" rx="8" fill="#1a1f2a"/>
+  <rect x="268" y="180" width="160" height="320" rx="10" fill="#151922"/>
+  <text x="288" y="210" fill="#94a3b8" font-size="12" font-family="Arial, sans-serif">Prospeccao</text>
+  <rect x="278" y="228" width="130" height="56" rx="8" fill="#242936"/>
+  <rect x="278" y="296" width="130" height="56" rx="8" fill="#242936"/>
+  <rect x="448" y="180" width="160" height="320" rx="10" fill="#151922"/>
+  <text x="468" y="210" fill="#94a3b8" font-size="12" font-family="Arial, sans-serif">Negociacao</text>
+  <rect x="458" y="228" width="130" height="56" rx="8" fill="#2a3140" stroke="#7aa2ff" stroke-width="1"/>
+  <rect x="458" y="296" width="130" height="56" rx="8" fill="#242936"/>
+  <rect x="628" y="180" width="160" height="320" rx="10" fill="#151922"/>
+  <text x="648" y="210" fill="#94a3b8" font-size="12" font-family="Arial, sans-serif">Fechado</text>
+  <rect x="638" y="228" width="130" height="56" rx="8" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <rect x="838" y="160" width="280" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="858" y="195" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Resumo do funil</text>
+  <rect x="858" y="215" width="240" height="8" rx="4" fill="#2a2e39"/>
+  <rect x="858" y="215" width="168" height="8" rx="4" fill="#4b8dff"/>
+  <rect x="858" y="250" width="100" height="36" rx="8" fill="#1e2430"/>
+  <text x="872" y="273" fill="#7aa2ff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">24</text>
+  <text x="920" y="273" fill="#b2b8c7" font-size="12" font-family="Arial, sans-serif">ativas</text>
+  <rect x="978" y="250" width="120" height="36" rx="8" fill="#1a2e1f"/>
+  <text x="992" y="273" fill="#25d366" font-size="20" font-weight="bold" font-family="Arial, sans-serif">8</text>
+  <text x="1020" y="273" fill="#b2b8c7" font-size="12" font-family="Arial, sans-serif">fechadas</text>
+  <path d="M858 320 H1098" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="858" y="340" width="240" height="14" rx="4" fill="#3d4659"/>
+  <rect x="858" y="368" width="200" height="14" rx="4" fill="#3d4659"/>
+  <rect x="858" y="396" width="220" height="14" rx="4" fill="#3d4659"/>
+  <rect x="858" y="424" width="160" height="14" rx="4" fill="#3d4659"/>
+</svg>
