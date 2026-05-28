@@ -28,6 +28,11 @@ export function WorkTable({ projects }: WorkTableProps) {
         header: "Projeto",
         cell: (info) => info.getValue(),
       }),
+      columnHelper.accessor("projectKind", {
+        header: "Area",
+        cell: (info) =>
+          info.getValue() === "marketing" ? "Marketing" : "Sistema",
+      }),
       columnHelper.accessor("category", {
         header: "Categoria",
         cell: (info) => info.getValue(),

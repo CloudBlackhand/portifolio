@@ -64,8 +64,8 @@ export default function RootLayout({
               <Link href="/contato">Contato</Link>
             </nav>
             <p className="footer-note">
-              Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — links para ver no ar ou falar
-              com o bot quando disponivel.
+              Sistemas em producao e trabalhos de marketing e criativo — links para ver no ar ou falar com o
+              bot quando disponivel.
             </p>
           </div>
         </footer>
