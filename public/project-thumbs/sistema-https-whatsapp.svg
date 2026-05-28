@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">SISTEMA HTTPS WHATSAPP</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, sans-serif">Numero conectado para bots e integracoes</text>
+  <rect x="120" y="170" width="280" height="520" rx="28" fill="#111217" stroke="#2a2e39" stroke-width="3"/>
+  <rect x="140" y="200" width="240" height="40" rx="10" fill="#1a1f2a"/>
+  <circle cx="200" cy="320" r="52" fill="#25d366"/>
+  <path d="M185 308 L200 323 L220 298" stroke="#0f121a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="155" y="400" width="210" height="12" rx="4" fill="#3d4659"/>
+  <rect x="155" y="428" width="160" height="10" rx="4" fill="#2a2e39"/>
+  <rect x="155" y="460" width="210" height="44" rx="10" fill="#1e2430" stroke="#4b8dff" stroke-width="2"/>
+  <text x="175" y="488" fill="#e8ebf3" font-size="14" font-family="Arial, sans-serif">Numero conectado</text>
+  <rect x="480" y="200" width="120" height="120" rx="16" fill="#1a2438" stroke="#4b8dff" stroke-width="2"/>
+  <rect x="508" y="228" width="64" height="64" rx="12" fill="#111217"/>
+  <path d="M528 248 L540 260 L556 242" stroke="#4b8dff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="500" y="345" fill="#7aa2ff" font-size="13" font-weight="bold" font-family="Arial, sans-serif">HTTPS</text>
+  <line x1="420" y1="320" x2="480" y2="260" stroke="#4b8dff" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="600" y1="260" x2="680" y2="220" stroke="#4b8dff" stroke-width="3"/>
+  <line x1="600" y1="280" x2="680" y2="320" stroke="#4b8dff" stroke-width="3"/>
+  <line x1="600" y1="300" x2="680" y2="420" stroke="#4b8dff" stroke-width="3"/>
+  <rect x="680" y="180" width="200" height="72" rx="12" fill="#151922" stroke="#2a2e39" stroke-width="2"/>
+  <circle cx="708" cy="216" r="14" fill="#25d366"/>
+  <text x="732" y="222" fill="#e8ebf3" font-size="14" font-family="Arial, sans-serif">Bot de atendimento</text>
+  <rect x="680" y="280" width="200" height="72" rx="12" fill="#151922" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="700" y="304" width="24" height="24" rx="6" fill="#7aa2ff"/>
+  <text x="732" y="322" fill="#e8ebf3" font-size="14" font-family="Arial, sans-serif">Disparo de mensagens</text>
+  <rect x="680" y="380" width="200" height="72" rx="12" fill="#151922" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="700" y="404" width="24" height="24" rx="6" fill="#4b8dff"/>
+  <text x="732" y="422" fill="#e8ebf3" font-size="14" font-family="Arial, sans-serif">Outros sistemas</text>
+  <rect x="920" y="200" width="200" height="280" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="940" y="235" fill="#94a3b8" font-size="12" font-family="Arial, sans-serif">Canal unico</text>
+  <circle cx="1020" cy="310" r="48" fill="#1e2430" stroke="#25d366" stroke-width="3"/>
+  <circle cx="980" cy="280" r="8" fill="#4b8dff"/>
+  <circle cx="1060" cy="280" r="8" fill="#7aa2ff"/>
+  <circle cx="1020" cy="360" r="8" fill="#4b8dff"/>
+</svg>
