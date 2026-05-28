@@ -5,7 +5,7 @@ import { getProjectsByKind } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
   description:
-    "Sistemas em producao e trabalhos de marketing e criativo da Cloud Service.",
+    "Sistemas em produção e trabalhos de marketing e criativo da Cloud Service.",
 };
 
 export default function ProjetosPage() {
@@ -20,15 +20,15 @@ export default function ProjetosPage() {
     <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Sistemas que colocamos no ar e pecas de marketing para redes — tudo com
+        Sistemas que colocamos no ar e peças de marketing para redes — tudo com
         foco em resultado e linguagem clara para o cliente final.
       </p>
 
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas</h2>
         <p className="muted section-spacing-sm">
-          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — produtos
-          digitais em uso no dia a dia da operacao.
+          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preço e CEPBOT — produtos
+          digitais em uso no dia a dia da operação.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
       </section>
@@ -36,8 +36,8 @@ export default function ProjetosPage() {
       <section id="marketing" className="section-spacing">
         <h2 className="section-heading">Marketing e criativo</h2>
         <p className="muted section-spacing-sm">
-          Destaques: instalacao gratis e rapida e peca de velocidade com CTA. Tambem
-          Copa 2026 e serie de posts para feed.
+          Destaques: instalação grátis e rápida, e peça de velocidade com CTA. Também
+          Copa 2026 e série de posts para feed.
         </p>
         <ProjectCardGrid projects={marketingProjects} />
       </section>

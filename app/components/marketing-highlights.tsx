@@ -16,7 +16,7 @@ export function MarketingHighlights() {
       <div className="container">
         <p className="ep-eyebrow ep-eyebrow-dark">Marketing e criativo</p>
         <h2 id="marketing-section-title" className="ep-section-title">
-          Pecas que mais convertem
+          Peças que mais convertem
         </h2>
         <p className="ep-section-lead">
           Posts para Instagram e campanhas visuais de provedor de internet — fora do
@@ -52,7 +52,7 @@ export function MarketingHighlights() {
                   <h3>{project.title}</h3>
                   <p>{project.shortDescription}</p>
                   <Link className="button" href={`/projetos/${project.slug}`}>
-                    Ver peca
+                    Ver peça
                   </Link>
                 </div>
               </article>

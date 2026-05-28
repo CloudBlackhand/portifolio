@@ -38,29 +38,29 @@ function Reveal({
 
 const pillars = [
   {
-    title: "Entrega pensada para producao",
+    title: "Entrega pensada para produção",
     body:
-      "Nada de demo fragil: fluxos, cadastros e integracoes pensados para o dia a dia da operacao.",
+      "Nada de demo frágil: fluxos, cadastros e integrações pensados para o dia a dia da operação.",
   },
   {
-    title: "Stack moderna e sustentavel",
+    title: "Stack moderna e sustentável",
     body:
-      "Next.js, TypeScript, APIs e infraestrutura que voce consegue evoluir sem reescrever tudo a cada ano.",
+      "Next.js, TypeScript, APIs e infraestrutura que você consegue evoluir sem reescrever tudo a cada ano.",
   },
   {
     title: "Clareza sem vazar segredo",
     body:
-      "Contexto, solucao e resultado — sem expor codigo proprietario ou dados sensiveis do cliente.",
+      "Contexto, solução e resultado — sem expor código proprietário ou dados sensíveis do cliente.",
   },
   {
-    title: "Canal oficial e governanca",
+    title: "Canal oficial e governança",
     body:
-      "WhatsApp e mensageria com filas, atrasos e rastreio — o que a operacao precisa para escalar com seguranca.",
+      "WhatsApp e mensageria com filas, atrasos e rastreio — o que a operação precisa para escalar com segurança.",
   },
 ];
 
 const stats = [
-  { label: "Sistemas em producao", value: "5" },
+  { label: "Sistemas em produção", value: "5" },
   { label: "Campanhas criativas", value: "2" },
   { label: "Foco", value: "Resultado" },
   { label: "Prioridade", value: "Conforto para o cliente" },
@@ -81,11 +81,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint ep-after-showcase">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Experimente voce mesmo</p>
-            <h2 className="ep-section-title">Veja a Cloud Service em acao</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">Experimente você mesmo</p>
+            <h2 className="ep-section-title">Veja a Cloud Service em ação</h2>
             <p className="ep-section-lead">
-              Cada projeto traz contexto, solucao e resultado em linguagem clara.
-              Abra a pagina do projeto e veja as capturas quando disponiveis.
+              Cada projeto traz contexto, solução e resultado em linguagem clara.
+              Abra a página do projeto e veja as capturas quando disponíveis.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -109,8 +109,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                 <div className="ep-device-main">
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Sistemas em producao e pecas de marketing para redes — do software ao criativo,
-                    com link para ver no ar ou falar com o bot quando disponivel.
+                    Sistemas em produção e peças de marketing para redes — do software ao criativo,
+                    com link para ver no ar ou falar com o bot quando disponível.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa
@@ -128,8 +128,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
             <p className="ep-eyebrow ep-eyebrow-dark">Por que esta abordagem</p>
             <h2 className="ep-section-title">A forma mais direta de evoluir o stack</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Menos ferramenta solta, mais produto integrado. E o que aplicamos
-              nos sistemas que voce ve aqui.
+              Menos ferramenta solta, mais produto integrado — é o que aplicamos
+              nos sistemas que você vê aqui.
             </p>
           </Reveal>
           <div className="ep-pillars">
@@ -148,7 +148,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Em numeros</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Em números</p>
             <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
           </Reveal>
           <div className="ep-stats">
@@ -168,10 +168,10 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
         <div className="container ep-cta-block">
           <Reveal>
             <p className="ep-eyebrow ep-eyebrow-dark">Vamos conversar</p>
-            <h2 className="ep-section-title">Pronto para o proximo sistema?</h2>
+            <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Conte objetivo, prazo e restricoes — respondemos pelo WhatsApp ou
-              pela pagina de contato.
+              Conte objetivo, prazo e restrições — respondemos pelo WhatsApp ou
+              pela página de contato.
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/contato">
@@ -217,12 +217,12 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                 Uma conversa clara sobre o seu projeto
               </h2>
               <p className="ep-body">
-                Meu foco e entender seu objetivo de negocio antes de propor
-                qualquer solucao tecnica. Cada entrega nasce com direcao,
-                prioridade e criterio de resultado desde o inicio.
+                Meu foco é entender seu objetivo de negócio antes de propor
+                qualquer solução técnica. Cada entrega nasce com direção,
+                prioridade e critério de resultado desde o início.
               </p>
               <p className="ep-body">
-                Alinhamentos curtos e objetivos para reduzir duvidas e manter
+                Alinhamentos curtos e objetivos para reduzir dúvidas e manter
                 transparencia durante todo o processo.
               </p>
               <div className="ep-hero-cta">
@@ -246,12 +246,12 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-pro-intro">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Apresentacao profissional</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Apresentação profissional</p>
             <h2 className="ep-section-title">Como eu trabalho</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Entendimento real do problema, implementacao robusta e resultado
-              mensuravel — impacto sem expor detalhes sensiveis de codigo ou
-              arquitetura proprietaria.
+              Entendimento real do problema, implementação robusta e resultado
+              mensurável — impacto sem expor detalhes sensíveis de código ou
+              arquitetura proprietária.
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/projetos">

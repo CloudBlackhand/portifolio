@@ -58,7 +58,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
               onClick={() =>
                 setActiveIndex((prev) => (prev + 1) % featuredProjects.length)
               }
-              aria-label="Proximo banner"
+              aria-label="Próximo banner"
             >
               ›
             </button>
@@ -182,7 +182,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             type="button"
             className="favorites-nav right"
             onClick={() => scrollFavorites("right")}
-            aria-label="Ver proximos projetos"
+            aria-label="Ver próximos projetos"
           >
             ›
           </button>
