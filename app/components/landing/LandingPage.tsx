@@ -59,7 +59,7 @@ const pillars = [
 ];
 
 const stats = [
-  { label: "Sistemas em producao", value: "4" },
+  { label: "Sistemas em producao", value: "5" },
   { label: "Foco", value: "B2B / operacao" },
   { label: "Repositorios publicos no portfolio", value: "3" },
   { label: "Prioridade", value: "Resultado" },
@@ -105,7 +105,7 @@ export function LandingPage({ projects }: LandingPageProps) {
                 <div className="ep-device-main">
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Vendas Hub, WAHA, MS e Melhor Preco — sistemas usados de
+                    Vendas Hub, WAHA, MS, Melhor Preco e CEPBOT — sistemas usados de
                     verdade, com links publicos quando o repositorio e aberto.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">

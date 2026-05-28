@@ -11,7 +11,7 @@ export default function Home() {
       <div className="container ep-table-section">
         <WorkTable projects={projects} />
         <p className="muted section-spacing">
-          Quatro sistemas em producao: Vendas Hub, WAHA, MS e Melhor Preco.
+          Cinco sistemas em producao: Vendas Hub, WAHA, MS, Melhor Preco e CEPBOT.
           Capturas reais no estudo de cada projeto.
         </p>
       </div>
