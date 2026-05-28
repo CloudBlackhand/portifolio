@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 
 export default function ProjetosPage() {
   const softwareProjects = getProjectsByKind("software");
-  const marketingProjects = getProjectsByKind("marketing");
+  const marketingProjects = getProjectsByKind("marketing").sort((a, b) => {
+    if (a.marketingHighlight && !b.marketingHighlight) return -1;
+    if (!a.marketingHighlight && b.marketingHighlight) return 1;
+    return 0;
+  });
 
   return (
     <section className="page-shell">
@@ -29,11 +33,11 @@ export default function ProjetosPage() {
         <ProjectCardGrid projects={softwareProjects} />
       </section>
 
-      <section className="section-spacing">
+      <section id="marketing" className="section-spacing">
         <h2 className="section-heading">Marketing e criativo</h2>
         <p className="muted section-spacing-sm">
-          Campanhas visuais para Instagram e materiais promocionais de provedor de
-          internet — ofertas, instalacao, Wi-Fi e eventos sazonais.
+          Destaques: instalacao gratis e rapida e peca de velocidade com CTA. Tambem
+          Copa 2026 e serie de posts para feed.
         </p>
         <ProjectCardGrid projects={marketingProjects} />
       </section>

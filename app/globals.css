@@ -655,6 +655,78 @@ a {
   margin-inline: auto;
 }
 
+.detail-media--marketing {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-image--marketing {
+  box-shadow: 0 12px 40px rgb(0 0 0 / 35%);
+}
+
+.detail-gallery--marketing {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  justify-items: center;
+}
+
+.detail-gallery--marketing .detail-gallery-figure {
+  max-width: 420px;
+  width: 100%;
+}
+
+.marketing-section {
+  padding: 3rem 0 2.5rem;
+  background: linear-gradient(180deg, #0c1220 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.marketing-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.marketing-highlight-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.marketing-highlight-media {
+  display: block;
+  background: #060a12;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.marketing-highlight-image {
+  width: auto;
+  max-width: min(100%, 400px);
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  margin-inline: auto;
+  border-radius: 8px;
+}
+
+.marketing-highlight-body {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.marketing-highlight-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.45rem;
+}
+
+.marketing-highlight-body p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.45;
+}
+
 .detail-gallery {
   margin-top: 1rem;
   display: grid;

@@ -70,7 +70,9 @@ type LandingPageProps = {
 };
 
 export function LandingPage({ projects }: LandingPageProps) {
-  const featured = projects.filter((p) => p.featured);
+  const featured = projects.filter(
+    (p) => p.featured && p.projectKind === "software",
+  );
 
   return (
     <>

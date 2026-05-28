@@ -12,7 +12,10 @@ type ShowcaseCarouselProps = {
 
 export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
   const featuredProjects = useMemo(
-    () => projects.filter((project) => project.featured),
+    () =>
+      projects.filter(
+        (project) => project.featured && project.projectKind === "software",
+      ),
     [projects],
   );
   const [activeIndex, setActiveIndex] = useState(0);

@@ -7,6 +7,7 @@ import {
   getProjectBySlug,
   getProjectLiveLinkLabel,
   isMarketingProject,
+  MARKETING_DETAIL_MAX_WIDTH_PX,
   projects,
 } from "@/data/projects";
 
@@ -49,9 +50,12 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   const thumbW = project.thumbnailWidth ?? 1200;
   const thumbH = project.thumbnailHeight ?? 630;
-  const detailThumbStyle: CSSProperties | undefined = project.thumbnailWidth
+  const detailMaxW = marketing
+    ? MARKETING_DETAIL_MAX_WIDTH_PX
+    : project.thumbnailWidth;
+  const detailThumbStyle: CSSProperties | undefined = detailMaxW
     ? ({
-        ["--detail-img-max-w"]: `${project.thumbnailWidth}px`,
+        ["--detail-img-max-w"]: `${detailMaxW}px`,
       } as CSSProperties)
     : undefined;
 
@@ -67,7 +71,11 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       <h1 className="page-title">{project.title}</h1>
       <p className="page-subtitle section-spacing">{project.shortDescription}</p>
 
-      <div className="section-spacing">
+      <div
+        className={
+          marketing ? "section-spacing detail-media detail-media--marketing" : "section-spacing"
+        }
+      >
         <Image
           src={project.thumbnail}
           alt={
@@ -78,12 +86,16 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           width={thumbW}
           height={thumbH}
           className={
-            project.thumbnailWidth
-              ? "detail-image detail-image--native"
+            detailMaxW
+              ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
               : "detail-image"
           }
           style={detailThumbStyle}
-          sizes="(max-width: 740px) 100vw, min(1100px, 100vw)"
+          sizes={
+            marketing
+              ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
+              : "(max-width: 740px) 100vw, min(1100px, 100vw)"
+          }
           priority
         />
       </div>
@@ -96,13 +108,20 @@ export default async function ProjetoDetalhePage({ params }: Params) {
               ? "Variacoes da campanha em formato para Instagram e redes."
               : "Capturas reais da interface em uso (versao desktop)."}
           </p>
-          <div className="detail-gallery">
+          <div
+            className={
+              marketing ? "detail-gallery detail-gallery--marketing" : "detail-gallery"
+            }
+          >
             {project.gallery.map((item) => {
               const gw = item.width ?? 1200;
               const gh = item.height ?? 675;
-              const galleryStyle: CSSProperties | undefined = item.width
+              const galleryMaxW = marketing
+                ? MARKETING_DETAIL_MAX_WIDTH_PX
+                : item.width;
+              const galleryStyle: CSSProperties | undefined = galleryMaxW
                 ? ({
-                    ["--detail-img-max-w"]: `${item.width}px`,
+                    ["--detail-img-max-w"]: `${galleryMaxW}px`,
                   } as CSSProperties)
                 : undefined;
               return (
@@ -113,12 +132,16 @@ export default async function ProjetoDetalhePage({ params }: Params) {
                   width={gw}
                   height={gh}
                   className={
-                    item.width
-                      ? "detail-image detail-image--native"
+                    galleryMaxW
+                      ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
                       : "detail-image"
                   }
                   style={galleryStyle}
-                  sizes="(max-width: 740px) 100vw, 50vw"
+                  sizes={
+                    marketing
+                      ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
+                      : "(max-width: 740px) 100vw, 50vw"
+                  }
                 />
               </figure>
             );
