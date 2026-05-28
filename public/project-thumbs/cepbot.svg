@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <rect x="88" y="120" width="380" height="320" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <circle cx="180" cy="200" r="36" fill="#25d366"/>
+  <rect x="240" y="178" width="180" height="16" rx="8" fill="#3d4659"/>
+  <rect x="240" y="206" width="140" height="12" rx="6" fill="#2a2e39"/>
+  <rect x="120" y="260" width="280" height="44" rx="10" fill="#1e2430" stroke="#4b8dff" stroke-width="2"/>
+  <text x="150" y="288" fill="#e8ebf3" font-size="18" font-family="Arial, sans-serif">CEP: 80010-010</text>
+  <rect x="120" y="320" width="200" height="36" rx="8" fill="#4b8dff"/>
+  <text x="145" y="343" fill="#0a0e18" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Ver planos</text>
+  <rect x="520" y="100" width="560" height="380" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <path d="M720 280 L780 220 L840 260 L900 200 L960 240" stroke="#4b8dff" stroke-width="4" fill="none"/>
+  <circle cx="780" cy="220" r="12" fill="#4b8dff"/>
+  <circle cx="900" cy="200" r="12" fill="#25d366"/>
+  <text x="560" y="88" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, sans-serif">CEPBOT</text>
+  <text x="560" y="118" fill="#b2b8c7" font-size="16" font-family="Arial, sans-serif">Cobertura por CEP no WhatsApp</text>
+</svg>

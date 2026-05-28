@@ -173,6 +173,37 @@ export const projects: Project[] = [
     codeUrl: "https://github.com/CloudBlackhand/MelhorPre-o",
     visibility: "public",
   },
+  {
+    slug: "cepbot",
+    title: "CEPBOT",
+    shortDescription:
+      "Bot de atendimento no WhatsApp que consulta cobertura por CEP, apresenta planos da regiao e encaminha para humano quando necessario.",
+    detailedDescription:
+      "O CEPBOT automatiza o primeiro contato com o cliente pelo WhatsApp: recebe a mensagem, mostra um menu claro e conduz a conversa sem depender de alguem online o tempo todo. Quando o cliente informa o CEP, o sistema verifica se o endereco esta dentro da area de cobertura e, se estiver, apresenta os planos disponiveis para aquela regiao. Se nao houver cobertura ou o cliente preferir falar com uma pessoa, o atendimento e transferido para a equipe humana. Um painel administrativo permite acompanhar conversas, assumir o atendimento manualmente e devolver o fluxo ao bot quando fizer sentido. O objetivo e vender com mais agilidade, reduzir respostas repetitivas e manter a experiencia organizada do inicio ao fim.",
+    thumbnail: "/project-thumbs/cepbot.svg",
+    category: "Atendimento automatizado WhatsApp",
+    year: 2026,
+    impactLabel: "Cobertura por CEP no atendimento",
+    featured: true,
+    stack: ["WhatsApp", "Consulta de CEP", "Painel de atendimento"],
+    context:
+      "A operacao precisava atender volume no WhatsApp sem perder qualidade: validar cobertura por regiao e mostrar oferta certa antes de envolver um vendedor.",
+    challenges: [
+      "Garantir que o cliente entenda o menu e informe o CEP corretamente.",
+      "Combinar atendimento automatico com handoff humano sem perder o historico da conversa.",
+    ],
+    solution: [
+      "Fluxo conversacional com menu, validacao de CEP e resposta sobre cobertura e planos.",
+      "Painel para a equipe assumir ou devolver conversas ao bot com registro completo.",
+    ],
+    results: [
+      "Primeiro atendimento mais rapido e padronizado no WhatsApp.",
+      "Menos tempo da equipe em perguntas repetitivas de cobertura e planos.",
+    ],
+    demoUrl: "",
+    codeUrl: "",
+    visibility: "private",
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

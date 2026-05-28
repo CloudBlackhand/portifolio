@@ -13,9 +13,10 @@ export default function ProjetosPage() {
     <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Quatro sistemas em producao: cadastro e funil de vendas (Vendas Hub),
-        API WhatsApp self-hosted (WAHA), disparador de mensagens (MS) e
-        comparacao de precos (Melhor Preco). MS ja inclui capturas em alta resolucao.
+        Cinco sistemas em producao: cadastro e funil de vendas (Vendas Hub),
+        API WhatsApp (WAHA), disparador de mensagens (MS), comparacao de precos
+        (Melhor Preco) e atendimento com consulta de CEP (CEPBOT). MS ja inclui
+        capturas em alta resolucao.
       </p>
 
       <div className="section-spacing card-grid">
