@@ -25,7 +25,6 @@ export type Project = {
   liveUrl?: string;
   /** Texto do botao do link publico. Padrao: "Ver site no ar" ou "Falar com o bot" no CEPBOT. */
   liveLinkLabel?: string;
-  visibility: "public" | "private";
   /** Telas extras na pagina de detalhe (alem da miniatura principal). */
   gallery?: ProjectGalleryImage[];
   /** Dimensões naturais da miniatura (PNG/JPG). Quando definido, o hero não estica além disso. */
@@ -62,7 +61,6 @@ export const projects: Project[] = [
       "Menos perda de informacao entre pessoas e canais.",
     ],
     liveUrl: "",
-    visibility: "private",
   },
   {
     slug: "sistema-https-whatsapp",
@@ -92,7 +90,6 @@ export const projects: Project[] = [
       "Mais previsibilidade para escalar automacao sem trocar de numero ou de ferramenta a cada projeto.",
     ],
     liveUrl: "",
-    visibility: "private",
   },
   {
     slug: "msg-sys",
@@ -124,7 +121,6 @@ export const projects: Project[] = [
       "Menos retrabalho e menos dependencia de atalho manual no dia a dia.",
     ],
     liveUrl: "",
-    visibility: "private",
     gallery: [
       {
         src: "/project-thumbs/ms/ms-conexao-whatsapp.png",
@@ -169,7 +165,6 @@ export const projects: Project[] = [
       "Ganho de tempo na preparacao de decisao de compra ou tabela de venda.",
     ],
     liveUrl: "",
-    visibility: "private",
   },
   {
     slug: "cepbot",
@@ -201,7 +196,6 @@ export const projects: Project[] = [
     liveUrl:
       "https://wa.me/5521971364919?text=Ola%2C%20vim%20pelo%20site%20Cloud%20Service%20e%20quero%20conhecer%20o%20CEPBOT",
     liveLinkLabel: "Falar com o bot",
-    visibility: "private",
   },
 ];
 
