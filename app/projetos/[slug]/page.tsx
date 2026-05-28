@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import {
   getProjectBySlug,
   getProjectLiveLinkLabel,
+  isMarketingProject,
   projects,
 } from "@/data/projects";
 
@@ -44,6 +45,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
   }
 
   const hasLiveLink = Boolean(project.liveUrl);
+  const marketing = isMarketingProject(project);
 
   const thumbW = project.thumbnailWidth ?? 1200;
   const thumbH = project.thumbnailHeight ?? 630;
@@ -59,13 +61,20 @@ export default async function ProjetoDetalhePage({ params }: Params) {
         Voltar para projetos
       </Link>
 
-      <h1 className="page-title section-spacing">{project.title}</h1>
-      <p className="page-subtitle">{project.shortDescription}</p>
+      <p className="card-kind section-spacing-sm">
+        {marketing ? "Marketing e criativo" : "Sistema"}
+      </p>
+      <h1 className="page-title">{project.title}</h1>
+      <p className="page-subtitle section-spacing">{project.shortDescription}</p>
 
       <div className="section-spacing">
         <Image
           src={project.thumbnail}
-          alt={`Captura principal do ${project.title}`}
+          alt={
+            marketing
+              ? `Peca principal — ${project.title}`
+              : `Captura principal do ${project.title}`
+          }
           width={thumbW}
           height={thumbH}
           className={
@@ -81,9 +90,11 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {project.gallery && project.gallery.length > 0 ? (
         <section className="content-block section-spacing">
-          <h3>Outras telas</h3>
+          <h3>{marketing ? "Outras pecas" : "Outras telas"}</h3>
           <p className="muted privacy-note">
-            Capturas reais da interface em uso (versao desktop).
+            {marketing
+              ? "Variacoes da campanha em formato para Instagram e redes."
+              : "Capturas reais da interface em uso (versao desktop)."}
           </p>
           <div className="detail-gallery">
             {project.gallery.map((item) => {
@@ -117,29 +128,31 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
 
       <section className="content-block section-spacing">
-        <h3>Descricao detalhada do produto</h3>
+        <h3>{marketing ? "Sobre o trabalho" : "Descricao detalhada do produto"}</h3>
         <p className="muted">{project.detailedDescription}</p>
       </section>
 
-      <section className="content-block">
-        <h3>Experimente</h3>
-        {!hasLiveLink ? (
-          <p className="muted">
-            O link para ver o sistema no ar sera publicado em breve.
-          </p>
-        ) : (
-          <div className="link-row">
-            <a
-              className="button primary"
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {getProjectLiveLinkLabel(project)}
-            </a>
-          </div>
-        )}
-      </section>
+      {!marketing ? (
+        <section className="content-block">
+          <h3>Experimente</h3>
+          {!hasLiveLink ? (
+            <p className="muted">
+              O link para ver o sistema no ar sera publicado em breve.
+            </p>
+          ) : (
+            <div className="link-row">
+              <a
+                className="button primary"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {getProjectLiveLinkLabel(project)}
+              </a>
+            </div>
+          )}
+        </section>
+      ) : null}
     </article>
   );
 }

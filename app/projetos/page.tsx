@@ -1,65 +1,42 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { getProjectLiveLinkLabel, projects } from "@/data/projects";
+import { ProjectCardGrid } from "@/app/components/project-card-grid";
+import { getProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
-  description: "Lista de projetos com miniaturas e contexto resumido.",
+  description:
+    "Sistemas em producao e trabalhos de marketing e criativo da Cloud Service.",
 };
 
 export default function ProjetosPage() {
+  const softwareProjects = getProjectsByKind("software");
+  const marketingProjects = getProjectsByKind("marketing");
+
   return (
     <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Cinco sistemas em producao: cadastro e funil de vendas (Vendas Hub),
-        Sistema HTTPS WhatsApp personalizado, disparador de mensagens (MS), comparacao de precos
-        (Melhor Preco) e atendimento com consulta de CEP (CEPBOT). MS ja inclui
-        capturas em alta resolucao.
+        Sistemas que colocamos no ar e pecas de marketing para redes — tudo com
+        foco em resultado e linguagem clara para o cliente final.
       </p>
 
-      <div className="section-spacing card-grid">
-        {projects.map((project) => {
-          const cardW = 1200;
-          const cardH =
-            project.thumbnailWidth && project.thumbnailHeight
-              ? Math.round(
-                  (cardW * project.thumbnailHeight) / project.thumbnailWidth,
-                )
-              : 630;
-          return (
-          <article className="card interactive-card" key={project.slug}>
-            <Image
-              src={project.thumbnail}
-              alt={`Miniatura do ${project.title}`}
-              width={cardW}
-              height={cardH}
-              className="card-image"
-            />
-            <div className="card-body">
-              <h2>{project.title}</h2>
-              <p>{project.shortDescription}</p>
-              <div className="section-spacing link-row">
-                <Link className="button" href={`/projetos/${project.slug}`}>
-                  Ver projeto
-                </Link>
-                {project.liveUrl ? (
-                  <a
-                    className="button primary"
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {getProjectLiveLinkLabel(project)}
-                  </a>
-                ) : null}
-              </div>
-            </div>
-          </article>
-        );
-        })}
-      </div>
+      <section className="section-spacing">
+        <h2 className="section-heading">Sistemas</h2>
+        <p className="muted section-spacing-sm">
+          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — produtos
+          digitais em uso no dia a dia da operacao.
+        </p>
+        <ProjectCardGrid projects={softwareProjects} />
+      </section>
+
+      <section className="section-spacing">
+        <h2 className="section-heading">Marketing e criativo</h2>
+        <p className="muted section-spacing-sm">
+          Campanhas visuais para Instagram e materiais promocionais de provedor de
+          internet — ofertas, instalacao, Wi-Fi e eventos sazonais.
+        </p>
+        <ProjectCardGrid projects={marketingProjects} />
+      </section>
     </section>
   );
 }

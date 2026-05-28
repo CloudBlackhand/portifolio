@@ -60,8 +60,8 @@ const pillars = [
 
 const stats = [
   { label: "Sistemas em producao", value: "5" },
+  { label: "Campanhas criativas", value: "2" },
   { label: "Foco", value: "Resultado" },
-  { label: "Canais", value: "WhatsApp + Web" },
   { label: "Prioridade", value: "Conforto para o cliente" },
 ];
 
@@ -105,8 +105,8 @@ export function LandingPage({ projects }: LandingPageProps) {
                 <div className="ep-device-main">
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — sistemas usados de
-                    verdade, com link para ver no ar ou falar com o bot quando disponivel.
+                    Sistemas em producao e pecas de marketing para redes — do software ao criativo,
+                    com link para ver no ar ou falar com o bot quando disponivel.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa

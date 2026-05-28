@@ -520,11 +520,36 @@ a {
   }
 }
 
+.section-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.section-spacing-sm {
+  margin-bottom: 0.75rem;
+}
+
+.card-kind {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted, #8b9cb3);
+  margin: 0;
+}
+
 .card-image {
   width: 100%;
   height: auto;
   display: block;
   border-bottom: 1px solid var(--border);
+}
+
+.card-image--marketing {
+  object-fit: contain;
+  max-height: min(72vh, 520px);
+  background: #060a12;
 }
 
 .card-body {

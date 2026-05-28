@@ -6,8 +6,12 @@ export type ProjectGalleryImage = {
   height?: number;
 };
 
+export type ProjectKind = "software" | "marketing";
+
 export type Project = {
   slug: string;
+  /** Sistema em producao ou peca de marketing/criativo. */
+  projectKind: ProjectKind;
   title: string;
   shortDescription: string;
   detailedDescription: string;
@@ -35,6 +39,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "vendas-hub",
+    projectKind: "software",
     title: "Vendas Hub",
     shortDescription:
       "Sistema completo de cadastro e gestao de vendas: oportunidades, equipe e acompanhamento do funil em um so lugar.",
@@ -64,6 +69,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sistema-https-whatsapp",
+    projectKind: "software",
     title: "Sistema HTTPS WhatsApp",
     shortDescription:
       "WhatsApp personalizado em ambiente proprio: conecte um numero da empresa e integre bots, disparadores e outros sistemas com seguranca.",
@@ -93,6 +99,7 @@ export const projects: Project[] = [
   },
   {
     slug: "msg-sys",
+    projectKind: "software",
     title: "MS",
     shortDescription:
       "Disparador de mensagens WhatsApp em producao: filas, modelos, regras e rastre do que foi enviado.",
@@ -139,6 +146,7 @@ export const projects: Project[] = [
   },
   {
     slug: "melhor-preco",
+    projectKind: "software",
     title: "Melhor Preco",
     shortDescription:
       "Ferramenta de comparacao e apoio a decisao de compra e margem, com dados reunidos para analise rapida.",
@@ -168,6 +176,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cepbot",
+    projectKind: "software",
     title: "CEPBOT",
     shortDescription:
       "Bot de atendimento no WhatsApp que consulta cobertura por CEP, apresenta planos da regiao e encaminha para humano quando necessario.",
@@ -197,7 +206,105 @@ export const projects: Project[] = [
       "https://wa.me/5521971364919?text=Ola%2C%20vim%20pelo%20site%20Cloud%20Service%20e%20quero%20conhecer%20o%20CEPBOT",
     liveLinkLabel: "Falar com o bot",
   },
+  {
+    slug: "campanha-copa-mundo-2026",
+    projectKind: "marketing",
+    title: "Copa do Mundo FIFA 2026",
+    shortDescription:
+      "Campanha visual para provedor de internet: oferta de fibra + celular com tema Copa, esportes e streaming.",
+    detailedDescription:
+      "Peca promocional completa para redes e materiais digitais, alinhada a temporada da Copa do Mundo FIFA 2026. O layout reforca velocidade, pacote combinado (fibra e plano movel) e beneficios de entretenimento (sportv, YouTube Premium, vero video). A entrega inclui hierarquia clara de preco, CTA de assinatura e contato, com identidade vermelha e dourada de alto contraste. A imagem de destaque mostra a separacao de camadas do criativo — util para revisao interna e para demonstrar o processo de montagem profissional.",
+    thumbnail: "/project-thumbs/marketing/copa-2026-camadas.png",
+    thumbnailWidth: 3375,
+    thumbnailHeight: 4219,
+    category: "Marketing e criativo",
+    year: 2026,
+    impactLabel: "Campanha tematica Copa 2026",
+    featured: true,
+    stack: ["Instagram", "Identidade visual", "Copy promocional"],
+    context:
+      "O cliente precisava de uma campanha rapida e memoravel para vender pacote de internet no periodo da Copa, sem perder clareza de preco e beneficios.",
+    challenges: [
+      "Conciliar muita informacao regulamentada com leitura em poucos segundos no feed.",
+      "Manter consistencia com a marca do provedor e com o clima de evento esportivo.",
+    ],
+    solution: [
+      "Composicao em camadas com foco em atletas, titulo da Copa e bloco de oferta destacado.",
+      "CTA e telefone visiveis, com rodape de condicoes em tipografia menor.",
+    ],
+    results: [
+      "Peca pronta para publicacao em formato vertical (45).",
+      "Arquivo de camadas separadas para ajustes finos sem refazer o layout do zero.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "pecas-internet-redes-sociais",
+    projectKind: "marketing",
+    title: "Pecas para redes — internet residencial",
+    shortDescription:
+      "Serie de posts para Instagram: instalacao rapida, Wi-Fi 6, planos, streaming e velocidade — linguagem direta para conversao.",
+    detailedDescription:
+      "Conjunto de criativos em formato feed/stories (45) para divulgar internet residencial. Cada peca trabalha um angulo diferente: familia e entretenimento em qualquer tela, qualidade Wi-Fi 6, comparativo de planos em destaque, instalacao gratis em ate 24h e promessa de navegar no dia seguinte. Visual 3D e fotos reais de tecnico reforcam confianca; botoes e faixas vermelhas conduzem para WhatsApp e assinatura. Ideal para campanhas recorrentes de aquisicao no provedor.",
+    thumbnail: "/project-thumbs/marketing/post-planos-destaque.png",
+    thumbnailWidth: 3375,
+    thumbnailHeight: 4219,
+    category: "Marketing e criativo",
+    year: 2026,
+    impactLabel: "Serie Instagram conversao",
+    featured: true,
+    stack: ["Instagram", "3D e foto", "Oferta e CTA"],
+    context:
+      "Provedor de internet precisava de volume de pecas para redes, mantendo padrao visual e mensagens de venda claras.",
+    challenges: [
+      "Variar o argumento (preco, velocidade, instalacao, Wi-Fi) sem parecer marca diferente a cada post.",
+      "Garantir legibilidade de tabelas de plano em tela de celular.",
+    ],
+    solution: [
+      "Templates com mesma logica de CTA, cores e tipografia, mudando apenas o gancho principal.",
+      "Uso de mockups 3D, foto de instalacao e cards de plano para diferentes etapas do funil.",
+    ],
+    results: [
+      "Biblioteca de pecas prontas para calendario de posts.",
+      "Mensagens alinhadas a objecoes comuns: preco, velocidade, prazo de instalacao e qualidade do Wi-Fi.",
+    ],
+    liveUrl: "",
+    gallery: [
+      {
+        src: "/project-thumbs/marketing/post-streaming-familia.png",
+        alt: "Post — internet para filmes e streaming em qualquer tela",
+        width: 3375,
+        height: 4219,
+      },
+      {
+        src: "/project-thumbs/marketing/post-wifi6-qualidade.png",
+        alt: "Post — Wi-Fi 6 com qualidade, alcance e velocidade",
+        width: 3375,
+        height: 4219,
+      },
+      {
+        src: "/project-thumbs/marketing/post-instalacao-rapida.png",
+        alt: "Post — instalacao gratis e rapida com tecnico",
+        width: 3375,
+        height: 4219,
+      },
+      {
+        src: "/project-thumbs/marketing/post-velocidade-router.png",
+        alt: "Post — velocidade com roteador 3D e CTA de contratacao",
+        width: 3375,
+        height: 4219,
+      },
+    ],
+  },
 ];
+
+export function isMarketingProject(project: Project): boolean {
+  return project.projectKind === "marketing";
+}
+
+export function getProjectsByKind(kind: ProjectKind): Project[] {
+  return projects.filter((project) => project.projectKind === kind);
+}
 
 export function getProjectLiveLinkLabel(project: Project): string {
   if (project.liveLinkLabel) return project.liveLinkLabel;

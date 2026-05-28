@@ -11,8 +11,8 @@ export default function Home() {
       <div className="container ep-table-section">
         <WorkTable projects={projects} />
         <p className="muted section-spacing">
-          Cinco sistemas em producao: Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT.
-          Capturas reais na pagina de cada projeto.
+          Sistemas em producao e campanhas de marketing e criativo — abra cada projeto
+          para ver capturas ou pecas visuais.
         </p>
       </div>
     </>
