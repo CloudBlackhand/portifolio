@@ -12,7 +12,7 @@ export default function Home() {
         <WorkTable projects={projects} />
         <p className="muted section-spacing">
           Cinco sistemas em producao: Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT.
-          Capturas reais no estudo de cada projeto.
+          Capturas reais na pagina de cada projeto.
         </p>
       </div>
     </>

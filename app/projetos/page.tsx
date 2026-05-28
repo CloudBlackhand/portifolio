@@ -4,7 +4,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projetos | Portifolio",
+  title: "Projetos | Cloud Service",
   description: "Lista de projetos com miniaturas e contexto resumido.",
 };
 
@@ -49,7 +49,7 @@ export default function ProjetosPage() {
               </div>
               <div className="section-spacing">
                 <Link className="button" href={`/projetos/${project.slug}`}>
-                  Abrir estudo
+                  Ver projeto
                 </Link>
               </div>
             </div>

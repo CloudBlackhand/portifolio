@@ -61,7 +61,7 @@ const pillars = [
 const stats = [
   { label: "Sistemas em producao", value: "5" },
   { label: "Foco", value: "Resultado" },
-  { label: "Repositorios publicos no portfolio", value: "3" },
+  { label: "Repositorios publicos", value: "3" },
   { label: "Prioridade", value: "Conforto para o cliente" },
 ];
 
@@ -78,10 +78,10 @@ export function LandingPage({ projects }: LandingPageProps) {
         <div className="container">
           <Reveal>
             <p className="ep-eyebrow ep-eyebrow-dark">Experimente voce mesmo</p>
-            <h2 className="ep-section-title">Veja o portfolio em acao</h2>
+            <h2 className="ep-section-title">Veja a Cloud Service em acao</h2>
             <p className="ep-section-lead">
-              Cada estudo traz contexto, stack e o que foi entregue em producao.
-              Abra um projeto e navegue pelas capturas quando disponiveis.
+              Cada projeto traz contexto, solucao e resultado em linguagem clara.
+              Abra a pagina do projeto e veja as capturas quando disponiveis.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -90,7 +90,7 @@ export function LandingPage({ projects }: LandingPageProps) {
                 <span className="ep-device-dot" />
                 <span className="ep-device-dot" />
                 <span className="ep-device-dot" />
-                <span className="ep-device-url">portifolio / projetos</span>
+                <span className="ep-device-url">cloudservice / projetos</span>
               </div>
               <div className="ep-device-body">
                 <div className="ep-device-sidebar">
@@ -145,7 +145,7 @@ export function LandingPage({ projects }: LandingPageProps) {
         <div className="container">
           <Reveal>
             <p className="ep-eyebrow ep-eyebrow-dark">Em numeros</p>
-            <h2 className="ep-section-title">O que consolidamos no portfolio</h2>
+            <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
           </Reveal>
           <div className="ep-stats">
             {stats.map((s, i) => (
@@ -174,7 +174,7 @@ export function LandingPage({ projects }: LandingPageProps) {
                 Ir para contato
               </Link>
               <Link className="ep-btn ep-btn-ghost" href="/projetos">
-                Ver estudos
+                Ver projetos
               </Link>
             </div>
           </Reveal>
@@ -239,7 +239,7 @@ export function LandingPage({ projects }: LandingPageProps) {
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/projetos">
-                Portfolio completo
+                Ver todos os projetos
               </Link>
               <Link className="ep-btn ep-btn-ghost" href="/contato">
                 Novo projeto

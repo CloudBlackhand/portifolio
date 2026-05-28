@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contato | Portifolio",
+  title: "Contato | Cloud Service",
   description: "Canal de contato profissional com exposicao minima de dados.",
 };
 

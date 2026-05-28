@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portifolio Profissional",
+  title: "Cloud Service",
   description:
-    "Portifolio de projetos digitais com foco em contexto, solucao e resultados.",
+    "Projetos digitais em producao com foco em resultado, clareza e conforto para o cliente.",
 };
 
 export default function RootLayout({
@@ -31,15 +31,12 @@ export default function RootLayout({
         <header className="site-header">
           <div className="container header-content">
             <Link className="logo" href="/">
-              Portifolio
+              Cloud Service
             </Link>
-            <nav className="nav nav-with-cta" aria-label="Navegacao principal">
+            <nav className="nav" aria-label="Navegacao principal">
               <Link href="/">Inicio</Link>
               <Link href="/projetos">Projetos</Link>
               <Link href="/contato">Contato</Link>
-              <Link className="nav-cta" href="/projetos">
-                Ver trabalhos
-              </Link>
             </nav>
           </div>
         </header>
@@ -56,7 +53,7 @@ export default function RootLayout({
         <footer className="site-footer">
           <div className="container footer-ep">
             <div className="footer-brand">
-              <strong>Portfolio</strong>
+              <strong>Cloud Service</strong>
               <p className="footer-tagline">
                 Sistemas em producao com foco em resultado e clareza.
               </p>
