@@ -14,7 +14,7 @@ export default function ProjetosPage() {
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
         Cinco sistemas em producao: cadastro e funil de vendas (Vendas Hub),
-        API WhatsApp (WAHA), disparador de mensagens (MS), comparacao de precos
+        Sistema HTTPS WhatsApp personalizado, disparador de mensagens (MS), comparacao de precos
         (Melhor Preco) e atendimento com consulta de CEP (CEPBOT). MS ja inclui
         capturas em alta resolucao.
       </p>
