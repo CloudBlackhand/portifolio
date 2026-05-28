@@ -58,7 +58,7 @@ export function WorkTable({ projects }: WorkTableProps) {
   return (
     <section className="table-wrap section-spacing">
       <div className="table-header">
-        <h2>Resumo profissional dos trabalhos</h2>
+        <h2>Resumo dos projetos</h2>
         <p className="muted">
           Visao executiva dos projetos. Clique no cabecalho para ordenar.
         </p>

@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Projeto nao encontrado | Portifolio",
+      title: "Projeto nao encontrado | Cloud Service",
     };
   }
 
   return {
-    title: `${project.title} | Portifolio`,
+    title: `${project.title} | Cloud Service`,
     description: project.shortDescription,
   };
 }

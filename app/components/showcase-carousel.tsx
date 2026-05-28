@@ -101,7 +101,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">
               <Link className="button primary gfn-like-cta" href={`/projetos/${activeProject.slug}`}>
-                EXIBIR DETALHES
+                VER PROJETO
               </Link>
             </div>
           </div>
