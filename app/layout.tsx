@@ -67,7 +67,7 @@ export default function RootLayout({
               <Link href="/contato">Contato</Link>
             </nav>
             <p className="footer-note">
-              Vendas Hub, WAHA, MS, Melhor Preco e CEPBOT — codigo publico apenas onde o
+              Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preco e CEPBOT — codigo publico apenas onde o
               repositorio e aberto.
             </p>
           </div>
