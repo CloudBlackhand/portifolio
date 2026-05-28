@@ -32,10 +32,9 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 ## Checklist de privacidade
 
-- Evitar publicar repositorios privados
-- Priorizar descricao de contexto, solucao e resultado
+- Manter repositorios de produto privados no GitHub
+- Priorizar descricao de contexto, solucao e resultado (sem links de codigo no site)
 - Nao incluir chaves, URLs internas ou dados pessoais sensiveis
-- Para codigo: publicar apenas quando quiser e somente em projetos publicos
 
 ## Deploy na Vercel (gratuito)
 

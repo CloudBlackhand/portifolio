@@ -61,7 +61,7 @@ const pillars = [
 const stats = [
   { label: "Sistemas em producao", value: "5" },
   { label: "Foco", value: "Resultado" },
-  { label: "Repositorios publicos", value: "3" },
+  { label: "Canais", value: "WhatsApp + Web" },
   { label: "Prioridade", value: "Conforto para o cliente" },
 ];
 

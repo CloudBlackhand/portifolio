@@ -40,13 +40,6 @@ export default function ProjetosPage() {
             <div className="card-body">
               <h2>{project.title}</h2>
               <p>{project.shortDescription}</p>
-              <div className="chip-list">
-                {project.stack.map((item) => (
-                  <span className="chip" key={item}>
-                    {item}
-                  </span>
-                ))}
-              </div>
               <div className="section-spacing link-row">
                 <Link className="button" href={`/projetos/${project.slug}`}>
                   Ver projeto
