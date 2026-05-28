@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
 
 type ShowcaseCarouselProps = {
@@ -16,16 +16,6 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
   );
   const [activeIndex, setActiveIndex] = useState(0);
   const favoritesRowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (featuredProjects.length <= 1) return;
-
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % featuredProjects.length);
-    }, 15000);
-
-    return () => clearInterval(timer);
-  }, [featuredProjects.length]);
 
   if (featuredProjects.length === 0) {
     return null;
@@ -43,27 +33,33 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
   return (
     <section className="showcase">
       <div className="showcase-media">
-        <button
-          type="button"
-          className="hero-nav left"
-          onClick={() =>
-            setActiveIndex(
-              (prev) =>
-                (prev - 1 + featuredProjects.length) % featuredProjects.length,
-            )
-          }
-          aria-label="Banner anterior"
-        >
-          ‹
-        </button>
-        <button
-          type="button"
-          className="hero-nav right"
-          onClick={() => setActiveIndex((prev) => (prev + 1) % featuredProjects.length)}
-          aria-label="Proximo banner"
-        >
-          ›
-        </button>
+        {featuredProjects.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="hero-nav left"
+              onClick={() =>
+                setActiveIndex(
+                  (prev) =>
+                    (prev - 1 + featuredProjects.length) % featuredProjects.length,
+                )
+              }
+              aria-label="Banner anterior"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              className="hero-nav right"
+              onClick={() =>
+                setActiveIndex((prev) => (prev + 1) % featuredProjects.length)
+              }
+              aria-label="Proximo banner"
+            >
+              ›
+            </button>
+          </>
+        )}
         {activeProject.thumbnailWidth && activeProject.thumbnailHeight ? (
           <div
             className="showcase-image-slot"
