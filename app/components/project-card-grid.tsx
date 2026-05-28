@@ -37,6 +37,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
             <div className="card-body">
               <p className="card-kind">
                 {marketing ? "Marketing e criativo" : "Sistema"}
+                {project.marketingHighlight ? " · Destaque" : ""}
               </p>
               <h2>{project.title}</h2>
               <p>{project.shortDescription}</p>

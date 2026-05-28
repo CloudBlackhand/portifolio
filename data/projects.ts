@@ -29,6 +29,8 @@ export type Project = {
   liveUrl?: string;
   /** Texto do botao do link publico. Padrao: "Ver site no ar" ou "Falar com o bot" no CEPBOT. */
   liveLinkLabel?: string;
+  /** Destaque na secao de marketing da pagina inicial (nao entra no hero). */
+  marketingHighlight?: boolean;
   /** Telas extras na pagina de detalhe (alem da miniatura principal). */
   gallery?: ProjectGalleryImage[];
   /** Dimensões naturais da miniatura (PNG/JPG). Quando definido, o hero não estica além disso. */
@@ -207,6 +209,72 @@ export const projects: Project[] = [
     liveLinkLabel: "Falar com o bot",
   },
   {
+    slug: "instalacao-gratis-rapida",
+    projectKind: "marketing",
+    title: "Instalacao gratis e rapida",
+    shortDescription:
+      "Post para Instagram: instalacao sem custo, tecnico em acao e CTA para contratar hoje e navegar amanha.",
+    detailedDescription:
+      "Peca vertical para feed com layout dividido: lado ilustrado com notebook, Wi-Fi e copy de instalacao gratis; lado com foto real do tecnico crimpando cabo. Reforca urgencia com faixa vermelha e telefone de contato. Foco em remover objecao de prazo e custo de instalacao no provedor de internet.",
+    thumbnail: "/project-thumbs/marketing/post-instalacao-rapida.png",
+    thumbnailWidth: 3375,
+    thumbnailHeight: 4219,
+    category: "Marketing e criativo",
+    year: 2026,
+    impactLabel: "Conversao instalacao 24h",
+    featured: false,
+    marketingHighlight: true,
+    stack: ["Instagram", "Foto + 3D", "Copy de oferta"],
+    context:
+      "Campanha para provedor que precisava destacar instalacao rapida e sem taxa em meio a concorrencia agressiva.",
+    challenges: [
+      "Unir confianca (foto real) com impacto visual (3D) sem poluir a leitura.",
+      "Manter CTA e telefone legiveis em preview pequeno do feed.",
+    ],
+    solution: [
+      "Composicao em duas faixas com hierarquia clara: promessa, beneficio e contato.",
+      "Paleta azul e vermelho alinhada a identidade de telecom.",
+    ],
+    results: [
+      "Peca pronta para stories e feed no formato 4:5.",
+      "Mensagem direta para quem adia a contratacao por medo de demora ou taxa.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "velocidade-contratacao-imediata",
+    projectKind: "marketing",
+    title: "Velocidade — contrate hoje",
+    shortDescription:
+      "Criativo 3D com roteador, sinal Wi-Fi e promessa de navegar no dia seguinte; CTA com WhatsApp.",
+    detailedDescription:
+      "Post de conversao com estetica 3D limpa: roteador, ondas de sinal em vermelho metalico e headline sobre velocidade. Faixa de CTA reforca contratacao no mesmo dia com resultado no dia seguinte. WhatsApp visivel para fechar no canal que o publico ja usa. Ideal para campanhas de aquisicao rapida no Instagram.",
+    thumbnail: "/project-thumbs/marketing/post-velocidade-router.png",
+    thumbnailWidth: 3375,
+    thumbnailHeight: 4219,
+    category: "Marketing e criativo",
+    year: 2026,
+    impactLabel: "CTA velocidade + WhatsApp",
+    featured: false,
+    marketingHighlight: true,
+    stack: ["Instagram", "3D", "WhatsApp"],
+    context:
+      "Provedor precisava de peca leve e moderna para vender velocidade sem tabela complexa na imagem.",
+    challenges: [
+      "Comunicar velocidade de forma visual, nao so com numeros de mega.",
+      "Encaixar CTA e contato sem competir com o titulo principal.",
+    ],
+    solution: [
+      "Iconografia 3D de router e sinal como metafora imediata de internet rapida.",
+      "Bloco vermelho de CTA e rodape com WhatsApp para resposta rapida.",
+    ],
+    results: [
+      "Visual memoravel para repeticao em calendario de posts.",
+      "Funil curto: impacto visual → CTA → contato.",
+    ],
+    liveUrl: "",
+  },
+  {
     slug: "campanha-copa-mundo-2026",
     projectKind: "marketing",
     title: "Copa do Mundo FIFA 2026",
@@ -220,7 +288,7 @@ export const projects: Project[] = [
     category: "Marketing e criativo",
     year: 2026,
     impactLabel: "Campanha tematica Copa 2026",
-    featured: true,
+    featured: false,
     stack: ["Instagram", "Identidade visual", "Copy promocional"],
     context:
       "O cliente precisava de uma campanha rapida e memoravel para vender pacote de internet no periodo da Copa, sem perder clareza de preco e beneficios.",
@@ -252,7 +320,7 @@ export const projects: Project[] = [
     category: "Marketing e criativo",
     year: 2026,
     impactLabel: "Serie Instagram conversao",
-    featured: true,
+    featured: false,
     stack: ["Instagram", "3D e foto", "Oferta e CTA"],
     context:
       "Provedor de internet precisava de volume de pecas para redes, mantendo padrao visual e mensagens de venda claras.",
@@ -282,21 +350,12 @@ export const projects: Project[] = [
         width: 3375,
         height: 4219,
       },
-      {
-        src: "/project-thumbs/marketing/post-instalacao-rapida.png",
-        alt: "Post — instalacao gratis e rapida com tecnico",
-        width: 3375,
-        height: 4219,
-      },
-      {
-        src: "/project-thumbs/marketing/post-velocidade-router.png",
-        alt: "Post — velocidade com roteador 3D e CTA de contratacao",
-        width: 3375,
-        height: 4219,
-      },
     ],
   },
 ];
+
+/** Largura maxima da peca na pagina de detalhe (evita imagem gigante em PNG 4K). */
+export const MARKETING_DETAIL_MAX_WIDTH_PX = 420;
 
 export function isMarketingProject(project: Project): boolean {
   return project.projectKind === "marketing";
@@ -304,6 +363,19 @@ export function isMarketingProject(project: Project): boolean {
 
 export function getProjectsByKind(kind: ProjectKind): Project[] {
   return projects.filter((project) => project.projectKind === kind);
+}
+
+export function getFeaturedSoftwareProjects(): Project[] {
+  return projects.filter(
+    (project) => project.featured && project.projectKind === "software",
+  );
+}
+
+export function getMarketingHighlightProjects(): Project[] {
+  return projects.filter(
+    (project) =>
+      project.projectKind === "marketing" && project.marketingHighlight,
+  );
 }
 
 export function getProjectLiveLinkLabel(project: Project): string {
