@@ -2,7 +2,9 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import type { ProfilePhoto } from "@/lib/profile-photo";
 import type { Project } from "@/data/projects";
 
 function useMotionTransition(base: { duration: number; delay?: number }) {
@@ -66,9 +68,10 @@ const stats = [
 
 type LandingPageProps = {
   projects: Project[];
+  profilePhoto: ProfilePhoto;
 };
 
-export function LandingPage({ projects }: LandingPageProps) {
+export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
   const featured = projects.filter(
     (p) => p.featured && p.projectKind === "software",
   );
@@ -177,6 +180,64 @@ export function LandingPage({ projects }: LandingPageProps) {
               <Link className="ep-btn ep-btn-ghost" href="/projetos">
                 Ver projetos
               </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="ep-section ep-section-tint">
+        <div className="container ep-about-grid">
+          <Reveal>
+            <div
+              className={
+                profilePhoto.src.includes("profile-placeholder")
+                  ? "ep-about-photo"
+                  : "ep-about-photo ep-about-photo--real"
+              }
+            >
+              <Image
+                src={profilePhoto.src}
+                alt={profilePhoto.alt}
+                width={profilePhoto.width}
+                height={profilePhoto.height}
+                className={
+                  profilePhoto.src.includes("profile-placeholder")
+                    ? "ep-about-img"
+                    : "ep-about-img ep-about-img--photo"
+                }
+                sizes="(max-width: 640px) 85vw, 420px"
+                priority={false}
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <div className="ep-about-copy">
+              <p className="ep-eyebrow ep-eyebrow-dark">Antes de tudo</p>
+              <h2 className="ep-section-title ep-section-title-left">
+                Uma conversa clara sobre o seu projeto
+              </h2>
+              <p className="ep-body">
+                Meu foco e entender seu objetivo de negocio antes de propor
+                qualquer solucao tecnica. Cada entrega nasce com direcao,
+                prioridade e criterio de resultado desde o inicio.
+              </p>
+              <p className="ep-body">
+                Alinhamentos curtos e objetivos para reduzir duvidas e manter
+                transparencia durante todo o processo.
+              </p>
+              <div className="ep-hero-cta">
+                <a
+                  className="ep-btn ep-btn-primary"
+                  href="https://wa.me/5521971364919"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp
+                </a>
+                <Link className="ep-btn ep-btn-ghost" href="/contato">
+                  Contato
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>

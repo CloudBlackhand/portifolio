@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run sync-profile && next dev",
+    "sync-profile": "node scripts/sync-profile-from-media.mjs",
+    "build": "npm run sync-profile && next build",
     "start": "next start",
     "lint": "eslint"
   },
