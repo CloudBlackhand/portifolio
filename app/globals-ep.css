@@ -443,38 +443,6 @@
   justify-content: center;
 }
 
-.ep-about-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 360px) 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: start;
-}
-
-@media (max-width: 800px) {
-  .ep-about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.ep-about-photo {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 50px -36px rgb(0 0 0 / 45%);
-  background: var(--surface);
-}
-
-.ep-about-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.ep-about-copy .ep-section-title {
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
 .ep-body {
   font-size: 1rem;
   line-height: 1.65;

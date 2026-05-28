@@ -2,7 +2,6 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 
@@ -178,52 +177,6 @@ export function LandingPage({ projects }: LandingPageProps) {
               <Link className="ep-btn ep-btn-ghost" href="/projetos">
                 Ver projetos
               </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="ep-section ep-section-tint">
-        <div className="container ep-about-grid">
-          <Reveal>
-            <div className="ep-about-photo">
-              <Image
-                src="/profile-placeholder.svg"
-                alt="Foto profissional"
-                width={420}
-                height={420}
-                className="ep-about-img"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <div className="ep-about-copy">
-              <p className="ep-eyebrow ep-eyebrow-dark">Antes de tudo</p>
-              <h2 className="ep-section-title ep-section-title-left">
-                Uma conversa clara sobre o seu projeto
-              </h2>
-              <p className="ep-body">
-                Meu foco e entender seu objetivo de negocio antes de propor
-                qualquer solucao tecnica. Cada entrega nasce com direcao,
-                prioridade e criterio de resultado desde o inicio.
-              </p>
-              <p className="ep-body">
-                Alinhamentos curtos e objetivos para reduzir duvidas e manter
-                transparencia durante todo o processo.
-              </p>
-              <div className="ep-hero-cta">
-                <a
-                  className="ep-btn ep-btn-primary"
-                  href="https://wa.me/5521971364919"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  WhatsApp
-                </a>
-                <Link className="ep-btn ep-btn-ghost" href="/contato">
-                  Contato
-                </Link>
-              </div>
             </div>
           </Reveal>
         </div>
