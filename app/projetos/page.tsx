@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { getProjectLiveLinkLabel, projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
@@ -47,10 +47,20 @@ export default function ProjetosPage() {
                   </span>
                 ))}
               </div>
-              <div className="section-spacing">
+              <div className="section-spacing link-row">
                 <Link className="button" href={`/projetos/${project.slug}`}>
                   Ver projeto
                 </Link>
+                {project.liveUrl ? (
+                  <a
+                    className="button primary"
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {getProjectLiveLinkLabel(project)}
+                  </a>
+                ) : null}
               </div>
             </div>
           </article>

@@ -3,7 +3,11 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, projects } from "@/data/projects";
+import {
+  getProjectBySlug,
+  getProjectLiveLinkLabel,
+  projects,
+} from "@/data/projects";
 
 type Params = {
   params: Promise<{ slug: string }>;
@@ -39,8 +43,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
     notFound();
   }
 
-  const canShowCodeLink = project.visibility === "public" && Boolean(project.codeUrl);
-  const hasDemo = Boolean(project.demoUrl);
+  const hasLiveLink = Boolean(project.liveUrl);
 
   const thumbW = project.thumbnailWidth ?? 1200;
   const thumbH = project.thumbnailHeight ?? 630;
@@ -119,24 +122,23 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       </section>
 
       <section className="content-block">
-        <h3>Acesso publico</h3>
-        {!hasDemo && !canShowCodeLink && (
+        <h3>Experimente</h3>
+        {!hasLiveLink ? (
           <p className="muted">
-            Links serao adicionados na fase de publicacao de conteudo real.
+            O link para ver o sistema no ar sera publicado em breve.
           </p>
+        ) : (
+          <div className="link-row">
+            <a
+              className="button primary"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {getProjectLiveLinkLabel(project)}
+            </a>
+          </div>
         )}
-        <div className="link-row">
-          {hasDemo && (
-            <a className="button" href={project.demoUrl} target="_blank" rel="noreferrer">
-              Ver demo
-            </a>
-          )}
-          {canShowCodeLink && (
-            <a className="button" href={project.codeUrl} target="_blank" rel="noreferrer">
-              Ver codigo
-            </a>
-          )}
-        </div>
       </section>
     </article>
   );

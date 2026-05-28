@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
+import { getProjectLiveLinkLabel } from "@/data/projects";
 
 type ShowcaseCarouselProps = {
   projects: Project[];
@@ -103,6 +104,16 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
               <Link className="button primary gfn-like-cta" href={`/projetos/${activeProject.slug}`}>
                 VER PROJETO
               </Link>
+              {activeProject.liveUrl ? (
+                <a
+                  className="button gfn-like-cta"
+                  href={activeProject.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {getProjectLiveLinkLabel(activeProject)}
+                </a>
+              ) : null}
             </div>
           </div>
         </div>
