@@ -4,20 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
-import { getProjectLiveLinkLabel, getProjectKindLabel } from "@/data/projects";
+import { getProjectLiveLinkLabel, getProjectKindLabel, getShowcaseProjects } from "@/data/projects";
 
 type ShowcaseCarouselProps = {
   projects: Project[];
 };
 
 export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
-  const featuredProjects = useMemo(
-    () =>
-      projects.filter(
-        (project) => project.featured && project.projectKind === "software",
-      ),
-    [projects],
-  );
+  const featuredProjects = useMemo(() => getShowcaseProjects(projects), [projects]);
   const [activeIndex, setActiveIndex] = useState(0);
   const favoritesRowRef = useRef<HTMLDivElement>(null);
 
@@ -133,7 +127,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         </div>
       </div>
       <div className="favorites-strip">
-        <h3>Principais projetos</h3>
+        <h3>Destaques — sistemas e landing pages</h3>
         <div className="favorites-track">
           <button
             type="button"
