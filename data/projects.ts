@@ -368,7 +368,7 @@ export const projects: Project[] = [
     category: "Landing page",
     year: 2025,
     impactLabel: "Vitrine no ar no Netlify",
-    featured: false,
+    featured: true,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
       "Precisava de presença online rápida para divulgar a loja sem montar e-commerce completo de imediato.",
@@ -400,7 +400,7 @@ export const projects: Project[] = [
     category: "Landing page",
     year: 2025,
     impactLabel: "Captação de crédito",
-    featured: false,
+    featured: true,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
       "Operação de crédito precisava de página única para explicar a oferta e receber contatos.",
@@ -432,7 +432,7 @@ export const projects: Project[] = [
     category: "Landing page",
     year: 2025,
     impactLabel: "Institucional construção civil",
-    featured: false,
+    featured: true,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
       "Construtora precisava de presença digital simples para complementar indicações e orçamentos.",
@@ -464,7 +464,7 @@ export const projects: Project[] = [
     category: "Landing page",
     year: 2024,
     impactLabel: "Captação B2B jurídico",
-    featured: false,
+    featured: true,
     stack: ["HTML/CSS", "Netlify", "Formulário de leads"],
     context:
       "Escritório e produto jurídico precisavam de página de vendas consultiva para advogados.",
@@ -510,6 +510,17 @@ export function getFeaturedSoftwareProjects(): Project[] {
   return projects.filter(
     (project) => project.featured && project.projectKind === "software",
   );
+}
+
+/** Hero e faixa de favoritos: landing pages primeiro, depois sistemas em destaque. */
+export function getShowcaseProjects(list: Project[] = projects): Project[] {
+  const landings = list.filter(
+    (project) => project.featured && project.projectKind === "landing",
+  );
+  const software = list.filter(
+    (project) => project.featured && project.projectKind === "software",
+  );
+  return [...landings, ...software];
 }
 
 export function getMarketingHighlightProjects(): Project[] {

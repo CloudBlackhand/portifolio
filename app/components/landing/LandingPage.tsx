@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ProfilePhoto } from "@/lib/profile-photo";
 import type { Project } from "@/data/projects";
+import { getShowcaseProjects } from "@/data/projects";
 
 function useMotionTransition(base: { duration: number; delay?: number }) {
   const reduce = useReducedMotion();
@@ -61,8 +62,8 @@ const pillars = [
 
 const stats = [
   { label: "Sistemas em produção", value: "5" },
+  { label: "Landing pages", value: "4" },
   { label: "Campanhas criativas", value: "2" },
-  { label: "Foco", value: "Resultado" },
   { label: "Prioridade", value: "Conforto para o cliente" },
 ];
 
@@ -72,9 +73,7 @@ type LandingPageProps = {
 };
 
 export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
-  const featured = projects.filter(
-    (p) => p.featured && p.projectKind === "software",
-  );
+  const featured = getShowcaseProjects(projects);
 
   return (
     <>
@@ -84,8 +83,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
             <p className="ep-eyebrow ep-eyebrow-dark">Experimente você mesmo</p>
             <h2 className="ep-section-title">Veja a Cloud Service em ação</h2>
             <p className="ep-section-lead">
-              Cada projeto traz contexto, solução e resultado em linguagem clara.
-              Abra a página do projeto e veja as capturas quando disponíveis.
+              Landing pages publicadas, sistemas em produção e criativos para redes —
+              abra cada projeto e veja capturas reais quando disponíveis.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -109,8 +108,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                 <div className="ep-device-main">
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Sistemas em produção e peças de marketing para redes — do software ao criativo,
-                    com link para ver no ar ou falar com o bot quando disponível.
+                    Landing pages no Netlify, sistemas em produção e peças de marketing —
+                    com link para ver no ar quando disponível.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa
