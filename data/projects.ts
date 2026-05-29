@@ -27,7 +27,7 @@ export type Project = {
   results: string[];
   /** Link público para ver o sistema no ar ou falar com o bot (ex.: site ou WhatsApp). */
   liveUrl?: string;
-  /** Texto do botão do link público. Padrão: "Ver site no ar" ou "Falar com o bot" no CEPBOT. */
+  /** Texto do botão do link público. Padrão: "Ver site no ar" ou "Bot de atendimento" no CEPBOT. */
   liveLinkLabel?: string;
   /** Destaque na seção de marketing da página inicial (não entra no hero). */
   marketingHighlight?: boolean;
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       "Disciplina na análise de preço e menos discussão sem número na mesa.",
       "Ganho de tempo na preparação de decisão de compra ou tabela de venda.",
     ],
-    liveUrl: "",
+    liveUrl: "https://melhorpreconet.up.railway.app",
   },
   {
     slug: "cepbot",
@@ -205,8 +205,8 @@ export const projects: Project[] = [
       "Menos tempo da equipe em perguntas repetitivas de cobertura e planos.",
     ],
     liveUrl:
-      "https://wa.me/5521971364919?text=Ola%2C%20vim%20pelo%20site%20Cloud%20Service%20e%20quero%20conhecer%20o%20CEPBOT",
-    liveLinkLabel: "Falar com o bot",
+      "https://wa.me/5519989834581?text=Ola%2C%20vim%20pelo%20site%20Cloud%20Service%20e%20quero%20conhecer%20o%20CEPBOT",
+    liveLinkLabel: "Bot de atendimento",
   },
   {
     slug: "instalacao-gratis-rapida",
@@ -380,7 +380,7 @@ export function getMarketingHighlightProjects(): Project[] {
 
 export function getProjectLiveLinkLabel(project: Project): string {
   if (project.liveLinkLabel) return project.liveLinkLabel;
-  if (project.slug === "cepbot") return "Falar com o bot";
+  if (project.slug === "cepbot") return "Bot de atendimento";
   return "Ver site no ar";
 }
 
