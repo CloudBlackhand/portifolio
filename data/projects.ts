@@ -366,6 +366,8 @@ export const projects: Project[] = [
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
     category: "Landing page",
+    year: 2025,
+    impactLabel: "Vitrine no ar no Netlify",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -396,6 +398,8 @@ export const projects: Project[] = [
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
     category: "Landing page",
+    year: 2025,
+    impactLabel: "Captação de crédito",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -426,6 +430,8 @@ export const projects: Project[] = [
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
     category: "Landing page",
+    year: 2025,
+    impactLabel: "Institucional construção civil",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -456,6 +462,8 @@ export const projects: Project[] = [
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
     category: "Landing page",
+    year: 2024,
+    impactLabel: "Captação B2B jurídico",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Formulário de leads"],
     context:
