@@ -6,11 +6,11 @@ export type ProjectGalleryImage = {
   height?: number;
 };
 
-export type ProjectKind = "software" | "marketing";
+export type ProjectKind = "software" | "marketing" | "landing";
 
 export type Project = {
   slug: string;
-  /** Sistema em produção ou peça de marketing/criativo. */
+  /** Sistema em produção, landing page ou peça de marketing/criativo. */
   projectKind: ProjectKind;
   title: string;
   shortDescription: string;
@@ -352,6 +352,126 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "cltechshop",
+    projectKind: "landing",
+    title: "CL Tech Shop",
+    shortDescription:
+      "Landing page para loja de eletrônicos: vitrine, categorias e CTA de compra com visual moderno.",
+    detailedDescription:
+      "Página institucional e comercial publicada no Netlify para apresentar a TechStore — loja de eletrônicos com layout responsivo, hierarquia clara de produtos e chamadas para ação. Foco em conversão e credibilidade para quem chega pelo link ou campanha.",
+    thumbnail: "/project-thumbs/placeholder.svg",
+    category: "Landing page",
+    year: 2025,
+    impactLabel: "Vitrine no ar no Netlify",
+    featured: false,
+    stack: ["HTML/CSS", "Netlify", "Landing page"],
+    context:
+      "Precisava de presença online rápida para divulgar a loja sem montar e-commerce completo de imediato.",
+    challenges: [
+      "Comunicar variedade de produtos com página leve e fácil de manter.",
+      "Manter CTA visível em mobile e desktop.",
+    ],
+    solution: [
+      "Landing com seções de destaque, benefícios e contato.",
+      "Deploy estático no Netlify para carregamento rápido.",
+    ],
+    results: [
+      "Site publicado e acessível por URL fixa.",
+      "Base pronta para campanhas e divulgação.",
+    ],
+    liveUrl: "https://cltechshop.netlify.app",
+  },
+  {
+    slug: "rapidcred",
+    projectKind: "landing",
+    title: "RapidCred",
+    shortDescription:
+      "Landing de crédito pessoal: proposta clara, simulação e CTA para solicitar crédito fácil e rápido.",
+    detailedDescription:
+      "Página de captura para serviço de crédito com mensagem direta sobre agilidade e simplicidade. Layout pensado para reduzir fricção na solicitação e transmitir confiança — publicada no Netlify para uso em anúncios e indicações.",
+    thumbnail: "/project-thumbs/placeholder.svg",
+    category: "Landing page",
+    year: 2025,
+    impactLabel: "Captação de crédito",
+    featured: false,
+    stack: ["HTML/CSS", "Netlify", "Landing page"],
+    context:
+      "Operação de crédito precisava de página única para explicar a oferta e receber contatos.",
+    challenges: [
+      "Explicar benefício sem parecer genérico demais.",
+      "Destacar CTA principal sem poluir a leitura.",
+    ],
+    solution: [
+      "Copy objetiva com foco em velocidade e facilidade.",
+      "Estrutura enxuta com blocos de confiança e formulário ou contato.",
+    ],
+    results: [
+      "Landing no ar para tráfego pago ou orgânico.",
+      "Mensagem consistente em um só link.",
+    ],
+    liveUrl: "https://rapidcred.netlify.app",
+  },
+  {
+    slug: "cn-construtora",
+    projectKind: "landing",
+    title: "CN Construtora",
+    shortDescription:
+      "Site institucional de construtora: serviços, obras e contato para captar clientes B2B e residenciais.",
+    detailedDescription:
+      "Landing institucional da CN Construtora com apresentação de soluções em construção civil, portfólio resumido e canal de contato. Visual profissional para passar solidez a visitantes que chegam por indicação ou busca local.",
+    thumbnail: "/project-thumbs/placeholder.svg",
+    category: "Landing page",
+    year: 2025,
+    impactLabel: "Institucional construção civil",
+    featured: false,
+    stack: ["HTML/CSS", "Netlify", "Landing page"],
+    context:
+      "Construtora precisava de presença digital simples para complementar indicações e orçamentos.",
+    challenges: [
+      "Transmitir confiança em segmento de ticket alto.",
+      "Organizar serviços sem página pesada.",
+    ],
+    solution: [
+      "Seções de serviços, diferenciais e formulário de contato.",
+      "Hospedagem estática no Netlify.",
+    ],
+    results: [
+      "Link único para enviar a prospects.",
+      "Imagem profissional alinhada ao ramo.",
+    ],
+    liveUrl: "https://cnconstrutora.netlify.app",
+  },
+  {
+    slug: "calculo-juridico-ebook",
+    projectKind: "landing",
+    title: "Cálculo Jurídico — Oliveira & Costa",
+    shortDescription:
+      "Landing para calculadora jurídica: serviços, equipe, depoimentos e formulário para solicitar demonstração.",
+    detailedDescription:
+      "Página completa para a solução Oliveira & Costa de cálculos processuais — prazos, honorários e correção monetária. Inclui apresentação da equipe, depoimentos e captura de leads para demonstração, com cortesia de e-book após envio do formulário.",
+    thumbnail: "/project-thumbs/placeholder.svg",
+    category: "Landing page",
+    year: 2024,
+    impactLabel: "Captação B2B jurídico",
+    featured: false,
+    stack: ["HTML/CSS", "Netlify", "Formulário de leads"],
+    context:
+      "Escritório e produto jurídico precisavam de página de vendas consultiva para advogados.",
+    challenges: [
+      "Conciliar credibilidade técnica com linguagem acessível.",
+      "Conduzir visitante até solicitação de demo.",
+    ],
+    solution: [
+      "Seções de serviços, equipe e prova social.",
+      "Formulário de demonstração com confirmação pós-envio.",
+    ],
+    results: [
+      "Landing publicada em calculojuridicoebook.netlify.app.",
+      "Funil claro para interessados em cálculos processuais.",
+    ],
+    liveUrl: "https://calculojuridicoebook.netlify.app",
+  },
 ];
 
 /** Largura máxima da peça na página de detalhe (evita imagem gigante em PNG 4K). */
@@ -359,6 +479,17 @@ export const MARKETING_DETAIL_MAX_WIDTH_PX = 420;
 
 export function isMarketingProject(project: Project): boolean {
   return project.projectKind === "marketing";
+}
+
+export function getProjectKindLabel(project: Project): string {
+  switch (project.projectKind) {
+    case "marketing":
+      return "Marketing e criativo";
+    case "landing":
+      return "Landing page";
+    default:
+      return "Sistema";
+  }
 }
 
 export function getProjectsByKind(kind: ProjectKind): Project[] {

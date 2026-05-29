@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
-import { getProjectLiveLinkLabel, isMarketingProject } from "@/data/projects";
+import { getProjectLiveLinkLabel, getProjectKindLabel } from "@/data/projects";
 
 type ShowcaseCarouselProps = {
   projects: Project[];
@@ -100,10 +100,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
           >
             <h1>{activeProject.title}</h1>
             <p className="showcase-meta">
-              {isMarketingProject(activeProject)
-                ? "Marketing e criativo"
-                : activeProject.category}{" "}
-              • {activeProject.impactLabel}
+              {getProjectKindLabel(activeProject)} • {activeProject.impactLabel}
             </p>
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   getProjectLiveLinkLabel,
+  getProjectKindLabel,
   isMarketingProject,
   type Project,
 } from "@/data/projects";
@@ -36,7 +37,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
             />
             <div className="card-body">
               <p className="card-kind">
-                {marketing ? "Marketing e criativo" : "Sistema"}
+                {getProjectKindLabel(project)}
                 {project.marketingHighlight ? " · Destaque" : ""}
               </p>
               <h2>{project.title}</h2>

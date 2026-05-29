@@ -30,8 +30,16 @@ export function WorkTable({ projects }: WorkTableProps) {
       }),
       columnHelper.accessor("projectKind", {
         header: "Área",
-        cell: (info) =>
-          info.getValue() === "marketing" ? "Marketing" : "Sistema",
+        cell: (info) => {
+          switch (info.getValue()) {
+            case "marketing":
+              return "Marketing";
+            case "landing":
+              return "Landing";
+            default:
+              return "Sistema";
+          }
+        },
       }),
       columnHelper.accessor("category", {
         header: "Categoria",
