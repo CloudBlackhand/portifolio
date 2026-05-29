@@ -154,7 +154,9 @@ export const projects: Project[] = [
       "Ferramenta de comparação e apoio à decisão de compra e margem, com dados reunidos para análise rápida.",
     detailedDescription:
       "O Melhor Preço ajuda a comparar cenários de custo e revenda antes de comprar ou precificar: entrada de dados organizada, visão do que pesa na margem e leitura objetiva para quem decide no operacional. Foi usado no cotidiano para reduzir decisão no feeling e concentrar números em um fluxo só — sempre com foco em consistência entre consultas e velocidade para repetir a análise sempre que o mercado mudar.",
-    thumbnail: "/project-thumbs/melhor-preco.svg",
+    thumbnail: "/project-thumbs/captures/melhor-preco.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Precificação e comparação",
     year: 2024,
     impactLabel: "Decisão mais clara na compra",
@@ -360,10 +362,10 @@ export const projects: Project[] = [
       "Landing page para loja de eletrônicos: vitrine, categorias e CTA de compra com visual moderno.",
     detailedDescription:
       "Página institucional e comercial publicada no Netlify para apresentar a TechStore — loja de eletrônicos com layout responsivo, hierarquia clara de produtos e chamadas para ação. Foco em conversão e credibilidade para quem chega pelo link ou campanha.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/captures/cltechshop.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Landing page",
-    year: 2025,
-    impactLabel: "Vitrine no ar no Netlify",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -390,10 +392,10 @@ export const projects: Project[] = [
       "Landing de crédito pessoal: proposta clara, simulação e CTA para solicitar crédito fácil e rápido.",
     detailedDescription:
       "Página de captura para serviço de crédito com mensagem direta sobre agilidade e simplicidade. Layout pensado para reduzir fricção na solicitação e transmitir confiança — publicada no Netlify para uso em anúncios e indicações.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/captures/rapidcred.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Landing page",
-    year: 2025,
-    impactLabel: "Captação de crédito",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -420,10 +422,10 @@ export const projects: Project[] = [
       "Site institucional de construtora: serviços, obras e contato para captar clientes B2B e residenciais.",
     detailedDescription:
       "Landing institucional da CN Construtora com apresentação de soluções em construção civil, portfólio resumido e canal de contato. Visual profissional para passar solidez a visitantes que chegam por indicação ou busca local.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/captures/cn-construtora.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Landing page",
-    year: 2025,
-    impactLabel: "Institucional construção civil",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
@@ -450,10 +452,10 @@ export const projects: Project[] = [
       "Landing para calculadora jurídica: serviços, equipe, depoimentos e formulário para solicitar demonstração.",
     detailedDescription:
       "Página completa para a solução Oliveira & Costa de cálculos processuais — prazos, honorários e correção monetária. Inclui apresentação da equipe, depoimentos e captura de leads para demonstração, com cortesia de e-book após envio do formulário.",
-    thumbnail: "/project-thumbs/placeholder.svg",
+    thumbnail: "/project-thumbs/captures/calculo-juridico-ebook.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Landing page",
-    year: 2024,
-    impactLabel: "Captação B2B jurídico",
     featured: false,
     stack: ["HTML/CSS", "Netlify", "Formulário de leads"],
     context:
