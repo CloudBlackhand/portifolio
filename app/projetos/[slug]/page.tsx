@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getProjectBySlug,
+  getProjectKindLabel,
   getProjectLiveLinkLabel,
   isMarketingProject,
   MARKETING_DETAIL_MAX_WIDTH_PX,
@@ -66,7 +67,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       </Link>
 
       <p className="card-kind section-spacing-sm">
-        {marketing ? "Marketing e criativo" : "Sistema"}
+        {getProjectKindLabel(project)}
       </p>
       <h1 className="page-title">{project.title}</h1>
       <p className="page-subtitle section-spacing">{project.shortDescription}</p>
