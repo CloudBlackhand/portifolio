@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npm run sync-profile && next dev",
     "sync-profile": "node scripts/sync-profile-from-media.mjs",
+    "capture-screenshots": "node scripts/capture-project-screenshots.mjs",
     "build": "npm run sync-profile && next build",
     "start": "next start",
     "lint": "eslint"
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "playwright": "^1.60.0",
     "typescript": "^5"
   }
 }
