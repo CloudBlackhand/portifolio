@@ -80,15 +80,17 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   return (
     <article className="page-shell">
-      <Link className="button" href="/projetos">
-        Voltar para projetos
-      </Link>
+      <header className="project-detail-head">
+        <Link className="button project-detail-back" href="/projetos">
+          Voltar para projetos
+        </Link>
 
-      <p className="card-kind section-spacing-sm">
-        {getProjectKindLabel(project)}
-      </p>
-      <h1 className="page-title">{project.title}</h1>
-      <p className="page-subtitle section-spacing">{project.shortDescription}</p>
+        <div className="project-detail-intro">
+          <p className="card-kind">{getProjectKindLabel(project)}</p>
+          <h1 className="page-title">{project.title}</h1>
+          <p className="page-subtitle">{project.shortDescription}</p>
+        </div>
+      </header>
 
       <div
         className={
