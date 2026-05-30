@@ -21,9 +21,9 @@ export function ProjetosSigiloGate() {
           Projetos sob sigilo
         </h2>
         <p className="projetos-sigilo-lead">
-          CRM, funil comercial e WhatsApp corporativo em produção com dados reais
-          de clientes. Você vê contexto, entrega e resultado — telas, credenciais
-          e operação ficam protegidas por acordo.
+          Vendas Hub, infraestrutura WhatsApp HTTPS e outros sistemas com código em
+          repositório privado. Você vê contexto, entrega e resultado — telas,
+          credenciais e operação ficam protegidas por acordo.
         </p>
         <p className="projetos-sigilo-meta">
           {count} {dossierLabel} disponíveis · acesso pelo tablet imersivo
