@@ -64,17 +64,7 @@
   background:
     radial-gradient(ellipse 80% 60% at 20% 0%, rgb(45 212 191 / 14%) 0%, transparent 55%),
     radial-gradient(ellipse 60% 50% at 90% 100%, rgb(255 107 157 / 12%) 0%, transparent 50%);
-  animation: marathonTeaserGlow 8s ease-in-out infinite alternate;
-}
-
-@keyframes marathonTeaserGlow {
-  from {
-    opacity: 0.75;
-  }
-
-  to {
-    opacity: 1;
-  }
+  animation: none;
 }
 
 .marathon-teaser-inner {
@@ -157,20 +147,6 @@
   border-radius: 50%;
   background: var(--tablet-orange);
   flex-shrink: 0;
-  animation: marathonStatusPulse 1.6s ease-in-out infinite;
-}
-
-@keyframes marathonStatusPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(0.82);
-    opacity: 0.55;
-  }
 }
 
 .marathon-status-text {
@@ -264,17 +240,6 @@
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' fill='%23fff'/%3E%3C/svg%3E");
   background-size: 3px 3px;
-  animation: marathonDitherShift 12s linear infinite;
-}
-
-@keyframes marathonDitherShift {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 12px 12px;
-  }
 }
 
 .marathon-world-ambient {
@@ -329,18 +294,7 @@
     linear-gradient(rgb(96 165 250 / 4%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(96 165 250 / 4%) 1px, transparent 1px);
   background-size: 40px 40px;
-  animation: marathonGridDrift 24s linear infinite;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, rgb(0 0 0 / 50%), transparent);
-}
-
-@keyframes marathonGridDrift {
-  from {
-    transform: translate(0, 0);
-  }
-
-  to {
-    transform: translate(40px, 40px);
-  }
 }
 
 .marathon-world-inner {
@@ -436,20 +390,7 @@
 }
 
 .marathon-screen-scan {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgb(96 165 250 / 12%) 48%,
-    rgb(255 107 157 / 10%) 52%,
-    transparent 100%
-  );
-  background-size: 100% 220%;
-  animation: marathonScanSweep 4.5s ease-in-out infinite;
-  pointer-events: none;
-  mix-blend-mode: multiply;
+  display: none;
 }
 
 .marathon-screen-boot {
@@ -468,16 +409,6 @@
 
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes marathonScanSweep {
-  0% {
-    background-position: 0 -120%;
-  }
-
-  100% {
-    background-position: 0 220%;
   }
 }
 
@@ -598,8 +529,6 @@
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--tablet-cyan) 0%, var(--tablet-pink) 55%, var(--tablet-yellow) 100%);
-  background-size: 200% 100%;
-  animation: marathonLoadGradient 3s ease-in-out infinite;
 }
 
 .marathon-load-shimmer {
@@ -608,32 +537,23 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgb(255 255 255 / 45%) 50%,
+    rgb(255 255 255 / 35%) 50%,
     transparent 100%
   );
   width: 40%;
-  animation: marathonLoadShimmer 2.2s ease-in-out infinite;
   pointer-events: none;
+  animation: marathonLoadShimmerOnce 0.9s ease-out forwards;
 }
 
-@keyframes marathonLoadGradient {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes marathonLoadShimmer {
-  0% {
+@keyframes marathonLoadShimmerOnce {
+  from {
     transform: translateX(-120%);
+    opacity: 0.6;
   }
 
-  100% {
-    transform: translateX(320%);
+  to {
+    transform: translateX(280%);
+    opacity: 0;
   }
 }
 
@@ -760,7 +680,6 @@
     linear-gradient(180deg, rgb(96 165 250 / 8%) 0%, transparent 40%);
   mix-blend-mode: multiply;
   pointer-events: none;
-  animation: marathonPreviewGlitch 5s steps(2, end) infinite;
 }
 
 .marathon-tablet-preview--detail {
@@ -771,30 +690,6 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
-}
-
-@keyframes marathonPreviewGlitch {
-  0%,
-  92%,
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-
-  93% {
-    transform: translate(-3px, 1px);
-    opacity: 0.85;
-  }
-
-  94% {
-    transform: translate(2px, -1px);
-    opacity: 0.95;
-  }
-
-  95% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
 }
 
 .marathon-tablet-card-title {
@@ -845,7 +740,6 @@
   height: 6px;
   border-radius: 50%;
   background: var(--tablet-pink);
-  animation: marathonStatusPulse 1.4s ease-in-out infinite;
 }
 
 /* —— Detalhe Top Secret —— */
@@ -994,18 +888,6 @@
   border-radius: 50%;
   background: #22c55e;
   box-shadow: 0 0 8px rgb(34 197 94 / 80%);
-  animation: hirePulse 2s ease-in-out infinite;
-}
-
-@keyframes hirePulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.45;
-  }
 }
 
 .ep-skills-row {
@@ -1285,23 +1167,6 @@ body.marathon-immersive-mode .site-main {
   filter: saturate(0.88) contrast(1.02);
 }
 
-.marathon-session-preview-glitch {
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgb(255 107 157 / 6%) 4px,
-      rgb(255 107 157 / 6%) 5px
-    ),
-    linear-gradient(180deg, rgb(96 165 250 / 8%) 0%, transparent 40%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  animation: marathonPreviewGlitch 5s steps(2, end) infinite;
-}
-
 .marathon-session-preview-caption {
   margin-top: 0.45rem;
   font-size: 0.68rem;
@@ -1455,19 +1320,9 @@ body.marathon-immersive-mode .site-main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marathon-load-fill,
   .marathon-load-shimmer,
-  .marathon-screen-scan,
   .marathon-screen-boot,
-  .marathon-status-dot,
-  .marathon-tablet-cta-pulse,
-  .marathon-tablet-preview-glitch,
-  .marathon-tag,
-  .marathon-teaser-bg,
-  .marathon-world-dither,
-  .marathon-world-grid-drift,
-  .marathon-orb,
-  .hire-chip::before {
+  .marathon-tablet--card:hover {
     animation: none;
   }
 
@@ -1481,9 +1336,5 @@ body.marathon-immersive-mode .site-main {
 
   .marathon-dossier-row:hover {
     transform: none;
-  }
-
-  .marathon-session-preview-glitch {
-    animation: none;
   }
 }
