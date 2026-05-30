@@ -6,11 +6,11 @@ export type ProjectGalleryImage = {
   height?: number;
 };
 
-export type ProjectKind = "software" | "marketing" | "landing";
+export type ProjectKind = "software" | "marketing" | "landing" | "consultoria" | "topsecret";
 
 export type Project = {
   slug: string;
-  /** Sistema em produção, landing page ou peça de marketing/criativo. */
+  /** Sistema, landing, marketing, consultoria ou trabalho confidencial. */
   projectKind: ProjectKind;
   title: string;
   shortDescription: string;
@@ -482,6 +482,70 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://calculojuridicoebook.netlify.app",
   },
+  {
+    slug: "consultoria",
+    projectKind: "consultoria",
+    title: "Consultoria",
+    shortDescription:
+      "Diagnóstico técnico, arquitetura de soluções e direção de implementação para empresas que precisam sair do improviso.",
+    detailedDescription:
+      "Atuo como consultor para mapear o cenário real da operação, priorizar o que traz retorno e desenhar um caminho executável — sem slide genérico e sem promessa vazia. O trabalho cobre desde automação de WhatsApp, funis de vendas e integrações até landing pages, dashboards e organização de processos digitais. Cada consultoria termina com clareza: o que fazer primeiro, o que pode esperar, quais riscos evitar e como medir se deu certo.",
+    thumbnail: "/project-thumbs/consultoria.svg",
+    category: "Consultoria técnica e de produto",
+    year: 2026,
+    impactLabel: "Direção clara antes de codar",
+    featured: false,
+    stack: ["Diagnóstico", "Arquitetura", "Roadmap"],
+    context:
+      "Empresas chegam com dor clara — vendas desorganizadas, WhatsApp no limite, site parado — mas sem saber por onde começar ou quanto esforço cada caminho exige.",
+    challenges: [
+      "Separar urgência real de pedido solto sem critério.",
+      "Traduzir necessidade de negócio em decisões técnicas sustentáveis.",
+      "Evitar escopo inflado quando o time ainda precisa de base.",
+    ],
+    solution: [
+      "Sessão de entendimento com mapeamento de processo, restrições e meta.",
+      "Proposta de arquitetura e fases: quick wins, fundação e evolução.",
+      "Recomendações alinhadas ao que já existe no ecossistema Cloud Service.",
+    ],
+    results: [
+      "Cliente sai sabendo o próximo passo concreto, não só uma lista de ideias.",
+      "Menos retrabalho por decisão tomada no escuro.",
+      "Base para implementação interna ou com a Cloud Service.",
+    ],
+  },
+  {
+    slug: "trabalhos-top-secret",
+    projectKind: "topsecret",
+    title: "Trabalhos Top Secret",
+    shortDescription:
+      "Sistemas e integrações em produção sob confidencialidade: descrevemos o tipo de entrega, não o cliente nem o código.",
+    detailedDescription:
+      "Parte relevante do nosso trabalho nunca aparece em link público, captura ou repositório aberto — e isso é intencional. São backends de operação, automações de WhatsApp, painéis internos, filas, cadastros e integrações que rodam todos os dias para empresas que exigem sigilo. No portfólio você vê o padrão de entrega (contexto, desafio, solução, resultado), no mesmo espírito do Vendas Hub ou do Sistema HTTPS WhatsApp, sem expor nome do cliente, URL, stack sensível ou telas proprietárias.",
+    thumbnail: "/project-thumbs/topsecret.svg",
+    category: "Projetos confidenciais",
+    year: 2026,
+    impactLabel: "Produção sem exposição pública",
+    featured: false,
+    stack: ["Produção", "NDA", "Integrações"],
+    context:
+      "Operações com volume, dados sensíveis ou vantagem competitiva não podem ser exibidas como vitrine aberta.",
+    challenges: [
+      "Provar capacidade de entrega sem violar acordo de confidencialidade.",
+      "Manter sistemas estáveis quando não há espaço para experimento público.",
+      "Documentar internamente o suficiente para suporte e evolução.",
+    ],
+    solution: [
+      "Contratos e práticas de privacidade: o que entra no site é categoria de trabalho, não detalhe do cliente.",
+      "Mesmo rigor de produção dos projetos visíveis — filas, governança, monitoramento.",
+      "Comunicação com o cliente por canal fechado e entregas verificáveis por quem contratou.",
+    ],
+    results: [
+      "Sistemas que continuam no ar sem vazar segredo operacional.",
+      "Portfólio honesto sobre a experiência, respeitando quem confia na Cloud Service.",
+      "Referência disponível sob demanda em conversa comercial, quando aplicável.",
+    ],
+  },
 ];
 
 /** Largura máxima da peça na página de detalhe (evita imagem gigante em PNG 4K). */
@@ -491,12 +555,20 @@ export function isMarketingProject(project: Project): boolean {
   return project.projectKind === "marketing";
 }
 
+export function isTextOnlyPortfolioProject(project: Project): boolean {
+  return project.projectKind === "consultoria" || project.projectKind === "topsecret";
+}
+
 export function getProjectKindLabel(project: Project): string {
   switch (project.projectKind) {
     case "marketing":
       return "Marketing e criativo";
     case "landing":
       return "Landing page";
+    case "consultoria":
+      return "Consultoria";
+    case "topsecret":
+      return "Top Secret";
     default:
       return "Sistema";
   }

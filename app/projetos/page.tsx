@@ -5,12 +5,14 @@ import { getProjectsByKind } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
   description:
-    "Sistemas em produção, landing pages e trabalhos de marketing e criativo da Cloud Service.",
+    "Sistemas em produção, landing pages, consultoria e trabalhos confidenciais da Cloud Service.",
 };
 
 export default function ProjetosPage() {
   const softwareProjects = getProjectsByKind("software");
   const landingProjects = getProjectsByKind("landing");
+  const consultoriaProjects = getProjectsByKind("consultoria");
+  const topSecretProjects = getProjectsByKind("topsecret");
   const marketingProjects = getProjectsByKind("marketing").sort((a, b) => {
     if (a.marketingHighlight && !b.marketingHighlight) return -1;
     if (!a.marketingHighlight && b.marketingHighlight) return 1;
@@ -21,8 +23,8 @@ export default function ProjetosPage() {
     <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Sistemas, landing pages e peças de marketing — tudo com foco em resultado
-        e linguagem clara para o cliente final.
+        Sistemas, landing pages, consultoria e trabalhos confidenciais — foco em
+        resultado com linguagem clara e sem expor o que não pode ser público.
       </p>
 
       <section className="section-spacing">
@@ -41,6 +43,24 @@ export default function ProjetosPage() {
           publicados no Netlify com link para ver no ar.
         </p>
         <ProjectCardGrid projects={landingProjects} />
+      </section>
+
+      <section id="consultoria" className="section-spacing">
+        <h2 className="section-heading">Consultoria</h2>
+        <p className="muted section-spacing-sm">
+          Diagnóstico, arquitetura e direção técnica antes de implementar — sem
+          link público, com descrição completa do tipo de entrega.
+        </p>
+        <ProjectCardGrid projects={consultoriaProjects} />
+      </section>
+
+      <section id="top-secret" className="section-spacing">
+        <h2 className="section-heading">Trabalhos Top Secret</h2>
+        <p className="muted section-spacing-sm">
+          Sistemas em produção sob confidencialidade: mostramos o padrão de
+          trabalho, não cliente, URL nem capturas.
+        </p>
+        <ProjectCardGrid projects={topSecretProjects} />
       </section>
 
       <section id="marketing" className="section-spacing">
