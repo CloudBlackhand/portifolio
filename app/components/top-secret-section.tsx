@@ -4,17 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
-import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
+import { VAULT_ACTIVATION } from "@/app/components/marathon/marathon-activation-presets";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
-import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
 
 type TopSecretSectionProps = {
   projects: Project[];
   standalone?: boolean;
 };
-
-const VAULT_STATUS =
-  "weave-mem sync · identidade removida · so contexto e resultado publicados";
 
 function caseIdFromSlug(slug: string): string {
   let hash = 0;
@@ -40,6 +36,7 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
   return (
     <MarathonSession
       fillViewport={standalone}
+      activation={standalone ? VAULT_ACTIVATION : undefined}
       headerLeft="UESC · tau ceti iv"
       headerRight="partition / restricted"
     >
@@ -51,8 +48,6 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
       </div>
 
       <p className="marathon-tablet-kicker">runner shell · sense-mem · dossier vault</p>
-      <MarathonStatusTicker messages={[VAULT_STATUS]} />
-      <MarathonLoadBar label="weave-mem sync" target={67} delay={0.35} duration={2} />
 
       <header className="marathon-session-head">
         <h2 id="classified-heading" className="marathon-session-title">
@@ -95,13 +90,9 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
                   </div>
                   <h3 className="marathon-dossier-row-title">{project.title}</h3>
                   <p className="marathon-dossier-row-desc">{project.shortDescription}</p>
-                  <MarathonLoadBar
-                    label="decrypt sense-mem"
-                    target={pct}
-                    delay={0.1 + index * 0.06}
-                    duration={1.4}
-                    animate={!reduceMotion}
-                  />
+                  <span className="marathon-dossier-row-sync">
+                    sense-mem · {pct}% cached
+                  </span>
                   <span className="marathon-dossier-row-cta">iniciar leitura →</span>
                 </div>
                 <div className="marathon-dossier-row-preview">
