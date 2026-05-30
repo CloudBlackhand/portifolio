@@ -39,32 +39,32 @@ function Reveal({
 
 const pillars = [
   {
-    title: "Sistemas em produção",
+    title: "Entrega pensada para produção",
     body:
-      "Cadastros, funis, dashboards e integrações que o time usa todo dia — não protótipo de vitrine.",
+      "Nada de demo frágil: fluxos, cadastros e integrações pensados para o dia a dia da operação.",
   },
   {
-    title: "WhatsApp e automação",
+    title: "Stack moderna e sustentável",
     body:
-      "Bots, disparos, filas e canal oficial com governança — do atendimento ao envio em massa.",
+      "Next.js, TypeScript, APIs e infraestrutura que você consegue evoluir sem reescrever tudo a cada ano.",
   },
   {
-    title: "Consultoria técnica",
+    title: "Clareza sem vazar segredo",
     body:
-      "Diagnóstico e arquitetura antes do código: prioridade clara, menos retrabalho e dívida evitável.",
+      "Contexto, solução e resultado — sem expor código proprietário ou dados sensíveis do cliente.",
   },
   {
-    title: "Sigilo quando importa",
+    title: "Canal oficial e governança",
     body:
-      "Cases confidenciais com contexto e resultado publicados — sem vazar operação ou dados do cliente.",
+      "WhatsApp e mensageria com filas, atrasos e rastreio — o que a operação precisa para escalar com segurança.",
   },
 ];
 
 const stats = [
   { label: "Sistemas em produção", value: "7" },
-  { label: "Disponível para projetos", value: "Sim" },
-  { label: "Stack principal", value: "Next.js" },
-  { label: "Resposta", value: "Rápida" },
+  { label: "Landing pages", value: "2" },
+  { label: "Disponibilidade", value: "Aberta" },
+  { label: "Resposta", value: "< 24h" },
 ];
 
 type LandingPageProps = {
@@ -80,11 +80,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint ep-after-showcase">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">&gt; portfólio / projetos</p>
-            <h2 className="ep-section-title">Prova de entrega — no ar de verdade</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">[ prova de entrega ]</p>
+            <h2 className="ep-section-title">Projetos reais, não só slide</h2>
             <p className="ep-section-lead">
-              Sistemas, landings e automação com link público quando permitido.
-              Abra cada case e veja capturas reais do que foi entregue.
+              Cada item abaixo tem contexto, stack e resultado — com link para ver
+              no ar ou captura quando o cliente permite.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -93,7 +93,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                 <span className="ep-device-dot" />
                 <span className="ep-device-dot" />
                 <span className="ep-device-dot" />
-                <span className="ep-device-url">cloud.service / hire-me</span>
+                <span className="ep-device-url">cloudservice / projetos</span>
               </div>
               <div className="ep-device-body">
                 <div className="ep-device-sidebar">
@@ -106,10 +106,10 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                   ))}
                 </div>
                 <div className="ep-device-main">
-                  <p className="ep-device-kicker">Para contratantes</p>
+                  <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Portfólio com sistemas comerciais, WhatsApp, e-commerce,
-                    jurídico e campanhas — evidência concreta de stack e entrega.
+                    Landing pages no Netlify, sistemas em produção e peças de marketing —
+                    com link para ver no ar quando disponível.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa
@@ -124,11 +124,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">&gt; serviços</p>
-            <h2 className="ep-section-title">O que posso entregar no seu projeto</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">[ o que você contrata ]</p>
+            <h2 className="ep-section-title">Stack que aguenta operação</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Foco em resultado operacional: menos ferramenta solta, mais produto
-              integrado que o time consegue usar amanhã.
+              Integração, cadastro, WhatsApp e deploy — pensado para quem precisa
+              de sistema rodando, não protótipo descartável.
             </p>
           </Reveal>
           <div className="ep-pillars">
@@ -147,8 +147,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">&gt; status</p>
-            <h2 className="ep-section-title">Resumo para quem está contratando</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">Em números</p>
+            <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
           </Reveal>
           <div className="ep-stats">
             {stats.map((s, i) => (
@@ -166,23 +166,18 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-cta-block">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">&gt; contato / contratar</p>
-            <h2 className="ep-section-title">Disponível para o próximo projeto</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">[ vamos alinhar ]</p>
+            <h2 className="ep-section-title">Tem vaga, freela ou projeto?</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Conte objetivo, prazo e orçamento aproximado — respondo rápido pelo
-              WhatsApp ou pela página de contato.
+              Mande objetivo, prazo e stack desejada — respondo pelo WhatsApp ou
+              pela página de contato em até 24 horas.
             </p>
             <div className="ep-hero-cta">
-              <a
-                className="ep-btn ep-btn-primary"
-                href="https://wa.me/5521971364919?text=Ola%2C%20vi%20seu%20portfolio%20e%20quero%20contratar%20para%20um%20projeto."
-                target="_blank"
-                rel="noreferrer"
-              >
-                Contratar via WhatsApp
-              </a>
-              <Link className="ep-btn ep-btn-ghost" href="/contato">
-                Outros canais
+              <Link className="ep-btn ep-btn-primary" href="/contato">
+                Enviar proposta / contato
+              </Link>
+              <Link className="ep-btn ep-btn-ghost" href="/projetos">
+                Ver projetos
               </Link>
             </div>
           </Reveal>
@@ -216,18 +211,18 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
           </Reveal>
           <Reveal delay={0.06}>
             <div className="ep-about-copy">
-              <p className="ep-eyebrow ep-eyebrow-dark">&gt; perfil</p>
+              <p className="ep-eyebrow ep-eyebrow-dark">[ quem implementa ]</p>
               <h2 className="ep-section-title ep-section-title-left">
-                Quem está por trás da Cloud Service
+                Foco em entrega e comunicação clara
               </h2>
               <p className="ep-body">
-                Desenvolvedor focado em sistemas reais: entendo o processo do
-                cliente antes de propor código, priorizo entrega que funciona em
-                produção e comunico com clareza do início ao fim.
+                Entendo o objetivo de negócio antes de codar. Cada projeto nasce
+                com escopo, prioridade e critério de pronto — ideal para times
+                enxutos e contratos diretos.
               </p>
               <p className="ep-body">
-                Aberto a freelas, projetos fechados e consultoria pontual —
-                remoto, com alinhamentos objetivos e transparência no andamento.
+                Trabalho remoto, documentação objetiva e updates curtos para quem
+                contrata não ficar no escuro.
               </p>
               <div className="ep-hero-cta">
                 <a
@@ -250,24 +245,19 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-pro-intro">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">&gt; processo</p>
-            <h2 className="ep-section-title">Como eu trabalho com contratantes</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">[ resumo ]</p>
+            <h2 className="ep-section-title">Como eu trabalho</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Entendimento do problema, implementação robusta e resultado
-              mensurável — com portfólio aberto para validar antes de fechar.
+              Diagnóstico rápido, implementação robusta e resultado mensurável —
+              com respeito a confidencialidade quando o cliente exige sigilo.
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/projetos">
-                Ver cases
+                Ver todos os projetos
               </Link>
-              <a
-                className="ep-btn ep-btn-ghost"
-                href="https://wa.me/5521971364919"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Propor projeto
-              </a>
+              <Link className="ep-btn ep-btn-ghost" href="/contato">
+                Novo projeto
+              </Link>
             </div>
           </Reveal>
         </div>

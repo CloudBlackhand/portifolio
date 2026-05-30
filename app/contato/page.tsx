@@ -1,63 +1,41 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contato | Cloud Service — Contratar",
-  description:
-    "Canal direto para contratar desenvolvimento web, automação WhatsApp e consultoria.",
+  title: "Contato | Cloud Service",
+  description: "Canal de contato profissional com exposição mínima de dados.",
 };
 
 export default function ContatoPage() {
   return (
     <section className="page-shell">
-      <p className="mara-prompt">&gt; contato / contratar</p>
-      <h1 className="page-title">Vamos fechar seu próximo projeto</h1>
+      <h1 className="page-title">Contato</h1>
       <p className="page-subtitle">
-        Resposta rápida para freelas, projetos fechados e consultoria. Conte o
-        objetivo, prazo e faixa de orçamento — alinhamos escopo antes de
-        qualquer compromisso.
+        Disponível para freela, contratos e vagas remotas. Canal direto para
+        alinhar escopo, prazo e proposta.
       </p>
 
-      <div className="content-block section-spacing mara-contact-block">
-        <h3>Canal preferencial</h3>
+      <div className="content-block section-spacing">
+        <h3>Contratar / proposta</h3>
         <p className="muted">
-          WhatsApp: <strong>(21) 97136-4919</strong>
+          WhatsApp: <strong>(21) 97136-4919</strong> — resposta em até 24h em dias
+          úteis.
         </p>
-        <p className="muted section-spacing-sm">
-          Ideal para primeira conversa: você descreve a demanda e eu retorno com
-          perguntas objetivas ou proposta de próximo passo.
-        </p>
-        <div className="link-row">
+        <div className="section-spacing">
           <a
             className="button primary"
-            href="https://wa.me/5521971364919?text=Ola%2C%20vi%20seu%20portfolio%20e%20quero%20contratar%20para%20um%20projeto."
+            href="https://wa.me/5521971364919"
             target="_blank"
             rel="noreferrer"
           >
-            Contratar via WhatsApp
+            Falar comigo no WhatsApp
           </a>
-          <Link className="button" href="/projetos">
-            Ver portfólio antes
-          </Link>
         </div>
       </div>
 
       <div className="content-block">
-        <h3>O que enviar na primeira mensagem</h3>
-        <ul className="plain-list">
-          <li>Objetivo do projeto em uma ou duas frases</li>
-          <li>Prazo desejado ou urgência</li>
-          <li>Se já existe sistema, site ou processo hoje</li>
-          <li>Orçamento aproximado, se tiver (facilita priorização)</li>
-        </ul>
-      </div>
-
-      <div className="content-block">
-        <h3>Privacidade</h3>
+        <h3>Nota de privacidade</h3>
         <p className="muted">
-          Não compartilhe senhas, dados sensíveis de clientes ou documentos
-          confidenciais na primeira conversa — alinhamos NDA ou escopo antes
-          quando necessário.
+          Evite publicar telefone pessoal, endereço residencial e links sensíveis.
         </p>
       </div>
     </section>

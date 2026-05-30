@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import "./globals-ep.css";
+import "./globals-marathon.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cloud Service | Desenvolvimento web e automação",
+  title: "Cloud Service — Dev full-stack | Sistemas em produção",
   description:
-    "Portfólio profissional: sistemas em produção, WhatsApp, integrações e consultoria. Disponível para projetos e freelas.",
+    "Portfólio de desenvolvimento full-stack: sistemas no ar, automação WhatsApp e landing pages. Disponível para freela, contratos e vagas remotas.",
 };
 
 export default function RootLayout({
@@ -32,19 +33,18 @@ export default function RootLayout({
           <div className="container header-content">
             <Link className="logo" href="/">
               Cloud Service
+              <span className="header-status">
+                <span className="header-status-dot" aria-hidden />
+                online
+              </span>
             </Link>
             <nav className="nav nav-with-cta" aria-label="Navegação principal">
               <Link href="/">Início</Link>
               <Link href="/projetos">Projetos</Link>
               <Link href="/contato">Contato</Link>
-              <a
-                className="nav-cta"
-                href="https://wa.me/5521971364919?text=Ola%2C%20vi%20seu%20portfolio%20e%20quero%20contratar."
-                target="_blank"
-                rel="noreferrer"
-              >
+              <Link className="nav-cta" href="/contato">
                 Contratar
-              </a>
+              </Link>
             </nav>
           </div>
         </header>
@@ -63,8 +63,8 @@ export default function RootLayout({
             <div className="footer-brand">
               <strong>Cloud Service</strong>
               <p className="footer-tagline">
-                Desenvolvimento web, automação WhatsApp e consultoria — disponível
-                para projetos.
+                Dev full-stack — sistemas em produção, automação e entrega com
+                clareza para quem contrata.
               </p>
             </div>
             <nav className="footer-nav" aria-label="Rodapé">
