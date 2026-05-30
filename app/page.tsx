@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { projects, getCatalogProjects } from "@/data/projects";
 import { getProfilePhoto } from "@/lib/profile-photo";
-import { ClassifiedTeaser } from "./components/classified-teaser";
 import { MarketingHighlights } from "./components/marketing-highlights";
 import { ShowcaseCarousel } from "./components/showcase-carousel";
 import { LandingPage } from "./components/landing/LandingPage";
@@ -16,7 +15,6 @@ export default function Home() {
       <ShowcaseCarousel projects={projects} />
       <MarketingHighlights />
       <LandingPage projects={projects} profilePhoto={profilePhoto} />
-      <ClassifiedTeaser />
       <div className="container ep-table-section">
         <WorkTable projects={catalogProjects} />
         <p className="muted section-spacing">

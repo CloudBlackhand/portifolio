@@ -51,8 +51,8 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
   return (
     <MarathonSession
       fillViewport
-      headerLeft="Cloud · sense-mem"
-      headerRight="dossier / sanitized"
+      headerLeft="Cloud Service"
+      headerRight="sob sigilo"
       bootLines={bootLines}
       bootHead={CLOUD_BOOT_HEAD}
       bootTarget={bootTarget}
@@ -60,7 +60,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
     >
       <div className="marathon-session-toolbar">
         <Link className="marathon-session-back" href="/classificados">
-          ← voltar ao arquivo
+          ← voltar à lista
         </Link>
         <span className="marathon-session-badge">{getProjectKindLabel(project)}</span>
       </div>
@@ -83,13 +83,13 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         <div className="marathon-session-preview-frame">
           <MarathonThumb
             src={project.thumbnail}
-            alt={`Representação ilustrativa — ${project.title}`}
+            alt={`Ilustração — ${project.title}`}
             className="marathon-session-preview-img"
             priority
           />
         </div>
         <figcaption className="marathon-session-preview-caption">
-          representação ilustrativa · sem captura real · dados reais redigidos
+          Ilustração genérica — sem captura real do sistema
         </figcaption>
       </figure>
 
@@ -103,24 +103,22 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         <p className="marathon-session-panel-body">{project.context}</p>
       </section>
 
-      <ListPanel title="O que fica fora do portfólio aberto" items={project.challenges} warn />
-      <ListPanel title="Como foi entregue" items={project.solution} />
-      <ListPanel title="Resultado em produção" items={project.results} />
+      <ListPanel title="Limites do que publico" items={project.challenges} warn />
+      <ListPanel title="O que foi feito" items={project.solution} />
+      <ListPanel title="Resultado" items={project.results} />
 
       <section className="marathon-session-panel marathon-session-panel--warn">
-        <h2 className="marathon-session-panel-title">Protocolo de sigilo</h2>
+        <h2 className="marathon-session-panel-title">Privacidade</h2>
         <p className="marathon-session-panel-body">
-          Estes dossiês existem para provar entrega em cenário real — com dados de
-          clientes, credenciais, conversas ou pipeline comercial — sem expor nada
-          disso publicamente. Não publicamos capturas, código, links, números,
-          endpoints, payloads ou identidade do contratante. O que você vê aqui é
-          memória sanitizada: contexto, abordagem e resultado aprovados para leitura
-          externa.
+          Por acordo com o cliente, não mostro telas, código, links, credenciais
+          ou qualquer dado que identifique a operação. Aqui fica só o contexto,
+          a forma de resolver e o resultado — o suficiente para você avaliar o
+          trabalho sem expor quem contratou.
         </p>
       </section>
 
       <p className="marathon-session-foot">
-        Cloud Service · registro classificado · {project.impactLabel.toLowerCase()}
+        Cloud Service · {project.impactLabel}
       </p>
     </MarathonSession>
   );

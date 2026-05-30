@@ -22,10 +22,10 @@ function blockBar(value: number, target: number): string {
 
 export function MarathonTabletBoot({
   lines = [
-    "> cloud link handshake...",
-    "> carregando dados...",
-    "> weave-mem buffer alocada...",
-    "> sense-mem sync...",
+    "> conectando...",
+    "> carregando...",
+    "> preparando tela...",
+    "> pronto",
   ],
   head = CLOUD_BOOT_HEAD,
   target = 100,
