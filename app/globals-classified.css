@@ -12,6 +12,37 @@
   --marathon-muted: #5a6b7d;
 }
 
+/* —— Link Classificados no header —— */
+.nav-classified {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--marathon-amber) !important;
+  border: 1px solid rgb(255 122 24 / 40%);
+  padding: 0.28rem 0.55rem;
+  background: rgb(255 122 24 / 8%);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-classified:hover {
+  color: #fff !important;
+  background: rgb(255 122 24 / 18%);
+  border-color: var(--marathon-amber);
+  box-shadow: 0 0 16px rgb(255 122 24 / 25%);
+}
+
+.nav-classified--footer {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.45rem;
+}
+
 /* —— Teaser na home —— */
 .classified-teaser {
   margin-inline: calc(50% - 50vw);
