@@ -21,9 +21,9 @@ export function ProjetosSigiloGate() {
           Projetos sob sigilo
         </h2>
         <p className="projetos-sigilo-lead">
-          CRM comercial, multiempresa e infra WhatsApp em produção — repositórios
-          privados no GitHub. Você vê contexto, entrega e resultado — telas,
-          credenciais e operação ficam protegidas por acordo.
+          Dossiês por segmento — comercial, mensageria, consultas, locação, imóveis
+          e autoatendimento — sem expor marcas, telas ou dados reais. Você vê contexto,
+          entrega e resultado; o resto fica protegido por acordo.
         </p>
         <p className="projetos-sigilo-meta">
           {count} {dossierLabel} disponíveis · acesso pelo tablet imersivo

@@ -3,7 +3,7 @@ import type { Project } from "@/data/projects";
 export const CLOUD_BOOT_HEAD = "cloud service · sense-mem · terminal";
 
 export function dossierBootName(project: Project): string {
-  return project.title.replace(/\s*—\s*confidencial$/i, "").trim().toLowerCase();
+  return project.title.replace(/\s*—\s*(confidencial|sigilo)$/i, "").trim().toLowerCase();
 }
 
 export function getVaultBootLines(dossierCount: number): string[] {
@@ -12,8 +12,8 @@ export function getVaultBootLines(dossierCount: number): string[] {
   return [
     "> cloud link handshake...",
     "> carregando dados...",
-    `> vault classificados · ${countLabel}...`,
-    "> partition restricted online...",
+    `> arquivo sob sigilo · ${countLabel}...`,
+    "> acesso restrito online...",
   ];
 }
 

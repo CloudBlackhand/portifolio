@@ -51,9 +51,9 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
           Registros sanitizados
         </h2>
         <p className="marathon-session-subtitle">
-          Trabalhos reais em produção — VionHub, Sales Hub, Evolution API e
-          integrações sensíveis — publicados só em nível descritivo. Nada de telas,
-          números, credenciais ou identidade do contratante no catálogo aberto.
+          Entregas reais por segmento — comercial, mensageria, saúde, locação,
+          imóveis e autoatendimento — publicadas só em nível descritivo. Nada de
+          telas, marcas, credenciais ou identidade do contratante no catálogo aberto.
         </p>
         <div className="marathon-tablet-tags">
           <span className="marathon-tag marathon-tag--pink">DADOS REDACTED</span>
