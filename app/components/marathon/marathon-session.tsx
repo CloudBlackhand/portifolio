@@ -14,8 +14,7 @@ type MarathonSessionProps = {
   fillViewport?: boolean;
   showBarcode?: boolean;
   bootSequence?: boolean;
-  bootLabel?: string;
-  bootSublabel?: string;
+  bootLines?: string[];
   bootTarget?: number;
   bootDuration?: number;
 };
@@ -27,8 +26,7 @@ export function MarathonSession({
   fillViewport = false,
   showBarcode = true,
   bootSequence,
-  bootLabel = "sense-mem sync",
-  bootSublabel = "abstract render · field record",
+  bootLines,
   bootTarget = 100,
   bootDuration = 2.4,
 }: MarathonSessionProps) {
@@ -84,8 +82,7 @@ export function MarathonSession({
                 {shouldBoot && !bootComplete ? (
                   <MarathonTabletBoot
                     key="tablet-boot"
-                    label={bootLabel}
-                    sublabel={bootSublabel}
+                    lines={bootLines}
                     target={bootTarget}
                     duration={bootDuration}
                     onComplete={() => setBootComplete(true)}

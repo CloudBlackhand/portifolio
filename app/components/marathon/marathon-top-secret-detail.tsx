@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { getProjectKindLabel } from "@/data/projects";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
+import { MARATHON_DOSSIER_BOOT_LINES } from "@/app/components/marathon/marathon-tablet-boot";
 
 type MarathonTopSecretDetailProps = {
   project: Project;
@@ -16,10 +17,9 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
       fillViewport
       headerLeft="UESC · sense-mem"
       headerRight="dossier / sanitized"
-      bootLabel="decrypt dossier"
-      bootSublabel="sense-mem · sanitized record"
+      bootLines={MARATHON_DOSSIER_BOOT_LINES}
       bootTarget={100}
-      bootDuration={2.5}
+      bootDuration={2.6}
     >
       <div className="marathon-session-toolbar">
         <Link className="marathon-session-back" href="/classificados">
