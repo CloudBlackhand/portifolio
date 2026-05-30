@@ -85,6 +85,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
             src={project.thumbnail}
             alt={`Representação ilustrativa — ${project.title}`}
             className="marathon-session-preview-img"
+            priority
           />
         </div>
         <figcaption className="marathon-session-preview-caption">
