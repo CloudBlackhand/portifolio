@@ -10,7 +10,7 @@ export type ProjectKind = "software" | "marketing" | "landing" | "consultoria" |
 
 export type Project = {
   slug: string;
-  /** Sistema, landing, marketing, consultoria ou trabalho confidencial. */
+  /** Sistema em produção, landing page, consultoria, trabalho confidencial ou peça de marketing/criativo. */
   projectKind: ProjectKind;
   title: string;
   shortDescription: string;
@@ -36,6 +36,8 @@ export type Project = {
   /** Dimensões nativas da miniatura (PNG/JPG). Quando definido, o hero não estica além disso. */
   thumbnailWidth?: number;
   thumbnailHeight?: number;
+  /** Sem link ou capturas públicas por confidencialidade do cliente ou operação interna. */
+  confidential?: boolean;
 };
 
 export const projects: Project[] = [
@@ -52,6 +54,7 @@ export const projects: Project[] = [
     year: 2026,
     impactLabel: "Funil e cadastro integrados",
     featured: true,
+    confidential: true,
     stack: ["Web app", "Dashboard", "API"],
     context:
       "A operação precisava sair de planilhas e grupos soltos para um cadastro de vendas único, com rastreio de etapas e donos claros por oportunidade.",
@@ -82,6 +85,7 @@ export const projects: Project[] = [
     year: 2025,
     impactLabel: "Número oficial integrado",
     featured: true,
+    confidential: true,
     stack: ["Conexão por número", "HTTPS", "Integração multi-sistema"],
     context:
       "A operação precisava de um WhatsApp próprio, com número dedicado, para alimentar bots e sistemas de envio sem gambiarra ou dependência externa frágil.",
@@ -483,67 +487,92 @@ export const projects: Project[] = [
     liveUrl: "https://calculojuridicoebook.netlify.app",
   },
   {
-    slug: "consultoria",
+    slug: "consultoria-cloud-service",
     projectKind: "consultoria",
-    title: "Consultoria",
+    title: "Consultoria técnica e operacional",
     shortDescription:
-      "Diagnóstico técnico, arquitetura de soluções e direção de implementação para empresas que precisam sair do improviso.",
+      "Diagnóstico, arquitetura e acompanhamento para digitalizar processos com clareza, segurança e foco em resultado.",
     detailedDescription:
-      "Atuo como consultor para mapear o cenário real da operação, priorizar o que traz retorno e desenhar um caminho executável — sem slide genérico e sem promessa vazia. O trabalho cobre desde automação de WhatsApp, funis de vendas e integrações até landing pages, dashboards e organização de processos digitais. Cada consultoria termina com clareza: o que fazer primeiro, o que pode esperar, quais riscos evitar e como medir se deu certo.",
+      "Consultoria para empresas que precisam sair do improviso: entendemos o processo atual, mapeamos gargalos e propomos solução técnica alinhada ao que o time realmente usa. Atuamos desde a definição de escopo até a orientação na implementação — integrações, automação, WhatsApp, cadastros e operação do dia a dia — sempre com linguagem acessível para decisores e respeito a restrições de dados e confidencialidade.",
     thumbnail: "/project-thumbs/consultoria.svg",
-    category: "Consultoria técnica e de produto",
+    category: "Consultoria",
     year: 2026,
-    impactLabel: "Direção clara antes de codar",
+    impactLabel: "Processo claro antes do código",
     featured: false,
-    stack: ["Diagnóstico", "Arquitetura", "Roadmap"],
+    stack: ["Diagnóstico", "Arquitetura", "Acompanhamento"],
     context:
-      "Empresas chegam com dor clara — vendas desorganizadas, WhatsApp no limite, site parado — mas sem saber por onde começar ou quanto esforço cada caminho exige.",
+      "Muitas operações crescem em planilhas, grupos e ferramentas soltas até o custo de manter tudo ficar maior que o benefício.",
     challenges: [
-      "Separar urgência real de pedido solto sem critério.",
-      "Traduzir necessidade de negócio em decisões técnicas sustentáveis.",
-      "Evitar escopo inflado quando o time ainda precisa de base.",
+      "Traduzir dor de negócio em decisões técnicas sem jargão desnecessário.",
+      "Priorizar o que traz retorno rápido sem criar dívida técnica evitável.",
     ],
     solution: [
-      "Sessão de entendimento com mapeamento de processo, restrições e meta.",
-      "Proposta de arquitetura e fases: quick wins, fundação e evolução.",
-      "Recomendações alinhadas ao que já existe no ecossistema Cloud Service.",
+      "Entrevistas curtas, mapa do fluxo atual e proposta de evolução por etapas.",
+      "Recomendações práticas sobre stack, integrações e governança de dados.",
     ],
     results: [
-      "Cliente sai sabendo o próximo passo concreto, não só uma lista de ideias.",
-      "Menos retrabalho por decisão tomada no escuro.",
-      "Base para implementação interna ou com a Cloud Service.",
+      "Cliente entende o caminho antes de investir em desenvolvimento.",
+      "Menos retrabalho e mais previsibilidade na entrega.",
     ],
   },
   {
-    slug: "trabalhos-top-secret",
+    slug: "topsecret-ecossistema-comercial",
     projectKind: "topsecret",
-    title: "Trabalhos Top Secret",
+    title: "Ecossistema comercial — confidencial",
     shortDescription:
-      "Sistemas e integrações em produção sob confidencialidade: descrevemos o tipo de entrega, não o cliente nem o código.",
+      "Cadastro, funil e operação de vendas em produção para cliente que exige sigilo total sobre telas e dados.",
     detailedDescription:
-      "Parte relevante do nosso trabalho nunca aparece em link público, captura ou repositório aberto — e isso é intencional. São backends de operação, automações de WhatsApp, painéis internos, filas, cadastros e integrações que rodam todos os dias para empresas que exigem sigilo. No portfólio você vê o padrão de entrega (contexto, desafio, solução, resultado), no mesmo espírito do Vendas Hub ou do Sistema HTTPS WhatsApp, sem expor nome do cliente, URL, stack sensível ou telas proprietárias.",
+      "Trabalho sob acordo de confidencialidade: sistema comercial em uso no dia a dia do cliente, com cadastro de oportunidades, etapas do funil, responsáveis e histórico operacional. Publicamos apenas contexto, solução e resultado — sem capturas, links públicos, código ou qualquer detalhe que possa expor a operação ou dados sensíveis.",
     thumbnail: "/project-thumbs/topsecret.svg",
-    category: "Projetos confidenciais",
+    category: "Top Secret",
     year: 2026,
-    impactLabel: "Produção sem exposição pública",
+    impactLabel: "Operação comercial protegida",
     featured: false,
-    stack: ["Produção", "NDA", "Integrações"],
+    confidential: true,
+    stack: ["Web app", "CRM interno", "Confidencial"],
     context:
-      "Operações com volume, dados sensíveis ou vantagem competitiva não podem ser exibidas como vitrine aberta.",
+      "Cliente precisava centralizar vendas sem expor processos, números ou interface para o mercado.",
     challenges: [
-      "Provar capacidade de entrega sem violar acordo de confidencialidade.",
-      "Manter sistemas estáveis quando não há espaço para experimento público.",
-      "Documentar internamente o suficiente para suporte e evolução.",
+      "Entregar visibilidade interna forte mantendo sigilo absoluto na divulgação externa.",
+      "Documentar valor do projeto sem vazar informação competitiva.",
     ],
     solution: [
-      "Contratos e práticas de privacidade: o que entra no site é categoria de trabalho, não detalhe do cliente.",
-      "Mesmo rigor de produção dos projetos visíveis — filas, governança, monitoramento.",
-      "Comunicação com o cliente por canal fechado e entregas verificáveis por quem contratou.",
+      "Arquitetura e fluxos alinhados ao processo comercial real do cliente.",
+      "Portfólio limitado a descrição executiva aprovada pelo cliente.",
     ],
     results: [
-      "Sistemas que continuam no ar sem vazar segredo operacional.",
-      "Portfólio honesto sobre a experiência, respeitando quem confia na Cloud Service.",
-      "Referência disponível sob demanda em conversa comercial, quando aplicável.",
+      "Operação comercial rodando com rastreio e donos claros por oportunidade.",
+      "Marca e dados do cliente preservados fora do site público.",
+    ],
+  },
+  {
+    slug: "topsecret-automacao-whatsapp",
+    projectKind: "topsecret",
+    title: "Automação WhatsApp — confidencial",
+    shortDescription:
+      "Canal oficial, bots e disparos integrados em ambiente controlado — projeto sigiloso, só descrição pública.",
+    detailedDescription:
+      "Implementação confidencial de infraestrutura WhatsApp para uso corporativo: sessão dedicada, integração via HTTPS com bots, filas e sistemas internos. O case entra no portfólio somente em nível descritivo — reforçando capacidade técnica sem publicar telas, endpoints, números ou arquitetura proprietária.",
+    thumbnail: "/project-thumbs/topsecret.svg",
+    category: "Top Secret",
+    year: 2025,
+    impactLabel: "Canal oficial sob sigilo",
+    featured: false,
+    confidential: true,
+    stack: ["WhatsApp", "HTTPS", "Confidencial"],
+    context:
+      "Operação precisava de mensageria oficial integrada ao restante dos sistemas, com restrição total de exposição pública.",
+    challenges: [
+      "Garantir estabilidade e governança do canal sem documentação pública detalhada.",
+      "Integrar múltiplos consumidores da API sem conflito operacional.",
+    ],
+    solution: [
+      "Base própria de conexão e regras claras de consumo por produto interno.",
+      "Monitoramento e operação alinhados ao acordo de confidencialidade.",
+    ],
+    results: [
+      "WhatsApp corporativo previsível para atendimento e automação.",
+      "Zero vazamento de detalhes sensíveis no material comercial externo.",
     ],
   },
 ];
@@ -555,8 +584,16 @@ export function isMarketingProject(project: Project): boolean {
   return project.projectKind === "marketing";
 }
 
-export function isTextOnlyPortfolioProject(project: Project): boolean {
-  return project.projectKind === "consultoria" || project.projectKind === "topsecret";
+export function isConsultoriaProject(project: Project): boolean {
+  return project.projectKind === "consultoria";
+}
+
+export function isTopSecretProject(project: Project): boolean {
+  return project.projectKind === "topsecret";
+}
+
+export function isConfidentialProject(project: Project): boolean {
+  return project.confidential === true || project.projectKind === "topsecret";
 }
 
 export function getProjectKindLabel(project: Project): string {
