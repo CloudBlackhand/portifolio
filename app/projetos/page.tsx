@@ -32,7 +32,7 @@ export default function ProjetosPage() {
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas</h2>
         <p className="muted section-spacing-sm">
-          MS, Melhor Preço, CEPBOT, CL Tech Shop e Cálculo Jurídico — produtos
+          Disparador WhatsApp, Melhor Preço, CEPBOT, CL Tech Shop e Cálculo Jurídico — produtos
           digitais em uso ou publicados com link no ar.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
