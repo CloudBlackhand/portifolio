@@ -3,8 +3,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MarathonDetailShell } from "@/app/components/marathon/marathon-detail-shell";
-import { MarathonDetailThumb } from "@/app/components/marathon/marathon-detail-thumb";
+import { MarathonTopSecretDetail } from "@/app/components/marathon/marathon-top-secret-detail";
 import {
   getProjectBySlug,
   getProjectKindLabel,
@@ -68,6 +67,10 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       } as CSSProperties)
     : undefined;
 
+  if (topsecret) {
+    return <MarathonTopSecretDetail project={project} />;
+  }
+
   const thumbAlt =
     marketing
       ? `Peça principal — ${project.title}`
@@ -75,10 +78,10 @@ export default async function ProjetoDetalhePage({ params }: Params) {
         ? `Representação ilustrativa — ${project.title}`
         : `Captura principal do ${project.title}`;
 
-  const article = (
-    <article className={topsecret ? "page-shell marathon-detail" : "page-shell"}>
-      <Link className="button marathon-detail-back" href={topsecret ? "/classificados" : "/projetos"}>
-        {topsecret ? "← Voltar para classificados" : "Voltar para projetos"}
+  return (
+    <article className="page-shell">
+      <Link className="button" href="/projetos">
+        Voltar para projetos
       </Link>
 
       <p className="card-kind section-spacing-sm">
@@ -87,42 +90,30 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       <h1 className="page-title">{project.title}</h1>
       <p className="page-subtitle section-spacing">{project.shortDescription}</p>
 
-      {topsecret ? (
-        <MarathonDetailThumb
+      <div
+        className={
+          marketing ? "section-spacing detail-media detail-media--marketing" : "section-spacing"
+        }
+      >
+        <Image
           src={project.thumbnail}
           alt={thumbAlt}
           width={thumbW}
           height={thumbH}
-          className={detailMaxW ? "detail-image detail-image--native" : "detail-image"}
-          style={detailThumbStyle}
-          sizes="(max-width: 740px) 100vw, min(1100px, 100vw)"
-        />
-      ) : (
-        <div
           className={
-            marketing ? "section-spacing detail-media detail-media--marketing" : "section-spacing"
+            detailMaxW
+              ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
+              : "detail-image"
           }
-        >
-          <Image
-            src={project.thumbnail}
-            alt={thumbAlt}
-            width={thumbW}
-            height={thumbH}
-            className={
-              detailMaxW
-                ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
-                : "detail-image"
-            }
-            style={detailThumbStyle}
-            sizes={
-              marketing
-                ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
-                : "(max-width: 740px) 100vw, min(1100px, 100vw)"
-            }
-            priority
-          />
-        </div>
-      )}
+          style={detailThumbStyle}
+          sizes={
+            marketing
+              ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
+              : "(max-width: 740px) 100vw, min(1100px, 100vw)"
+          }
+          priority
+        />
+      </div>
 
       {project.gallery && project.gallery.length > 0 && !confidential ? (
         <section className="content-block section-spacing">
@@ -176,7 +167,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       <section className="content-block section-spacing">
         <h3>
-          {marketing || topsecret
+          {marketing
             ? "Sobre o trabalho"
             : consultoria
               ? "Sobre a consultoria"
@@ -186,35 +177,14 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       </section>
 
       {confidential ? (
-        <section
-          className={
-            topsecret
-              ? "content-block section-spacing marathon-privacy-tablet"
-              : "content-block section-spacing classified-privacy-block"
-          }
-        >
-          {topsecret ? (
-            <div className="marathon-tablet-bezel">
-              <div className="marathon-tablet-screen">
-                <h3>protocolo de sigilo</h3>
-                <p className="muted privacy-note">
-                  Por acordo com o cliente, não publicamos capturas, código,
-                  links ou dados sensíveis. Só contexto, solução e resultado —
-                  arquivo classificado, sem exposição operacional.
-                </p>
-              </div>
-            </div>
-          ) : (
-            <>
-              <h3>Privacidade e confidencialidade</h3>
-              <p className="muted privacy-note">
-                Por acordo com o cliente ou por natureza interna do produto, não
-                publicamos capturas de tela, código, links de acesso ou dados
-                sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
-                critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp.
-              </p>
-            </>
-          )}
+        <section className="content-block section-spacing classified-privacy-block">
+          <h3>Privacidade e confidencialidade</h3>
+          <p className="muted privacy-note">
+            Por acordo com o cliente ou por natureza interna do produto, não
+            publicamos capturas de tela, código, links de acesso ou dados
+            sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
+            critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp.
+          </p>
         </section>
       ) : null}
 
@@ -272,8 +242,6 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
     </article>
   );
-
-  return topsecret ? <MarathonDetailShell>{article}</MarathonDetailShell> : article;
 }
 
 export const dynamicParams = false;

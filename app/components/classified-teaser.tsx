@@ -4,11 +4,10 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
 import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
-import { MarathonTabletChrome } from "@/app/components/marathon/marathon-tablet-chrome";
 
 const TEASER_MESSAGES = [
   "sense-mem detectada · fora do catalogo aberto",
-  "2 dossiês em field active · clearance local",
+  "2 dossies em field active · clearance local",
 ];
 
 export function ClassifiedTeaser() {
@@ -19,26 +18,15 @@ export function ClassifiedTeaser() {
       <div className="marathon-teaser-bg" aria-hidden="true" />
       <div className="marathon-teaser-inner">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, x: -16 }}
-          whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-        >
-          <article className="marathon-tablet marathon-tablet--mini" aria-hidden="true">
-            <MarathonTabletChrome headerLeft="uesc" headerRight="teaser">
-              <MarathonLoadBar label="sense-mem" target={84} delay={0.2} duration={1.4} />
-            </MarathonTabletChrome>
-          </article>
-        </motion.div>
-        <motion.div
           className="marathon-teaser-copy"
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.1 }}
+          transition={{ duration: 0.55 }}
         >
           <p className="marathon-tablet-kicker">partition / restricted</p>
           <MarathonStatusTicker messages={TEASER_MESSAGES} intervalMs={3200} />
+          <MarathonLoadBar label="sense-mem" target={84} delay={0.2} duration={1.4} />
           <h2 id="classified-teaser-heading" className="marathon-teaser-title">
             Trabalhos que só abrem pelo tablet
           </h2>
