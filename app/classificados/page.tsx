@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ClassificadosPageBar } from "@/app/components/marathon/classificados-page-bar";
 import { TopSecretSection } from "@/app/components/top-secret-section";
 import { getTopSecretProjects } from "@/data/projects";
 
@@ -18,16 +18,7 @@ export default function ClassificadosPage() {
 
   return (
     <div className="marathon-world-page">
-      <div className="marathon-world-page-bar">
-        <div className="container marathon-world-page-bar-inner">
-          <Link className="marathon-world-back" href="/projetos">
-            ← Catálogo público
-          </Link>
-          <span className="marathon-world-route" aria-hidden="true">
-            tau ceti · warehouse node · tablet sync
-          </span>
-        </div>
-      </div>
+      <ClassificadosPageBar />
       <TopSecretSection projects={topSecretProjects} standalone />
     </div>
   );

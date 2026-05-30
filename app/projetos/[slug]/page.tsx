@@ -3,6 +3,8 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MarathonDetailShell } from "@/app/components/marathon/marathon-detail-shell";
+import { MarathonDetailThumb } from "@/app/components/marathon/marathon-detail-thumb";
 import {
   getProjectBySlug,
   getProjectKindLabel,
@@ -66,34 +68,18 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       } as CSSProperties)
     : undefined;
 
-  return (
-    <article className={topsecret ? "page-shell marathon-detail" : "page-shell"}>
-      <Link className="button" href={topsecret ? "/classificados" : "/projetos"}>
-        {topsecret ? "Voltar para classificados" : "Voltar para projetos"}
-      </Link>
+  const thumbAlt =
+    marketing
+      ? `Peça principal — ${project.title}`
+      : confidential
+        ? `Representação ilustrativa — ${project.title}`
+        : `Captura principal do ${project.title}`;
 
-      {topsecret ? (
-        <div className="marathon-detail-notice section-spacing-sm">
-          <div className="marathon-tablet-bezel">
-            <div className="marathon-tablet-screen">
-              <p className="marathon-tablet-kicker">sense-mem · dossiê sanitizado</p>
-              <div className="marathon-load">
-                <div className="marathon-load-label">
-                  <span>decrypt public record</span>
-                  <span className="marathon-load-pct">100%</span>
-                </div>
-                <div className="marathon-load-track">
-                  <span className="marathon-load-fill" style={{ width: "100%" }} />
-                </div>
-              </div>
-              <p className="marathon-tablet-lead">
-                Registro liberado só em nível descritivo. Identidade do cliente,
-                telas e arquitetura permanecem fora do catálogo aberto.
-              </p>
-            </div>
-          </div>
-        </div>
-      ) : null}
+  const article = (
+    <article className={topsecret ? "page-shell marathon-detail" : "page-shell"}>
+      <Link className="button marathon-detail-back" href={topsecret ? "/classificados" : "/projetos"}>
+        {topsecret ? "← Voltar para classificados" : "Voltar para projetos"}
+      </Link>
 
       <p className="card-kind section-spacing-sm">
         {getProjectKindLabel(project)}
@@ -101,36 +87,42 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       <h1 className="page-title">{project.title}</h1>
       <p className="page-subtitle section-spacing">{project.shortDescription}</p>
 
-      <div
-        className={
-          marketing ? "section-spacing detail-media detail-media--marketing" : "section-spacing"
-        }
-      >
-        <Image
+      {topsecret ? (
+        <MarathonDetailThumb
           src={project.thumbnail}
-          alt={
-            marketing
-              ? `Peça principal — ${project.title}`
-              : confidential
-                ? `Representação ilustrativa — ${project.title}`
-                : `Captura principal do ${project.title}`
-          }
+          alt={thumbAlt}
           width={thumbW}
           height={thumbH}
-          className={
-            detailMaxW
-              ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
-              : "detail-image"
-          }
+          className={detailMaxW ? "detail-image detail-image--native" : "detail-image"}
           style={detailThumbStyle}
-          sizes={
-            marketing
-              ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
-              : "(max-width: 740px) 100vw, min(1100px, 100vw)"
-          }
-          priority
+          sizes="(max-width: 740px) 100vw, min(1100px, 100vw)"
         />
-      </div>
+      ) : (
+        <div
+          className={
+            marketing ? "section-spacing detail-media detail-media--marketing" : "section-spacing"
+          }
+        >
+          <Image
+            src={project.thumbnail}
+            alt={thumbAlt}
+            width={thumbW}
+            height={thumbH}
+            className={
+              detailMaxW
+                ? `detail-image detail-image--native${marketing ? " detail-image--marketing" : ""}`
+                : "detail-image"
+            }
+            style={detailThumbStyle}
+            sizes={
+              marketing
+                ? `(max-width: 740px) 100vw, ${MARKETING_DETAIL_MAX_WIDTH_PX}px`
+                : "(max-width: 740px) 100vw, min(1100px, 100vw)"
+            }
+            priority
+          />
+        </div>
+      )}
 
       {project.gallery && project.gallery.length > 0 && !confidential ? (
         <section className="content-block section-spacing">
@@ -280,6 +272,8 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
     </article>
   );
+
+  return topsecret ? <MarathonDetailShell>{article}</MarathonDetailShell> : article;
 }
 
 export const dynamicParams = false;
