@@ -7,8 +7,10 @@ import {
   getProjectBySlug,
   getProjectKindLabel,
   getProjectLiveLinkLabel,
+  isConfidentialProject,
+  isConsultoriaProject,
   isMarketingProject,
-  isTextOnlyPortfolioProject,
+  isTopSecretProject,
   MARKETING_DETAIL_MAX_WIDTH_PX,
   projects,
 } from "@/data/projects";
@@ -49,7 +51,9 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   const hasLiveLink = Boolean(project.liveUrl);
   const marketing = isMarketingProject(project);
-  const textOnly = isTextOnlyPortfolioProject(project);
+  const consultoria = isConsultoriaProject(project);
+  const topsecret = isTopSecretProject(project);
+  const confidential = isConfidentialProject(project);
 
   const thumbW = project.thumbnailWidth ?? 1200;
   const thumbH = project.thumbnailHeight ?? 630;
@@ -84,8 +88,8 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           alt={
             marketing
               ? `Peça principal — ${project.title}`
-              : textOnly
-                ? `Ilustração representativa — ${project.title}`
+              : confidential
+                ? `Representação ilustrativa — ${project.title}`
                 : `Captura principal do ${project.title}`
           }
           width={thumbW}
@@ -105,7 +109,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
         />
       </div>
 
-      {project.gallery && project.gallery.length > 0 ? (
+      {project.gallery && project.gallery.length > 0 && !confidential ? (
         <section className="content-block section-spacing">
           <h3>{marketing ? "Outras peças" : "Outras telas"}</h3>
           <p className="muted privacy-note">
@@ -156,63 +160,44 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
 
       <section className="content-block section-spacing">
-        <h3>{marketing ? "Sobre o trabalho" : "Descrição detalhada"}</h3>
+        <h3>
+          {marketing || topsecret
+            ? "Sobre o trabalho"
+            : consultoria
+              ? "Sobre a consultoria"
+              : "Descrição detalhada do produto"}
+        </h3>
         <p className="muted">{project.detailedDescription}</p>
       </section>
 
-      {textOnly ? (
-        <>
-          <section className="content-block section-spacing">
-            <h3>Contexto</h3>
-            <p className="muted">{project.context}</p>
-          </section>
-          <section className="content-block section-spacing">
-            <h3>Desafios</h3>
-            <ul className="muted project-detail-list">
-              {project.challenges.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-          <section className="content-block section-spacing">
-            <h3>Solução</h3>
-            <ul className="muted project-detail-list">
-              {project.solution.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-          <section className="content-block section-spacing">
-            <h3>Resultados</h3>
-            <ul className="muted project-detail-list">
-              {project.results.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-          <section className="content-block">
-            <h3>
-              {project.projectKind === "consultoria"
-                ? "Próximo passo"
-                : "Confidencialidade"}
-            </h3>
-            <p className="muted">
-              {project.projectKind === "consultoria"
-                ? "Consultoria é contratada sob medida. Conte objetivo, prazo e restrições — respondemos pelo WhatsApp ou pela página de contato."
-                : "Detalhes de clientes, URLs, capturas e código não são publicados por acordo de confidencialidade. O perfil de entrega segue o mesmo padrão dos sistemas descritos neste portfólio."}
-            </p>
-            {project.projectKind === "consultoria" ? (
-              <div className="section-spacing link-row">
-                <Link className="button primary" href="/contato">
-                  Ir para contato
-                </Link>
-              </div>
-            ) : null}
-          </section>
-        </>
+      {confidential ? (
+        <section className="content-block section-spacing">
+          <h3>Privacidade e confidencialidade</h3>
+          <p className="muted privacy-note">
+            Por acordo com o cliente ou por natureza interna do produto, não
+            publicamos capturas de tela, código, links de acesso ou dados
+            sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
+            critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp.
+          </p>
+        </section>
       ) : null}
 
-      {!marketing && !textOnly ? (
+      {consultoria ? (
+        <section className="content-block">
+          <h3>Quer algo parecido?</h3>
+          <p className="muted">
+            Conte seu cenário, prazo e restrições — alinhamos consultoria ou
+            implementação conforme a necessidade.
+          </p>
+          <div className="link-row">
+            <Link className="button primary" href="/contato">
+              Falar sobre consultoria
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
+      {!marketing && !consultoria && !confidential ? (
         <section className="content-block">
           <h3>Experimente</h3>
           {!hasLiveLink ? (
@@ -231,6 +216,22 @@ export default async function ProjetoDetalhePage({ params }: Params) {
               </a>
             </div>
           )}
+        </section>
+      ) : null}
+
+      {!marketing && !consultoria && confidential && hasLiveLink ? (
+        <section className="content-block">
+          <h3>Experimente</h3>
+          <div className="link-row">
+            <a
+              className="button primary"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {getProjectLiveLinkLabel(project)}
+            </a>
+          </div>
         </section>
       ) : null}
     </article>

@@ -5,7 +5,7 @@ import { getProjectsByKind } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
   description:
-    "Sistemas em produção, landing pages, consultoria e trabalhos confidenciais da Cloud Service.",
+    "Sistemas em produção, landing pages e trabalhos de marketing e criativo da Cloud Service.",
 };
 
 export default function ProjetosPage() {
@@ -24,7 +24,7 @@ export default function ProjetosPage() {
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
         Sistemas, landing pages, consultoria e trabalhos confidenciais — foco em
-        resultado com linguagem clara e sem expor o que não pode ser público.
+        resultado e linguagem clara, sem expor o que o cliente precisa proteger.
       </p>
 
       <section className="section-spacing">
@@ -48,17 +48,17 @@ export default function ProjetosPage() {
       <section id="consultoria" className="section-spacing">
         <h2 className="section-heading">Consultoria</h2>
         <p className="muted section-spacing-sm">
-          Diagnóstico, arquitetura e direção técnica antes de implementar — sem
-          link público, com descrição completa do tipo de entrega.
+          Diagnóstico, arquitetura e acompanhamento para digitalizar processos
+          antes e durante a implementação.
         </p>
         <ProjectCardGrid projects={consultoriaProjects} />
       </section>
 
       <section id="top-secret" className="section-spacing">
-        <h2 className="section-heading">Trabalhos Top Secret</h2>
+        <h2 className="section-heading">Top Secret</h2>
         <p className="muted section-spacing-sm">
-          Sistemas em produção sob confidencialidade: mostramos o padrão de
-          trabalho, não cliente, URL nem capturas.
+          Trabalhos em produção sob sigilo — só contexto, solução e resultado,
+          sem telas, links ou dados sensíveis.
         </p>
         <ProjectCardGrid projects={topSecretProjects} />
       </section>
