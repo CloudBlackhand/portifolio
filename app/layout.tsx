@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cloud Service",
+  title: "Cloud Service | Desenvolvimento web e automação",
   description:
-    "Projetos digitais em produção com foco em resultado, clareza e conforto para o cliente.",
+    "Portfólio profissional: sistemas em produção, WhatsApp, integrações e consultoria. Disponível para projetos e freelas.",
 };
 
 export default function RootLayout({
@@ -33,10 +33,18 @@ export default function RootLayout({
             <Link className="logo" href="/">
               Cloud Service
             </Link>
-            <nav className="nav" aria-label="Navegação principal">
+            <nav className="nav nav-with-cta" aria-label="Navegação principal">
               <Link href="/">Início</Link>
               <Link href="/projetos">Projetos</Link>
               <Link href="/contato">Contato</Link>
+              <a
+                className="nav-cta"
+                href="https://wa.me/5521971364919?text=Ola%2C%20vi%20seu%20portfolio%20e%20quero%20contratar."
+                target="_blank"
+                rel="noreferrer"
+              >
+                Contratar
+              </a>
             </nav>
           </div>
         </header>
@@ -55,7 +63,8 @@ export default function RootLayout({
             <div className="footer-brand">
               <strong>Cloud Service</strong>
               <p className="footer-tagline">
-                Sistemas em produção com foco em resultado e clareza.
+                Desenvolvimento web, automação WhatsApp e consultoria — disponível
+                para projetos.
               </p>
             </div>
             <nav className="footer-nav" aria-label="Rodapé">
