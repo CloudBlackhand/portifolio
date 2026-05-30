@@ -1,10 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import type { MarathonActivationConfig } from "@/app/components/marathon/marathon-tablet-activation";
-import { MarathonTabletActivation } from "@/app/components/marathon/marathon-tablet-activation";
+import { useEffect, useState, type ReactNode } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MarathonRegMarks } from "@/app/components/marathon/marathon-tablet-chrome";
+import { MarathonTabletBoot } from "@/app/components/marathon/marathon-tablet-boot";
 
 const IMMERSIVE_BODY_CLASS = "marathon-immersive-mode";
 
@@ -14,7 +13,11 @@ type MarathonSessionProps = {
   children: ReactNode;
   fillViewport?: boolean;
   showBarcode?: boolean;
-  activation?: MarathonActivationConfig;
+  bootSequence?: boolean;
+  bootLabel?: string;
+  bootSublabel?: string;
+  bootTarget?: number;
+  bootDuration?: number;
 };
 
 export function MarathonSession({
@@ -23,21 +26,15 @@ export function MarathonSession({
   children,
   fillViewport = false,
   showBarcode = true,
-  activation,
+  bootSequence,
+  bootLabel = "sense-mem sync",
+  bootSublabel = "abstract render · field record",
+  bootTarget = 100,
+  bootDuration = 2.4,
 }: MarathonSessionProps) {
   const reduceMotion = useReducedMotion();
-  const skipActivation = !activation || reduceMotion;
-  const [contentReady, setContentReady] = useState(skipActivation);
-
-  const handleActivationComplete = useCallback(() => {
-    setContentReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (skipActivation) {
-      setContentReady(true);
-    }
-  }, [skipActivation]);
+  const shouldBoot = bootSequence ?? fillViewport;
+  const [bootComplete, setBootComplete] = useState(!shouldBoot || Boolean(reduceMotion));
 
   useEffect(() => {
     if (!fillViewport) return undefined;
@@ -47,6 +44,12 @@ export function MarathonSession({
       document.body.classList.remove(IMMERSIVE_BODY_CLASS);
     };
   }, [fillViewport]);
+
+  useEffect(() => {
+    if (!shouldBoot || reduceMotion) {
+      setBootComplete(true);
+    }
+  }, [reduceMotion, shouldBoot]);
 
   return (
     <div
@@ -77,31 +80,30 @@ export function MarathonSession({
             </div>
             <div className="marathon-session-screen">
               <span className="marathon-screen-boot" aria-hidden="true" />
-              <div
-                className={`marathon-session-scroll${
-                  contentReady ? "" : " marathon-session-scroll--booting"
-                }`}
-              >
-                {activation && !contentReady ? (
-                  <MarathonTabletActivation
-                    config={activation}
-                    onComplete={handleActivationComplete}
+              <AnimatePresence mode="wait">
+                {shouldBoot && !bootComplete ? (
+                  <MarathonTabletBoot
+                    key="tablet-boot"
+                    label={bootLabel}
+                    sublabel={bootSublabel}
+                    target={bootTarget}
+                    duration={bootDuration}
+                    onComplete={() => setBootComplete(true)}
                   />
                 ) : null}
-                <motion.div
-                  className="marathon-session-content"
-                  initial={false}
-                  animate={
-                    contentReady
-                      ? { opacity: 1, y: 0 }
-                      : { opacity: 0, y: 10 }
-                  }
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  aria-hidden={!contentReady}
-                >
-                  {children}
-                </motion.div>
-              </div>
+              </AnimatePresence>
+              <motion.div
+                className="marathon-session-scroll"
+                initial={false}
+                animate={
+                  bootComplete
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 10 }
+                }
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {children}
+              </motion.div>
               {showBarcode ? <span className="marathon-barcode" aria-hidden="true" /> : null}
             </div>
           </div>
