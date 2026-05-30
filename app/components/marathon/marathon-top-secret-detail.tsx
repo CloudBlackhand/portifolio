@@ -4,26 +4,34 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { getProjectKindLabel } from "@/data/projects";
+import {
+  CLOUD_BOOT_HEAD,
+  getDossierBootLines,
+  getDossierBootTarget,
+} from "@/app/components/marathon/marathon-boot-lines";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
-import { MARATHON_DOSSIER_BOOT_LINES } from "@/app/components/marathon/marathon-tablet-boot";
 
 type MarathonTopSecretDetailProps = {
   project: Project;
 };
 
 export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProps) {
+  const bootLines = getDossierBootLines(project);
+  const bootTarget = getDossierBootTarget(project.slug);
+
   return (
     <MarathonSession
       fillViewport
-      headerLeft="UESC · sense-mem"
+      headerLeft="Cloud · sense-mem"
       headerRight="dossier / sanitized"
-      bootLines={MARATHON_DOSSIER_BOOT_LINES}
-      bootTarget={100}
+      bootLines={bootLines}
+      bootHead={CLOUD_BOOT_HEAD}
+      bootTarget={bootTarget}
       bootDuration={2.6}
     >
       <div className="marathon-session-toolbar">
         <Link className="marathon-session-back" href="/classificados">
-          ← partition classificados
+          ← voltar classificados
         </Link>
         <span className="marathon-session-badge">{getProjectKindLabel(project)}</span>
       </div>
