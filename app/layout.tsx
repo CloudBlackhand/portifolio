@@ -37,6 +37,9 @@ export default function RootLayout({
             <nav className="nav nav-with-cta" aria-label="Navegação principal">
               <Link href="/">Início</Link>
               <Link href="/projetos">Projetos</Link>
+              <Link className="nav-classified" href="/projetos#top-secret">
+                Classificados
+              </Link>
               <Link href="/contato">Contato</Link>
               <Link className="nav-cta" href="/contato">
                 Contratar
@@ -65,6 +68,9 @@ export default function RootLayout({
             <nav className="footer-nav" aria-label="Rodapé">
               <Link href="/">Início</Link>
               <Link href="/projetos">Projetos</Link>
+              <Link className="nav-classified nav-classified--footer" href="/projetos#top-secret">
+                Classificados
+              </Link>
               <Link href="/contato">Contato</Link>
             </nav>
             <p className="footer-note">
