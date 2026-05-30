@@ -32,18 +32,18 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
     <MarathonSession
       fillViewport={standalone}
       bootSequence={standalone}
-      headerLeft="Cloud · classificados"
-      headerRight="vault / restricted"
+      headerLeft="Cloud · sob sigilo"
+      headerRight="acesso restrito"
       bootLines={getVaultBootLines(projects.length)}
       bootHead={CLOUD_BOOT_HEAD}
       bootTarget={67}
       bootDuration={2.4}
     >
       <div className="marathon-session-toolbar">
-        <Link className="marathon-session-back" href="/projetos">
-          ← catálogo público
+        <Link className="marathon-session-back" href="/projetos#sob-sigilo">
+          ← voltar aos projetos
         </Link>
-        <span className="marathon-session-badge">vault index</span>
+        <span className="marathon-session-badge">arquivo confidencial</span>
       </div>
 
       <header className="marathon-session-head">

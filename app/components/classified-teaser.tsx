@@ -6,7 +6,7 @@ import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
 import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
 
 const TEASER_STATUS =
-  "cloud classificados · 2 dossies em sigilo · fora do catalogo aberto";
+  "cloud service · 2 dossies em sigilo · fora do catalogo aberto";
 
 export function ClassifiedTeaser() {
   const reduceMotion = useReducedMotion();
@@ -22,7 +22,7 @@ export function ClassifiedTeaser() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="marathon-tablet-kicker">cloud service · classificados</p>
+          <p className="marathon-tablet-kicker">cloud service · sob sigilo</p>
           <MarathonStatusTicker messages={[TEASER_STATUS]} />
           <MarathonLoadBar label="cloud vault" target={84} delay={0.2} duration={1.4} />
           <h2 id="classified-teaser-heading" className="marathon-teaser-title">
@@ -33,8 +33,8 @@ export function ClassifiedTeaser() {
             clientes — sob acordo de sigilo. Você vê contexto, entrega e resultado;
             telas, credenciais e operação ficam protegidas.
           </p>
-          <Link className="marathon-teaser-link" href="/classificados">
-            entrar nos classificados →
+          <Link className="marathon-teaser-link" href="/projetos#sob-sigilo">
+            ver em projetos →
           </Link>
         </motion.div>
       </div>

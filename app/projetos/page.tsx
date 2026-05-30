@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
+import { ProjetosSigiloGate } from "@/app/components/projetos-sigilo-gate";
 import { getCatalogProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -24,9 +24,10 @@ export default function ProjetosPage() {
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
         Sistemas, landing pages, consultoria e marketing — catálogo aberto com
-        foco em resultado e linguagem clara. Trabalhos sob sigilo ficam em{" "}
-        <Link href="/classificados">Classificados</Link>.
+        foco em resultado e linguagem clara.
       </p>
+
+      <ProjetosSigiloGate />
 
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas</h2>

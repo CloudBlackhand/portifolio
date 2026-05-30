@@ -60,7 +60,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
     >
       <div className="marathon-session-toolbar">
         <Link className="marathon-session-back" href="/classificados">
-          ← voltar classificados
+          ← voltar ao arquivo
         </Link>
         <span className="marathon-session-badge">{getProjectKindLabel(project)}</span>
       </div>

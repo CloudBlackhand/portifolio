@@ -53,6 +53,90 @@
   padding: 0.25rem 0.6rem;
 }
 
+/* —— Porta de entrada em /projetos —— */
+.projetos-sigilo-gate {
+  scroll-margin-top: 5.5rem;
+  margin-block: 1.75rem 2.5rem;
+  padding: clamp(1.35rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 1.65rem);
+  border-radius: 1rem;
+  background:
+    linear-gradient(145deg, rgb(26 31 40 / 96%) 0%, rgb(18 22 29 / 98%) 100%);
+  border: 1px solid rgb(255 255 255 / 8%);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 4%) inset,
+    0 16px 40px -28px rgb(0 0 0 / 65%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projetos-sigilo-gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 0% 0%, rgb(45 212 191 / 12%) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgb(255 107 157 / 10%) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.projetos-sigilo-gate-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 62ch;
+}
+
+.projetos-sigilo-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(45 212 191 / 75%);
+  margin-bottom: 0.45rem;
+}
+
+.projetos-sigilo-title {
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tablet-cream);
+  margin-bottom: 0.55rem;
+}
+
+.projetos-sigilo-lead {
+  color: rgb(246 242 236 / 68%);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+}
+
+.projetos-sigilo-meta {
+  font-size: 0.82rem;
+  color: rgb(246 242 236 / 45%);
+  margin-bottom: 1rem;
+}
+
+.projetos-sigilo-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--tablet-ink);
+  background: var(--tablet-cyan);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid rgb(0 0 0 / 8%);
+  box-shadow: 0 4px 14px -6px rgb(45 212 191 / 45%);
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.projetos-sigilo-link:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  color: var(--tablet-ink);
+}
+
 /* —— Teaser home —— */
 .marathon-teaser {
   margin-inline: calc(50% - 50vw);
