@@ -29,8 +29,20 @@ export function SiteHeaderNav() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const mq = window.matchMedia("(max-width: 1024px)");
+    const onChange = () => {
+      if (!mq.matches) setOpen(false);
+    };
+
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, [open]);
+
   return (
-    <>
+    <div className="header-nav-group">
       <button
         type="button"
         className="nav-toggle"
@@ -67,6 +79,6 @@ export function SiteHeaderNav() {
           onClick={() => setOpen(false)}
         />
       ) : null}
-    </>
+    </div>
   );
 }
