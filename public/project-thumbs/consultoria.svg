@@ -1,27 +1,36 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#0f121a"/>
   <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
-  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, sans-serif">CONSULTORIA</text>
-  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, sans-serif">Diagnóstico, arquitetura e operação</text>
-  <rect x="88" y="160" width="420" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
-  <text x="118" y="200" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Contexto</text>
-  <rect x="118" y="220" width="360" height="12" rx="4" fill="#2a2e39"/>
-  <rect x="118" y="242" width="300" height="12" rx="4" fill="#2a2e39"/>
-  <rect x="118" y="264" width="330" height="12" rx="4" fill="#2a2e39"/>
-  <text x="118" y="310" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Solução</text>
-  <rect x="118" y="330" width="340" height="12" rx="4" fill="#3d4659"/>
-  <rect x="118" y="352" width="280" height="12" rx="4" fill="#3d4659"/>
-  <text x="118" y="398" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Resultado</text>
-  <rect x="118" y="418" width="320" height="12" rx="4" fill="#4b8dff"/>
-  <rect x="118" y="440" width="260" height="12" rx="4" fill="#4b8dff"/>
-  <rect x="548" y="160" width="570" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
-  <circle cx="620" cy="240" r="36" fill="#1e2430" stroke="#7aa2ff" stroke-width="2"/>
-  <rect x="690" y="210" width="360" height="16" rx="6" fill="#2a2e39"/>
-  <rect x="690" y="238" width="280" height="12" rx="4" fill="#242936"/>
-  <circle cx="620" cy="340" r="36" fill="#1e2430" stroke="#25d366" stroke-width="2"/>
-  <rect x="690" y="310" width="340" height="16" rx="6" fill="#2a2e39"/>
-  <rect x="690" y="338" width="300" height="12" rx="4" fill="#242936"/>
-  <circle cx="620" cy="440" r="36" fill="#1e2430" stroke="#f59e0b" stroke-width="2"/>
-  <rect x="690" y="410" width="320" height="16" rx="6" fill="#2a2e39"/>
-  <rect x="690" y="438" width="250" height="12" rx="4" fill="#242936"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">CONSULTORIA</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Diagnostico, arquitetura e operacao</text>
+  <rect x="88" y="160" width="400" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="200" fill="#7aa2ff" font-size="13" font-weight="bold" font-family="Arial, Helvetica, sans-serif">1. Contexto</text>
+  <rect x="112" y="218" width="340" height="12" rx="4" fill="#2a2e39"/>
+  <rect x="112" y="240" width="280" height="12" rx="4" fill="#2a2e39"/>
+  <rect x="112" y="262" width="300" height="12" rx="4" fill="#242936"/>
+  <text x="112" y="310" fill="#7aa2ff" font-size="13" font-weight="bold" font-family="Arial, Helvetica, sans-serif">2. Solucao</text>
+  <rect x="112" y="328" width="320" height="12" rx="4" fill="#3d4659"/>
+  <rect x="112" y="350" width="260" height="12" rx="4" fill="#3d4659"/>
+  <rect x="112" y="372" width="290" height="12" rx="4" fill="#2a3140"/>
+  <text x="112" y="420" fill="#7aa2ff" font-size="13" font-weight="bold" font-family="Arial, Helvetica, sans-serif">3. Resultado</text>
+  <rect x="112" y="438" width="300" height="12" rx="4" fill="#4b8dff"/>
+  <rect x="112" y="460" width="240" height="12" rx="4" fill="#4b8dff"/>
+  <rect x="112" y="482" width="180" height="28" rx="10" fill="#4b8dff"/>
+  <text x="148" y="502" fill="#0a0e18" font-size="13" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Plano de acao</text>
+  <rect x="520" y="160" width="620" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="544" y="195" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Roadmap de evolucao</text>
+  <rect x="544" y="220" width="572" height="64" rx="12" fill="#1e2430" stroke="#7aa2ff" stroke-width="2"/>
+  <circle cx="576" cy="252" r="18" fill="#4b8dff"/>
+  <text x="606" y="248" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Mapear processo atual</text>
+  <text x="606" y="268" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Entrevistas e fluxo real do time</text>
+  <rect x="544" y="300" width="572" height="64" rx="12" fill="#1a1f2a" stroke="#25d366" stroke-width="1"/>
+  <circle cx="576" cy="332" r="18" fill="#25d366"/>
+  <text x="606" y="328" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Definir arquitetura</text>
+  <text x="606" y="348" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Stack, integracoes e prioridades</text>
+  <rect x="544" y="380" width="572" height="64" rx="12" fill="#1a1f2a" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="576" cy="412" r="18" fill="#f59e0b"/>
+  <text x="606" y="408" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Acompanhar entrega</text>
+  <text x="606" y="428" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Clareza para decisores e operacao</text>
+  <line x1="576" y1="284" x2="576" y2="300" stroke="#4b8dff" stroke-width="2"/>
+  <line x1="576" y1="364" x2="576" y2="380" stroke="#25d366" stroke-width="2"/>
 </svg>

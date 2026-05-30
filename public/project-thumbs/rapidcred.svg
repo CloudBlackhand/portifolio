@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">RAPIDCRED</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Credito facil e rapido  landing page</text>
+  <rect x="88" y="160" width="520" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="210" fill="#e8ebf3" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Credito sem burocracia</text>
+  <rect x="112" y="230" width="360" height="14" rx="4" fill="#3d4659"/>
+  <rect x="112" y="254" width="300" height="14" rx="4" fill="#2a2e39"/>
+  <rect x="112" y="300" width="200" height="48" rx="12" fill="#25d366"/>
+  <text x="148" y="330" fill="#0a0e18" font-size="16" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Simular agora</text>
+  <rect x="112" y="370" width="160" height="36" rx="8" fill="#1e2430" stroke="#7aa2ff" stroke-width="1"/>
+  <text x="136" y="393" fill="#7aa2ff" font-size="13" font-family="Arial, Helvetica, sans-serif">Fale conosco</text>
+  <rect x="640" y="160" width="472" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="664" y="200" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Simulacao rapida</text>
+  <rect x="664" y="220" width="424" height="48" rx="10" fill="#151922"/>
+  <text x="684" y="250" fill="#94a3b8" font-size="14" font-family="Arial, Helvetica, sans-serif">Valor desejado: R$ 5.000</text>
+  <rect x="664" y="286" width="424" height="48" rx="10" fill="#151922"/>
+  <text x="684" y="316" fill="#94a3b8" font-size="14" font-family="Arial, Helvetica, sans-serif">Parcelas: 12x</text>
+  <rect x="664" y="360" width="424" height="120" rx="12" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="684" y="400" fill="#25d366" font-size="13" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Aprovacao em minutos</text>
+  <text x="684" y="430" fill="#b2b8c7" font-size="24" font-weight="bold" font-family="Arial, Helvetica, sans-serif">R$ 489 / mes</text>
+</svg>
