@@ -21,8 +21,8 @@ export function ProjetosSigiloGate() {
           Projetos sob sigilo
         </h2>
         <p className="projetos-sigilo-lead">
-          Vendas Hub, infraestrutura WhatsApp HTTPS e outros sistemas com código em
-          repositório privado. Você vê contexto, entrega e resultado — telas,
+          CRM comercial, multiempresa e infra WhatsApp em produção — repositórios
+          privados no GitHub. Você vê contexto, entrega e resultado — telas,
           credenciais e operação ficam protegidas por acordo.
         </p>
         <p className="projetos-sigilo-meta">
