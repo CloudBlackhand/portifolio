@@ -10,15 +10,14 @@ export default function ContatoPage() {
     <section className="page-shell">
       <h1 className="page-title">Contato</h1>
       <p className="page-subtitle">
-        Disponível para freela, contratos e vagas remotas. Canal direto para
-        alinhar escopo, prazo e proposta.
+        Este espaço prioriza comunicação profissional com privacidade e resposta
+        rápida para alinhamento de projetos.
       </p>
 
       <div className="content-block section-spacing">
-        <h3>Contratar / proposta</h3>
+        <h3>Canal recomendado</h3>
         <p className="muted">
-          WhatsApp: <strong>(21) 97136-4919</strong> — resposta em até 24h em dias
-          úteis.
+          WhatsApp: <strong>(21) 97136-4919</strong>
         </p>
         <div className="section-spacing">
           <a

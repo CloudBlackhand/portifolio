@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { MarathonFx, MarathonTicker } from "./components/marathon/MarathonFx";
 import "./globals.css";
 import "./globals-ep.css";
-import "./globals-marathon.css";
+import "./globals-classified.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,18 +13,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const marathonDisplay = Barlow_Condensed({
-  variable: "--font-marathon-display",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-});
-
-const marathonMono = IBM_Plex_Mono({
-  variable: "--font-marathon-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -40,38 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${marathonDisplay.variable} ${marathonMono.variable}`}
-    >
-      <body className="marathon-ui">
-        <MarathonFx />
-        <div className="marathon-grid" aria-hidden="true" />
-        <div className="marathon-scanlines" aria-hidden="true" />
+    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <header className="site-header">
           <div className="container header-content">
-            <div className="marathon-header-stack">
-              <div className="marathon-status-bar" aria-hidden="true">
-                <span>SYS // PORTFOLIO ONLINE</span>
-                <span className="marathon-status-pulse">LINK // ACTIVE</span>
-              </div>
-              <div className="marathon-header-row">
-                <Link className="logo marathon-logo" href="/">
-                  <span className="marathon-logo-mark" aria-hidden="true">
-                    ▸
-                  </span>
-                  Cloud Service
-                </Link>
-                <nav className="nav marathon-nav" aria-label="Navegação principal">
-                  <Link href="/">Início</Link>
-                  <Link href="/projetos">Projetos</Link>
-                  <Link href="/contato">Contato</Link>
-                </nav>
-              </div>
-            </div>
+            <Link className="logo" href="/">
+              Cloud Service
+            </Link>
+            <nav className="nav nav-with-cta" aria-label="Navegação principal">
+              <Link href="/">Início</Link>
+              <Link href="/projetos">Projetos</Link>
+              <Link href="/contato">Contato</Link>
+              <Link className="nav-cta" href="/contato">
+                Contratar
+              </Link>
+            </nav>
           </div>
         </header>
-        <MarathonTicker />
         <main className="site-main">{children}</main>
         <a
           className="whatsapp-float"

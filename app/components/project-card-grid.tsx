@@ -3,7 +3,9 @@ import Link from "next/link";
 import {
   getProjectLiveLinkLabel,
   getProjectKindLabel,
+  isConfidentialProject,
   isMarketingProject,
+  isTopSecretProject,
   type Project,
 } from "@/data/projects";
 
@@ -23,6 +25,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
               )
             : 630;
         const marketing = isMarketingProject(project);
+        const confidential = isConfidentialProject(project) && !isTopSecretProject(project);
 
         return (
           <article className="card interactive-card" key={project.slug}>
@@ -36,8 +39,12 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
               }
             />
             <div className="card-body">
-              <p className="card-kind">
-                {getProjectKindLabel(project)}
+              <p
+                className={
+                  confidential ? "card-kind card-kind--confidential" : "card-kind"
+                }
+              >
+                {confidential ? "Sigilo comercial" : getProjectKindLabel(project)}
                 {project.marketingHighlight ? " · Destaque" : ""}
               </p>
               <h2>{project.title}</h2>

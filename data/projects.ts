@@ -648,3 +648,12 @@ export function getProjectLiveLinkLabel(project: Project): string {
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }
+
+/** Projetos visíveis em listagens gerais (tabela, catálogo público) — sem Top Secret. */
+export function getCatalogProjects(list: Project[] = projects): Project[] {
+  return list.filter((project) => !isTopSecretProject(project));
+}
+
+export function getTopSecretProjects(): Project[] {
+  return getProjectsByKind("topsecret");
+}
