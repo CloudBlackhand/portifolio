@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { getProjectKindLabel } from "@/data/projects";
@@ -10,6 +9,7 @@ import {
   getDossierBootTarget,
 } from "@/app/components/marathon/marathon-boot-lines";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
+import { MarathonThumb } from "@/app/components/marathon/marathon-thumb";
 
 type MarathonTopSecretDetailProps = {
   project: Project;
@@ -81,13 +81,10 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
 
       <figure className="marathon-session-preview">
         <div className="marathon-session-preview-frame">
-          <Image
+          <MarathonThumb
             src={project.thumbnail}
             alt={`Representação ilustrativa — ${project.title}`}
-            width={1200}
-            height={630}
             className="marathon-session-preview-img"
-            priority
           />
         </div>
         <figcaption className="marathon-session-preview-caption">

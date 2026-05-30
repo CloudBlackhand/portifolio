@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
+import { MarathonThumb } from "@/app/components/marathon/marathon-thumb";
 import {
   CLOUD_BOOT_HEAD,
   getVaultBootLines,
@@ -88,11 +88,9 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
                 <span className="marathon-dossier-row-cta">iniciar leitura →</span>
               </div>
               <div className="marathon-dossier-row-preview" aria-hidden="true">
-                <Image
+                <MarathonThumb
                   src={project.thumbnail}
                   alt=""
-                  width={480}
-                  height={252}
                   className="marathon-dossier-row-img"
                 />
               </div>
