@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ClassificadosPageBar } from "@/app/components/marathon/classificados-page-bar";
 import { TopSecretSection } from "@/app/components/top-secret-section";
 import { getTopSecretProjects } from "@/data/projects";
 
@@ -16,10 +15,5 @@ export const metadata: Metadata = {
 export default function ClassificadosPage() {
   const topSecretProjects = getTopSecretProjects();
 
-  return (
-    <div className="marathon-world-page">
-      <ClassificadosPageBar />
-      <TopSecretSection projects={topSecretProjects} standalone />
-    </div>
-  );
+  return <TopSecretSection projects={topSecretProjects} standalone />;
 }
