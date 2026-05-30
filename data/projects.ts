@@ -42,68 +42,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "vendas-hub",
-    projectKind: "software",
-    title: "Vendas Hub",
-    shortDescription:
-      "Sistema completo de cadastro e gestão de vendas: oportunidades, equipe e acompanhamento do funil em um só lugar.",
-    detailedDescription:
-      "O Vendas Hub é o ponto central da operação comercial: cadastro de clientes e negócios, registro de etapas do funil, responsáveis e histórico do que foi feito em cada oportunidade. Foi pensado como um sistema de vendas de verdade — não só uma listagem, mas regras de preenchimento, visão por vendedor ou time e leitura rápida do que precisa de atenção. Tudo isso em produção, com interface voltada a quem vive de meta e follow-up diário.",
-    thumbnail: "/project-thumbs/vendas-hub.svg",
-    category: "Gestão e cadastro de vendas",
-    year: 2026,
-    impactLabel: "Funil e cadastro integrados",
-    featured: true,
-    confidential: true,
-    stack: ["Web app", "Dashboard", "API"],
-    context:
-      "A operação precisava sair de planilhas e grupos soltos para um cadastro de vendas único, com rastreio de etapas e donos claros por oportunidade.",
-    challenges: [
-      "Modelar cadastro e funil sem travar o time no dia a dia.",
-      "Fazer a equipe enxergar prioridade: o que fechar, o que esquentar, o que documentar.",
-    ],
-    solution: [
-      "Estrutura de oportunidades com etapas, campos e visões alinhadas ao processo real de vendas.",
-      "Dashboards e listas que destacam o que está atrasado ou sem próximo passo definido.",
-    ],
-    results: [
-      "Um só lugar para cadastro, histórico e acompanhamento de vendas.",
-      "Menos perda de informação entre pessoas e canais.",
-    ],
-    liveUrl: "",
-  },
-  {
-    slug: "sistema-https-whatsapp",
-    projectKind: "software",
-    title: "Sistema HTTPS WhatsApp",
-    shortDescription:
-      "WhatsApp personalizado em ambiente próprio: conecte um número da empresa e integre bots, disparadores e outros sistemas com segurança.",
-    detailedDescription:
-      "Este sistema permite usar um número de WhatsApp da empresa de forma controlada e personalizada. Você faz o login do número (como no app) e passa a ter um canal seguro via HTTPS para conectar outras soluções: bots de atendimento, disparo de mensagens, alertas, cadastros e qualquer fluxo que precise falar com o cliente no WhatsApp. A ideia é ter uma base única e confiável, sem depender de ferramentas fechadas de terceiros, e permitir que cada produto do ecossistema use o mesmo número oficial com regras claras, monitoramento e estabilidade para operação do dia a dia.",
-    thumbnail: "/project-thumbs/sistema-https-whatsapp.svg",
-    category: "WhatsApp personalizado",
-    year: 2025,
-    impactLabel: "Número oficial integrado",
-    featured: true,
-    confidential: true,
-    stack: ["Conexão por número", "HTTPS", "Integração multi-sistema"],
-    context:
-      "A operação precisava de um WhatsApp próprio, com número dedicado, para alimentar bots e sistemas de envio sem gambiarra ou dependência externa frágil.",
-    challenges: [
-      "Manter o número conectado e estável durante o uso contínuo.",
-      "Permitir que vários sistemas usem o mesmo canal sem conflito ou perda de mensagens.",
-    ],
-    solution: [
-      "Infraestrutura própria com acesso HTTPS para integrar bots, disparadores e demais módulos.",
-      "Sessão do WhatsApp vinculada ao número da empresa, pronta para consumo por outros produtos.",
-    ],
-    results: [
-      "Um único ponto de conexão WhatsApp para todo o ecossistema de atendimento e envio.",
-      "Mais previsibilidade para escalar automação sem trocar de número ou de ferramenta a cada projeto.",
-    ],
-    liveUrl: "",
-  },
-  {
     slug: "msg-sys",
     projectKind: "software",
     title: "MS",
@@ -622,17 +560,20 @@ export function getProjectsByKind(kind: ProjectKind): Project[] {
 }
 
 export function getFeaturedSoftwareProjects(): Project[] {
-  return projects.filter(
+  return getCatalogProjects().filter(
     (project) => project.featured && project.projectKind === "software",
   );
 }
 
 /** Hero e faixa de favoritos: landing pages primeiro, depois sistemas em destaque. */
 export function getShowcaseProjects(list: Project[] = projects): Project[] {
-  const landings = list.filter(
+  const publicList = list.filter(
+    (project) => !isTopSecretProject(project) && !isConfidentialProject(project),
+  );
+  const landings = publicList.filter(
     (project) => project.featured && project.projectKind === "landing",
   );
-  const software = list.filter(
+  const software = publicList.filter(
     (project) => project.featured && project.projectKind === "software",
   );
   return [...landings, ...software];
@@ -655,9 +596,15 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }
 
-/** Projetos visíveis em listagens gerais (tabela, catálogo público) — sem Top Secret. */
+/** Projetos visíveis em listagens gerais (tabela, catálogo público) — sem sigilo. */
 export function getCatalogProjects(list: Project[] = projects): Project[] {
-  return list.filter((project) => !isTopSecretProject(project));
+  return list.filter(
+    (project) => !isTopSecretProject(project) && !isConfidentialProject(project),
+  );
+}
+
+export function getCatalogProjectsByKind(kind: ProjectKind): Project[] {
+  return getCatalogProjects().filter((project) => project.projectKind === kind);
 }
 
 export function getTopSecretProjects(): Project[] {

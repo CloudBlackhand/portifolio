@@ -183,7 +183,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
             Por acordo com o cliente ou por natureza interna do produto, não
             publicamos capturas de tela, código, links de acesso ou dados
             sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
-            critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp.
+            critério usado nos dossiês em Classificados.
           </p>
         </section>
       ) : null}

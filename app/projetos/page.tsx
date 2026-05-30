@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
-import { getProjectsByKind } from "@/data/projects";
+import { getCatalogProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projetos | Cloud Service",
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProjetosPage() {
-  const softwareProjects = getProjectsByKind("software");
-  const landingProjects = getProjectsByKind("landing");
-  const consultoriaProjects = getProjectsByKind("consultoria");
-  const marketingProjects = getProjectsByKind("marketing").sort((a, b) => {
+  const softwareProjects = getCatalogProjectsByKind("software");
+  const landingProjects = getCatalogProjectsByKind("landing");
+  const consultoriaProjects = getCatalogProjectsByKind("consultoria");
+  const marketingProjects = getCatalogProjectsByKind("marketing").sort((a, b) => {
     if (a.marketingHighlight && !b.marketingHighlight) return -1;
     if (!a.marketingHighlight && b.marketingHighlight) return 1;
     return 0;
@@ -23,14 +24,15 @@ export default function ProjetosPage() {
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
         Sistemas, landing pages, consultoria e marketing — catálogo aberto com
-        foco em resultado e linguagem clara.
+        foco em resultado e linguagem clara. Trabalhos sob sigilo ficam em{" "}
+        <Link href="/classificados">Classificados</Link>.
       </p>
 
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas</h2>
         <p className="muted section-spacing-sm">
-          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preço, CEPBOT, CL Tech Shop
-          e Cálculo Jurídico — produtos digitais em uso ou publicados com link no ar.
+          MS, Melhor Preço, CEPBOT, CL Tech Shop e Cálculo Jurídico — produtos
+          digitais em uso ou publicados com link no ar.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
       </section>
