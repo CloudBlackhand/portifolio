@@ -1460,6 +1460,7 @@ body.marathon-immersive-mode .site-main {
 }
 
 .marathon-session-preview-img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1687,6 +1688,7 @@ body.marathon-immersive-mode .site-main {
 }
 
 .marathon-dossier-row-img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
