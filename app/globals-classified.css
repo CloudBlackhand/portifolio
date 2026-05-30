@@ -14,6 +14,11 @@
   --tablet-blue: #60a5fa;
   --tablet-world: #1a1f28;
   --tablet-world-deep: #12161d;
+  --tablet-screen-ink: #eef0f4;
+  --tablet-screen-muted: rgb(238 240 244 / 58%);
+  --tablet-screen-line: rgb(255 255 255 / 10%);
+  --tablet-screen-bg: #12161d;
+  --tablet-screen-bg-mid: #151820;
 }
 
 /* —— Nav link (pill suave, não terminal) —— */
@@ -397,7 +402,7 @@
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: rgb(250 248 245 / 92%);
+  background: rgb(10 12 16 / 92%);
   animation: marathonScreenBoot 0.9s ease-out forwards;
   pointer-events: none;
 }
@@ -427,7 +432,7 @@
   background:
     linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px),
-    linear-gradient(180deg, #151820 0%, #0d1016 100%);
+    linear-gradient(180deg, var(--tablet-screen-bg-mid) 0%, var(--tablet-screen-bg) 100%);
   background-size: 22px 22px, 22px 22px, auto;
   color: rgb(246 242 236 / 92%);
 }
@@ -796,12 +801,13 @@
 }
 
 .marathon-tag--neutral {
-  background: rgb(28 28 36 / 6%);
-  color: var(--tablet-muted);
+  background: rgb(255 255 255 / 7%);
+  color: rgb(238 240 244 / 72%);
   animation: none;
   text-transform: none;
   letter-spacing: 0.04em;
   font-weight: 600;
+  border-color: var(--tablet-screen-line);
 }
 
 .marathon-session-tags {
@@ -1240,8 +1246,12 @@ body.marathon-immersive-mode .site-main {
   flex-direction: column;
   min-height: 0;
   border-radius: 18px;
-  background: linear-gradient(165deg, #faf8f5 0%, var(--tablet-screen) 45%, #e8e4de 100%);
-  color: var(--tablet-ink);
+  background:
+    linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(180deg, var(--tablet-screen-bg-mid) 0%, var(--tablet-screen-bg) 100%);
+  background-size: 22px 22px, 22px 22px, auto;
+  color: var(--tablet-screen-ink);
   position: relative;
   overflow: hidden;
 }
@@ -1257,7 +1267,11 @@ body.marathon-immersive-mode .site-main {
   position: relative;
   z-index: 2;
   scrollbar-width: thin;
-  scrollbar-color: rgb(28 28 36 / 20%) transparent;
+  scrollbar-color: rgb(255 255 255 / 18%) transparent;
+}
+
+.marathon-session-screen .marathon-tablet-kicker {
+  color: var(--tablet-screen-muted);
 }
 
 .marathon-session-toolbar {
@@ -1274,18 +1288,19 @@ body.marathon-immersive-mode .site-main {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: lowercase;
-  color: var(--tablet-ink);
-  background: rgb(255 255 255 / 55%);
-  border: 1.5px solid rgb(28 28 36 / 10%);
+  color: var(--tablet-screen-ink);
+  background: rgb(255 255 255 / 7%);
+  border: 1.5px solid var(--tablet-screen-line);
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .marathon-session-back:hover {
-  background: #fff;
+  background: rgb(255 255 255 / 12%);
+  border-color: rgb(255 255 255 / 18%);
   transform: translateX(-2px);
-  color: var(--tablet-ink);
+  color: var(--tablet-screen-ink);
 }
 
 .marathon-session-badge {
@@ -1293,9 +1308,9 @@ body.marathon-immersive-mode .site-main {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #be185d;
-  background: rgb(255 107 157 / 18%);
-  border: 1.5px solid rgb(255 107 157 / 35%);
+  color: var(--tablet-pink);
+  background: rgb(255 107 157 / 14%);
+  border: 1.5px solid rgb(255 107 157 / 32%);
   border-radius: 6px;
   padding: 0.28rem 0.5rem;
 }
@@ -1309,14 +1324,14 @@ body.marathon-immersive-mode .site-main {
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: var(--tablet-ink);
+  color: var(--tablet-screen-ink);
   margin-bottom: 0.5rem;
 }
 
 .marathon-session-subtitle {
   font-size: 0.92rem;
   line-height: 1.55;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
   max-width: 62ch;
 }
 
@@ -1328,17 +1343,17 @@ body.marathon-immersive-mode .site-main {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgb(28 28 36 / 10%);
-  background: #ddd8d0;
+  border: 1px solid var(--tablet-screen-line);
+  background: #0a0c10;
   aspect-ratio: 1200 / 630;
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 35%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 4%);
 }
 
 .marathon-session-preview-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.88) contrast(1.02);
+  filter: saturate(0.82) contrast(1.05) brightness(0.92);
 }
 
 .marathon-session-preview-caption {
@@ -1347,14 +1362,14 @@ body.marathon-immersive-mode .site-main {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
 }
 
 .marathon-session-panel {
   padding: 1.1rem 0 0.85rem;
   margin: 0;
   border: none;
-  border-top: 1px solid rgb(28 28 36 / 12%);
+  border-top: 1px solid var(--tablet-screen-line);
   border-radius: 0;
   background: transparent;
 }
@@ -1363,7 +1378,7 @@ body.marathon-immersive-mode .site-main {
   padding-left: 0.85rem;
   border-top-color: rgb(255 107 157 / 22%);
   border-left: 3px solid var(--tablet-pink);
-  background: transparent;
+  background: rgb(255 107 157 / 5%);
 }
 
 .marathon-session-panel-title {
@@ -1371,14 +1386,14 @@ body.marathon-immersive-mode .site-main {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  color: var(--tablet-ink);
+  color: var(--tablet-screen-ink);
   margin-bottom: 0.45rem;
 }
 
 .marathon-session-panel-body {
   font-size: 0.9rem;
   line-height: 1.55;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
 }
 
 .marathon-session-panel-list {
@@ -1391,7 +1406,7 @@ body.marathon-immersive-mode .site-main {
 .marathon-session-panel-list li {
   font-size: 0.88rem;
   line-height: 1.5;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
 }
 
 .marathon-session-foot {
@@ -1399,7 +1414,28 @@ body.marathon-immersive-mode .site-main {
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: lowercase;
-  color: rgb(92 99 112 / 90%);
+  color: rgb(238 240 244 / 42%);
+}
+
+.marathon-session-screen .marathon-barcode {
+  opacity: 0.22;
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(238 240 244 / 85%) 0,
+    rgb(238 240 244 / 85%) 2px,
+    transparent 2px,
+    transparent 4px,
+    rgb(238 240 244 / 85%) 4px,
+    rgb(238 240 244 / 85%) 5px,
+    transparent 5px,
+    transparent 8px
+  );
+}
+
+.marathon-session-screen .marathon-tag--neutral {
+  background: rgb(255 255 255 / 7%);
+  color: rgb(238 240 244 / 72%);
+  border-color: var(--tablet-screen-line);
 }
 
 .marathon-dossier-list {
@@ -1418,7 +1454,7 @@ body.marathon-immersive-mode .site-main {
   padding: 0.85rem 0 0.95rem;
   border-radius: 0;
   border: none;
-  border-bottom: 1px solid rgb(28 28 36 / 12%);
+  border-bottom: 1px solid var(--tablet-screen-line);
   background: transparent;
   text-decoration: none;
   color: inherit;
@@ -1429,7 +1465,7 @@ body.marathon-immersive-mode .site-main {
 }
 
 .marathon-dossier-row:hover {
-  background: rgb(255 255 255 / 35%);
+  background: rgb(255 255 255 / 5%);
   transform: translateX(2px);
 }
 
@@ -1441,7 +1477,7 @@ body.marathon-immersive-mode .site-main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
   margin-bottom: 0.35rem;
 }
 
@@ -1450,13 +1486,13 @@ body.marathon-immersive-mode .site-main {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.3;
-  color: var(--tablet-ink);
+  color: var(--tablet-screen-ink);
 }
 
 .marathon-dossier-row-desc {
   font-size: 0.8rem;
   line-height: 1.45;
-  color: var(--tablet-muted);
+  color: var(--tablet-screen-muted);
   margin: 0.3rem 0 0.55rem;
 }
 
@@ -1476,8 +1512,8 @@ body.marathon-immersive-mode .site-main {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgb(28 28 36 / 10%);
-  background: #ddd8d0;
+  border: 1px solid var(--tablet-screen-line);
+  background: #0a0c10;
   min-height: 88px;
 }
 
