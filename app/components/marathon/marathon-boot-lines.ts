@@ -1,19 +1,19 @@
 import type { Project } from "@/data/projects";
 
-export const CLOUD_BOOT_HEAD = "cloud service · sense-mem · terminal";
+export const CLOUD_BOOT_HEAD = "Cloud Service";
 
 export function dossierBootName(project: Project): string {
   return project.title.replace(/\s*—\s*(confidencial|sigilo)$/i, "").trim().toLowerCase();
 }
 
 export function getVaultBootLines(dossierCount: number): string[] {
-  const countLabel = dossierCount === 1 ? "1 dossie" : `${dossierCount} dossies`;
+  const countLabel = dossierCount === 1 ? "1 projeto" : `${dossierCount} projetos`;
 
   return [
-    "> cloud link handshake...",
-    "> carregando dados...",
-    `> arquivo sob sigilo · ${countLabel}...`,
-    "> acesso restrito online...",
+    "> conectando...",
+    "> carregando lista...",
+    `> ${countLabel} sob sigilo`,
+    "> pronto",
   ];
 }
 
@@ -21,10 +21,10 @@ export function getDossierBootLines(project: Project): string[] {
   const name = dossierBootName(project);
 
   return [
-    "> cloud link handshake...",
-    "> carregando dados...",
-    `> montando dossie: ${name}...`,
-    "> decrypt sense-mem · sigilo ativo...",
+    "> conectando...",
+    "> lendo projeto...",
+    `> ${name}`,
+    "> pronto",
   ];
 }
 

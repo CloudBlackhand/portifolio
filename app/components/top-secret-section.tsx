@@ -15,14 +15,6 @@ type TopSecretSectionProps = {
   standalone?: boolean;
 };
 
-function caseIdFromSlug(slug: string): string {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i += 1) {
-    hash = (hash * 31 + slug.charCodeAt(i)) % 9973;
-  }
-  return `DOSSIER-${String(hash).padStart(4, "0")}`;
-}
-
 export function TopSecretSection({ projects, standalone = false }: TopSecretSectionProps) {
   const reduceMotion = useReducedMotion();
 
@@ -32,8 +24,8 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
     <MarathonSession
       fillViewport={standalone}
       bootSequence={standalone}
-      headerLeft="Cloud · sob sigilo"
-      headerRight="acesso restrito"
+      headerLeft="Cloud Service"
+      headerRight="sob sigilo"
       bootLines={getVaultBootLines(projects.length)}
       bootHead={CLOUD_BOOT_HEAD}
       bootTarget={100}
@@ -43,23 +35,17 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
         <Link className="marathon-session-back" href="/projetos#sob-sigilo">
           ← voltar aos projetos
         </Link>
-        <span className="marathon-session-badge">arquivo confidencial</span>
+        <span className="marathon-session-badge">sob sigilo</span>
       </div>
 
       <header className="marathon-session-head">
         <h2 id="classified-heading" className="marathon-session-title">
-          Registros sanitizados
+          Projetos sob sigilo
         </h2>
         <p className="marathon-session-subtitle">
-          Entregas reais por segmento — comercial, mensageria, saúde, locação,
-          imóveis e autoatendimento — publicadas só em nível descritivo. Nada de
-          telas, marcas, credenciais ou identidade do contratante no catálogo aberto.
+          Cases reais, descritos com cuidado. Sem nomes de clientes, links, capturas
+          de tela ou dados que possam identificar a operação.
         </p>
-        <div className="marathon-tablet-tags">
-          <span className="marathon-tag marathon-tag--pink">DADOS REDACTED</span>
-          <span className="marathon-tag marathon-tag--cyan">HTTPS · ACESSO RESTRITO</span>
-          <span className="marathon-tag marathon-tag--yellow">EM PRODUÇÃO</span>
-        </div>
       </header>
 
       <ul className="marathon-dossier-list">
@@ -74,18 +60,18 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
             <Link
               className="marathon-dossier-row"
               href={`/projetos/${project.slug}`}
-              aria-label={`Abrir dossiê: ${project.title}`}
+              aria-label={`Abrir: ${project.title}`}
             >
               <div className="marathon-dossier-row-main">
                 <div className="marathon-dossier-row-meta">
-                  <span>{caseIdFromSlug(project.slug)}</span>
+                  <span>{project.impactLabel}</span>
                   <span className="marathon-dossier-row-index">
                     {String(index + 1).padStart(2, "0")}/{String(projects.length).padStart(2, "0")}
                   </span>
                 </div>
                 <h3 className="marathon-dossier-row-title">{project.title}</h3>
                 <p className="marathon-dossier-row-desc">{project.shortDescription}</p>
-                <span className="marathon-dossier-row-cta">iniciar leitura →</span>
+                <span className="marathon-dossier-row-cta">ver detalhes →</span>
               </div>
               <div className="marathon-dossier-row-preview" aria-hidden="true">
                 <MarathonThumb
@@ -100,7 +86,7 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
       </ul>
 
       <p className="marathon-session-foot">
-        Estes dossiês não entram na tabela da home nem no catálogo público de projetos.
+        Estes projetos não aparecem na tabela da home nem no catálogo aberto.
       </p>
     </MarathonSession>
   );

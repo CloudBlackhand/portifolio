@@ -460,7 +460,7 @@ export const projects: Project[] = [
     shortDescription:
       "Plataforma de vendas e backoffice em produção: funil, financeiro, documentos, equipe com papéis e pós-venda por mensagem — sem exposição pública.",
     detailedDescription:
-      "Sistema web que centraliza a rotina comercial de uma operação de serviços: cadastro de oportunidades com formulário completo, aprovação interna, painéis comparando períodos, visão por canal ou parceiro e upload de documentos organizados por tipo. Usuários, logs e permissões em banco relacional; parte do pipeline sincronizada com planilha operacional para quem edita fora do painel; arquivos em armazenamento em nuvem com pastas por categoria. Inclui financeiro, metas, antecipação, acompanhamento pós-venda com mensagens padronizadas, solicitações internas, grupos com permissões e visão em tempo real. Papéis distintos controlam quem vê números, quem aprova negócio e quem dispara mensagem. Por lidar com dados pessoais, contratos e pipeline real, o dossiê é só descritivo: prova entrega sem telas, integrações ou identidade do contratante.",
+      "Sistema web que centraliza a rotina comercial de uma operação de serviços: cadastro de oportunidades com formulário completo, aprovação interna, painéis comparando períodos, visão por canal ou parceiro e upload de documentos organizados por tipo. Usuários, logs e permissões em banco relacional; parte do pipeline sincronizada com planilha operacional para quem edita fora do painel; arquivos em armazenamento em nuvem com pastas por categoria. Inclui financeiro, metas, antecipação, acompanhamento pós-venda com mensagens padronizadas, solicitações internas, grupos com permissões e visão em tempo real. Papéis distintos controlam quem vê números, quem aprova negócio e quem dispara mensagem. Por lidar com dados pessoais, contratos e pipeline real, a descrição aqui é só resumo: prova entrega sem telas, integrações ou identidade do contratante.",
     thumbnail: "/project-thumbs/topsecret-comercial.svg",
     category: "Sob sigilo",
     year: 2025,
@@ -503,7 +503,7 @@ export const projects: Project[] = [
     shortDescription:
       "CRM web onde cada empresa opera isolada: vendas, clientes, comissões, financeiro e pós-venda — código privado, dados redigidos.",
     detailedDescription:
-      "Plataforma comercial multiempresa: cada organização acessa ambiente próprio, com papéis de proprietário, administrador, gerente e vendedor. Cobre produtos, clientes, registro de vendas, comissões, movimentações financeiras, rotinas de pós-venda, visão gerencial por período e supervisão central para operadores autorizados. Autenticação persistente, banco relacional modelado com migrations, interface atual e gráficos de acompanhamento. Pode operar em modo demonstração somente leitura para apresentações sem gravar dados sensíveis. Repositório privado; deploy preparado com migrações no arranque. O dossiê descreve capacidade e abordagem — nunca CNPJs, credenciais ou capturas reais.",
+      "Plataforma comercial multiempresa: cada organização acessa ambiente próprio, com papéis de proprietário, administrador, gerente e vendedor. Cobre produtos, clientes, registro de vendas, comissões, movimentações financeiras, rotinas de pós-venda, visão gerencial por período e supervisão central para operadores autorizados. Autenticação persistente, banco relacional modelado com migrations, interface atual e gráficos de acompanhamento. Pode operar em modo demonstração somente leitura para apresentações sem gravar dados sensíveis. Repositório privado; deploy preparado com migrações no arranque. Descrevo capacidade e abordagem — nunca CNPJs, credenciais ou capturas reais.",
     thumbnail: "/project-thumbs/topsecret-multiempresa.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -584,7 +584,7 @@ export const projects: Project[] = [
     shortDescription:
       "Site e fluxo de marcação para clínicas e consultórios: agenda, confirmações e dados de pacientes tratados como confidenciais.",
     detailedDescription:
-      "Sistemas de agendamento online para área da saúde: escolha de especialidade ou profissional, horários disponíveis, confirmação por mensagem ou e-mail, lembretes automáticos e painel interno para recepção remarcar ou bloquear slots. Lida com nome, contato, histórico de consultas e preferências — informação sensível sob LGPD e acordo com o contratante. O dossiê descreve o tipo de entrega (marcação, confirmação, integração com operação) sem publicar marca, telas, URLs ou dados reais de pacientes.",
+      "Sistemas de agendamento online para área da saúde: escolha de especialidade ou profissional, horários disponíveis, confirmação por mensagem ou e-mail, lembretes automáticos e painel interno para recepção remarcar ou bloquear slots. Lida com nome, contato, histórico de consultas e preferências — informação sensível sob LGPD e acordo com o contratante. Descrevo o tipo de entrega (marcação, confirmação, integração com operação) sem publicar marca, telas, URLs ou dados reais de pacientes.",
     thumbnail: "/project-thumbs/topsecret-saude.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -623,7 +623,7 @@ export const projects: Project[] = [
     shortDescription:
       "Plataforma para aluguel de carros e motos: frota, reservas, contratos e pagamentos — operação real sob acordo de sigilo.",
     detailedDescription:
-      "Sistema para locadoras de carros e motos: catálogo de veículos por categoria, consulta de disponibilidade, reserva com datas e retirada, registro de contrato, cobrança e status da frota (disponível, reservado, em manutenção). Pode incluir check-list de entrega e devolução, multas ou adicionais e painel operacional para equipe interna. Trata documentos, pagamentos e dados de locatários como confidenciais. O case no portfólio fica no nível descritivo — sem marca da locadora, placas, telas ou integrações expostas.",
+      "Sistema para locadoras de carros e motos: catálogo de veículos por categoria, consulta de disponibilidade, reserva com datas e retirada, registro de contrato, cobrança e status da frota (disponível, reservado, em manutenção). Pode incluir check-list de entrega e devolução, multas ou adicionais e painel operacional para equipe interna. Trata documentos, pagamentos e dados de locatários como confidenciais. Descrição genérica — sem marca da locadora, placas, telas ou integrações expostas.",
     thumbnail: "/project-thumbs/topsecret-veiculos.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -662,7 +662,7 @@ export const projects: Project[] = [
     shortDescription:
       "Site e backoffice para imobiliárias: imóveis, leads, visitas e documentação — sem exposição de operação ou clientes.",
     detailedDescription:
-      "Ecossistema digital para corretoras e imobiliárias: vitrine de imóveis com filtros, captura de leads, agendamento de visitas, acompanhamento de propostas e repositório de documentos por negócio. Painel interno para corretores atualizarem status, registrar contatos e priorizar oportunidades. Informações de proprietários, valores negociados e documentos ficam sob sigilo comercial. O dossiê mostra capacidade de entrega no segmento — nunca endereços reais, fotos internas, CRM ou identidade do contratante.",
+      "Ecossistema digital para corretoras e imobiliárias: vitrine de imóveis com filtros, captura de leads, agendamento de visitas, acompanhamento de propostas e repositório de documentos por negócio. Painel interno para corretores atualizarem status, registrar contatos e priorizar oportunidades. Informações de proprietários, valores negociados e documentos ficam sob sigilo comercial. Mostro capacidade de entrega no segmento — nunca endereços reais, fotos internas, CRM ou identidade do contratante.",
     thumbnail: "/project-thumbs/topsecret-imobiliaria.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -701,7 +701,7 @@ export const projects: Project[] = [
     shortDescription:
       "Fluxos de autoatendimento web ou totem: filas, formulários, pagamentos e integrações — operação do cliente fora do catálogo público.",
     detailedDescription:
-      "Sistemas de autoatendimento para reduzir fila presencial e liberar equipe: jornadas guiadas por etapas (escolha de serviço, preenchimento, confirmação, pagamento ou emissão de comprovante), integração com backoffice e, quando necessário, mensageria ou impressão. Serve setores como serviços, varejo, utilities ou atendimento público interno — sempre adaptado ao processo do contratante. Dados de quem usa o fluxo e regras comerciais reais permanecem confidenciais. O dossiê descreve o padrão de entrega (fluxo, integração, operação) sem expor telas, totens, URLs ou identidade do cliente.",
+      "Sistemas de autoatendimento para reduzir fila presencial e liberar equipe: jornadas guiadas por etapas (escolha de serviço, preenchimento, confirmação, pagamento ou emissão de comprovante), integração com backoffice e, quando necessário, mensageria ou impressão. Serve setores como serviços, varejo, utilities ou atendimento público interno — sempre adaptado ao processo do contratante. Dados de quem usa o fluxo e regras comerciais reais permanecem confidenciais. Descrevo o padrão de entrega (fluxo, integração, operação) sem expor telas, totens, URLs ou identidade do cliente.",
     thumbnail: "/project-thumbs/topsecret-autoatendimento.svg",
     category: "Sob sigilo",
     year: 2026,

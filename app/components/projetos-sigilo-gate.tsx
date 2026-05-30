@@ -7,7 +7,7 @@ export function ProjetosSigiloGate() {
 
   if (count === 0) return null;
 
-  const dossierLabel = count === 1 ? "dossiê" : "dossiês";
+  const projectLabel = count === 1 ? "projeto" : "projetos";
 
   return (
     <section
@@ -21,15 +21,15 @@ export function ProjetosSigiloGate() {
           Projetos sob sigilo
         </h2>
         <p className="projetos-sigilo-lead">
-          Dossiês por segmento — comercial, mensageria, consultas, locação, imóveis
-          e autoatendimento — sem expor marcas, telas ou dados reais. Você vê contexto,
-          entrega e resultado; o resto fica protegido por acordo.
+          Trabalhos de clientes que pediram discrição — comercial, mensageria, saúde,
+          locação, imóveis e autoatendimento. Explico o que foi feito e o resultado,
+          sem marcas, telas ou dados sensíveis.
         </p>
         <p className="projetos-sigilo-meta">
-          {count} {dossierLabel} disponíveis · acesso pelo tablet imersivo
+          {count} {projectLabel} nesta lista
         </p>
         <Link className="projetos-sigilo-link" href="/classificados">
-          Abrir arquivo confidencial →
+          Ver projetos sob sigilo →
         </Link>
       </div>
     </section>
