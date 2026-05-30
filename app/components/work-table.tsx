@@ -36,6 +36,10 @@ export function WorkTable({ projects }: WorkTableProps) {
               return "Marketing";
             case "landing":
               return "Landing";
+            case "consultoria":
+              return "Consultoria";
+            case "topsecret":
+              return "Top Secret";
             default:
               return "Sistema";
           }

@@ -8,6 +8,7 @@ import {
   getProjectKindLabel,
   getProjectLiveLinkLabel,
   isMarketingProject,
+  isTextOnlyPortfolioProject,
   MARKETING_DETAIL_MAX_WIDTH_PX,
   projects,
 } from "@/data/projects";
@@ -48,6 +49,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   const hasLiveLink = Boolean(project.liveUrl);
   const marketing = isMarketingProject(project);
+  const textOnly = isTextOnlyPortfolioProject(project);
 
   const thumbW = project.thumbnailWidth ?? 1200;
   const thumbH = project.thumbnailHeight ?? 630;
@@ -82,7 +84,9 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           alt={
             marketing
               ? `Peça principal — ${project.title}`
-              : `Captura principal do ${project.title}`
+              : textOnly
+                ? `Ilustração representativa — ${project.title}`
+                : `Captura principal do ${project.title}`
           }
           width={thumbW}
           height={thumbH}
@@ -152,11 +156,63 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
 
       <section className="content-block section-spacing">
-        <h3>{marketing ? "Sobre o trabalho" : "Descrição detalhada do produto"}</h3>
+        <h3>{marketing ? "Sobre o trabalho" : "Descrição detalhada"}</h3>
         <p className="muted">{project.detailedDescription}</p>
       </section>
 
-      {!marketing ? (
+      {textOnly ? (
+        <>
+          <section className="content-block section-spacing">
+            <h3>Contexto</h3>
+            <p className="muted">{project.context}</p>
+          </section>
+          <section className="content-block section-spacing">
+            <h3>Desafios</h3>
+            <ul className="muted project-detail-list">
+              {project.challenges.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+          <section className="content-block section-spacing">
+            <h3>Solução</h3>
+            <ul className="muted project-detail-list">
+              {project.solution.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+          <section className="content-block section-spacing">
+            <h3>Resultados</h3>
+            <ul className="muted project-detail-list">
+              {project.results.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+          <section className="content-block">
+            <h3>
+              {project.projectKind === "consultoria"
+                ? "Próximo passo"
+                : "Confidencialidade"}
+            </h3>
+            <p className="muted">
+              {project.projectKind === "consultoria"
+                ? "Consultoria é contratada sob medida. Conte objetivo, prazo e restrições — respondemos pelo WhatsApp ou pela página de contato."
+                : "Detalhes de clientes, URLs, capturas e código não são publicados por acordo de confidencialidade. O perfil de entrega segue o mesmo padrão dos sistemas descritos neste portfólio."}
+            </p>
+            {project.projectKind === "consultoria" ? (
+              <div className="section-spacing link-row">
+                <Link className="button primary" href="/contato">
+                  Ir para contato
+                </Link>
+              </div>
+            ) : null}
+          </section>
+        </>
+      ) : null}
+
+      {!marketing && !textOnly ? (
         <section className="content-block">
           <h3>Experimente</h3>
           {!hasLiveLink ? (
