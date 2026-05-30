@@ -15,6 +15,7 @@ type MarathonSessionProps = {
   showBarcode?: boolean;
   bootSequence?: boolean;
   bootLines?: string[];
+  bootHead?: string;
   bootTarget?: number;
   bootDuration?: number;
 };
@@ -27,6 +28,7 @@ export function MarathonSession({
   showBarcode = true,
   bootSequence,
   bootLines,
+  bootHead,
   bootTarget = 100,
   bootDuration = 2.4,
 }: MarathonSessionProps) {
@@ -83,6 +85,7 @@ export function MarathonSession({
                   <MarathonTabletBoot
                     key="tablet-boot"
                     lines={bootLines}
+                    head={bootHead}
                     target={bootTarget}
                     duration={bootDuration}
                     onComplete={() => setBootComplete(true)}

@@ -2,11 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { CLOUD_BOOT_HEAD } from "@/app/components/marathon/marathon-boot-lines";
 
 const BLOCK_COUNT = 18;
 
 type MarathonTabletBootProps = {
   lines?: string[];
+  head?: string;
   target?: number;
   duration?: number;
   onComplete?: () => void;
@@ -20,11 +22,12 @@ function blockBar(value: number, target: number): string {
 
 export function MarathonTabletBoot({
   lines = [
-    "> uesc link handshake...",
+    "> cloud link handshake...",
     "> carregando dados...",
     "> weave-mem buffer alocada...",
     "> sense-mem sync...",
   ],
+  head = CLOUD_BOOT_HEAD,
   target = 100,
   duration = 2.4,
   onComplete,
@@ -110,7 +113,7 @@ export function MarathonTabletBoot({
       ) : null}
 
       <div className="marathon-boot-cmd">
-        <p className="marathon-boot-cmd-head">uesc / sense-mem · terminal</p>
+        <p className="marathon-boot-cmd-head">{head}</p>
 
         <div className="marathon-boot-cmd-lines">
           {lines.slice(0, visibleCount).map((line, index) => (
@@ -147,17 +150,3 @@ export function MarathonTabletBoot({
     </motion.div>
   );
 }
-
-export const MARATHON_VAULT_BOOT_LINES = [
-  "> uesc link handshake...",
-  "> carregando dados...",
-  "> weave-mem buffer alocada...",
-  "> vault index online...",
-];
-
-export const MARATHON_DOSSIER_BOOT_LINES = [
-  "> uesc link handshake...",
-  "> carregando dados...",
-  "> decrypt sense-mem...",
-  "> registro sanitizado...",
-];

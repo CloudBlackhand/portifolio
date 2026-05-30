@@ -5,7 +5,10 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
-import { MARATHON_VAULT_BOOT_LINES } from "@/app/components/marathon/marathon-tablet-boot";
+import {
+  CLOUD_BOOT_HEAD,
+  getVaultBootLines,
+} from "@/app/components/marathon/marathon-boot-lines";
 
 type TopSecretSectionProps = {
   projects: Project[];
@@ -29,9 +32,10 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
     <MarathonSession
       fillViewport={standalone}
       bootSequence={standalone}
-      headerLeft="UESC · tau ceti iv"
-      headerRight="partition / restricted"
-      bootLines={MARATHON_VAULT_BOOT_LINES}
+      headerLeft="Cloud · classificados"
+      headerRight="vault / restricted"
+      bootLines={getVaultBootLines(projects.length)}
+      bootHead={CLOUD_BOOT_HEAD}
       bootTarget={67}
       bootDuration={2.4}
     >
