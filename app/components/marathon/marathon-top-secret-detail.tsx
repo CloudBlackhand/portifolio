@@ -4,11 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { getProjectKindLabel } from "@/data/projects";
-import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
+import { DOSSIER_ACTIVATION } from "@/app/components/marathon/marathon-activation-presets";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
-import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
-
-const DETAIL_STATUS = "dossier sanitizado · sem capturas publicas · cliente redacted";
 
 type MarathonTopSecretDetailProps = {
   project: Project;
@@ -18,6 +15,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
   return (
     <MarathonSession
       fillViewport
+      activation={DOSSIER_ACTIVATION}
       headerLeft="UESC · sense-mem"
       headerRight="dossier / sanitized"
     >
@@ -27,9 +25,6 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         </Link>
         <span className="marathon-session-badge">{getProjectKindLabel(project)}</span>
       </div>
-
-      <MarathonStatusTicker messages={[DETAIL_STATUS]} />
-      <MarathonLoadBar label="decrypt dossier" target={100} delay={0.2} duration={1.6} />
 
       <header className="marathon-session-head">
         <h1 className="marathon-session-title">{project.title}</h1>
