@@ -88,9 +88,6 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
             priority
           />
         </div>
-        <figcaption className="marathon-session-preview-caption">
-          Ilustração genérica — sem captura real do sistema
-        </figcaption>
       </figure>
 
       <section className="marathon-session-panel">
