@@ -72,14 +72,14 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
             transition={{ duration: 0.45, delay: index * 0.08 }}
           >
             <Link
-              className="marathon-dossier-row interactive-card"
+              className="marathon-dossier-row"
               href={`/projetos/${project.slug}`}
               aria-label={`Abrir dossiê: ${project.title}`}
             >
               <div className="marathon-dossier-row-main">
                 <div className="marathon-dossier-row-meta">
                   <span>{caseIdFromSlug(project.slug)}</span>
-                  <span>
+                  <span className="marathon-dossier-row-index">
                     {String(index + 1).padStart(2, "0")}/{String(projects.length).padStart(2, "0")}
                   </span>
                 </div>
@@ -87,14 +87,13 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
                 <p className="marathon-dossier-row-desc">{project.shortDescription}</p>
                 <span className="marathon-dossier-row-cta">iniciar leitura →</span>
               </div>
-              <div className="marathon-dossier-row-preview">
+              <div className="marathon-dossier-row-preview" aria-hidden="true">
                 <Image
                   src={project.thumbnail}
                   alt=""
                   width={480}
                   height={252}
                   className="marathon-dossier-row-img"
-                  aria-hidden="true"
                 />
               </div>
             </Link>
