@@ -412,60 +412,70 @@
   }
 }
 
-/* Boot in-game dentro da tela cream (marcas + X + %) */
+/* Boot CMD in-game — tela escura, linhas monoespaçadas, barra em blocos */
 .marathon-tablet-boot {
   position: absolute;
   inset: 0;
   z-index: 5;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(165deg, #faf8f5 0%, var(--tablet-screen) 45%, #e8e4de 100%);
+  align-items: stretch;
+  justify-content: stretch;
   pointer-events: none;
 }
 
-.marathon-boot-mark {
+.marathon-tablet-boot--cmd {
+  background:
+    linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(180deg, #151820 0%, #0d1016 100%);
+  background-size: 22px 22px, 22px 22px, auto;
+  color: rgb(246 242 236 / 92%);
+}
+
+.marathon-boot-frame {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 1px;
+  width: 14px;
+  height: 14px;
   opacity: 0;
-  animation: marathonBootMarkIn 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: marathonBootFrameIn 0.28s ease-out forwards;
 }
 
-.marathon-boot-mark--tl {
-  top: 1.05rem;
-  left: 1.05rem;
-  background: var(--tablet-cyan);
-  box-shadow: 13px 0 0 var(--tablet-pink), 0 13px 0 var(--tablet-yellow);
-  animation-delay: 0.08s;
+.marathon-boot-frame--tl {
+  top: 0.95rem;
+  left: 0.95rem;
+  border-top: 2px solid rgb(246 242 236 / 70%);
+  border-left: 2px solid rgb(246 242 236 / 70%);
+  animation-delay: 0.05s;
 }
 
-.marathon-boot-mark--tr {
-  top: 1.05rem;
-  right: 1.05rem;
-  background: var(--tablet-pink);
-  animation-delay: 0.16s;
+.marathon-boot-frame--tr {
+  top: 0.95rem;
+  right: 0.95rem;
+  border-top: 2px solid rgb(246 242 236 / 70%);
+  border-right: 2px solid rgb(246 242 236 / 70%);
+  animation-delay: 0.12s;
 }
 
-.marathon-boot-mark--bl {
-  bottom: 1.05rem;
-  left: 1.05rem;
-  background: var(--tablet-yellow);
-  animation-delay: 0.24s;
+.marathon-boot-frame--bl {
+  bottom: 0.95rem;
+  left: 0.95rem;
+  border-bottom: 2px solid rgb(246 242 236 / 70%);
+  border-left: 2px solid rgb(246 242 236 / 70%);
+  animation-delay: 0.19s;
 }
 
-.marathon-boot-mark--br {
-  bottom: 1.05rem;
-  right: 1.05rem;
-  background: var(--tablet-blue);
-  animation-delay: 0.32s;
+.marathon-boot-frame--br {
+  bottom: 0.95rem;
+  right: 0.95rem;
+  border-bottom: 2px solid rgb(246 242 236 / 70%);
+  border-right: 2px solid rgb(246 242 236 / 70%);
+  animation-delay: 0.26s;
 }
 
-@keyframes marathonBootMarkIn {
+@keyframes marathonBootFrameIn {
   from {
     opacity: 0;
-    transform: scale(0.35);
+    transform: scale(0.7);
   }
 
   to {
@@ -476,82 +486,87 @@
 
 .marathon-boot-x {
   position: absolute;
-  top: 0.95rem;
-  right: 2.75rem;
-  width: 1.55rem;
-  height: 1.55rem;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 1.45rem;
+  height: 1.45rem;
   display: grid;
   place-items: center;
-  font-size: 1.05rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--tablet-ink);
-  border: 2px solid rgb(28 28 36 / 16%);
-  border-radius: 5px;
-  background: rgb(255 255 255 / 45%);
-  opacity: 0;
-  animation: marathonBootXIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.42s forwards;
+  color: rgb(246 242 236 / 92%);
+  border: 2px solid rgb(246 242 236 / 35%);
+  background: rgb(0 0 0 / 25%);
 }
 
-@keyframes marathonBootXIn {
-  from {
-    opacity: 0;
-    transform: scale(0.55) rotate(-10deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
+.marathon-boot-cmd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 2.4rem 1.35rem 1.5rem;
 }
 
-.marathon-boot-core {
-  text-align: center;
-  width: min(88%, 320px);
-  padding: 0 0.5rem;
-}
-
-.marathon-boot-kicker {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+.marathon-boot-cmd-head {
+  position: absolute;
+  top: 1.15rem;
+  left: 1.35rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(92 99 112 / 82%);
-  margin-bottom: 0.5rem;
+  color: rgb(246 242 236 / 38%);
 }
 
-.marathon-boot-label {
-  font-size: 0.76rem;
+.marathon-boot-cmd-lines {
+  display: grid;
+  gap: 0.42rem;
+  margin-bottom: 1rem;
+}
+
+.marathon-boot-cmd-line {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.72rem, 2.2vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  color: rgb(246 242 236 / 88%);
+  white-space: pre-wrap;
+}
+
+.marathon-boot-cmd-line--ok {
+  color: var(--tablet-pink);
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
-  color: var(--tablet-muted);
-  margin-bottom: 0.35rem;
 }
 
-.marathon-boot-pct {
-  font-size: clamp(2.35rem, 8.5vw, 3.1rem);
-  font-weight: 800;
+.marathon-boot-cursor {
+  display: inline-block;
+  margin-left: 0.15rem;
+  animation: marathonBootCursor 0.85s step-end infinite;
+}
+
+@keyframes marathonBootCursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.marathon-boot-cmd-progress {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(0.68rem, 2vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgb(246 242 236 / 72%);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--tablet-ink);
-  margin-bottom: 0.8rem;
-}
-
-.marathon-boot-track {
-  height: 6px;
-  border-radius: 999px;
-  background: rgb(28 28 36 / 8%);
-  border: 1px solid rgb(28 28 36 / 10%);
-  overflow: hidden;
-}
-
-.marathon-boot-fill {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--tablet-cyan) 0%, var(--tablet-pink) 55%, var(--tablet-yellow) 100%);
 }
 
 .marathon-barcode {
@@ -1464,16 +1479,19 @@ body.marathon-immersive-mode .site-main {
 @media (prefers-reduced-motion: reduce) {
   .marathon-load-shimmer,
   .marathon-screen-boot,
-  .marathon-boot-mark,
-  .marathon-boot-x,
+  .marathon-boot-frame,
+  .marathon-boot-cursor,
   .marathon-tablet--card:hover {
     animation: none;
   }
 
-  .marathon-boot-mark,
-  .marathon-boot-x {
+  .marathon-boot-frame {
     opacity: 1;
     transform: none;
+  }
+
+  .marathon-boot-cursor {
+    opacity: 1;
   }
 
   .marathon-screen-boot {

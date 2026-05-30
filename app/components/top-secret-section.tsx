@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
+import { MARATHON_VAULT_BOOT_LINES } from "@/app/components/marathon/marathon-tablet-boot";
 
 type TopSecretSectionProps = {
   projects: Project[];
@@ -30,10 +31,9 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
       bootSequence={standalone}
       headerLeft="UESC · tau ceti iv"
       headerRight="partition / restricted"
-      bootLabel="weave-mem sync"
-      bootSublabel="runner shell · dossier vault"
+      bootLines={MARATHON_VAULT_BOOT_LINES}
       bootTarget={67}
-      bootDuration={2.2}
+      bootDuration={2.4}
     >
       <div className="marathon-session-toolbar">
         <Link className="marathon-session-back" href="/projetos">
