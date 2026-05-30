@@ -13,12 +13,8 @@ type TopSecretSectionProps = {
   standalone?: boolean;
 };
 
-const BOOT_MESSAGES = [
-  "weave-mem buffer alocada · identidade do cliente removida",
-  "strip endpoint metadata · sem links publicos",
-  "sense-mem render · abstrato por design",
-  "dossier vault · so contexto e resultado",
-];
+const VAULT_STATUS =
+  "weave-mem sync · identidade removida · so contexto e resultado publicados";
 
 function caseIdFromSlug(slug: string): string {
   let hash = 0;
@@ -55,7 +51,7 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
       </div>
 
       <p className="marathon-tablet-kicker">runner shell · sense-mem · dossier vault</p>
-      <MarathonStatusTicker messages={BOOT_MESSAGES} />
+      <MarathonStatusTicker messages={[VAULT_STATUS]} />
       <MarathonLoadBar label="weave-mem sync" target={67} delay={0.35} duration={2} />
 
       <header className="marathon-session-head">
@@ -117,7 +113,6 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
                     className="marathon-dossier-row-img"
                     aria-hidden="true"
                   />
-                  <div className="marathon-session-preview-glitch" aria-hidden="true" />
                 </div>
               </Link>
             </motion.li>

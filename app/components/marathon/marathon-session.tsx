@@ -60,7 +60,6 @@ export function MarathonSession({
               <span>{headerRight}</span>
             </div>
             <div className="marathon-session-screen">
-              <span className="marathon-screen-scan" aria-hidden="true" />
               <span className="marathon-screen-boot" aria-hidden="true" />
               <div className="marathon-session-scroll">{children}</div>
               {showBarcode ? <span className="marathon-barcode" aria-hidden="true" /> : null}

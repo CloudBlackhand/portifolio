@@ -21,10 +21,12 @@ export function MarathonLoadBar({
   const reduceMotion = useReducedMotion();
   const shouldAnimate = animate && !reduceMotion;
   const [value, setValue] = useState(shouldAnimate ? 0 : target);
+  const [settled, setSettled] = useState(!shouldAnimate);
 
   useEffect(() => {
     if (!shouldAnimate) {
       setValue(target);
+      setSettled(true);
       return;
     }
 
@@ -40,7 +42,11 @@ export function MarathonLoadBar({
       const t = Math.min(1, (now - start) / (end - start));
       const eased = 1 - (1 - t) ** 3;
       setValue(Math.round(target * eased));
-      if (t < 1) frame = requestAnimationFrame(tick);
+      if (t < 1) {
+        frame = requestAnimationFrame(tick);
+        return;
+      }
+      setSettled(true);
     };
 
     frame = requestAnimationFrame(tick);
@@ -48,7 +54,7 @@ export function MarathonLoadBar({
   }, [delay, duration, shouldAnimate, target]);
 
   return (
-    <div className="marathon-load">
+    <div className={`marathon-load${settled ? " marathon-load--settled" : ""}`}>
       <div className="marathon-load-label">
         <span>{label}</span>
         <span className="marathon-load-pct">{value}%</span>
@@ -66,7 +72,7 @@ export function MarathonLoadBar({
           animate={{ width: `${value}%` }}
           transition={{ duration: 0.35, ease: "easeOut" }}
         />
-        <span className="marathon-load-shimmer" aria-hidden="true" />
+        {!settled ? <span className="marathon-load-shimmer" aria-hidden="true" /> : null}
       </div>
     </div>
   );

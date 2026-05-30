@@ -5,10 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
 import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
 
-const TEASER_MESSAGES = [
-  "sense-mem detectada · fora do catalogo aberto",
-  "2 dossies em field active · clearance local",
-];
+const TEASER_STATUS = "sense-mem detectada · 2 dossies em field active · fora do catalogo aberto";
 
 export function ClassifiedTeaser() {
   const reduceMotion = useReducedMotion();
@@ -25,7 +22,7 @@ export function ClassifiedTeaser() {
           transition={{ duration: 0.55 }}
         >
           <p className="marathon-tablet-kicker">partition / restricted</p>
-          <MarathonStatusTicker messages={TEASER_MESSAGES} intervalMs={3200} />
+          <MarathonStatusTicker messages={[TEASER_STATUS]} />
           <MarathonLoadBar label="sense-mem" target={84} delay={0.2} duration={1.4} />
           <h2 id="classified-teaser-heading" className="marathon-teaser-title">
             Trabalhos que só abrem pelo tablet

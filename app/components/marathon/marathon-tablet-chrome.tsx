@@ -50,7 +50,6 @@ export function MarathonTabletChrome({
           </div>
         )}
         <div className="marathon-tablet-screen">
-          <span className="marathon-screen-scan" aria-hidden="true" />
           <span className="marathon-screen-boot" aria-hidden="true" />
           <div className="marathon-screen-content">{children}</div>
           {showBarcode ? <span className="marathon-barcode" aria-hidden="true" /> : null}

@@ -8,11 +8,7 @@ import { MarathonLoadBar } from "@/app/components/marathon/marathon-load-bar";
 import { MarathonSession } from "@/app/components/marathon/marathon-session";
 import { MarathonStatusTicker } from "@/app/components/marathon/marathon-status-ticker";
 
-const DETAIL_MESSAGES = [
-  "dossier sanitizado · sem capturas publicas",
-  "metadata strip · cliente redacted",
-  "leitura abstract · field record only",
-];
+const DETAIL_STATUS = "dossier sanitizado · sem capturas publicas · cliente redacted";
 
 type MarathonTopSecretDetailProps = {
   project: Project;
@@ -32,7 +28,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         <span className="marathon-session-badge">{getProjectKindLabel(project)}</span>
       </div>
 
-      <MarathonStatusTicker messages={DETAIL_MESSAGES} />
+      <MarathonStatusTicker messages={[DETAIL_STATUS]} />
       <MarathonLoadBar label="decrypt dossier" target={100} delay={0.2} duration={1.6} />
 
       <header className="marathon-session-head">
@@ -50,7 +46,6 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
             className="marathon-session-preview-img"
             priority
           />
-          <div className="marathon-session-preview-glitch" aria-hidden="true" />
         </div>
         <figcaption className="marathon-session-preview-caption">
           representação ilustrativa · sem captura real
