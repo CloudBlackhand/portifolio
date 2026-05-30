@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
+import { MarathonFx, MarathonTicker } from "./components/marathon/MarathonFx";
 import "./globals.css";
 import "./globals-ep.css";
 import "./globals-marathon.css";
@@ -44,6 +45,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${marathonDisplay.variable} ${marathonMono.variable}`}
     >
       <body className="marathon-ui">
+        <MarathonFx />
         <div className="marathon-grid" aria-hidden="true" />
         <div className="marathon-scanlines" aria-hidden="true" />
         <header className="site-header">
@@ -69,6 +71,7 @@ export default function RootLayout({
             </div>
           </div>
         </header>
+        <MarathonTicker />
         <main className="site-main">{children}</main>
         <a
           className="whatsapp-float"
