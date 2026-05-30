@@ -51,10 +51,9 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
           Registros sanitizados
         </h2>
         <p className="marathon-session-subtitle">
-          Sistemas com repositório privado no GitHub — Vendas Hub, infraestrutura
-          WhatsApp HTTPS e demais entregas sensíveis — publicados só em nível
-          descritivo. Nada de telas, números, credenciais ou identidade do
-          contratante no catálogo aberto.
+          Trabalhos reais em produção — VionHub, Sales Hub, Evolution API e
+          integrações sensíveis — publicados só em nível descritivo. Nada de telas,
+          números, credenciais ou identidade do contratante no catálogo aberto.
         </p>
         <div className="marathon-tablet-tags">
           <span className="marathon-tag marathon-tag--pink">DADOS REDACTED</span>
