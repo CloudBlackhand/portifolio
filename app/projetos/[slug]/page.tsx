@@ -67,10 +67,26 @@ export default async function ProjetoDetalhePage({ params }: Params) {
     : undefined;
 
   return (
-    <article className="page-shell">
+    <article className={topsecret ? "page-shell classified-detail" : "page-shell"}>
       <Link className="button" href="/projetos">
         Voltar para projetos
       </Link>
+
+      {topsecret ? (
+        <div className="classified-detail-banner section-spacing-sm">
+          <div className="classified-header-meta">
+            <span className="classified-stamp">CLASSIFIED</span>
+            <span className="classified-clearance">CLEARANCE // OMEGA</span>
+          </div>
+          <p className="classified-transmission" aria-hidden="true">
+            UESC-NODE :: DOSSIÊ SANITIZADO :: SEM CAPTURAS PÚBLICAS
+          </p>
+          <p>
+            Registro liberado apenas em nível descritivo. Identidade do cliente,
+            telas e arquitetura permanecem fora do catálogo aberto.
+          </p>
+        </div>
+      ) : null}
 
       <p className="card-kind section-spacing-sm">
         {getProjectKindLabel(project)}
@@ -171,13 +187,21 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       </section>
 
       {confidential ? (
-        <section className="content-block section-spacing">
-          <h3>Privacidade e confidencialidade</h3>
+        <section
+          className={
+            topsecret
+              ? "content-block section-spacing classified-privacy-block"
+              : "content-block section-spacing classified-privacy-block"
+          }
+        >
+          <h3>{topsecret ? "Protocolo de sigilo" : "Privacidade e confidencialidade"}</h3>
           <p className="muted privacy-note">
             Por acordo com o cliente ou por natureza interna do produto, não
             publicamos capturas de tela, código, links de acesso ou dados
-            sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
-            critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp.
+            sensíveis. O foco aqui é contexto, solução e resultado
+            {topsecret
+              ? " — arquivo classificado, sem exposição operacional."
+              : " — o mesmo critério usado em sistemas como Vendas Hub e Sistema HTTPS WhatsApp."}
           </p>
         </section>
       ) : null}

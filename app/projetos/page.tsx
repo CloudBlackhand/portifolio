@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
+import { TopSecretSection } from "@/app/components/top-secret-section";
 import { getProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -54,14 +55,7 @@ export default function ProjetosPage() {
         <ProjectCardGrid projects={consultoriaProjects} />
       </section>
 
-      <section id="top-secret" className="section-spacing">
-        <h2 className="section-heading">Top Secret</h2>
-        <p className="muted section-spacing-sm">
-          Trabalhos em produção sob sigilo — só contexto, solução e resultado,
-          sem telas, links ou dados sensíveis.
-        </p>
-        <ProjectCardGrid projects={topSecretProjects} />
-      </section>
+      <TopSecretSection projects={topSecretProjects} />
 
       <section id="marketing" className="section-spacing">
         <h2 className="section-heading">Marketing e criativo</h2>

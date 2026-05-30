@@ -64,7 +64,16 @@ const stats = [
   { label: "Sistemas em produção", value: "7" },
   { label: "Landing pages", value: "2" },
   { label: "Campanhas criativas", value: "2" },
-  { label: "Prioridade", value: "Conforto para o cliente" },
+  { label: "Disponível para projetos", value: "Sim" },
+];
+
+const skills = [
+  "Next.js",
+  "TypeScript",
+  "APIs & integrações",
+  "WhatsApp / automação",
+  "Landing pages",
+  "Consultoria técnica",
 ];
 
 type LandingPageProps = {
@@ -80,12 +89,21 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint ep-after-showcase">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Deploy // Experimente</p>
+            <span className="hire-chip">Disponível para freelas e contratos</span>
+            <p className="ep-eyebrow ep-eyebrow-dark">Experimente você mesmo</p>
             <h2 className="ep-section-title">Veja a Cloud Service em ação</h2>
             <p className="ep-section-lead">
-              Landing pages publicadas, sistemas em produção e criativos para redes —
-              abra cada projeto e veja capturas reais quando disponíveis.
+              Sistemas em produção, landing pages publicadas e criativos para
+              redes — portfólio direto para quem precisa contratar dev com
+              entrega real, não só slide.
             </p>
+            <div className="ep-skills-row">
+              {skills.map((skill) => (
+                <span key={skill} className="ep-skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </Reveal>
           <Reveal delay={0.08}>
             <div className="ep-device">
@@ -124,7 +142,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Stack // Abordagem</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Por que esta abordagem</p>
             <h2 className="ep-section-title">A forma mais direta de evoluir o stack</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
               Menos ferramenta solta, mais produto integrado — é o que aplicamos
@@ -147,7 +165,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Data // Resumo</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Em números</p>
             <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
           </Reveal>
           <div className="ep-stats">
@@ -166,10 +184,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-cta-block">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Comms // Contato</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Vamos conversar</p>
             <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Conte objetivo, prazo e restrições — respondemos pelo WhatsApp ou
+              Precisa de dev full-stack, automação WhatsApp ou site que converte?
+              Conte objetivo, prazo e orçamento — respondemos pelo WhatsApp ou
               pela página de contato.
             </p>
             <div className="ep-hero-cta">
@@ -211,7 +230,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
           </Reveal>
           <Reveal delay={0.06}>
             <div className="ep-about-copy">
-              <p className="ep-eyebrow ep-eyebrow-dark">Profile // Sobre</p>
+              <p className="ep-eyebrow ep-eyebrow-dark">Antes de tudo</p>
               <h2 className="ep-section-title ep-section-title-left">
                 Uma conversa clara sobre o seu projeto
               </h2>
@@ -245,7 +264,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-pro-intro">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Ops // Processo</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Apresentação profissional</p>
             <h2 className="ep-section-title">Como eu trabalho</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
               Entendimento real do problema, implementação robusta e resultado

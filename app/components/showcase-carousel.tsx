@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/data/projects";
 import { getProjectLiveLinkLabel, getProjectKindLabel, getShowcaseProjects } from "@/data/projects";
-import { marathonGlitchPulse } from "@/app/components/marathon/MarathonFx";
 
 type ShowcaseCarouselProps = {
   projects: Project[];
@@ -14,24 +13,7 @@ type ShowcaseCarouselProps = {
 export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
   const featuredProjects = useMemo(() => getShowcaseProjects(projects), [projects]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [glitching, setGlitching] = useState(false);
   const favoritesRowRef = useRef<HTMLDivElement>(null);
-  const skipGlitchRef = useRef(true);
-
-  useEffect(() => {
-    if (skipGlitchRef.current) {
-      skipGlitchRef.current = false;
-      return;
-    }
-    setGlitching(true);
-    marathonGlitchPulse();
-    const t = window.setTimeout(() => setGlitching(false), 480);
-    return () => window.clearTimeout(t);
-  }, [activeIndex]);
-
-  const goToSlide = (next: number | ((prev: number) => number)) => {
-    setActiveIndex(next);
-  };
 
   if (featuredProjects.length === 0) {
     return null;
@@ -48,28 +30,14 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
 
   return (
     <section className="showcase">
-      <div className={`showcase-media ${glitching ? "marathon-showcase-glitch" : ""}`}>
-        <div className="marathon-hud" aria-hidden="true">
-          <span className="marathon-hud-corner marathon-hud-corner--tl" />
-          <span className="marathon-hud-corner marathon-hud-corner--tr" />
-          <span className="marathon-hud-corner marathon-hud-corner--bl" />
-          <span className="marathon-hud-corner marathon-hud-corner--br" />
-          <div className="marathon-scan-beam" />
-          <div className="marathon-hud-readout">
-            FEED // {String(activeIndex + 1).padStart(2, "0")}/
-            {String(featuredProjects.length).padStart(2, "0")}
-          </div>
-          <div className="marathon-hud-readout marathon-hud-readout--right">
-            LIVE // {activeProject.slug.toUpperCase().replace(/-/g, "_")}
-          </div>
-        </div>
+      <div className="showcase-media">
         {featuredProjects.length > 1 && (
           <>
             <button
               type="button"
               className="hero-nav left"
               onClick={() =>
-                goToSlide(
+                setActiveIndex(
                   (prev) =>
                     (prev - 1 + featuredProjects.length) % featuredProjects.length,
                 )
@@ -82,7 +50,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
               type="button"
               className="hero-nav right"
               onClick={() =>
-                goToSlide((prev) => (prev + 1) % featuredProjects.length)
+                setActiveIndex((prev) => (prev + 1) % featuredProjects.length)
               }
               aria-label="Próximo banner"
             >
@@ -122,11 +90,11 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         <div className="showcase-overlay">
           <div
             key={activeProject.slug}
-            className="showcase-panel marathon-decode"
+            className="showcase-panel showcase-panel-enter"
           >
-            <h1 className="marathon-glitch-text">{activeProject.title}</h1>
-            <p className="showcase-meta marathon-kicker">
-              {getProjectKindLabel(activeProject)} // {activeProject.impactLabel}
+            <h1>{activeProject.title}</h1>
+            <p className="showcase-meta">
+              {getProjectKindLabel(activeProject)} • {activeProject.impactLabel}
             </p>
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">
@@ -152,17 +120,14 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
               key={project.slug}
               type="button"
               className={index === activeIndex ? "dot active" : "dot"}
-              onClick={() => goToSlide(index)}
+              onClick={() => setActiveIndex(index)}
               aria-label={`Mostrar ${project.title}`}
             />
           ))}
         </div>
       </div>
       <div className="favorites-strip">
-        <h3 className="marathon-strip-title">
-          <span className="marathon-kicker">Portfolio //</span>
-          Destaques — sistemas e landing pages
-        </h3>
+        <h3>Destaques — sistemas e landing pages</h3>
         <div className="favorites-track">
           <button
             type="button"
