@@ -36,7 +36,7 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
       headerRight="acesso restrito"
       bootLines={getVaultBootLines(projects.length)}
       bootHead={CLOUD_BOOT_HEAD}
-      bootTarget={67}
+      bootTarget={100}
       bootDuration={2.4}
     >
       <div className="marathon-session-toolbar">

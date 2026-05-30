@@ -24,7 +24,7 @@ export function ClassifiedTeaser() {
         >
           <p className="marathon-tablet-kicker">cloud service · sob sigilo</p>
           <MarathonStatusTicker messages={[TEASER_STATUS]} />
-          <MarathonLoadBar label="arquivo sigilo" target={84} delay={0.2} duration={1.4} />
+          <MarathonLoadBar label="arquivo sigilo" target={100} delay={0.2} duration={1.4} />
           <h2 id="classified-teaser-heading" className="marathon-teaser-title">
             Trabalhos que só abrem pelo tablet
           </h2>

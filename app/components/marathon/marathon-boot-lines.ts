@@ -28,10 +28,6 @@ export function getDossierBootLines(project: Project): string[] {
   ];
 }
 
-export function getDossierBootTarget(slug: string): number {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i += 1) {
-    hash = (hash * 17 + slug.charCodeAt(i)) % 100;
-  }
-  return 78 + (hash % 21);
+export function getDossierBootTarget(_slug: string): number {
+  return 100;
 }
