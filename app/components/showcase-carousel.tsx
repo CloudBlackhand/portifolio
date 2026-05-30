@@ -82,54 +82,77 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
           </>
         )}
         {activeProject.thumbnailWidth && activeProject.thumbnailHeight ? (
-          <div
-            className="showcase-image-slot"
-            style={
-              {
-                "--thumb-max-w": `${activeProject.thumbnailWidth}px`,
-              } as CSSProperties
-            }
+          <Link
+            href={`/projetos/${activeProject.slug}`}
+            className="showcase-image-link"
+            aria-label={`Abrir ${activeProject.title}`}
+          >
+            <div
+              className="showcase-image-slot"
+              style={
+                {
+                  "--thumb-max-w": `${activeProject.thumbnailWidth}px`,
+                } as CSSProperties
+              }
+            >
+              <Image
+                src={activeProject.thumbnail}
+                alt=""
+                width={activeProject.thumbnailWidth}
+                height={activeProject.thumbnailHeight}
+                className="showcase-image-intrinsic"
+                sizes={`(max-width: ${activeProject.thumbnailWidth}px) 100vw, ${activeProject.thumbnailWidth}px`}
+                priority
+                aria-hidden
+              />
+            </div>
+          </Link>
+        ) : (
+          <Link
+            href={`/projetos/${activeProject.slug}`}
+            className="showcase-image-link showcase-image-link--fill"
+            aria-label={`Abrir ${activeProject.title}`}
           >
             <Image
               src={activeProject.thumbnail}
-              alt={`Imagem de destaque do ${activeProject.title}`}
-              width={activeProject.thumbnailWidth}
-              height={activeProject.thumbnailHeight}
-              className="showcase-image-intrinsic"
-              sizes={`(max-width: ${activeProject.thumbnailWidth}px) 100vw, ${activeProject.thumbnailWidth}px`}
+              alt=""
+              fill
+              sizes="100vw"
+              className="showcase-image"
               priority
+              aria-hidden
             />
-          </div>
-        ) : (
-          <Image
-            src={activeProject.thumbnail}
-            alt={`Imagem de destaque do ${activeProject.title}`}
-            fill
-            sizes="100vw"
-            className="showcase-image"
-            priority
-          />
+          </Link>
         )}
         <div className="showcase-overlay">
           <div
             key={activeProject.slug}
-            className="showcase-panel showcase-panel-enter"
+            className="showcase-panel showcase-panel-enter showcase-panel--clickable"
           >
+            <Link
+              className="showcase-panel-link"
+              href={`/projetos/${activeProject.slug}`}
+              aria-label={`Abrir ${activeProject.title}`}
+            />
             <h1>{activeProject.title}</h1>
             <p className="showcase-meta">
               {getProjectKindLabel(activeProject)} • {activeProject.impactLabel}
             </p>
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">
-              <Link className="button primary gfn-like-cta" href={`/projetos/${activeProject.slug}`}>
+              <Link
+                className="button primary gfn-like-cta card-action-link"
+                href={`/projetos/${activeProject.slug}`}
+              >
                 VER PROJETO
               </Link>
               {activeProject.liveUrl ? (
                 <a
-                  className="button gfn-like-cta"
+                  className="button gfn-like-cta card-action-link"
                   href={activeProject.liveUrl}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(event) => event.stopPropagation()}
                 >
                   {getProjectLiveLinkLabel(activeProject)}
                 </a>

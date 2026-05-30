@@ -28,15 +28,21 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
         const confidential = isConfidentialProject(project) && !isTopSecretProject(project);
 
         return (
-          <article className="card interactive-card" key={project.slug}>
+          <article className="card interactive-card card--clickable" key={project.slug}>
+            <Link
+              className="card-stretched-link"
+              href={`/projetos/${project.slug}`}
+              aria-label={`Abrir ${project.title}`}
+            />
             <Image
               src={project.thumbnail}
-              alt={`Miniatura do ${project.title}`}
+              alt=""
               width={cardW}
               height={cardH}
               className={
                 marketing ? "card-image card-image--marketing" : "card-image"
               }
+              aria-hidden
             />
             <div className="card-body">
               <p
@@ -49,13 +55,13 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
               </p>
               <h2>{project.title}</h2>
               <p>{project.shortDescription}</p>
-              <div className="section-spacing link-row">
-                <Link className="button" href={`/projetos/${project.slug}`}>
+              <div className="section-spacing card-actions">
+                <Link className="button card-action-link" href={`/projetos/${project.slug}`}>
                   Ver projeto
                 </Link>
                 {project.liveUrl ? (
                   <a
-                    className="button primary"
+                    className="button primary card-action-link"
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"

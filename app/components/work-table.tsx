@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useMemo, useState, type KeyboardEvent } from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -34,9 +35,21 @@ function projectAreaLabel(kind: Project["projectKind"]): string {
 }
 
 export function WorkTable({ projects }: WorkTableProps) {
+  const router = useRouter();
   const [sorting, setSorting] = useState<SortingState>([
     { id: "year", desc: true },
   ]);
+
+  const openProject = (slug: string) => {
+    router.push(`/projetos/${slug}`);
+  };
+
+  const onRowKeyDown = (event: KeyboardEvent<HTMLTableRowElement>, slug: string) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openProject(slug);
+    }
+  };
 
   const columns = useMemo(
     () => [
@@ -135,7 +148,15 @@ export function WorkTable({ projects }: WorkTableProps) {
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.id}>
+              <tr
+                key={row.id}
+                className="work-table-row"
+                onClick={() => openProject(row.original.slug)}
+                onKeyDown={(event) => onRowKeyDown(event, row.original.slug)}
+                tabIndex={0}
+                role="link"
+                aria-label={`Abrir ${row.original.title}`}
+              >
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
