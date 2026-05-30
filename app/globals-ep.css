@@ -450,7 +450,29 @@
   align-items: start;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+  .ep-hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ep-hero-cta .ep-btn {
+    width: 100%;
+  }
+
+  .ep-btn-sm {
+    min-height: 44px;
+  }
+
+  .ep-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .ep-filmstrip-item {
+    width: min(78vw, 260px);
+  }
+
   .ep-about-grid {
     grid-template-columns: 1fr;
   }

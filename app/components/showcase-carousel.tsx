@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useRef, useState, type CSSProperties } from "react";
+import { useMemo, useRef, useState, type CSSProperties, type TouchEvent } from "react";
 import type { Project } from "@/data/projects";
 import { getProjectLiveLinkLabel, getProjectKindLabel, getShowcaseProjects } from "@/data/projects";
 
@@ -10,16 +10,28 @@ type ShowcaseCarouselProps = {
   projects: Project[];
 };
 
+const SWIPE_THRESHOLD_PX = 48;
+
 export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
   const featuredProjects = useMemo(() => getShowcaseProjects(projects), [projects]);
   const [activeIndex, setActiveIndex] = useState(0);
   const favoritesRowRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
 
   if (featuredProjects.length === 0) {
     return null;
   }
 
   const activeProject = featuredProjects[activeIndex];
+
+  const goTo = (direction: "prev" | "next") => {
+    setActiveIndex((prev) => {
+      if (direction === "prev") {
+        return (prev - 1 + featuredProjects.length) % featuredProjects.length;
+      }
+      return (prev + 1) % featuredProjects.length;
+    });
+  };
 
   const scrollFavorites = (direction: "left" | "right") => {
     const row = favoritesRowRef.current;
@@ -28,20 +40,33 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
     row.scrollBy({ left: delta, behavior: "smooth" });
   };
 
+  const onTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.changedTouches[0]?.clientX ?? null;
+  };
+
+  const onTouchEnd = (event: TouchEvent<HTMLDivElement>) => {
+    if (featuredProjects.length <= 1 || touchStartX.current === null) return;
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = endX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(delta) < SWIPE_THRESHOLD_PX) return;
+    goTo(delta > 0 ? "prev" : "next");
+  };
+
   return (
     <section className="showcase">
-      <div className="showcase-media">
+      <div
+        className="showcase-media"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {featuredProjects.length > 1 && (
           <>
             <button
               type="button"
               className="hero-nav left"
-              onClick={() =>
-                setActiveIndex(
-                  (prev) =>
-                    (prev - 1 + featuredProjects.length) % featuredProjects.length,
-                )
-              }
+              onClick={() => goTo("prev")}
               aria-label="Banner anterior"
             >
               ‹
@@ -49,9 +74,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             <button
               type="button"
               className="hero-nav right"
-              onClick={() =>
-                setActiveIndex((prev) => (prev + 1) % featuredProjects.length)
-              }
+              onClick={() => goTo("next")}
               aria-label="Próximo banner"
             >
               ›
@@ -153,7 +176,11 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
               return (
               <Link
                 key={project.slug}
-                className="favorite-card"
+                className={
+                  project.slug === activeProject.slug
+                    ? "favorite-card is-active"
+                    : "favorite-card"
+                }
                 href={`/projetos/${project.slug}`}
                 aria-label={`Abrir ${project.title}`}
               >
