@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { SiteHeaderNav } from "@/app/components/site-header-nav";
 import "./globals.css";
 import "./globals-ep.css";
 import "./globals-classified.css";
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
     "Projetos digitais em produção com foco em resultado, clareza e conforto para o cliente.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,14 +41,7 @@ export default function RootLayout({
             <Link className="logo" href="/">
               Cloud Service
             </Link>
-            <nav className="nav nav-with-cta" aria-label="Navegação principal">
-              <Link href="/">Início</Link>
-              <Link href="/projetos">Projetos</Link>
-              <Link href="/contato">Contato</Link>
-              <Link className="nav-cta" href="/contato">
-                Contratar
-              </Link>
-            </nav>
+            <SiteHeaderNav />
           </div>
         </header>
         <main className="site-main">{children}</main>

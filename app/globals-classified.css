@@ -1191,6 +1191,7 @@
 /* —— Modo imersivo (sem chrome do site) —— */
 body.marathon-immersive-mode {
   overflow: hidden;
+  padding-bottom: 0;
 }
 
 body.marathon-immersive-mode .site-header,
@@ -1201,6 +1202,7 @@ body.marathon-immersive-mode .whatsapp-float {
 
 body.marathon-immersive-mode .site-main {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 0;
   margin: 0;
 }
@@ -1219,7 +1221,9 @@ body.marathon-immersive-mode .site-main {
   width: 100%;
   padding: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -1376,7 +1380,10 @@ body.marathon-immersive-mode .site-main {
   background: rgb(255 255 255 / 7%);
   border: 1.5px solid var(--tablet-screen-line);
   border-radius: 999px;
-  padding: 0.4rem 0.85rem;
+  padding: 0.55rem 0.95rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
@@ -1696,7 +1703,7 @@ body.marathon-immersive-mode .site-main {
   padding: 0.35rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .marathon-dossier-row {
     grid-template-columns: 1fr;
     padding: 0.95rem;
@@ -1707,12 +1714,75 @@ body.marathon-immersive-mode .site-main {
     max-width: 100%;
   }
 
+  .marathon-session-scroll {
+    padding: 1rem 0.85rem calc(1.25rem + var(--safe-bottom));
+  }
+
+  .marathon-session-header {
+    font-size: 0.68rem;
+  }
+
+  .marathon-session-title {
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
+  }
+
+  .marathon-dossier-row-meta {
+    font-size: 0.72rem;
+  }
+
+  .marathon-tag {
+    font-size: 0.72rem;
+  }
+
+  .marathon-teaser {
+    padding-inline: 1rem;
+  }
+
+  .projetos-sigilo-gate {
+    margin-inline: 0;
+    padding-inline: 1rem;
+  }
+
+  .projetos-sigilo-link {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .marathon-session {
+    padding-inline: 0.35rem;
+  }
+
+  .marathon-session-device {
+    border-radius: 18px;
+    padding: 8px;
+  }
+
+  .marathon-session-bezel {
+    border-radius: 14px;
+    padding: 6px;
+  }
+
+  .marathon-session-screen {
+    border-radius: 12px;
+  }
+
   .marathon-session-wrap {
-    min-height: calc(100vh - 68px - 1rem);
+    min-height: calc(100dvh - 68px - 1rem);
   }
 
   .marathon-session--fill .marathon-session-wrap {
     min-height: 100%;
+  }
+
+  .marathon-session-head {
+    margin-bottom: 0.75rem;
+  }
+
+  .marathon-tablet-tags {
+    gap: 0.35rem;
   }
 }
 

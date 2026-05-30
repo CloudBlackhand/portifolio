@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   createColumnHelper,
@@ -17,6 +18,21 @@ type WorkTableProps = {
 
 const columnHelper = createColumnHelper<Project>();
 
+function projectAreaLabel(kind: Project["projectKind"]): string {
+  switch (kind) {
+    case "marketing":
+      return "Marketing";
+    case "landing":
+      return "Landing";
+    case "consultoria":
+      return "Consultoria";
+    case "topsecret":
+      return "Sob sigilo";
+    default:
+      return "Sistema";
+  }
+}
+
 export function WorkTable({ projects }: WorkTableProps) {
   const [sorting, setSorting] = useState<SortingState>([
     { id: "year", desc: true },
@@ -30,20 +46,7 @@ export function WorkTable({ projects }: WorkTableProps) {
       }),
       columnHelper.accessor("projectKind", {
         header: "Área",
-        cell: (info) => {
-          switch (info.getValue()) {
-            case "marketing":
-              return "Marketing";
-            case "landing":
-              return "Landing";
-            case "consultoria":
-              return "Consultoria";
-            case "topsecret":
-              return "Top Secret";
-            default:
-              return "Sistema";
-          }
-        },
+        cell: (info) => projectAreaLabel(info.getValue()),
       }),
       columnHelper.accessor("category", {
         header: "Categoria",
@@ -61,7 +64,6 @@ export function WorkTable({ projects }: WorkTableProps) {
     [],
   );
 
-  // TanStack Table fornece handlers dinamicos; memoizacao do React Compiler e ignorada aqui de forma intencional.
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: projects,
@@ -72,14 +74,37 @@ export function WorkTable({ projects }: WorkTableProps) {
     getSortedRowModel: getSortedRowModel(),
   });
 
+  const rows = table.getRowModel().rows;
+
   return (
     <section className="table-wrap section-spacing">
       <div className="table-header">
         <h2>Resumo dos projetos</h2>
-        <p className="muted">
-          Visão executiva dos projetos. Clique no cabeçalho para ordenar.
+        <p className="muted table-header-note">
+          Visão executiva dos projetos. No desktop, clique no cabeçalho para ordenar.
         </p>
       </div>
+
+      <ul className="work-table-cards" aria-label="Lista de projetos">
+        {rows.map((row) => {
+          const project = row.original;
+          return (
+            <li key={row.id} className="work-table-card">
+              <Link className="work-table-card-link" href={`/projetos/${project.slug}`}>
+                <div className="work-table-card-head">
+                  <h3>{project.title}</h3>
+                  <span className="work-table-card-year">{project.year}</span>
+                </div>
+                <p className="work-table-card-meta">
+                  {projectAreaLabel(project.projectKind)} · {project.category}
+                </p>
+                <p className="work-table-card-impact">{project.impactLabel}</p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+
       <div className="table-scroll">
         <table className="work-table">
           <thead>
@@ -109,7 +134,7 @@ export function WorkTable({ projects }: WorkTableProps) {
             ))}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => (
+            {rows.map((row) => (
               <tr key={row.id}>
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id}>
