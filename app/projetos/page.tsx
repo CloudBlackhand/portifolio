@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
-import { TopSecretSection } from "@/app/components/top-secret-section";
 import { getProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function ProjetosPage() {
   const softwareProjects = getProjectsByKind("software");
   const landingProjects = getProjectsByKind("landing");
   const consultoriaProjects = getProjectsByKind("consultoria");
-  const topSecretProjects = getProjectsByKind("topsecret");
   const marketingProjects = getProjectsByKind("marketing").sort((a, b) => {
     if (a.marketingHighlight && !b.marketingHighlight) return -1;
     if (!a.marketingHighlight && b.marketingHighlight) return 1;
@@ -24,8 +22,8 @@ export default function ProjetosPage() {
     <section className="page-shell">
       <h1 className="page-title">Projetos</h1>
       <p className="page-subtitle">
-        Sistemas, landing pages, consultoria e trabalhos confidenciais — foco em
-        resultado e linguagem clara, sem expor o que o cliente precisa proteger.
+        Sistemas, landing pages, consultoria e marketing — catálogo aberto com
+        foco em resultado e linguagem clara.
       </p>
 
       <section className="section-spacing">
@@ -54,8 +52,6 @@ export default function ProjetosPage() {
         </p>
         <ProjectCardGrid projects={consultoriaProjects} />
       </section>
-
-      <TopSecretSection projects={topSecretProjects} />
 
       <section id="marketing" className="section-spacing">
         <h2 className="section-heading">Marketing e criativo</h2>

@@ -19,7 +19,7 @@ export function ClassifiedTeaser() {
             total do cliente. Só contexto, solução e resultado — sem expor
             operação.
           </p>
-          <Link className="classified-teaser-link" href="/projetos#top-secret">
+          <Link className="classified-teaser-link" href="/classificados">
             Acessar arquivos restritos
           </Link>
         </div>
