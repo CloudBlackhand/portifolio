@@ -29,8 +29,9 @@ export function ClassifiedTeaser() {
             Trabalhos que só abrem pelo tablet
           </h2>
           <p className="marathon-teaser-lead">
-            Sistemas comerciais e automação WhatsApp em produção, sob sigilo total.
-            Sense-mem sanitizada: contexto, solução e resultado — sem expor operação.
+            CRM, funil comercial e WhatsApp corporativo rodando com dados reais de
+            clientes — sob acordo de sigilo. Você vê contexto, entrega e resultado;
+            telas, credenciais e operação ficam protegidas.
           </p>
           <Link className="marathon-teaser-link" href="/classificados">
             entrar nos classificados →

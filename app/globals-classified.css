@@ -795,6 +795,23 @@
   color: #a16207;
 }
 
+.marathon-tag--neutral {
+  background: rgb(28 28 36 / 6%);
+  color: var(--tablet-muted);
+  animation: none;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.marathon-session-tags {
+  margin-top: 0.75rem;
+}
+
+.marathon-session-tags .marathon-tag {
+  animation: none;
+}
+
 .marathon-tablet-meta {
   display: flex;
   justify-content: space-between;
@@ -1361,6 +1378,19 @@ body.marathon-immersive-mode .site-main {
 .marathon-session-panel-body {
   font-size: 0.9rem;
   line-height: 1.55;
+  color: var(--tablet-muted);
+}
+
+.marathon-session-panel-list {
+  margin: 0;
+  padding: 0 0 0 1.05rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.marathon-session-panel-list li {
+  font-size: 0.88rem;
+  line-height: 1.5;
   color: var(--tablet-muted);
 }
 

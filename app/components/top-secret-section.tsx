@@ -51,14 +51,14 @@ export function TopSecretSection({ projects, standalone = false }: TopSecretSect
           Registros sanitizados
         </h2>
         <p className="marathon-session-subtitle">
-          Memória fabricada para focar a leitura — abstrata de propósito. Trabalhos
-          em produção sob sigilo: contexto, solução e resultado publicados. Telas,
-          código e dados do cliente ficam fora do registro aberto.
+          Trabalhos reais em produção — CRM, funis, WhatsApp, dados de clientes e
+          integrações sensíveis — publicados só em nível descritivo. Nada de telas,
+          números, credenciais ou identidade do contratante no catálogo aberto.
         </p>
         <div className="marathon-tablet-tags">
-          <span className="marathon-tag marathon-tag--pink">CLIENT REDACTED</span>
-          <span className="marathon-tag marathon-tag--cyan">NO CAPTURES</span>
-          <span className="marathon-tag marathon-tag--yellow">FIELD ACTIVE</span>
+          <span className="marathon-tag marathon-tag--pink">DADOS REDACTED</span>
+          <span className="marathon-tag marathon-tag--cyan">HTTPS · ACESSO RESTRITO</span>
+          <span className="marathon-tag marathon-tag--yellow">EM PRODUÇÃO</span>
         </div>
       </header>
 
