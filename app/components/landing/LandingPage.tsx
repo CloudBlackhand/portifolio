@@ -63,8 +63,8 @@ const pillars = [
 const stats = [
   { label: "Sistemas em produção", value: "7" },
   { label: "Landing pages", value: "2" },
-  { label: "Disponibilidade", value: "Aberta" },
-  { label: "Resposta", value: "< 24h" },
+  { label: "Campanhas criativas", value: "2" },
+  { label: "Prioridade", value: "Conforto para o cliente" },
 ];
 
 type LandingPageProps = {
@@ -80,11 +80,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint ep-after-showcase">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">[ prova de entrega ]</p>
-            <h2 className="ep-section-title">Projetos reais, não só slide</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">Deploy // Experimente</p>
+            <h2 className="ep-section-title">Veja a Cloud Service em ação</h2>
             <p className="ep-section-lead">
-              Cada item abaixo tem contexto, stack e resultado — com link para ver
-              no ar ou captura quando o cliente permite.
+              Landing pages publicadas, sistemas em produção e criativos para redes —
+              abra cada projeto e veja capturas reais quando disponíveis.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -124,11 +124,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">[ o que você contrata ]</p>
-            <h2 className="ep-section-title">Stack que aguenta operação</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">Stack // Abordagem</p>
+            <h2 className="ep-section-title">A forma mais direta de evoluir o stack</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Integração, cadastro, WhatsApp e deploy — pensado para quem precisa
-              de sistema rodando, não protótipo descartável.
+              Menos ferramenta solta, mais produto integrado — é o que aplicamos
+              nos sistemas que você vê aqui.
             </p>
           </Reveal>
           <div className="ep-pillars">
@@ -147,7 +147,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section ep-section-tint">
         <div className="container">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Em números</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Data // Resumo</p>
             <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
           </Reveal>
           <div className="ep-stats">
@@ -166,15 +166,15 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-cta-block">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">[ vamos alinhar ]</p>
-            <h2 className="ep-section-title">Tem vaga, freela ou projeto?</h2>
+            <p className="ep-eyebrow ep-eyebrow-dark">Comms // Contato</p>
+            <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Mande objetivo, prazo e stack desejada — respondo pelo WhatsApp ou
-              pela página de contato em até 24 horas.
+              Conte objetivo, prazo e restrições — respondemos pelo WhatsApp ou
+              pela página de contato.
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/contato">
-                Enviar proposta / contato
+                Ir para contato
               </Link>
               <Link className="ep-btn ep-btn-ghost" href="/projetos">
                 Ver projetos
@@ -211,18 +211,18 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
           </Reveal>
           <Reveal delay={0.06}>
             <div className="ep-about-copy">
-              <p className="ep-eyebrow ep-eyebrow-dark">[ quem implementa ]</p>
+              <p className="ep-eyebrow ep-eyebrow-dark">Profile // Sobre</p>
               <h2 className="ep-section-title ep-section-title-left">
-                Foco em entrega e comunicação clara
+                Uma conversa clara sobre o seu projeto
               </h2>
               <p className="ep-body">
-                Entendo o objetivo de negócio antes de codar. Cada projeto nasce
-                com escopo, prioridade e critério de pronto — ideal para times
-                enxutos e contratos diretos.
+                Meu foco é entender seu objetivo de negócio antes de propor
+                qualquer solução técnica. Cada entrega nasce com direção,
+                prioridade e critério de resultado desde o início.
               </p>
               <p className="ep-body">
-                Trabalho remoto, documentação objetiva e updates curtos para quem
-                contrata não ficar no escuro.
+                Alinhamentos curtos e objetivos para reduzir dúvidas e manter
+                transparencia durante todo o processo.
               </p>
               <div className="ep-hero-cta">
                 <a
@@ -245,11 +245,12 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       <section className="ep-section">
         <div className="container ep-pro-intro">
           <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">[ resumo ]</p>
+            <p className="ep-eyebrow ep-eyebrow-dark">Ops // Processo</p>
             <h2 className="ep-section-title">Como eu trabalho</h2>
             <p className="ep-section-lead ep-section-lead-narrow">
-              Diagnóstico rápido, implementação robusta e resultado mensurável —
-              com respeito a confidencialidade quando o cliente exige sigilo.
+              Entendimento real do problema, implementação robusta e resultado
+              mensurável — impacto sem expor detalhes sensíveis de código ou
+              arquitetura proprietária.
             </p>
             <div className="ep-hero-cta">
               <Link className="ep-btn ep-btn-primary" href="/projetos">

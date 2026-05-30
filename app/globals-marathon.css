@@ -1,437 +1,605 @@
-/* Marathon / terminal HUD — camada visual para portfólio profissional */
+/* Marathon 2026 — graphic retro futurism (HUD, glitch, industrial sci-fi) */
 
 :root {
-  --background: #050506;
-  --surface: #0a0a0d;
-  --surface-soft: #0f0f13;
-  --foreground: #ece8df;
-  --muted: #8c8880;
-  --brand: #f0a030;
-  --brand-strong: #ffc857;
-  --accent: #00d4aa;
-  --accent-dim: rgb(0 212 170 / 35%);
-  --border: #2a2824;
-  --border-bright: rgb(240 160 48 / 45%);
-  --terminal-glow: rgb(240 160 48 / 12%);
+  --background: #040404;
+  --surface: #0a0a0a;
+  --surface-soft: #0f0f0f;
+  --foreground: #efefea;
+  --muted: #7d7d78;
+  --brand: #dff64a;
+  --brand-strong: #f3ff7a;
+  --border: rgb(223 246 74 / 22%);
+  --marathon-cyan: #42e8ff;
+  --marathon-red: #ff3d4d;
+  --marathon-grid: rgb(223 246 74 / 4%);
+  --marathon-glow: rgb(223 246 74 / 35%);
 }
 
-body {
-  background-color: var(--background);
-  background-image:
-    linear-gradient(var(--terminal-glow) 1px, transparent 1px),
-    linear-gradient(90deg, var(--terminal-glow) 1px, transparent 1px);
-  background-size: 40px 40px;
+.marathon-ui {
+  position: relative;
 }
 
-body::before {
+.marathon-ui::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: -2;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgb(0 0 0 / 4%) 2px,
-    rgb(0 0 0 / 4%) 4px
-  );
-  opacity: 0.35;
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 50% -15%,
+      rgb(66 232 255 / 7%),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 50%,
+      rgb(223 246 74 / 5%),
+      transparent 50%
+    ),
+    var(--background);
 }
 
-body::after {
-  content: "";
+.marathon-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(var(--marathon-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--marathon-grid) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 20%, transparent 100%);
+}
+
+.marathon-scanlines {
   position: fixed;
   inset: 0;
   z-index: 9998;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 80% 60% at 50% 0%,
-    rgb(240 160 48 / 6%),
-    transparent 70%
+  opacity: 0.22;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgb(0 0 0 / 18%) 2px,
+    rgb(0 0 0 / 18%) 4px
   );
 }
 
-/* Header terminal */
-.site-header {
-  border-bottom: 1px solid var(--border-bright);
-  background: rgb(5 5 6 / 92%);
-  box-shadow: 0 1px 0 rgb(240 160 48 / 8%);
+@media (prefers-reduced-motion: reduce) {
+  .marathon-scanlines {
+    display: none;
+  }
 }
 
-.logo {
-  display: inline-flex;
+.marathon-status-bar {
+  display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  margin-bottom: -0.15rem;
+  border-bottom: 1px solid rgb(223 246 74 / 12%);
+  font-family: var(--font-marathon-mono), "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--brand-strong);
+  color: var(--muted);
 }
 
-.logo:hover {
-  color: var(--foreground);
+.marathon-status-bar span:last-child {
+  color: var(--marathon-cyan);
 }
 
-.nav a {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.marathon-status-pulse::after {
+  content: " ●";
+  color: var(--brand);
+  animation: marathon-pulse 2.4s ease-in-out infinite;
 }
 
-.nav a:hover {
-  color: var(--brand-strong);
-}
-
-.header-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding: 0.2rem 0.55rem;
-  border: 1px solid var(--accent-dim);
-  background: rgb(0 212 170 / 6%);
-}
-
-.header-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
-  animation: mhn-pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes mhn-pulse {
+@keyframes marathon-pulse {
   0%,
   100% {
     opacity: 1;
   }
 
   50% {
-    opacity: 0.45;
+    opacity: 0.25;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .header-status-dot {
+  .marathon-status-pulse::after {
     animation: none;
   }
 }
 
-.nav-cta {
-  margin-left: 0.5rem;
-  padding: 0.45rem 1rem;
-  border-radius: 2px;
-  font-family: var(--font-geist-mono), monospace;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+.marathon-ui h1,
+.marathon-ui h2,
+.marathon-ui h3,
+.marathon-ui .page-title,
+.marathon-ui .section-heading,
+.marathon-ui .ep-section-title,
+.marathon-ui .showcase-panel h1,
+.marathon-ui .logo {
+  font-family: var(--font-marathon-display), "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  background: var(--brand);
-  color: #0a0806 !important;
-  box-shadow: 0 0 20px rgb(240 160 48 / 25%);
-  border: 1px solid var(--brand-strong);
 }
 
-.nav-cta:hover {
-  color: #0a0806 !important;
-  background: var(--brand-strong);
-  filter: none;
+.marathon-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.05rem;
+  color: var(--foreground);
 }
 
-/* Faixa de contratação */
-.mhn-hire-band {
-  border-bottom: 1px solid var(--border-bright);
-  background:
-    linear-gradient(180deg, rgb(240 160 48 / 8%) 0%, transparent 55%),
-    var(--surface-soft);
-  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+.marathon-logo-mark {
+  color: var(--brand);
+  font-size: 0.85rem;
+  animation: marathon-blink 3s step-end infinite;
 }
 
-.mhn-hire-grid {
-  display: grid;
-  grid-template-columns: 1fr minmax(240px, 320px);
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  align-items: start;
-}
+@keyframes marathon-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-@media (max-width: 820px) {
-  .mhn-hire-grid {
-    grid-template-columns: 1fr;
+  50% {
+    opacity: 0.35;
   }
 }
 
-.mhn-tag {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brand);
-  margin-bottom: 0.65rem;
+@media (prefers-reduced-motion: reduce) {
+  .marathon-logo-mark {
+    animation: none;
+  }
 }
 
-.mhn-title {
-  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 0.35rem;
-}
-
-.mhn-role {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.82rem;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.85rem;
-}
-
-.mhn-lead {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted);
-  max-width: 52ch;
-  margin-bottom: 1rem;
-}
-
-.mhn-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.15rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-}
-
-.mhn-chip {
-  padding: 0.25rem 0.55rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--muted);
-  border-radius: 2px;
-}
-
-.mhn-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.mhn-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 1.15rem;
-  border-radius: 2px;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.mhn-btn-primary {
-  background: var(--brand);
-  color: #0a0806;
-  border: 1px solid var(--brand-strong);
-  box-shadow: 0 0 24px rgb(240 160 48 / 22%);
-}
-
-.mhn-btn-primary:hover {
-  background: var(--brand-strong);
-}
-
-.mhn-btn-ghost {
-  background: transparent;
-  color: var(--foreground);
-  border: 1px solid var(--border-bright);
-}
-
-.mhn-btn-ghost:hover {
-  border-color: var(--brand);
-  color: var(--brand-strong);
-}
-
-.mhn-terminal {
-  border: 1px solid var(--border-bright);
-  background: var(--surface);
-  border-radius: 2px;
-  overflow: hidden;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.72rem;
-  line-height: 1.55;
-}
-
-.mhn-terminal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.45rem 0.75rem;
-  background: rgb(240 160 48 / 8%);
-  border-bottom: 1px solid var(--border);
-  color: var(--brand);
+.marathon-nav a {
+  font-family: var(--font-marathon-mono), "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.mhn-terminal-body {
-  padding: 0.85rem 0.75rem;
-  color: var(--muted);
+.marathon-nav a:hover {
+  color: var(--brand);
+  text-shadow: 0 0 18px var(--marathon-glow);
 }
 
-.mhn-terminal-body strong {
-  color: var(--foreground);
-  font-weight: 600;
+.site-header {
+  border-bottom-color: rgb(223 246 74 / 18%);
+  background: rgb(4 4 4 / 92%);
 }
 
-.mhn-terminal-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.2rem 0;
-  border-bottom: 1px solid rgb(42 40 36 / 60%);
-}
-
-.mhn-terminal-row:last-child {
-  border-bottom: none;
-}
-
-.mhn-terminal-val {
-  color: var(--accent);
-  text-align: right;
-}
-
-/* Showcase + cards */
-.showcase {
-  background: linear-gradient(180deg, #0c0a08 0%, #050506 65%);
-}
-
-.showcase-kicker,
-.showcase-meta {
-  font-family: var(--font-geist-mono), monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.showcase-meta {
-  color: var(--brand) !important;
-}
-
-.dot.active {
-  background: var(--brand);
-  box-shadow: 0 0 8px rgb(240 160 48 / 50%);
-}
-
-.favorites-strip h3 {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-strong);
-}
-
-.favorite-card {
-  border-color: var(--border);
-  border-radius: 2px;
-}
-
-.favorite-card:hover {
-  border-color: var(--brand);
-}
-
-.button.primary,
-.ep-btn-primary {
+.nav-cta,
+.ep-btn-primary,
+.button.primary {
   background: var(--brand) !important;
-  color: #0a0806 !important;
-  border-color: var(--brand-strong) !important;
-  border-radius: 2px !important;
-  font-family: var(--font-geist-mono), monospace;
-  font-weight: 700 !important;
-  letter-spacing: 0.06em;
+  color: #0a0a08 !important;
+  border: 1px solid var(--brand-strong) !important;
+  border-radius: 0 !important;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 40%),
+    0 12px 32px -16px var(--marathon-glow) !important;
+  font-family: var(--font-marathon-mono), "IBM Plex Mono", monospace !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease !important;
+}
+
+.nav-cta:hover,
+.ep-btn-primary:hover,
+.button.primary:hover {
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 0 1px var(--brand),
+    0 0 28px -4px var(--marathon-glow) !important;
+}
+
+.button,
+.ep-btn-ghost {
+  border-radius: 0 !important;
+  font-family: var(--font-marathon-mono), "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 0 20px rgb(240 160 48 / 20%) !important;
+  border-color: rgb(223 246 74 / 28%) !important;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
 }
 
-.button.primary:hover,
-.ep-btn-primary:hover {
-  background: var(--brand-strong) !important;
+.button:hover,
+.ep-btn-ghost:hover {
+  border-color: var(--marathon-cyan) !important;
+  color: var(--marathon-cyan) !important;
+  background: rgb(66 232 255 / 6%) !important;
 }
 
-.button.primary.gfn-like-cta {
-  border-color: var(--brand-strong) !important;
-}
-
+.marathon-kicker,
 .ep-eyebrow,
+.showcase-meta,
+.card-kind {
+  font-family: var(--font-marathon-mono), "IBM Plex Mono", monospace !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--marathon-cyan) !important;
+}
+
 .ep-eyebrow-dark {
-  font-family: var(--font-geist-mono), monospace;
   color: var(--brand) !important;
 }
 
 .ep-hero-accent {
-  background: linear-gradient(120deg, #f0a030 0%, #ffc857 50%, #00d4aa 100%);
+  background: linear-gradient(
+    120deg,
+    var(--brand) 0%,
+    var(--marathon-cyan) 55%,
+    #fff 100%
+  ) !important;
   -webkit-background-clip: text;
   background-clip: text;
 }
 
-.ep-stat-value {
-  color: var(--brand-strong);
-  font-family: var(--font-geist-mono), monospace;
+.showcase {
+  background: linear-gradient(180deg, #080808 0%, #040404 70%);
+  border-bottom: 1px solid rgb(223 246 74 / 15%);
 }
 
-.ep-stat,
-.ep-pillar-card,
-.card,
-.table-wrap,
-.content-block {
-  border-radius: 2px;
+.showcase-media {
+  border-bottom-color: rgb(223 246 74 / 12%);
+  background: #060606;
 }
 
-.interactive-card:hover {
-  border-color: var(--brand);
-  box-shadow: 0 12px 32px -20px rgb(240 160 48 / 35%);
+.showcase-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(223 246 74 / 8%) 0,
+      transparent 1px,
+      transparent calc(100% - 1px),
+      rgb(223 246 74 / 8%) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgb(223 246 74 / 6%) 0,
+      transparent 1px,
+      transparent calc(100% - 1px),
+      rgb(223 246 74 / 6%) 100%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.45;
 }
 
-.chip {
-  border-radius: 2px;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
+.showcase-image,
+.showcase-image-intrinsic {
+  filter: saturate(1.08) contrast(1.06) brightness(0.72) !important;
 }
 
-.page-title {
-  font-family: var(--font-geist-mono), monospace;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.showcase-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgb(4 4 4 / 92%) 0%,
+      rgb(4 4 4 / 45%) 40%,
+      transparent 72%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(4 4 4 / 95%) 0%,
+      rgb(4 4 4 / 55%) 30%,
+      transparent 62%
+    ) !important;
 }
 
-.section-heading {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-strong);
+.showcase-panel h1 {
+  text-shadow:
+    2px 0 var(--marathon-red),
+    -2px 0 var(--marathon-cyan);
+  animation: marathon-title-glitch 7s infinite;
 }
 
-.whatsapp-float {
-  border-radius: 2px;
-  font-family: var(--font-geist-mono), monospace;
+@keyframes marathon-title-glitch {
+  0%,
+  92%,
+  100% {
+    text-shadow:
+      0 0 transparent,
+      0 0 transparent;
+    transform: translate(0);
+  }
+
+  93% {
+    text-shadow:
+      2px 0 var(--marathon-red),
+      -2px 0 var(--marathon-cyan);
+    transform: translate(-1px, 0);
+  }
+
+  94% {
+    text-shadow:
+      -2px 0 var(--marathon-red),
+      2px 0 var(--marathon-cyan);
+    transform: translate(1px, 0);
+  }
+
+  95% {
+    text-shadow: none;
+    transform: translate(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-panel h1 {
+    animation: none;
+    text-shadow: none;
+  }
+}
+
+.hero-nav,
+.favorites-nav {
+  border-radius: 0 !important;
+  border-color: rgb(223 246 74 / 35%) !important;
+  color: var(--brand) !important;
+  font-family: var(--font-marathon-mono), monospace;
+}
+
+.hero-nav:hover,
+.favorites-nav:hover {
+  background: rgb(223 246 74 / 10%) !important;
+  box-shadow: 0 0 20px -6px var(--marathon-glow);
+}
+
+.dot.active {
+  background: var(--brand) !important;
+  box-shadow: 0 0 12px var(--marathon-glow);
+}
+
+.marathon-strip-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.75rem) !important;
+  line-height: 1.1;
+  margin-bottom: 0.9rem;
+  color: var(--foreground);
+}
+
+.favorite-card {
+  border-radius: 0 !important;
+  border-color: rgb(223 246 74 / 18%) !important;
+  background: #080808 !important;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.favorite-card:hover {
+  border-color: var(--brand) !important;
+  box-shadow:
+    inset 0 0 0 1px rgb(223 246 74 / 15%),
+    0 0 24px -8px var(--marathon-glow);
+  transform: translateY(-2px);
+}
+
+.favorite-card span {
+  font-family: var(--font-marathon-mono), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.card,
+.ep-pillar-card,
+.ep-stat,
+.ep-device,
+.content-block,
+.stack,
+.table-wrap,
+.marketing-highlight-card {
+  border-radius: 0 !important;
+  border-color: rgb(223 246 74 / 16%) !important;
+  background: linear-gradient(180deg, #0c0c0c 0%, #080808 100%) !important;
+}
+
+.card::before,
+.interactive-card::before {
+  content: none;
+}
+
+.interactive-card {
+  position: relative;
+}
+
+.interactive-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid var(--brand);
+  border-left: 2px solid var(--brand);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.interactive-card:hover {
+  border-color: var(--brand) !important;
+  box-shadow:
+    inset 0 0 0 1px rgb(223 246 74 / 12%),
+    0 0 32px -12px var(--marathon-glow) !important;
+  transform: translateY(-3px);
+}
+
+.ep-section-tint {
+  background:
+    linear-gradient(180deg, rgb(223 246 74 / 3%) 0%, transparent 100%),
+    #0a0a0a !important;
+  border-block: 1px solid rgb(223 246 74 / 8%);
+}
+
+.ep-stat-value {
+  color: var(--brand) !important;
+  font-family: var(--font-marathon-display), sans-serif;
+}
+
+.ep-cta-block {
+  border-radius: 0 !important;
+  background:
+    linear-gradient(135deg, rgb(223 246 74 / 12%) 0%, rgb(4 4 4 / 98%) 45%, rgb(66 232 255 / 8%) 100%) !important;
+  border-color: rgb(223 246 74 / 22%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ep-cta-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgb(223 246 74 / 8%) 50%,
+    transparent 60%
+  );
+  animation: marathon-sweep 6s ease-in-out infinite;
+}
+
+@keyframes marathon-sweep {
+  0%,
+  100% {
+    transform: translateX(-120%);
+  }
+
+  45%,
+  55% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ep-cta-block::before {
+    animation: none;
+    display: none;
+  }
+}
+
+.ep-device-chrome {
+  background: #0a0a0a !important;
+  border-bottom-color: rgb(223 246 74 / 15%) !important;
+}
+
+.ep-device-url {
+  color: var(--brand) !important;
+}
+
+.work-table th {
+  font-family: var(--font-marathon-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--marathon-cyan);
+}
+
+.work-table tbody tr:hover {
+  background: rgb(223 246 74 / 5%) !important;
+}
+
+.whatsapp-float {
+  border-radius: 0 !important;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  font-family: var(--font-marathon-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  border-top-color: rgb(223 246 74 / 15%);
+  background: #060606;
+}
+
+.footer-note {
+  font-family: var(--font-marathon-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.chip {
+  border-radius: 0 !important;
+  font-family: var(--font-marathon-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-color: rgb(66 232 255 / 25%) !important;
+  color: var(--marathon-cyan) !important;
+}
+
+.marathon-header-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-block: 0.45rem 0.55rem;
+}
+
+.marathon-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .marathon-status-bar {
+    font-size: 0.55rem;
+  }
+
+  .marathon-header-row {
+    flex-wrap: wrap;
+  }
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed, Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import "./globals-ep.css";
@@ -15,10 +15,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const marathonDisplay = Barlow_Condensed({
+  variable: "--font-marathon-display",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
+const marathonMono = IBM_Plex_Mono({
+  variable: "--font-marathon-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
 export const metadata: Metadata = {
-  title: "Cloud Service — Dev full-stack | Sistemas em produção",
+  title: "Cloud Service",
   description:
-    "Portfólio de desenvolvimento full-stack: sistemas no ar, automação WhatsApp e landing pages. Disponível para freela, contratos e vagas remotas.",
+    "Projetos digitais em produção com foco em resultado, clareza e conforto para o cliente.",
 };
 
 export default function RootLayout({
@@ -27,25 +39,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+    <html
+      lang="pt-BR"
+      className={`${geistSans.variable} ${geistMono.variable} ${marathonDisplay.variable} ${marathonMono.variable}`}
+    >
+      <body className="marathon-ui">
+        <div className="marathon-grid" aria-hidden="true" />
+        <div className="marathon-scanlines" aria-hidden="true" />
         <header className="site-header">
           <div className="container header-content">
-            <Link className="logo" href="/">
-              Cloud Service
-              <span className="header-status">
-                <span className="header-status-dot" aria-hidden />
-                online
-              </span>
-            </Link>
-            <nav className="nav nav-with-cta" aria-label="Navegação principal">
-              <Link href="/">Início</Link>
-              <Link href="/projetos">Projetos</Link>
-              <Link href="/contato">Contato</Link>
-              <Link className="nav-cta" href="/contato">
-                Contratar
-              </Link>
-            </nav>
+            <div className="marathon-header-stack">
+              <div className="marathon-status-bar" aria-hidden="true">
+                <span>SYS // PORTFOLIO ONLINE</span>
+                <span className="marathon-status-pulse">LINK // ACTIVE</span>
+              </div>
+              <div className="marathon-header-row">
+                <Link className="logo marathon-logo" href="/">
+                  <span className="marathon-logo-mark" aria-hidden="true">
+                    ▸
+                  </span>
+                  Cloud Service
+                </Link>
+                <nav className="nav marathon-nav" aria-label="Navegação principal">
+                  <Link href="/">Início</Link>
+                  <Link href="/projetos">Projetos</Link>
+                  <Link href="/contato">Contato</Link>
+                </nav>
+              </div>
+            </div>
           </div>
         </header>
         <main className="site-main">{children}</main>
@@ -63,8 +84,7 @@ export default function RootLayout({
             <div className="footer-brand">
               <strong>Cloud Service</strong>
               <p className="footer-tagline">
-                Dev full-stack — sistemas em produção, automação e entrega com
-                clareza para quem contrata.
+                Sistemas em produção com foco em resultado e clareza.
               </p>
             </div>
             <nav className="footer-nav" aria-label="Rodapé">

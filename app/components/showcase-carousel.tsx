@@ -93,8 +93,8 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             className="showcase-panel showcase-panel-enter"
           >
             <h1>{activeProject.title}</h1>
-            <p className="showcase-meta">
-              {getProjectKindLabel(activeProject)} • {activeProject.impactLabel}
+            <p className="showcase-meta marathon-kicker">
+              {getProjectKindLabel(activeProject)} // {activeProject.impactLabel}
             </p>
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">
@@ -127,7 +127,10 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         </div>
       </div>
       <div className="favorites-strip">
-        <h3>Destaques — portfólio ativo</h3>
+        <h3 className="marathon-strip-title">
+          <span className="marathon-kicker">Portfolio //</span>
+          Destaques — sistemas e landing pages
+        </h3>
         <div className="favorites-track">
           <button
             type="button"
