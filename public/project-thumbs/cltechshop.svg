@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">CL TECH SHOP</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Loja de eletronicos  landing page</text>
+  <rect x="88" y="160" width="1024" height="80" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="112" y="188" width="120" height="24" rx="6" fill="#4b8dff"/>
+  <rect x="860" y="188" width="120" height="24" rx="6" fill="#1e2430" stroke="#4b8dff" stroke-width="1"/>
+  <text x="888" y="205" fill="#e8ebf3" font-size="12" font-family="Arial, Helvetica, sans-serif">Comprar</text>
+  <rect x="88" y="260" width="320" height="260" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="108" y="280" width="280" height="140" rx="10" fill="#1a2438"/>
+  <rect x="148" y="320" width="200" height="80" rx="8" fill="#242936"/>
+  <rect x="108" y="440" width="200" height="14" rx="4" fill="#3d4659"/>
+  <rect x="108" y="464" width="120" height="28" rx="8" fill="#4b8dff"/>
+  <rect x="432" y="260" width="320" height="260" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <rect x="452" y="280" width="280" height="140" rx="10" fill="#1a2438"/>
+  <circle cx="592" cy="350" r="40" fill="#242936"/>
+  <rect x="452" y="440" width="200" height="14" rx="4" fill="#3d4659"/>
+  <rect x="452" y="464" width="120" height="28" rx="8" fill="#4b8dff"/>
+  <rect x="776" y="260" width="336" height="260" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="800" y="300" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Oferta destaque</text>
+  <rect x="800" y="320" width="288" height="12" rx="4" fill="#2a2e39"/>
+  <rect x="800" y="342" width="240" height="12" rx="4" fill="#2a2e39"/>
+  <rect x="800" y="380" width="160" height="40" rx="10" fill="#25d366"/>
+  <text x="828" y="406" fill="#0a0e18" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Ver produtos</text>
+</svg>
