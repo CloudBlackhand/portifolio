@@ -17,14 +17,14 @@ export default function ClassificadosPage() {
   const topSecretProjects = getTopSecretProjects();
 
   return (
-    <div className="classified-page">
-      <div className="classified-page-bar">
-        <div className="container classified-page-bar-inner">
-          <Link className="classified-page-back" href="/projetos">
+    <div className="marathon-world-page">
+      <div className="marathon-world-page-bar">
+        <div className="container marathon-world-page-bar-inner">
+          <Link className="marathon-world-back" href="/projetos">
             ← Catálogo público
           </Link>
-          <span className="classified-page-route" aria-hidden="true">
-            UESC / RESTRICTED / NODE-07
+          <span className="marathon-world-route" aria-hidden="true">
+            tau ceti · warehouse node · tablet sync
           </span>
         </div>
       </div>
