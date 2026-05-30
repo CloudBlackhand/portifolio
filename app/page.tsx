@@ -1,3 +1,4 @@
+import { HeroTerminal } from "./components/hero-terminal";
 import { projects } from "@/data/projects";
 import { getProfilePhoto } from "@/lib/profile-photo";
 import { MarketingHighlights } from "./components/marketing-highlights";
@@ -10,14 +11,15 @@ export default function Home() {
 
   return (
     <>
+      <HeroTerminal />
       <ShowcaseCarousel projects={projects} />
       <MarketingHighlights />
       <LandingPage projects={projects} profilePhoto={profilePhoto} />
       <div className="container ep-table-section">
         <WorkTable projects={projects} />
         <p className="muted section-spacing">
-          Sistemas em produção e campanhas de marketing e criativo — abra cada projeto
-          para ver capturas ou peças visuais.
+          Portfólio para contratantes — sistemas, automação e campanhas. Abra cada
+          case para validar entrega antes de fechar projeto.
         </p>
       </div>
     </>
