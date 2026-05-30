@@ -61,8 +61,8 @@ const pillars = [
 ];
 
 const stats = [
-  { label: "Sistemas em produção", value: "5" },
-  { label: "Landing pages", value: "4" },
+  { label: "Sistemas em produção", value: "7" },
+  { label: "Landing pages", value: "2" },
   { label: "Campanhas criativas", value: "2" },
   { label: "Prioridade", value: "Conforto para o cliente" },
 ];

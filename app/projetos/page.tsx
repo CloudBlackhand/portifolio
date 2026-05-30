@@ -30,8 +30,8 @@ export default function ProjetosPage() {
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas</h2>
         <p className="muted section-spacing-sm">
-          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preço e CEPBOT — produtos
-          digitais em uso no dia a dia da operação.
+          Vendas Hub, Sistema HTTPS WhatsApp, MS, Melhor Preço, CEPBOT, CL Tech Shop
+          e Cálculo Jurídico — produtos digitais em uso ou publicados com link no ar.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
       </section>
@@ -39,8 +39,8 @@ export default function ProjetosPage() {
       <section id="landing-pages" className="section-spacing">
         <h2 className="section-heading">Landing pages</h2>
         <p className="muted section-spacing-sm">
-          CL Tech Shop, RapidCred, CN Construtora e Cálculo Jurídico — sites
-          publicados no Netlify com link para ver no ar.
+          RapidCred e CN Construtora — páginas de captura publicadas no Netlify com
+          link para ver no ar.
         </p>
         <ProjectCardGrid projects={landingProjects} />
       </section>
