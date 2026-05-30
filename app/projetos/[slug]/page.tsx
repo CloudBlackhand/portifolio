@@ -68,8 +68,8 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   return (
     <article className={topsecret ? "page-shell classified-detail" : "page-shell"}>
-      <Link className="button" href="/projetos">
-        Voltar para projetos
+      <Link className="button" href={topsecret ? "/classificados" : "/projetos"}>
+        {topsecret ? "Voltar para classificados" : "Voltar para projetos"}
       </Link>
 
       {topsecret ? (

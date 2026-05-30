@@ -136,7 +136,61 @@
   color: #fff;
 }
 
-/* —— Zona Top Secret (/projetos) —— */
+/* —— Página /classificados —— */
+.classified-page {
+  background: var(--marathon-surface);
+}
+
+.classified-page-bar {
+  border-bottom: 1px solid rgb(255 122 24 / 30%);
+  background: rgb(7 8 9 / 95%);
+  padding: 0.75rem 0;
+}
+
+.classified-page-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.classified-page-back {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--marathon-cyan);
+  border: 1px solid rgb(0 232 255 / 35%);
+  padding: 0.45rem 0.75rem;
+  background: rgb(0 232 255 / 6%);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.classified-page-back:hover {
+  background: rgb(0 232 255 / 12%);
+  border-color: var(--marathon-cyan);
+  color: #fff;
+}
+
+.classified-page-route {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: rgb(255 122 24 / 65%);
+  text-transform: uppercase;
+}
+
+.classified-zone--standalone {
+  margin-top: 0;
+  min-height: calc(100vh - 68px - 52px);
+  border-top: none;
+}
+
+/* —— Zona Top Secret —— */
 .classified-zone {
   position: relative;
   margin-inline: calc(50% - 50vw);

@@ -4,6 +4,8 @@ import type { Project } from "@/data/projects";
 
 type TopSecretSectionProps = {
   projects: Project[];
+  /** Página dedicada /classificados — layout full-screen. */
+  standalone?: boolean;
 };
 
 function caseIdFromSlug(slug: string): string {
@@ -14,11 +16,17 @@ function caseIdFromSlug(slug: string): string {
   return `CS-${String(hash).padStart(4, "0")}`;
 }
 
-export function TopSecretSection({ projects }: TopSecretSectionProps) {
+export function TopSecretSection({ projects, standalone = false }: TopSecretSectionProps) {
   if (projects.length === 0) return null;
 
   return (
-    <section id="top-secret" className="classified-zone" aria-labelledby="classified-heading">
+    <section
+      id={standalone ? undefined : "top-secret"}
+      className={
+        standalone ? "classified-zone classified-zone--standalone" : "classified-zone"
+      }
+      aria-labelledby="classified-heading"
+    >
       <div className="classified-zone-bg" aria-hidden="true">
         <div className="classified-zone-noise" />
         <div className="classified-zone-scanlines" />
@@ -91,8 +99,8 @@ export function TopSecretSection({ projects }: TopSecretSectionProps) {
         </ul>
 
         <p className="classified-footer-note">
-          Estes arquivos não aparecem na tabela resumo da home nem em listagens
-          públicas do catálogo.
+          Estes arquivos não aparecem na tabela resumo da home, no catálogo
+          público de projetos nem em listagens abertas.
         </p>
       </div>
     </section>

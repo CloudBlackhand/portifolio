@@ -25,7 +25,7 @@ export default function Home() {
         </p>
         <p className="catalog-table-note">
           Arquivos classificados não entram nesta tabela.{" "}
-          <Link href="/projetos#top-secret">Ver dossiês restritos</Link>
+          <Link href="/classificados">Ver dossiês restritos</Link>
         </p>
       </div>
     </>
