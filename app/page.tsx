@@ -24,8 +24,8 @@ export default function Home() {
           ver capturas ou peças visuais quando disponíveis.
         </p>
         <p className="catalog-table-note">
-          Arquivos classificados não entram nesta tabela.{" "}
-          <Link href="/classificados">Ver dossiês restritos</Link>
+          Projetos sob sigilo não entram nesta tabela.{" "}
+          <Link href="/projetos#sob-sigilo">Ver na página de projetos</Link>
         </p>
       </div>
     </>
