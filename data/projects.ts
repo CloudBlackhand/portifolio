@@ -464,7 +464,9 @@ export const projects: Project[] = [
       "Site institucional 3D para operadoras: van de instalação, scroll-driven e pitch de vendas + campo com marca parceira.",
     detailedDescription:
       "ViON é o site de apresentação do modelo comercial para operadoras parceiras: vendedores fixos no desk e equipe de instalação em campo, operando com a marca da operadora. A experiência é scroll-driven — câmera e cena 3D sincronizadas com as seções, inspiradas em referências imersivas como igloo.inc. Inclui van de serviço modelada, roteador procedural, partículas, grid de rede, intro animada e post-processing. Stack React + Vite + Three.js + Tailwind v4 + Zustand.",
-    thumbnail: "/project-thumbs/vion.svg",
+    thumbnail: "/project-thumbs/captures/vion.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
     category: "Site institucional 3D",
     year: 2026,
     impactLabel: "Pitch imersivo para operadoras",
@@ -481,10 +483,10 @@ export const projects: Project[] = [
       "Cena 3D com van, rede e efeitos visuais alinhados à identidade laranja ViON.",
     ],
     results: [
-      "Site de pitch pronto para enviar a operadoras interessadas.",
+      "Site publicado na Vercel com experiência scroll-driven completa.",
       "Demonstração clara do modelo desk + campo sem expor dados de clientes.",
     ],
-    liveUrl: "",
+    liveUrl: "https://vion-ashen.vercel.app",
   },
   {
     slug: "consultoria-cloud-service",
