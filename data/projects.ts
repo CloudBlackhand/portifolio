@@ -91,32 +91,32 @@ export const projects: Project[] = [
   {
     slug: "melhor-preco",
     projectKind: "software",
-    title: "Melhor Preço",
+    title: "Melhor Preço Net",
     shortDescription:
-      "Ferramenta de comparação e apoio à decisão de compra e margem, com dados reunidos para análise rápida.",
+      "Comparador de planos de internet com mapa de cobertura por KML, cache e painel admin para operação comercial.",
     detailedDescription:
-      "O Melhor Preço ajuda a comparar cenários de custo e revenda antes de comprar ou precificar: entrada de dados organizada, visão do que pesa na margem e leitura objetiva para quem decide no operacional. Foi usado no cotidiano para reduzir decisão no feeling e concentrar números em um fluxo só — sempre com foco em consistência entre consultas e velocidade para repetir a análise sempre que o mercado mudar.",
+      "O Melhor Preço Net reúne comparação de planos, margem e decisão de compra em um fluxo web completo. O diferencial é a cobertura geográfica: áreas importadas em KML, validação com Turf.js e visualização no mapa com Leaflet — o cliente vê se o endereço está atendido antes de fechar. Há autenticação, painel administrativo, Prisma com PostgreSQL, Redis para cache e interface atual com componentes reutilizáveis. Parte da experiência usa Three.js para dar profundidade visual sem perder velocidade no operacional.",
     thumbnail: "/project-thumbs/captures/melhor-preco.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
-    category: "Precificação e comparação",
-    year: 2024,
-    impactLabel: "Decisão mais clara na compra",
+    category: "Comparador e cobertura",
+    year: 2026,
+    impactLabel: "Cobertura no mapa antes da venda",
     featured: true,
-    stack: ["Web", "TypeScript", "API"],
+    stack: ["Next.js", "PostgreSQL", "Leaflet", "Three.js"],
     context:
-      "Compra e precificação precisavam de uma base única de comparação, em vez de cortes de planilha e conversas sem registro.",
+      "Operação de internet precisava comparar planos e provar cobertura por região — não só tabela de preço em planilha.",
     challenges: [
-      "Manter regras de comparação alinhadas ao que o time realmente usa no dia a dia.",
-      "Evitar telas pesadas: quem compra precisa resposta em poucos cliques.",
+      "Cruzar KMLs de cobertura com consulta rápida no mapa.",
+      "Manter comparação de planos consistente para quem decide compra e revenda.",
     ],
     solution: [
-      "Fluxos de entrada e comparação com foco em margem e cenários repetíveis.",
-      "Interface pensada para revisitar preços com frequência.",
+      "Backend com Prisma, cache Redis e rotas públicas + admin.",
+      "Mapa interativo com polígonos de cobertura e fluxo de comparação objetivo.",
     ],
     results: [
-      "Disciplina na análise de preço e menos discussão sem número na mesa.",
-      "Ganho de tempo na preparação de decisão de compra ou tabela de venda.",
+      "Decisão de compra e precificação com número e região na mesma tela.",
+      "Base pronta para escalar operadoras e áreas atendidas.",
     ],
     liveUrl: "https://melhorpreconet.up.railway.app",
   },
@@ -423,6 +423,68 @@ export const projects: Project[] = [
       "Funil claro para interessados em cálculos processuais.",
     ],
     liveUrl: "https://calculojuridicoebook.netlify.app",
+  },
+  {
+    slug: "vision",
+    projectKind: "landing",
+    title: "VISION",
+    shortDescription:
+      "Landing de veículos premium com hero 3D cinematográfico — modelos GLB, pós-processamento e CTA para WhatsApp.",
+    detailedDescription:
+      "Site de apresentação para concessionária premium: hero imersivo com React Three Fiber, modelos BMW em GLB/GLTF, bloom e aberração cromática. A cada visita o carro em destaque pode variar; seções de financiamento, veículos revisados e entrega nacional completam a narrativa comercial. Layout escuro de alto contraste, tipografia forte e fluxo pensado para converter no WhatsApp — experiência de vitrine digital, não catálogo estático.",
+    thumbnail: "/project-thumbs/captures/vision.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
+    category: "Landing 3D",
+    year: 2026,
+    impactLabel: "Hero 3D que vende no clique",
+    featured: true,
+    stack: ["Next.js", "React Three Fiber", "Three.js", "Tailwind"],
+    context:
+      "Concessionária precisava de presença digital memorável — mais vitrine cinematográfica do que site de lista de carros.",
+    challenges: [
+      "Carregar modelos 3D pesados sem travar mobile.",
+      "Manter legibilidade do copy sobre cena escura e efeitos de luz.",
+    ],
+    solution: [
+      "Pipeline R3F + drei + postprocessing com loading controlado.",
+      "Seções claras de benefício e contato abaixo do hero 3D.",
+    ],
+    results: [
+      "Landing publicada na Vercel com identidade premium.",
+      "Hero interativo que reforça posicionamento de seleção exclusiva.",
+    ],
+    liveUrl: "https://vision-iota-eight.vercel.app",
+  },
+  {
+    slug: "vion",
+    projectKind: "landing",
+    title: "ViON",
+    shortDescription:
+      "Site institucional 3D para operadoras: van de instalação, scroll-driven e pitch de vendas + campo com marca parceira.",
+    detailedDescription:
+      "ViON é o site de apresentação do modelo comercial para operadoras parceiras: vendedores fixos no desk e equipe de instalação em campo, operando com a marca da operadora. A experiência é scroll-driven — câmera e cena 3D sincronizadas com as seções, inspiradas em referências imersivas como igloo.inc. Inclui van de serviço modelada, roteador procedural, partículas, grid de rede, intro animada e post-processing. Stack React + Vite + Three.js + Tailwind v4 + Zustand.",
+    thumbnail: "/project-thumbs/vion.svg",
+    category: "Site institucional 3D",
+    year: 2026,
+    impactLabel: "Pitch imersivo para operadoras",
+    featured: true,
+    stack: ["React Three Fiber", "Three.js", "Vite", "Tailwind"],
+    context:
+      "Operadora precisa entender o modelo ViON — desk + instalação — antes de fechar parceria; PDF e slide não transmitiam a proposta.",
+    challenges: [
+      "Narrar vendas e instalação em uma jornada contínua, sem parecer apresentação corporativa genérica.",
+      "Sincronizar scroll HTML com câmera 3D em várias cenas.",
+    ],
+    solution: [
+      "Timeline de scroll com seções Hero, Serviços, Sobre e Contato.",
+      "Cena 3D com van, rede e efeitos visuais alinhados à identidade laranja ViON.",
+    ],
+    results: [
+      "Site de pitch pronto para enviar a operadoras interessadas.",
+      "Demonstração clara do modelo desk + campo sem expor dados de clientes.",
+    ],
+    liveUrl: "",
   },
   {
     slug: "consultoria-cloud-service",
