@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0c10"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#12151c" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#fb923c" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Vi</text>
+  <text x="128" y="100" fill="#f8fafc" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">ON</text>
+  <text x="88" y="132" fill="#94a3b8" font-size="16" font-family="Arial, Helvetica, sans-serif">Vendas e instalacao para operadoras - site 3D scroll-driven</text>
+  <rect x="88" y="170" width="520" height="360" rx="16" fill="#111217" stroke="#fb923c" stroke-width="2"/>
+  <rect x="140" y="280" width="180" height="90" rx="12" fill="#1a1f2a" stroke="#334155" stroke-width="2"/>
+  <rect x="155" y="295" width="28" height="8" rx="2" fill="#22c55e"/>
+  <rect x="190" y="295" width="28" height="8" rx="2" fill="#22c55e"/>
+  <rect x="225" y="295" width="28" height="8" rx="2" fill="#334155"/>
+  <rect x="260" y="295" width="28" height="8" rx="2" fill="#334155"/>
+  <rect x="295" y="295" width="8" height="8" rx="2" fill="#fb923c"/>
+  <circle cx="230" cy="340" r="22" fill="#fb923c" opacity="0.25"/>
+  <path d="M210 340 Q230 320 250 340" stroke="#fb923c" stroke-width="3" fill="none"/>
+  <rect x="360" y="240" width="200" height="120" rx="14" fill="#151922" stroke="#334155" stroke-width="2"/>
+  <rect x="380" y="265" width="160" height="70" rx="8" fill="#1e2430"/>
+  <text x="400" y="310" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Van de instalacao</text>
+  <rect x="640" y="170" width="480" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="664" y="210" fill="#e8ebf3" font-size="15" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Scroll sincronizado com cena 3D</text>
+  <rect x="664" y="232" width="420" height="12" rx="4" fill="#1e2430"/>
+  <rect x="664" y="232" width="280" height="12" rx="4" fill="#fb923c"/>
+  <text x="664" y="280" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Desk fixo + equipe em campo</text>
+  <text x="664" y="310" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Marca da operadora parceira</text>
+  <text x="664" y="340" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Post-processing e particulas</text>
+  <circle cx="1040" cy="420" r="64" fill="#1a1f2a" stroke="#fb923c" stroke-width="3"/>
+  <path d="M1010 420 L1010 392 C1010 374 1023 360 1040 360 C1057 360 1070 374 1070 392 L1070 420" stroke="#fb923c" stroke-width="6" stroke-linecap="round"/>
+  <rect x="1002" y="418" width="76" height="58" rx="10" fill="#242936" stroke="#fb923c" stroke-width="2"/>
+</svg>
