@@ -118,7 +118,7 @@ export const projects: Project[] = [
       "Decisão de compra e precificação com número e região na mesma tela.",
       "Base pronta para escalar operadoras e áreas atendidas.",
     ],
-    liveUrl: "https://melhorpreconet.up.railway.app",
+    liveUrl: "",
   },
   {
     slug: "cepbot",
@@ -148,9 +148,7 @@ export const projects: Project[] = [
       "Primeiro atendimento mais rápido e padronizado no WhatsApp.",
       "Menos tempo da equipe em perguntas repetitivas de cobertura e planos.",
     ],
-    liveUrl:
-      "https://wa.me/5519989834581?text=Ola%2C%20vim%20pelo%20site%20Cloud%20Service%20e%20quero%20conhecer%20o%20CEPBOT",
-    liveLinkLabel: "Bot de atendimento",
+    liveUrl: "",
   },
   {
     slug: "instalacao-gratis-rapida",
@@ -866,7 +864,6 @@ export function getMarketingHighlightProjects(): Project[] {
 
 export function getProjectLiveLinkLabel(project: Project): string {
   if (project.liveLinkLabel) return project.liveLinkLabel;
-  if (project.slug === "cepbot") return "Bot de atendimento";
   return "Ver site no ar";
 }
 
