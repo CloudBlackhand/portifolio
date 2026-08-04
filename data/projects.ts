@@ -795,6 +795,41 @@ export const projects: Project[] = [
       "Regras e dados da operação mantidos sob sigilo no portfólio.",
     ],
   },
+  {
+    slug: "bottique-do-vidro",
+    projectKind: "landing",
+    title: "Bottique do Vidro",
+    shortDescription:
+      "Site institucional para vidraçaria de alto padrão: apresentação de serviços, diferenciais, portfólio de ambientes e canais de contato.",
+    detailedDescription:
+      "A Bottique do Vidro é uma vidraçaria de alto padrão que atende residências e comércios com soluções em vidro temperado, espelhos, esquadrias e manutenção. O site reforça a seriedade do serviço desde o primeiro contato: serviços claros, diferenciais como experiência e garantia de instalação, portfólio de ambientes transformados e múltiplos canais de atendimento via WhatsApp. Foco em converter visitantes em orçamentos, sem burocracia.",
+    thumbnail: "/project-thumbs/captures/bottique-do-vidro.png",
+    thumbnailWidth: 1200,
+    thumbnailHeight: 630,
+    category: "Landing page institucional",
+    year: 2026,
+    impactLabel: "Orçamento claro e contato direto",
+    featured: true,
+    stack: ["Next.js", "Landing page", "WhatsApp"],
+    context:
+      "A vidraçaria precisava de uma presença digital profissional que mostrasse serviços, qualidade do acabamento e facilitasse o primeiro contato.",
+    challenges: [
+      "Criar uma landing page que transmita sofisticação e segurança de um serviço técnico.",
+      "Mostrar portfólio sem depender de fotos próprias de obras.",
+      "Deixar o contato por WhatsApp acessível em todos os pontos da página.",
+    ],
+    solution: [
+      "Site em Next.js com carregamento rápido e SEO amigável.",
+      "Estrutura de seções claras: serviços, diferenciais, portfólio, depoimentos e CTA.",
+      "Links diretos para WhatsApp com opções de atendimento.",
+    ],
+    results: [
+      "Site no ar com identidade clean e foco em conversão.",
+      "Clientes conseguem entender serviços e entrar em contato em poucos segundos.",
+      "Presença digital alinhada com o posicionamento de alto padrão.",
+    ],
+    liveUrl: "https://bottiquedovidro.vercel.app/",
+  },
 ];
 
 /** Largura máxima da peça na página de detalhe (evita imagem gigante em PNG 4K). */

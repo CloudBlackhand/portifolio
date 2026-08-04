@@ -13,6 +13,7 @@ const targets = [
   { slug: "rapidcred", url: "https://rapidcred.netlify.app" },
   { slug: "cn-construtora", url: "https://cnconstrutora.netlify.app" },
   { slug: "calculo-juridico-ebook", url: "https://calculojuridicoebook.netlify.app" },
+  { slug: "bottique-do-vidro", url: "https://bottiquedovidro.vercel.app/", waitMs: 2500 },
 ];
 
 const VIEWPORT = { width: 1200, height: 630 };
