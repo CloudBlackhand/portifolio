@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">PROJECT HUB</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Cronograma, equipe, horas e custos</text>
+
+  <rect x="88" y="160" width="1024" height="330" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Cronograma do projeto</text>
+
+  <text x="112" y="234" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Descoberta</text>
+  <rect x="230" y="222" width="140" height="20" rx="6" fill="#25d366"/>
+
+  <text x="112" y="274" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Desenvolvimento</text>
+  <rect x="230" y="262" width="360" height="20" rx="6" fill="#4b8dff"/>
+
+  <text x="112" y="314" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Homologação</text>
+  <rect x="470" y="302" width="140" height="20" rx="6" fill="#f59e0b"/>
+
+  <text x="112" y="354" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Entrega</text>
+  <rect x="610" y="342" width="90" height="20" rx="6" fill="#c084fc"/>
+
+  <line x1="230" y1="200" x2="230" y2="380" stroke="#2a2e39" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="590" y1="200" x2="590" y2="380" stroke="#2a2e39" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <rect x="112" y="400" width="240" height="60" rx="10" fill="#1a1f2a"/>
+  <text x="132" y="424" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">HORAS APONTADAS</text>
+  <text x="132" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">312h / 400h</text>
+
+  <rect x="376" y="400" width="240" height="60" rx="10" fill="#1a1f2a"/>
+  <text x="396" y="424" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">CUSTO ATÉ AGORA</text>
+  <text x="396" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">R$ 62.400</text>
+
+  <rect x="640" y="400" width="240" height="60" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="660" y="424" fill="#7fd99b" font-size="11" font-family="Arial, Helvetica, sans-serif">STATUS</text>
+  <text x="660" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">No prazo</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">STOCK CONTROL</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Curva ABC, ponto de pedido e perdas</text>
+
+  <rect x="88" y="160" width="520" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Curva ABC</text>
+  <rect x="112" y="230" width="60" height="220" fill="#25d366"/>
+  <rect x="188" y="270" width="60" height="180" fill="#25d366"/>
+  <rect x="264" y="310" width="60" height="140" fill="#4b8dff"/>
+  <rect x="340" y="350" width="60" height="100" fill="#4b8dff"/>
+  <rect x="416" y="390" width="60" height="60" fill="#f59e0b"/>
+  <rect x="492" y="410" width="60" height="40" fill="#f59e0b"/>
+  <text x="112" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">A</text>
+  <text x="188" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">A</text>
+  <text x="264" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">B</text>
+  <text x="340" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">B</text>
+  <text x="416" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">C</text>
+  <text x="492" y="470" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">C</text>
+
+  <rect x="632" y="160" width="480" height="170" rx="16" fill="#111217" stroke="#f59e0b" stroke-width="2"/>
+  <text x="656" y="196" fill="#fbbf6b" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Ponto de pedido</text>
+  <rect x="656" y="216" width="432" height="16" rx="8" fill="#2a2e39"/>
+  <rect x="656" y="216" width="140" height="16" rx="8" fill="#f59e0b"/>
+  <text x="656" y="260" fill="#e8ebf3" font-size="24" font-weight="bold" font-family="Arial, Helvetica, sans-serif">32 un.</text>
+  <text x="656" y="288" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Reposição sugerida esta semana</text>
+
+  <rect x="632" y="350" width="480" height="170" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="656" y="386" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Perdas do mês</text>
+  <text x="656" y="440" fill="#f87171" font-size="26" font-weight="bold" font-family="Arial, Helvetica, sans-serif">-1,2%</text>
+  <text x="656" y="466" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">Abaixo da média do setor</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">PDV CLOUD</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Frente de caixa integrada com fiscal e estoque</text>
+
+  <rect x="88" y="160" width="380" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Carrinho</text>
+  <rect x="112" y="216" width="332" height="50" rx="8" fill="#1a1f2a"/>
+  <rect x="128" y="234" width="180" height="10" rx="4" fill="#3d4659"/>
+  <text x="380" y="248" fill="#7aa2ff" font-size="13" font-family="Arial, Helvetica, sans-serif">R$ 89</text>
+  <rect x="112" y="276" width="332" height="50" rx="8" fill="#1a1f2a"/>
+  <rect x="128" y="294" width="150" height="10" rx="4" fill="#3d4659"/>
+  <text x="380" y="308" fill="#7aa2ff" font-size="13" font-family="Arial, Helvetica, sans-serif">R$ 45</text>
+  <rect x="112" y="336" width="332" height="50" rx="8" fill="#1a1f2a"/>
+  <rect x="128" y="354" width="200" height="10" rx="4" fill="#3d4659"/>
+  <text x="380" y="368" fill="#7aa2ff" font-size="13" font-family="Arial, Helvetica, sans-serif">R$ 120</text>
+  <rect x="112" y="410" width="332" height="2" fill="#2a2e39"/>
+  <text x="112" y="450" fill="#e8ebf3" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Total: R$ 254</text>
+  <rect x="112" y="464" width="200" height="42" rx="10" fill="#25d366"/>
+  <text x="150" y="490" fill="#05170c" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Finalizar venda</text>
+
+  <rect x="500" y="160" width="612" height="170" rx="16" fill="#111217" stroke="#4b8dff" stroke-width="2"/>
+  <text x="524" y="196" fill="#7aa2ff" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Nota fiscal emitida</text>
+  <rect x="524" y="216" width="200" height="16" rx="8" fill="#2a2e39"/>
+  <rect x="524" y="216" width="180" height="16" rx="8" fill="#4b8dff"/>
+  <text x="524" y="270" fill="#e8ebf3" font-size="26" font-weight="bold" font-family="Arial, Helvetica, sans-serif">NF-e #00482</text>
+  <text x="524" y="296" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Sincronizada com estoque e e-commerce</text>
+
+  <rect x="500" y="350" width="612" height="170" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="524" y="386" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Canais de venda</text>
+  <rect x="524" y="410" width="150" height="44" rx="10" fill="#1a1f2a"/>
+  <text x="544" y="437" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Loja física</text>
+  <rect x="690" y="410" width="150" height="44" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="710" y="437" fill="#7fd99b" font-size="13" font-family="Arial, Helvetica, sans-serif">E-commerce</text>
+  <rect x="856" y="410" width="150" height="44" rx="10" fill="#1a1f2a"/>
+  <text x="876" y="437" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Marketplace</text>
+</svg>

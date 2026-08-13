@@ -97,8 +97,8 @@ export const projects: Project[] = [
     detailedDescription:
       "O Melhor Preço Net reúne comparação de planos, margem e decisão de compra em um fluxo web completo. O diferencial é a cobertura geográfica: áreas importadas em KML, validação com Turf.js e visualização no mapa com Leaflet — o cliente vê se o endereço está atendido antes de fechar. Há autenticação, painel administrativo, Prisma com PostgreSQL, Redis para cache e interface atual com componentes reutilizáveis. Parte da experiência usa Three.js para dar profundidade visual sem perder velocidade no operacional.",
     thumbnail: "/project-thumbs/captures/melhor-preco.png",
-    thumbnailWidth: 1200,
-    thumbnailHeight: 630,
+    thumbnailWidth: 1919,
+    thumbnailHeight: 955,
     category: "Comparador e cobertura",
     year: 2026,
     impactLabel: "Cobertura no mapa antes da venda",
@@ -794,6 +794,385 @@ export const projects: Project[] = [
       "Cliente resolve o básico sozinho, no ritmo dele.",
       "Regras e dados da operação mantidos sob sigilo no portfólio.",
     ],
+  },
+  {
+    slug: "erp360",
+    projectKind: "software",
+    title: "ERP360",
+    shortDescription:
+      "ERP integrado para operações de médio porte: vendas, estoque, financeiro, RH e BI em um só sistema.",
+    detailedDescription:
+      "ERP360 centraliza a operação de empresas que cresceram usando ferramentas separadas. Reúne vendas, compras, estoque, financeiro, RH e dashboards executivos em um único ambiente. Cada departamento vê só o que precisa, mas a diretoria tem visão consolidada em tempo real.",
+    thumbnail: "/project-thumbs/erp360.svg",
+    category: "ERP",
+    year: 2026,
+    impactLabel: "Gestão unificada sem planilhas",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Redis"],
+    context:
+      "Empresa de médio porte usava planilhas e sistemas avulsos. Dados se perdiam entre vendas, estoque e financeiro.",
+    challenges: [
+      "Unificar processos sem parar a operação.",
+      "Criar permissões por departamento.",
+      "Gerar relatórios consolidados de forma rápida.",
+    ],
+    solution: [
+      "ERP modular com módulos de vendas, compras, estoque, financeiro e RH.",
+      "Papéis e aprovações configuráveis por usuário.",
+      "Dashboards executivos com KPIs atualizados.",
+    ],
+    results: [
+      "Relatórios que levavam dias gerados em segundos.",
+      "Menos retrabalho entre áreas e visão real do lucro.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "gestor-pro",
+    projectKind: "software",
+    title: "Gestor Pro",
+    shortDescription:
+      "ERP enxuto para pequenas empresas que precisam sair do caos do Excel e do WhatsApp.",
+    detailedDescription:
+      "Gestor Pro é um ERP leve pensado para pequenos negócios que precisam de controle sem curva de aprendizado. Fluxo de vendas, clientes, contas a pagar, contas a receber e alertas de estoque baixo em uma interface direta.",
+    thumbnail: "/project-thumbs/gestor-pro.svg",
+    category: "ERP leve",
+    year: 2026,
+    impactLabel: "Controle completo sem complexidade",
+    featured: true,
+    stack: ["Next.js", "TypeScript", "PostgreSQL"],
+    context:
+      "Pequenos negócios gerenciavam tudo em planilhas e grupos de mensagem, sem controle real.",
+    challenges: [
+      "Criar interface simples sem perder funcionalidade.",
+      "Substituir planilhas de forma natural.",
+    ],
+    solution: [
+      "ERP leve com fluxo de vendas, cadastro de clientes, contas e alertas de estoque.",
+      "Relatórios objetivos para o dono do negócio.",
+    ],
+    results: [
+      "Donos passaram a ter controle diário do caixa e do estoque.",
+      "Menos esquecimento de contas e prazos.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "crm-max",
+    projectKind: "software",
+    title: "CRM Max",
+    shortDescription:
+      "CRM com funil de vendas, follow-up automático, metas e acompanhamento de equipe em tempo real.",
+    detailedDescription:
+      "CRM Max organiza o time comercial com funil visual, follow-up automático por WhatsApp, metas individuais e dashboards de conversão. Cada oportunidade tem histórico, próxima ação e alerta de inatividade.",
+    thumbnail: "/project-thumbs/crm-max.svg",
+    category: "CRM",
+    year: 2025,
+    impactLabel: "Funil comercial sob controle",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp"],
+    context:
+      "Time comercial perdia oportunidades por falta de follow-up e não sabia onde estava cada negócio.",
+    challenges: [
+      "Fazer vendedores atualizarem o funil.",
+      "Integrar WhatsApp no fluxo comercial.",
+      "Medir conversão por etapa e por vendedor.",
+    ],
+    solution: [
+      "Funil kanban com follow-up automático por WhatsApp.",
+      "Metas individuais e dashboard de conversão.",
+      "Alertas de inatividade para próxima ação.",
+    ],
+    results: [
+      "Aumento na taxa de conversão.",
+      "Menos oportunidades esquecidas no funil.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "controla-financeiro",
+    projectKind: "topsecret",
+    title: "Controla Financeiro",
+    shortDescription:
+      "Controle de contas a pagar, receber, fluxo de caixa e DRE gerada automaticamente.",
+    detailedDescription:
+      "Sistema financeiro que reúne contas a pagar, contas a receber, conciliação, projeção de caixa e DRE. Alerta contas vencidas, categoriza receitas e despesas e entende o lucro real do negócio.",
+    thumbnail: "/project-thumbs/topsecret-financeiro.svg",
+    category: "Gestão financeira",
+    year: 2026,
+    impactLabel: "DRE e caixa em tempo real",
+    featured: false,
+    confidential: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "Empresa tomava decisões sem saber o lucro real por atraso na conciliação financeira.",
+    challenges: [
+      "Juntar entradas e saídas de várias fontes.",
+      "Gerar DRE confiável.",
+      "Alertar contas vencidas.",
+    ],
+    solution: [
+      "Conciliação automática com categorização de receitas e despesas.",
+      "Projeção de caixa e DRE gerada instantaneamente.",
+      "Alertas de vencimento e inadimplência.",
+    ],
+    results: [
+      "Decisões baseadas em número reais.",
+      "Menos inadimplência e lucro líquido claro.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "stock-control",
+    projectKind: "software",
+    title: "Stock Control",
+    shortDescription:
+      "Controle de estoque com alerta de compra, curva ABC, perdas e integração com vendas.",
+    detailedDescription:
+      "Stock Control dá visibilidade total do estoque: entradas, saídas, curva ABC, ponto de pedido, perdas e integração com vendas. Evita ruptura e também dinheiro parado em produtos parados.",
+    thumbnail: "/project-thumbs/stock-control.svg",
+    category: "Gestão de estoque",
+    year: 2025,
+    impactLabel: "Estoque sem ruptura nem exagero",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "Empresa deixava de vender por falta de produto, mas ao mesmo tempo tinha estoque parado.",
+    challenges: [
+      "Prever demanda e ponto de compra.",
+      "Reduzir perdas e quebras.",
+      "Integrar estoque com vendas.",
+    ],
+    solution: [
+      "Curva ABC, ponto de pedido automático e auditoria de perdas.",
+      "Integração com vendas para atualização em tempo real.",
+    ],
+    results: [
+      "Menos rupturas de venda.",
+      "Redução de capital parado em produtos parados.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "ponto-digital",
+    projectKind: "topsecret",
+    title: "Ponto Digital",
+    shortDescription:
+      "Controle de ponto, horas extras, banco de horas e exportação para folha de pagamento.",
+    detailedDescription:
+      "Sistema de ponto digital para empresas que precisam registrar jornada, controlar horas extras, banco de horas e exportar dados para folha. Registro por geolocalização e relatórios por departamento.",
+    thumbnail: "/project-thumbs/topsecret-rh.svg",
+    category: "RH",
+    year: 2026,
+    impactLabel: "RH digital e sem planilha",
+    featured: false,
+    confidential: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "RH perdia tempo consolidando ponto em planilhas e discutindo horas com funcionários.",
+    challenges: [
+      "Criar registro confiável de jornada.",
+      "Evitar fraudes no registro.",
+      "Integrar com folha de pagamento.",
+    ],
+    solution: [
+      "Registro de ponto por web com geolocalização.",
+      "Banco de horas e horas extras automáticos.",
+      "Exportação para folha de pagamento.",
+    ],
+    results: [
+      "Fechamento de folha mais rápido.",
+      "Menos conflitos sobre horas trabalhadas.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "service-os",
+    projectKind: "topsecret",
+    title: "Service OS",
+    shortDescription:
+      "Gestão de ordens de serviço: técnicos, peças, garantia e acompanhamento em tempo real.",
+    detailedDescription:
+      "Service OS rastreia cada ordem de serviço do recebimento até a entrega: atribuição de técnicos, controle de peças, garantia, status e avisos automáticos para o cliente.",
+    thumbnail: "/project-thumbs/topsecret-ordemservico.svg",
+    category: "Ordens de serviço",
+    year: 2026,
+    impactLabel: "O.S. sem perder tempo",
+    featured: false,
+    confidential: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp"],
+    context:
+      "Empresa de manutenção perdia O.S. entre atendente, técnico e cliente, sem visão do status.",
+    challenges: [
+      "Rastrear cada O.S. do início ao fim.",
+      "Controlar peças usadas.",
+      "Comunicar cliente sobre andamento.",
+    ],
+    solution: [
+      "O.S. com atribuição, status, peças e garantia.",
+      "Avisos automáticos por WhatsApp para o cliente.",
+    ],
+    results: [
+      "Menos O.S. esquecidas.",
+      "Prazo de atendimento reduzido.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "fleet-manager",
+    projectKind: "software",
+    title: "Fleet Manager",
+    shortDescription:
+      "Controle de veículos, manutenções, combustível, rotas e documentação da frota.",
+    detailedDescription:
+      "Fleet Manager centraliza a operação de frotas: abastecimento, manutenção preventiva, multas, licenciamento, rotas e custo por veículo. Alerta vencimentos e ajuda a reduzir o custo operacional.",
+    thumbnail: "/project-thumbs/fleet-manager.svg",
+    category: "Gestão de frotas",
+    year: 2025,
+    impactLabel: "Frota organizada e barata",
+    featured: false,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "Frota cresceu e faltava controle de custos, manutenções e documentação em dia.",
+    challenges: [
+      "Controlar abastecimento e manutenção.",
+      "Reduzir custo por km.",
+      "Alertar vencimentos de documentação.",
+    ],
+    solution: [
+      "Cadastro de veículos com abastecimento, manutenções e custos.",
+      "Alertas de vencimento e manutenção preventiva.",
+    ],
+    results: [
+      "Redução de multas e atrasos.",
+      "Custo por veículo visível e controlado.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "contratos-docs",
+    projectKind: "topsecret",
+    title: "Contratos & Docs",
+    shortDescription:
+      "Gestão de contratos com alertas de vencimento, aprovações e armazenamento seguro de documentos.",
+    detailedDescription:
+      "Repositório de contratos e documentos com alertas de vencimento, fluxo de aprovação, versionamento e acesso por permissão. Centraliza a documentação e reduz riscos jurídicos.",
+    thumbnail: "/project-thumbs/topsecret-contratos.svg",
+    category: "Gestão de contratos",
+    year: 2025,
+    impactLabel: "Contratos nunca mais vencidos",
+    featured: false,
+    confidential: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "Empresa descobria contratos vencidos só na cobrança e tinha documentos espalhados.",
+    challenges: [
+      "Centralizar contratos.",
+      "Alertar vencimentos.",
+      "Controlar aprovações.",
+    ],
+    solution: [
+      "Repositório de contratos com alertas e aprovações.",
+      "Versionamento e lembretes automáticos.",
+    ],
+    results: [
+      "Renovações no prazo.",
+      "Documentos centralizados e acesso controlado.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "business-view",
+    projectKind: "software",
+    title: "Business View",
+    shortDescription:
+      "Dashboards executivos com KPIs de vendas, financeiro, estoque e operação em tempo real.",
+    detailedDescription:
+      "Business View reúne indicadores de vendas, financeiro, estoque e operação em dashboards claros. Ajuda gestores a tomar decisões baseadas em dados, não em achismo.",
+    thumbnail: "/project-thumbs/business-view.svg",
+    category: "BI e dashboards",
+    year: 2026,
+    impactLabel: "Decisões com dados, não achismo",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
+    context:
+      "Gestores tomavam decisões sem saber os números reais por falta de dashboards confiáveis.",
+    challenges: [
+      "Juntar dados de várias fontes.",
+      "Apresentar indicadores de forma simples.",
+      "Atualizar dashboards em tempo real.",
+    ],
+    solution: [
+      "BI com dashboards por área e KPIs configuráveis.",
+      "Alertas de variação e tendências.",
+    ],
+    results: [
+      "Reuniões mais objetivas.",
+      "Gargalos detectados mais rápido.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "pdv-cloud",
+    projectKind: "software",
+    title: "PDV Cloud",
+    shortDescription:
+      "Frente de caixa na nuvem com fiscal, controle de estoque e integração com e-commerce.",
+    detailedDescription:
+      "PDV Cloud conecta loja física e e-commerce em um só catálogo. Emite documentos fiscais, atualiza estoque em tempo real e evita erros de preço entre canais.",
+    thumbnail: "/project-thumbs/pdv-cloud.svg",
+    category: "Ponto de venda",
+    year: 2026,
+    impactLabel: "Venda online e física integrada",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL", "API fiscal"],
+    context:
+      "Loja física e e-commerce usavam sistemas separados. Estoque e preços não conversavam.",
+    challenges: [
+      "Integrar loja física e online.",
+      "Emitir documentos fiscais.",
+      "Manter estoque unificado.",
+    ],
+    solution: [
+      "PDV cloud com catálogo unificado e emissão fiscal.",
+      "Estoque atualizado em tempo real para todos os canais.",
+    ],
+    results: [
+      "Estoque integrado.",
+      "Menos erro de preço e operação unificada.",
+    ],
+    liveUrl: "",
+  },
+  {
+    slug: "project-hub",
+    projectKind: "software",
+    title: "Project Hub",
+    shortDescription:
+      "Gestão de projetos com tarefas, equipe, horas, custos e entregas acompanhadas.",
+    detailedDescription:
+      "Project Hub acompanha projetos do planejamento à entrega: cronograma, tarefas, alocação de equipe, apontamento de horas e controle de custos. Ideal para empresas que entregam projetos e precisam saber o lucro de cada um.",
+    thumbnail: "/project-thumbs/project-hub.svg",
+    category: "Gestão de projetos",
+    year: 2026,
+    impactLabel: "Projetos no prazo e no custo",
+    featured: true,
+    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    context:
+      "Projetos atrasavam e estouravam orçamento por falta de controle de tarefas e horas.",
+    challenges: [
+      "Acompanhar prazos e entregas.",
+      "Controlar horas e custos.",
+      "Manter visibilidade do status.",
+    ],
+    solution: [
+      "Cronograma, tarefas, alocação e apontamento de horas.",
+      "Acompanhamento de custos e rentabilidade por projeto.",
+    ],
+    results: [
+      "Projetos entregues no prazo.",
+      "Controle de rentabilidade por projeto.",
+    ],
+    liveUrl: "",
   },
   {
     slug: "bottique-do-vidro",

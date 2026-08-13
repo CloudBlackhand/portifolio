@@ -54,16 +54,16 @@ const pillars = [
       "Contexto, solução e resultado — sem expor código proprietário ou dados sensíveis do cliente.",
   },
   {
-    title: "Canal oficial e governança",
+    title: "Gestão empresarial de ponta a ponta",
     body:
-      "WhatsApp e mensageria com filas, atrasos e rastreio — o que a operação precisa para escalar com segurança.",
+      "ERP, CRM, financeiro, estoque, RH, frotas e BI — sistemas que conectam departamentos e dão controle real para a diretoria.",
   },
 ];
 
 const stats = [
-  { label: "Sistemas em produção", value: "5" },
-  { label: "Landing pages", value: "2" },
-  { label: "Campanhas criativas", value: "2" },
+  { label: "Cases de gestão empresarial", value: "12" },
+  { label: "Sistemas em produção", value: "15+" },
+  { label: "Landing pages publicadas", value: "4" },
   { label: "Disponível para projetos", value: "Sim" },
 ];
 
@@ -91,11 +91,11 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
           <Reveal>
             <span className="hire-chip">Disponível para freelas e contratos</span>
             <p className="ep-eyebrow ep-eyebrow-dark">Experimente você mesmo</p>
-            <h2 className="ep-section-title">Veja a Cloud Service em ação</h2>
+            <h2 className="ep-section-title">Sistemas que administram empresas</h2>
             <p className="ep-section-lead">
-              Sistemas em produção, landing pages publicadas e criativos para
-              redes — portfólio direto para quem precisa contratar dev com
-              entrega real, não só slide.
+              ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos
+              — portfólio direto para quem precisa contratar dev com entrega real
+              e experiência em gestão empresarial.
             </p>
             <div className="ep-skills-row">
               {skills.map((skill) => (
@@ -126,8 +126,9 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                 <div className="ep-device-main">
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
-                    Landing pages no Netlify, sistemas em produção e peças de marketing —
-                    com link para ver no ar quando disponível.
+                    ERP, CRM, controle financeiro, estoque, BI e gestão de
+                    projetos — cases de gestão empresarial para empresas de
+                    todos os tamanhos.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
                     Abrir lista completa

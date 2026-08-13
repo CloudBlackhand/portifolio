@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
 import { ProjetosSigiloGate } from "@/app/components/projetos-sigilo-gate";
 import { getCatalogProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projetos | Cloud Service",
+  title: "Sistemas de gestão empresarial | Cloud Service",
   description:
-    "Sistemas em produção, landing pages e trabalhos de marketing e criativo da Cloud Service.",
+    "ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos — cases reais da Cloud Service para empresas de todos os tamanhos.",
 };
 
 export default function ProjetosPage() {
@@ -21,19 +22,20 @@ export default function ProjetosPage() {
 
   return (
     <section className="page-shell">
-      <h1 className="page-title">Projetos</h1>
+      <h1 className="page-title">Sistemas de gestão empresarial</h1>
       <p className="page-subtitle">
-        Sistemas, landing pages, consultoria e marketing — catálogo aberto com
-        foco em resultado e linguagem clara.
+        ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos —
+        catálogo de cases reais para administradores, gestores e empresários.
       </p>
 
       <ProjetosSigiloGate />
 
       <section className="section-spacing">
-        <h2 className="section-heading">Sistemas</h2>
+        <h2 className="section-heading">Sistemas e gestão empresarial</h2>
         <p className="muted section-spacing-sm">
-          MS, Melhor Preço Net, CEPBOT, CL Tech Shop e Cálculo Jurídico — produtos
-          digitais em uso ou publicados com link no ar.
+          ERP360, CRM Max, Controla Financeiro, Stock Control, Ponto Digital,
+          Service OS, Fleet Manager, Business View, PDV Cloud, Project Hub e
+          mais — sistemas que movem a operação de empresas de todos os tamanhos.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
       </section>
@@ -63,6 +65,30 @@ export default function ProjetosPage() {
           Copa 2026 e série de posts para feed.
         </p>
         <ProjectCardGrid projects={marketingProjects} />
+      </section>
+
+      <section className="content-block section-spacing" aria-labelledby="projetos-cta-title">
+        <h2 id="projetos-cta-title" className="section-heading">
+          Pronto para organizar sua operação?
+        </h2>
+        <p className="muted section-spacing-sm">
+          Se sua empresa ainda vive de planilhas, WhatsApp solto e ferramentas
+          avulsas, vamos conversar. Desenho e entrego sistemas de gestão
+          pensados para o dia a dia real do seu negócio.
+        </p>
+        <div className="link-row">
+          <a
+            className="button primary"
+            href="https://wa.me/5521971364919"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Falar sobre meu projeto
+          </a>
+          <Link className="button" href="/contato">
+            Ver página de contato
+          </Link>
+        </div>
       </section>
     </section>
   );
