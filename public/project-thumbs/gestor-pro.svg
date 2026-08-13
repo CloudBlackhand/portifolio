@@ -1,0 +1,39 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">GESTOR PRO</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">ERP leve para pequenas empresas</text>
+
+  <rect x="88" y="160" width="360" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Contas do mês</text>
+  <rect x="112" y="216" width="312" height="52" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <circle cx="140" cy="242" r="12" fill="#25d366"/>
+  <text x="164" y="238" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Aluguel pago</text>
+  <text x="164" y="256" fill="#7fd99b" font-size="11" font-family="Arial, Helvetica, sans-serif">R$ 1.800,00</text>
+  <rect x="112" y="280" width="312" height="52" rx="10" fill="#1e2430" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="140" cy="306" r="12" fill="#f59e0b"/>
+  <text x="164" y="302" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Fornecedor — vence hoje</text>
+  <text x="164" y="320" fill="#fbbf6b" font-size="11" font-family="Arial, Helvetica, sans-serif">R$ 640,00</text>
+  <rect x="112" y="344" width="312" height="52" rx="10" fill="#1a1f2a"/>
+  <circle cx="140" cy="370" r="12" fill="#4b8dff"/>
+  <text x="164" y="366" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Cliente — a receber</text>
+  <text x="164" y="384" fill="#7aa2ff" font-size="11" font-family="Arial, Helvetica, sans-serif">R$ 2.150,00</text>
+  <rect x="112" y="450" width="180" height="42" rx="10" fill="#4b8dff"/>
+  <text x="140" y="476" fill="#0a0e18" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Nova venda</text>
+
+  <rect x="472" y="160" width="640" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="496" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Estoque baixo</text>
+  <rect x="496" y="220" width="592" height="46" rx="8" fill="#1a1f2a"/>
+  <rect x="512" y="238" width="220" height="10" rx="4" fill="#3d4659"/>
+  <rect x="900" y="234" width="70" height="20" rx="10" fill="#f59e0b"/>
+  <text x="916" y="248" fill="#0a0e18" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">baixo</text>
+  <rect x="496" y="276" width="592" height="46" rx="8" fill="#1a1f2a"/>
+  <rect x="512" y="294" width="180" height="10" rx="4" fill="#3d4659"/>
+  <rect x="900" y="290" width="70" height="20" rx="10" fill="#25d366"/>
+  <text x="916" y="304" fill="#0a0e18" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">ok</text>
+  <rect x="496" y="332" width="592" height="46" rx="8" fill="#1a1f2a"/>
+  <rect x="512" y="350" width="260" height="10" rx="4" fill="#3d4659"/>
+  <rect x="900" y="346" width="70" height="20" rx="10" fill="#f59e0b"/>
+  <text x="916" y="360" fill="#0a0e18" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">baixo</text>
+  <text x="496" y="440" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Sem planilha. Sem grupo de WhatsApp perdido.</text>
+</svg>

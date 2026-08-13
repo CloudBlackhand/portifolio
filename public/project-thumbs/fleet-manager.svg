@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">FLEET MANAGER</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Veículos, manutenção, rotas e custos</text>
+
+  <rect x="88" y="160" width="640" height="360" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Mapa de rotas</text>
+  <path d="M130 460 C 220 400, 260 320, 340 300 S 480 260, 560 220 S 660 200, 700 240" stroke="#4b8dff" stroke-width="4" fill="none"/>
+  <circle cx="130" cy="460" r="10" fill="#25d366"/>
+  <circle cx="340" cy="300" r="8" fill="#f59e0b"/>
+  <circle cx="700" cy="240" r="10" fill="#f87171"/>
+  <rect x="112" y="440" width="140" height="40" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="128" y="466" fill="#7fd99b" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Van 03 · rota</text>
+
+  <rect x="748" y="160" width="364" height="165" rx="16" fill="#111217" stroke="#f59e0b" stroke-width="2"/>
+  <text x="772" y="196" fill="#fbbf6b" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Manutenção pendente</text>
+  <rect x="772" y="216" width="316" height="46" rx="8" fill="#241d10"/>
+  <text x="788" y="244" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Van 07 — troca de óleo</text>
+  <rect x="772" y="270" width="316" height="46" rx="8" fill="#1a1f2a"/>
+  <text x="788" y="298" fill="#e8ebf3" font-size="13" font-family="Arial, Helvetica, sans-serif">Moto 12 — pneus</text>
+
+  <rect x="748" y="345" width="364" height="175" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="772" y="381" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Custo por km</text>
+  <text x="772" y="440" fill="#7aa2ff" font-size="26" font-weight="bold" font-family="Arial, Helvetica, sans-serif">R$ 1,84</text>
+  <text x="772" y="466" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">-12% no último trimestre</text>
+</svg>
