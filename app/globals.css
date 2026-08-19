@@ -1,13 +1,17 @@
 :root {
-  /* Tema escuro (landing marketing + restante do site) */
-  --background: #09090b;
-  --surface: #111217;
-  --surface-soft: #181b22;
-  --foreground: #e8ebf3;
-  --muted: #94a3b8;
-  --brand: #818cf8;
-  --brand-strong: #a5b4fc;
-  --border: #2a2e39;
+  /* Tema escuro tecnico/terminal */
+  --background: #0a0b0c;
+  --surface: #101213;
+  --surface-soft: #16181a;
+  --foreground: #e7e9e6;
+  --muted: #838d89;
+  --brand: #52d68e;
+  --brand-strong: #8ff0b8;
+  --brand-dim: #234a37;
+  --accent-amber: #f2a154;
+  --border: #24272a;
+  --mono: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  --radius: 6px;
   --showcase-hero-height: 70vh;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
@@ -65,9 +69,8 @@ a {
   z-index: 50;
   padding-top: var(--safe-top);
   border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--background) 88%, transparent);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 28px -20px rgb(0 0 0 / 55%);
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+  backdrop-filter: blur(6px);
 }
 
 .header-content {
@@ -84,10 +87,18 @@ a {
 }
 
 .logo {
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0;
   white-space: nowrap;
   flex-shrink: 0;
+  color: var(--foreground);
+}
+
+.logo::before {
+  content: "~/";
+  color: var(--brand);
 }
 
 .header-nav-group {
@@ -105,6 +116,8 @@ a {
 }
 
 .nav a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
   color: var(--muted);
   transition: color 0.2s ease;
   min-height: 44px;
@@ -114,7 +127,7 @@ a {
 }
 
 .nav a:hover {
-  color: var(--foreground);
+  color: var(--brand-strong);
 }
 
 .nav-with-cta {
@@ -123,19 +136,20 @@ a {
 
 .nav-cta {
   margin-left: 0.5rem;
-  padding: 0.55rem 1.05rem;
+  padding: 0.5rem 1rem;
   min-height: 44px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   font-weight: 600;
-  font-size: 0.88rem;
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-  color: #fff !important;
-  box-shadow: 0 8px 22px -14px rgb(79 70 229 / 65%);
+  font-size: 0.85rem;
+  background: var(--brand);
+  border: 1px solid var(--brand);
+  color: #05130c !important;
 }
 
 .nav-cta:hover {
-  color: #fff !important;
-  filter: brightness(1.05);
+  background: var(--brand-strong) !important;
+  border-color: var(--brand-strong);
+  color: #05130c !important;
 }
 
 .site-main {
@@ -176,8 +190,14 @@ a {
 }
 
 .footer-brand strong {
-  font-size: 1.05rem;
+  font-family: var(--mono);
+  font-size: 1rem;
   color: var(--foreground);
+}
+
+.footer-brand strong::before {
+  content: "~/";
+  color: var(--brand);
 }
 
 .footer-tagline {
@@ -612,22 +632,20 @@ a {
 
 .card {
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: var(--surface);
   overflow: hidden;
 }
 
 .interactive-card {
   transition:
-    transform 0.2s ease,
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color 0.2s ease;
 }
 
 .interactive-card:hover {
-  transform: translateY(-4px);
-  border-color: #4f76cf;
-  box-shadow: 0 18px 42px -28px rgb(71 115 215 / 65%);
+  border-color: var(--brand);
+  background: var(--surface-soft);
 }
 
 .card--clickable {
@@ -692,11 +710,12 @@ a {
 }
 
 .card-kind {
-  font-size: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted, #8b9cb3);
+  color: var(--brand);
   margin: 0;
 }
 
@@ -729,11 +748,12 @@ a {
 }
 
 .chip {
+  font-family: var(--mono);
   border: 1px solid var(--border);
   background: var(--surface-soft);
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 0.2rem 0.6rem;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
 }
 
@@ -742,51 +762,46 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
   padding: 0 0.9rem;
   background: var(--surface-soft);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .button:hover {
-  background: #242936;
+  background: var(--surface);
+  border-color: var(--brand);
 }
 
 .button.primary {
   background: var(--brand);
-  border-color: transparent;
-  color: #050810;
+  border-color: var(--brand);
+  color: #05130c;
   font-weight: 600;
 }
 
 .button.primary:hover {
-  background: #a5b4fc;
+  background: var(--brand-strong);
+  border-color: var(--brand-strong);
 }
 
 .button.primary.gfn-like-cta {
   min-height: 44px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  border-color: color-mix(in srgb, var(--brand) 55%, #0a0e18);
-  box-shadow: 0 10px 28px -14px rgb(122 162 255 / 55%);
+  letter-spacing: 0.02em;
   transition:
     background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.button.primary.gfn-like-cta:hover {
-  background: color-mix(in srgb, var(--brand) 88%, #fff);
-  border-color: color-mix(in srgb, var(--brand) 70%, #fff);
+    border-color 0.2s ease;
 }
 
 .stack {
   margin-top: 1.25rem;
   border: 1px solid var(--border);
+  border-left: 2px solid var(--brand);
   background: var(--surface);
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .content-block {
@@ -794,7 +809,7 @@ a {
   border: 1px solid var(--border);
   background: var(--surface);
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .content-block h3 {
@@ -804,7 +819,7 @@ a {
 .detail-image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
 }
 
@@ -837,7 +852,7 @@ a {
 
 .marketing-section {
   padding: 3rem 0 2.5rem;
-  background: linear-gradient(180deg, #0c1220 0%, var(--background) 100%);
+  background: var(--surface-soft);
   border-bottom: 1px solid var(--border);
 }
 
@@ -850,7 +865,7 @@ a {
 
 .marketing-highlight-card {
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
 }
@@ -930,7 +945,7 @@ a {
 
 .about-photo-wrap {
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
 }
@@ -944,7 +959,7 @@ a {
 
 .about-content {
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius);
   background: var(--surface);
   padding: 1rem;
 }
@@ -956,7 +971,7 @@ a {
 
 .table-wrap {
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   background: var(--surface);
   overflow: hidden;
 }
@@ -1070,6 +1085,7 @@ a {
 }
 
 .whatsapp-float {
+  font-family: var(--mono);
   position: fixed;
   right: calc(1rem + var(--safe-right));
   bottom: calc(1rem + var(--safe-bottom));
@@ -1077,7 +1093,7 @@ a {
   min-height: 48px;
   min-width: 48px;
   padding: 0 1rem;
-  border-radius: 999px;
+  border-radius: var(--radius);
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -60,13 +60,6 @@ const pillars = [
   },
 ];
 
-const stats = [
-  { label: "Cases de gestão empresarial", value: "12" },
-  { label: "Sistemas em produção", value: "15+" },
-  { label: "Landing pages publicadas", value: "4" },
-  { label: "Disponível para projetos", value: "Sim" },
-];
-
 const skills = [
   "Next.js",
   "TypeScript",
@@ -87,12 +80,14 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
   return (
     <>
       <section className="ep-section ep-section-tint ep-after-showcase">
-        <div className="container">
-          <Reveal>
+        <div className="container ep-intro-grid">
+          <Reveal className="ep-intro-copy">
             <span className="hire-chip">Disponível para freelas e contratos</span>
             <p className="ep-eyebrow ep-eyebrow-dark">Experimente você mesmo</p>
-            <h2 className="ep-section-title">Sistemas que administram empresas</h2>
-            <p className="ep-section-lead">
+            <h2 className="ep-section-title ep-section-title-left">
+              Sistemas que administram empresas
+            </h2>
+            <p className="ep-section-lead ep-section-lead-left">
               ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos
               — portfólio direto para quem precisa contratar dev com entrega real
               e experiência em gestão empresarial.
@@ -105,7 +100,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
               ))}
             </div>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.08} className="ep-intro-device">
             <div className="ep-device">
               <div className="ep-device-chrome">
                 <span className="ep-device-dot" />
@@ -141,66 +136,28 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       </section>
 
       <section className="ep-section">
-        <div className="container">
-          <Reveal>
+        <div className="container ep-pillars-grid">
+          <Reveal className="ep-pillars-head">
             <p className="ep-eyebrow ep-eyebrow-dark">Por que esta abordagem</p>
-            <h2 className="ep-section-title">A forma mais direta de evoluir o stack</h2>
-            <p className="ep-section-lead ep-section-lead-narrow">
+            <h2 className="ep-section-title ep-section-title-left">
+              A forma mais direta de evoluir o stack
+            </h2>
+            <p className="ep-section-lead ep-section-lead-left">
               Menos ferramenta solta, mais produto integrado — é o que aplicamos
               nos sistemas que você vê aqui.
             </p>
           </Reveal>
-          <div className="ep-pillars">
+          <div className="ep-pillars-list">
             {pillars.map((pillar, i) => (
-              <Reveal key={pillar.title} delay={0.06 * i}>
-                <article className="ep-pillar-card">
+              <Reveal key={pillar.title} delay={0.06 * i} className="ep-pillar-row">
+                <span className="ep-pillar-index">{String(i + 1).padStart(2, "0")}</span>
+                <div>
                   <h3>{pillar.title}</h3>
                   <p>{pillar.body}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ep-section ep-section-tint">
-        <div className="container">
-          <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Em números</p>
-            <h2 className="ep-section-title">O que consolidamos na Cloud Service</h2>
-          </Reveal>
-          <div className="ep-stats">
-            {stats.map((s, i) => (
-              <Reveal key={s.label} delay={0.05 * i}>
-                <div className="ep-stat">
-                  <span className="ep-stat-value">{s.value}</span>
-                  <span className="ep-stat-label">{s.label}</span>
                 </div>
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="ep-section">
-        <div className="container ep-cta-block">
-          <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Vamos conversar</p>
-            <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
-            <p className="ep-section-lead ep-section-lead-narrow">
-              Precisa de dev full-stack, automação WhatsApp ou site que converte?
-              Conte objetivo, prazo e orçamento — respondemos pelo WhatsApp ou
-              pela página de contato.
-            </p>
-            <div className="ep-hero-cta">
-              <Link className="ep-btn ep-btn-primary" href="/contato">
-                Ir para contato
-              </Link>
-              <Link className="ep-btn ep-btn-ghost" href="/projetos">
-                Ver projetos
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -238,11 +195,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
               <p className="ep-body">
                 Meu foco é entender seu objetivo de negócio antes de propor
                 qualquer solução técnica. Cada entrega nasce com direção,
-                prioridade e critério de resultado desde o início.
-              </p>
-              <p className="ep-body">
-                Alinhamentos curtos e objetivos para reduzir dúvidas e manter
-                transparencia durante todo o processo.
+                prioridade e critério de resultado desde o início — sem expor
+                código proprietário ou dados sensíveis do cliente.
               </p>
               <div className="ep-hero-cta">
                 <a
@@ -263,21 +217,25 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       </section>
 
       <section className="ep-section">
-        <div className="container ep-pro-intro">
-          <Reveal>
-            <p className="ep-eyebrow ep-eyebrow-dark">Apresentação profissional</p>
-            <h2 className="ep-section-title">Como eu trabalho</h2>
-            <p className="ep-section-lead ep-section-lead-narrow">
-              Entendimento real do problema, implementação robusta e resultado
-              mensurável — impacto sem expor detalhes sensíveis de código ou
-              arquitetura proprietária.
+        <div className="container ep-cta-block ep-cta-block--split">
+          <Reveal className="ep-cta-label">
+            <p className="ep-eyebrow ep-eyebrow-dark">Vamos conversar</p>
+          </Reveal>
+          <Reveal delay={0.05} className="ep-cta-body">
+            <h2 className="ep-section-title ep-section-title-left">
+              Pronto para o próximo sistema?
+            </h2>
+            <p className="ep-section-lead ep-section-lead-left">
+              Precisa de dev full-stack, automação WhatsApp ou site que converte?
+              Conte objetivo, prazo e orçamento — respondemos pelo WhatsApp ou
+              pela página de contato.
             </p>
             <div className="ep-hero-cta">
-              <Link className="ep-btn ep-btn-primary" href="/projetos">
-                Ver todos os projetos
+              <Link className="ep-btn ep-btn-primary" href="/contato">
+                Ir para contato
               </Link>
-              <Link className="ep-btn ep-btn-ghost" href="/contato">
-                Novo projeto
+              <Link className="ep-btn ep-btn-ghost" href="/projetos">
+                Ver projetos
               </Link>
             </div>
           </Reveal>
