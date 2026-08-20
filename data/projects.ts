@@ -46,9 +46,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "MS",
     shortDescription:
-      "Disparador de WhatsApp em produção: filas, modelos, controle de carga entre contas e rastreio do que foi enviado.",
+      "Disparador de WhatsApp que eu fiz pra parar de mandar msg duplicada em grupo. Fila, modelos, carga entre contas, log de tudo.",
     detailedDescription:
-      "O MS resolve um problema simples que vira caos rápido: disparar mensagens no WhatsApp sem perder o controle de quem recebeu o quê. Tem fila, modelos de mensagem, envio em massa por Excel, repartição de carga entre até três contas e licença por ativação. Liga em eventos do negócio — etapa de venda, lembrete, confirmação — e registra tudo pra auditoria. Interface desktop, feito pra volume real.",
+      "O MS nasceu de uma dor real: o time disparava mensagem manualmente, não sabia quem já tinha recebido, mandava duplicado sem querer. Fiz um disparador desktop com fila, modelos de mensagem, envio em massa por Excel e repartição de carga entre até três contas pra não estourar limite. Liga em eventos do negócio (etapa de venda, lembrete, confirmação) e loga tudo — o que saiu, o que falhou, pra quem. Tem licença por ativação.",
     thumbnail: "/project-thumbs/ms/ms-envio-massa.png",
     thumbnailWidth: 1919,
     thumbnailHeight: 1030,
@@ -58,18 +58,18 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Node.js", "WhatsApp", "Filas"],
     context:
-      "O time disparava tudo manualmente, em planilha e grupo. Não sabia quem já tinha recebido, mandava duplicado, não tinha histórico.",
+      "O time disparava tudo no braço. Mesma mensagem mandada duas vezes pro mesmo cliente, sem histórico de nada.",
     challenges: [
-      "Controlar fila e evitar disparo duplicado.",
-      "Distribuir envio entre várias contas sem estourar limite.",
+      "Não mandar duplicado quando duas pessoas disparavam ao mesmo tempo.",
+      "Distribuir entre contas sem passar do limite do WhatsApp.",
     ],
     solution: [
-      "Fila com modelos e vínculo ao que disparou (venda, cliente, evento).",
-      "Log de envio e status pra saber o que saiu e o que falhou.",
+      "Fila única com lock, modelos e vínculo ao evento que disparou.",
+      "Repartição automática entre contas e log de cada envio.",
     ],
     results: [
-      "Disparo previsível, com registro de quem recebeu.",
-      "Menos retrabalho manual no dia a dia.",
+      "Acabou o disparo duplicado.",
+      "O time sabe exatamente o que foi enviado e pra quem.",
     ],
     liveUrl: "",
     gallery: [
@@ -93,9 +93,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Melhor Preço Net",
     shortDescription:
-      "Comparador de planos de internet com mapa de cobertura por KML, painel admin e cache.",
+      "Comparador de planos de internet com mapa de cobertura. Cliente digita o endereço e vê se tem antes de fechar.",
     detailedDescription:
-      "O Melhor Preço Net compara planos e mostra cobertura no mapa antes da venda. As áreas de cobertura vêm de KML, são validadas com Turf.js e renderizadas no Leaflet — o cliente digita o endereço e vê se tem atendimento naquela rua. Tem painel admin, Prisma com PostgreSQL, Redis de cache e um pouco de Three.js pra dar profundidade visual sem pesar.",
+      "O Melhor Preço Net faz algo que parece óbvio mas ninguém fazia: mostrar no mapa se o endereço tem cobertura antes da venda. As áreas vêm de KML, valido com Turf.js e renderizo no Leaflet. O cliente digita onde mora e vê na hora se atende. Por trás tem Prisma com PostgreSQL, Redis de cache, painel admin e um pouco de Three.js pra dar profundidade sem pesar o mobile.",
     thumbnail: "/project-thumbs/captures/melhor-preco.png",
     thumbnailWidth: 1919,
     thumbnailHeight: 955,
@@ -105,18 +105,16 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "PostgreSQL", "Leaflet", "Three.js"],
     context:
-      "A operação vendia internet mas não tinha como provar que o endereço tinha cobertura — era tudo na fé ou em planilha.",
+      "Vendiam internet sem saber se o endereço tinha cobertura. Cliente ligava, vendedor dizia 'deixa eu verificar', demorava, às vezes cancelava depois de instalar.",
     challenges: [
-      "Cruzar KMLs de cobertura com consulta rápida no mapa.",
-      "Manter a comparação de planos consistente pra quem decide compra e revenda.",
+      "Cruzar KML de cobertura com consulta rápida no mapa — o polígono é pesado.",
     ],
     solution: [
-      "Backend com Prisma, Redis de cache e rotas públicas + admin.",
-      "Mapa com polígonos de cobertura e fluxo de comparação direto.",
+      "Backend com Prisma e Redis de cache. O mapa carrega só o polígono da região consultada, não tudo.",
     ],
     results: [
-      "Decisão de compra com número e região na mesma tela.",
-      "Base pronta pra escalar operadoras e áreas.",
+      "O cliente vê cobertura na hora, sem depender do vendedor.",
+      "Menos cancelamento pós-instalação por endereço fora da área.",
     ],
     liveUrl: "",
   },
@@ -125,9 +123,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "CEPBOT",
     shortDescription:
-      "Bot de WhatsApp que consulta cobertura por CEP, mostra planos da região e passa pra humano quando precisa.",
+      "Bot de WhatsApp que pergunta o CEP, diz se tem cobertura e mostra os planos. Passa pra humano se precisar.",
     detailedDescription:
-      "O CEPBOT atende o primeiro contato no WhatsApp sozinho: recebe a mensagem, mostra um menu, pede o CEP e verifica se o endereço tem cobertura. Se tiver, mostra os planos daquela região. Se não tiver, ou se o cliente quiser falar com alguém, passa pra equipe. Tem painel pra equipe acompanhar conversas, assumir o atendimento e devolver pro bot quando fizer sentido. Menos pergunta repetitiva, mais agilidade na venda.",
+      "O CEPBOT eu fiz porque a equipe respondia 'tem cobertura na minha rua?' o dia todo. O bot pergunta o CEP, verifica no mapa se tem cobertura, mostra os planos da região e pronto. Se o cliente quiser falar com alguém ou se não tiver cobertura, passa pra equipe com o histórico inteiro da conversa. A equipe pode assumir o atendimento no painel e devolver pro bot quando quiser.",
     thumbnail: "/project-thumbs/cepbot.svg",
     category: "Atendimento automatizado WhatsApp",
     year: 2026,
@@ -135,18 +133,18 @@ export const projects: Project[] = [
     featured: true,
     stack: ["WhatsApp", "Consulta de CEP", "Painel de atendimento"],
     context:
-      "Volume grande de WhatsApp e pouca gente pra atender. A equipe perdia tempo respondendo a mesma coisa: 'tem cobertura na minha rua?'.",
+      "Volume grande de WhatsApp, pouca gente. Metade das mensagens era a mesma pergunta sobre cobertura.",
     challenges: [
-      "Fazer o cliente informar o CEP corretamente no fluxo do bot.",
-      "Passar pra humano sem perder o histórico da conversa.",
+      "O cliente às vezes manda o CEP errado ou incompleto — o bot tem que validar e pedir de novo sem ficar chato.",
+      "Passar pra humano sem perder o que o bot já conversou.",
     ],
     solution: [
-      "Fluxo conversacional com menu, validação de CEP e resposta sobre cobertura e planos.",
-      "Painel pra equipe assumir ou devolver conversas ao bot, com histórico completo.",
+      "Fluxo com validação de CEP e retry amigável.",
+      "Painel onde a equipe vê a conversa inteira antes de assumir.",
     ],
     results: [
-      "Primeiro atendimento mais rápido e padronizado.",
-      "Equipe gasta menos tempo com pergunta repetitiva.",
+      "A equipe parou de responder a mesma coisa 50 vezes por dia.",
+      "O cliente que tem cobertura fecha mais rápido porque o bot já mostra os planos.",
     ],
     liveUrl: "",
   },
@@ -155,9 +153,9 @@ export const projects: Project[] = [
     projectKind: "marketing",
     title: "Instalação grátis e rápida",
     shortDescription:
-      "Post pra Instagram: instalação sem custo, técnico em ação e CTA pra contratar hoje.",
+      "Post de Instagram: instalação sem custo, foto do técnico e CTA pra contratar hoje.",
     detailedDescription:
-      "Peça vertical pro feed com layout dividido: de um lado notebook, Wi-Fi e copy de instalação grátis; do outro, foto real do técnico crimpando cabo. Faixa vermelha com telefone de contato. A ideia é tirar a objeção de prazo e taxa de instalação logo de cara.",
+      "Peça vertical pro feed. Metade com notebook, Wi-Fi e copy de instalação grátis; metade com foto real do técnico crimpando cabo. Faixa vermelha com telefone. A ideia é matar a objeção de prazo e taxa na primeira imagem.",
     thumbnail: "/project-thumbs/marketing/post-instalacao-rapida.png",
     thumbnailWidth: 3375,
     thumbnailHeight: 4219,
@@ -168,18 +166,17 @@ export const projects: Project[] = [
     marketingHighlight: true,
     stack: ["Instagram", "Foto + 3D", "Copy de oferta"],
     context:
-      "Provedor precisava destacar instalação rápida e sem taxa num mercado com concorrência agressiva.",
+      "Provedor numa guerra de preço com concorrente. O diferencial dele era instalação rápida e grátis, mas ninguém percebia.",
     challenges: [
-      "Juntar foto real (confiança) com 3D (impacto) sem poluir a leitura.",
-      "Manter CTA e telefone legíveis no preview pequeno do feed.",
+      "Juntar foto real (confiança) com 3D (impacto) sem virar poluição visual.",
+      "Telefone e CTA legíveis no preview minúsculo do feed.",
     ],
     solution: [
-      "Composição em duas faixas: promessa, benefício e contato na hierarquia certa.",
-      "Paleta azul e vermelho alinhada à identidade de telecom.",
+      "Layout em duas faixas: promessa em cima, prova embaixo.",
     ],
     results: [
-      "Peça pronta pra stories e feed no formato 4:5.",
-      "Mensagem direta pra quem adia contratação por medo de demora ou taxa.",
+      "Peça pronta pro feed em 4:5.",
+      "A objeção de 'demora muito' some na primeira imagem.",
     ],
     liveUrl: "",
   },
@@ -188,9 +185,9 @@ export const projects: Project[] = [
     projectKind: "marketing",
     title: "Velocidade — contrate hoje",
     shortDescription:
-      "Criativo 3D com roteador, sinal Wi-Fi e promessa de navegar no dia seguinte. CTA com WhatsApp.",
+      "Criativo 3D com roteador e sinal Wi-Fi. 'Contrata hoje, navega amanhã.' WhatsApp no CTA.",
     detailedDescription:
-      "Post de conversão com estética 3D limpa: roteador, ondas de sinal em vermelho metálico e headline sobre velocidade. Faixa de CTA pra contratar hoje e navegar amanhã. WhatsApp visível pra fechar no canal que o público já usa.",
+      "Post de conversão com estética 3D: roteador, ondas de sinal em vermelho metálico, headline sobre velocidade. Faixa de CTA embaixo com WhatsApp. Feito pra ser leve no feed e direto na mensagem.",
     thumbnail: "/project-thumbs/marketing/post-velocidade-router.png",
     thumbnailWidth: 3375,
     thumbnailHeight: 4219,
@@ -201,18 +198,15 @@ export const projects: Project[] = [
     marketingHighlight: true,
     stack: ["Instagram", "3D", "WhatsApp"],
     context:
-      "Provedor precisava de uma peça leve e moderna pra vender velocidade sem jogar tabela de mega na imagem.",
+      "Provedor queria vender velocidade sem jogar tabela de mega na imagem. Número assusta, visual não.",
     challenges: [
-      "Comunicar velocidade de forma visual, não só com número.",
-      "Encaixar CTA e contato sem competir com o título.",
+      "Comunicar velocidade sem usar número — todo mundo faz isso e vira poluição.",
     ],
     solution: [
-      "Iconografia 3D de roteador e sinal como metáfora imediata de internet rápida.",
-      "Bloco vermelho de CTA e rodapé com WhatsApp pra resposta rápida.",
+      "Roteador 3D com ondas de sinal como metáfora. CTA vermelho com WhatsApp embaixo.",
     ],
     results: [
-      "Visual memorável pra repetir no calendário de posts.",
-      "Funil curto: impacto visual, CTA, contato.",
+      "Peça que dá pra repetir no calendário mudando só a headline.",
     ],
     liveUrl: "",
   },
@@ -221,9 +215,9 @@ export const projects: Project[] = [
     projectKind: "marketing",
     title: "Copa do Mundo FIFA 2026",
     shortDescription:
-      "Campanha visual pra provedor: oferta de fibra + celular com tema Copa, esportes e streaming.",
+      "Campanha de Copa 2026 pra provedor: fibra + celular, esportes e streaming. Vermelho e dourado.",
     detailedDescription:
-      "Peça promocional pra redes e materiais digitais na temporada da Copa 2026. O layout vende velocidade, pacote combinado (fibra e móvel) e benefícios de entretenimento (SportTV, YouTube Premium, Vero Vídeo). Hierarquia clara de preço, CTA de assinatura e contato, com identidade vermelha e dourada. A imagem de destaque mostra as camadas separadas do criativo — útil pra revisão interna e pra mostrar o processo de montagem.",
+      "Peça promocional pra Copa do Mundo. O layout vende pacote combinado (fibra + móvel) com benefícios de streaming (SportTV, YouTube Premium, Vero Vídeo). Identidade vermelha e dourada, preço em destaque, CTA de assinatura. A imagem que coloquei no portfólio mostra as camadas separadas — é útil internamente e mostra como o criativo foi montado.",
     thumbnail: "/project-thumbs/marketing/copa-2026-camadas.png",
     thumbnailWidth: 3375,
     thumbnailHeight: 4219,
@@ -233,18 +227,17 @@ export const projects: Project[] = [
     featured: false,
     stack: ["Instagram", "Identidade visual", "Copy promocional"],
     context:
-      "O cliente precisava de uma campanha rápida e memorável pra vender pacote de internet na Copa, sem perder clareza de preço e benefícios.",
+      "Copa estava chegando e o provedor queria surfar o clima sem parecer que estava forçando.",
     challenges: [
-      "Cabe muita informação regulamentada em poucos segundos de leitura no feed.",
-      "Manter consistência com a marca do provedor e o clima de evento esportivo.",
+      "Cabe muita informação regulamentada num post de feed — preço, benefícios, condições. Tem que ler em 3 segundos.",
+      "Manter a identidade do provedor sem brigar com o tema da Copa.",
     ],
     solution: [
-      "Composição em camadas com atletas, título da Copa e bloco de oferta destacado.",
-      "CTA e telefone visíveis, rodapé de condições em tipografia menor.",
+      "Composição em camadas: atletas em cima, oferta no meio, condições no rodapé pequeno.",
     ],
     results: [
-      "Peça pronta pra publicação em formato vertical (4:5).",
-      "Arquivo de camadas separadas pra ajuste fino sem refazer o layout do zero.",
+      "Peça pronta em 4:5 pro feed.",
+      "Arquivo de camadas separadas pra ajustar sem refazer do zero.",
     ],
     liveUrl: "",
   },
@@ -253,9 +246,9 @@ export const projects: Project[] = [
     projectKind: "marketing",
     title: "Peças para redes — internet residencial",
     shortDescription:
-      "Série de posts pra Instagram: instalação rápida, Wi-Fi 6, planos, streaming e velocidade.",
+      "Série de posts de Instagram: instalação, Wi-Fi 6, planos, streaming e velocidade. Mesma identidade, ângulos diferentes.",
     detailedDescription:
-      "Conjunto de criativos em formato feed/stories (4:5) pra divulgar internet residencial. Cada peça trabalha um ângulo: família e entretenimento em qualquer tela, Wi-Fi 6, comparativo de planos, instalação grátis em 24h e promessa de navegar no dia seguinte. Visual 3D e fotos reais de técnico pra confiança; botões e faixas vermelhas levam pro WhatsApp e assinatura.",
+      "Um conjunto de peças em 4:5 pra feed e stories. Cada uma pega um argumento diferente: família assistindo streaming, Wi-Fi 6 com alcance, comparativo de planos, instalação em 24h. O visual 3D e as fotos de técnico se repetem pra manter identidade, mas o gancho muda. Faixas vermelhas e WhatsApp em todas.",
     thumbnail: "/project-thumbs/marketing/post-planos-destaque.png",
     thumbnailWidth: 3375,
     thumbnailHeight: 4219,
@@ -265,18 +258,17 @@ export const projects: Project[] = [
     featured: false,
     stack: ["Instagram", "3D e foto", "Oferta e CTA"],
     context:
-      "Provedor precisava de volume de peças pra redes, mantendo padrão visual e mensagem de venda clara.",
+      "Provedor precisava de volume de post mas sem parecer que cada um foi feito por uma agência diferente.",
     challenges: [
-      "Variar o argumento (preço, velocidade, instalação, Wi-Fi) sem parecer marca diferente a cada post.",
-      "Garantir que tabela de plano seja legível em tela de celular.",
+      "Variar o argumento sem perder a identidade visual.",
+      "Tabela de plano legível em tela de celular — é pequena.",
     ],
     solution: [
-      "Templates com mesma lógica de CTA, cores e tipografia, mudando só o gancho principal.",
-      "Mockups 3D, foto de instalação e cards de plano pra diferentes etapas do funil.",
+      "Template fixo de CTA, cor e tipografia. Só muda o gancho e a imagem principal.",
     ],
     results: [
-      "Biblioteca de peças prontas pra calendário de posts.",
-      "Mensagens alinhadas às objeções comuns: preço, velocidade, prazo e Wi-Fi.",
+      "Biblioteca de peças que dura um mês de calendário.",
+      "Cada post ataca uma objeção: preço, velocidade, prazo, Wi-Fi.",
     ],
     liveUrl: "",
     gallery: [
@@ -299,9 +291,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "CL Tech Shop",
     shortDescription:
-      "Loja virtual de eletrônicos: vitrine, categorias, ofertas e fluxo de compra. No ar no Netlify.",
+      "Loja virtual de eletrônicos com vitrine, categorias e fluxo de compra. No ar no Netlify.",
     detailedDescription:
-      "Site comercial da TechStore — loja de eletrônicos com layout responsivo, vitrine organizada por categorias, destaques promocionais e CTA. Não é uma página única: a estrutura da vitrine foi pensada pra conversão, com navegação por categoria e credibilidade pra quem chega pelo link ou campanha.",
+      "Site da TechStore, loja de eletrônicos. Vitrine organizada por categoria, destaques promocionais e CTA de compra. Não é uma página única — a estrutura foi pensada pra conversão, com navegação por categoria e credibilidade pra quem chega por link de campanha.",
     thumbnail: "/project-thumbs/captures/cltechshop.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -311,18 +303,16 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Web", "Netlify", "Vitrine comercial"],
     context:
-      "A loja precisava de presença online pra divulgar catálogo e converter visitante em comprador.",
+      "A loja não tinha site. Vendia só por WhatsApp e indicava produto por foto.",
     challenges: [
-      "Comunicar variedade de produtos com site leve e fácil de manter.",
-      "Manter vitrine e CTA visíveis em mobile e desktop.",
+      "Fazer site leve que o dono consegue manter sem depender de mim pra tudo.",
     ],
     solution: [
-      "Site com seções de destaque, categorias, benefícios e contato.",
-      "Deploy estático no Netlify pra carregamento rápido.",
+      "Deploy estático no Netlify. Vitrine com categorias e CTA visível em mobile e desktop.",
     ],
     results: [
-      "Loja publicada e acessível por URL fixa.",
-      "Base pronta pra campanhas e divulgação.",
+      "Loja no ar com URL fixa pra mandar em campanha.",
+      "O dono atualiza destaque sem mexer em código.",
     ],
     liveUrl: "https://cltechshop.netlify.app",
   },
@@ -331,9 +321,9 @@ export const projects: Project[] = [
     projectKind: "landing",
     title: "RapidCred",
     shortDescription:
-      "Landing de crédito pessoal: proposta clara, simulação e CTA pra solicitar crédito rápido.",
+      "Landing de crédito pessoal. 'Crédito rápido e fácil.' Simulação e CTA no Netlify.",
     detailedDescription:
-      "Página de captura pra serviço de crédito com mensagem direta sobre agilidade e simplicidade. Layout pensado pra reduzir fricção na solicitação e passar confiança. Publicada no Netlify pra usar em anúncio e indicação.",
+      "Página de captura pra serviço de crédito. Mensagem direta: agilidade e simplicidade. Layout enxuto pra reduzir fricção na solicitação e passar confiança. Publicada no Netlify pra usar em anúncio e indicação.",
     thumbnail: "/project-thumbs/captures/rapidcred.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -343,18 +333,16 @@ export const projects: Project[] = [
     featured: true,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
-      "Operação de crédito precisava de uma página única pra explicar a oferta e receber contato.",
+      "Operação de crédito não tinha página. Mandava PDF no WhatsApp e perdia lead.",
     challenges: [
-      "Explicar o benefício sem parecer genérico.",
-      "Destacar o CTA principal sem poluir a leitura.",
+      "Explicar o benefício sem virar texto de banco — crédito pessoal assusta.",
     ],
     solution: [
-      "Copy objetiva com foco em velocidade e facilidade.",
-      "Estrutura enxuta com blocos de confiança e formulário de contato.",
+      "Copy curta com foco em velocidade. Bloco de confiança e formulário de contato.",
     ],
     results: [
-      "Landing no ar pra tráfego pago ou orgânico.",
-      "Mensagem consistente em um só link.",
+      "Landing no ar pra tráfego pago.",
+      "Lead chega pelo formulário em vez de PDF no WhatsApp.",
     ],
     liveUrl: "https://rapidcred.netlify.app",
   },
@@ -363,9 +351,9 @@ export const projects: Project[] = [
     projectKind: "landing",
     title: "CN Construtora",
     shortDescription:
-      "Site institucional de construtora: serviços, obras e contato pra captar clientes.",
+      "Site institucional de construtora. Serviços, obras e contato. No ar no Netlify.",
     detailedDescription:
-      "Landing institucional da CN Construtora com apresentação dos serviços de construção civil, portfólio resumido e canal de contato. Visual profissional pra passar solidez pra quem chega por indicação ou busca local.",
+      "Landing da CN Construtora. Mostra os serviços de construção civil, um portfólio resumido e canal de contato. Visual profissional pra quem chega por indicação ou busca local — em construção, a primeira impressão é tudo.",
     thumbnail: "/project-thumbs/captures/cn-construtora.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -375,18 +363,16 @@ export const projects: Project[] = [
     featured: true,
     stack: ["HTML/CSS", "Netlify", "Landing page"],
     context:
-      "Construtora precisava de presença digital simples pra complementar indicações e orçamentos.",
+      "Construtora vivia de indicação. Não tinha site, e o cliente novo não achava nada no Google.",
     challenges: [
-      "Passar confiança em segmento de ticket alto.",
-      "Organizar serviços sem fazer página pesada.",
+      "Construção é ticket alto. O site tem que passar solidez sem parecer barato.",
     ],
     solution: [
-      "Seções de serviços, diferenciais e formulário de contato.",
-      "Hospedagem estática no Netlify.",
+      "Página com serviços, diferenciais e formulário. Hospedagem estática no Netlify.",
     ],
     results: [
-      "Link único pra enviar pra prospects.",
-      "Imagem profissional alinhada ao ramo.",
+      "Link único pra mandar no WhatsApp e no Google.",
+      "Cliente novo chega e já vê que é serio.",
     ],
     liveUrl: "https://cnconstrutora.netlify.app",
   },
@@ -395,9 +381,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Cálculo Jurídico — Oliveira & Costa",
     shortDescription:
-      "Site comercial da calculadora jurídica: serviços, equipe, depoimentos e formulário pra solicitar demo.",
+      "Site da calculadora jurídica Oliveira & Costa. Serviços, equipe, depoimentos e demo. E-book de cortesia no final.",
     detailedDescription:
-      "Site completo pra solução Oliveira & Costa de cálculos processuais — prazos, honorários e correção monetária. Tem apresentação da equipe, depoimentos, captura de leads pra demonstração e e-book de cortesia depois do envio do formulário. Funil comercial estruturado pra um produto jurídico B2B.",
+      "Site completo pra solução de cálculos processuais — prazos, honorários, correção monetária. Tem apresentação da equipe, depoimentos, captura de lead pra demonstração e e-book de cortesia depois que o visitante manda o formulário. Funil B2B estruturado: o advogado chega, entende, pede demo, recebe e-book.",
     thumbnail: "/project-thumbs/captures/calculo-juridico-ebook.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -407,18 +393,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Web", "Netlify", "Formulário de leads"],
     context:
-      "Escritório e produto jurídico precisavam de um site de vendas consultivo pra advogados interessados em cálculos processuais.",
+      "Escritório tinha um produto jurídico bom mas vendia por reunião e PDF. Não tinha onde o advogado interessado pudesse chegar sozinho.",
     challenges: [
-      "Conciliar credibilidade técnica com linguagem acessível.",
-      "Conduzir o visitante até pedir a demo.",
+      "Produto jurídico é técnico. O site tem que ser credível sem virar tese de mestrado.",
+      "Conduzir o visitante até pedir a demo sem parecer que está empurrando.",
     ],
     solution: [
-      "Seções de serviços, equipe e prova social.",
-      "Formulário de demonstração com confirmação pós-envio.",
+      "Seções de serviços, equipe e prova social. Formulário de demo com e-book de cortesia no fim.",
     ],
     results: [
-      "Site publicado em calculojuridicoebook.netlify.app.",
-      "Funil claro pra interessados em cálculos processuais.",
+      "Site no ar em calculojuridicoebook.netlify.app.",
+      "Lead checa sozinho, pede demo quando quer. Menos reunião de qualificação.",
     ],
     liveUrl: "https://calculojuridicoebook.netlify.app",
   },
@@ -427,9 +412,9 @@ export const projects: Project[] = [
     projectKind: "landing",
     title: "VISION",
     shortDescription:
-      "Landing de veículos premium com hero 3D — modelos GLB, pós-processamento e CTA pra WhatsApp.",
+      "Landing de veículos premium com hero 3D. Carro BMW em GLB, bloom, aberração cromática. CTA no WhatsApp.",
     detailedDescription:
-      "Site de apresentação pra concessionária premium: hero imersivo com React Three Fiber, modelos BMW em GLB/GLTF, bloom e aberração cromática. O carro em destaque muda a cada visita; embaixo tem seções de financiamento, veículos revisados e entrega nacional. Layout escuro de alto contraste, tipografia forte e fluxo que leva pro WhatsApp. Mais vitrine digital do que catálogo estático.",
+      "Site de concessionária premium que eu fiz com React Three Fiber. O hero tem modelo BMW em GLB/GLTF com bloom e aberração cromática — o carro em destaque muda a cada visita. Embaixo tem financiamento, veículos revisados e entrega nacional. Layout escuro de alto contraste, tipografia forte. Mais vitrine digital do que catálogo de lista de carro.",
     thumbnail: "/project-thumbs/captures/vision.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -439,18 +424,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "React Three Fiber", "Three.js", "Tailwind"],
     context:
-      "Concessionária precisava de presença digital memorável — mais vitrine cinematográfica do que site de lista de carros.",
+      "Concessionária premium não queria site de lista de carro. Queriam algo que passasse a sensação de entrar num showroom.",
     challenges: [
-      "Carregar modelos 3D pesados sem travar mobile.",
-      "Manter o copy legível sobre cena escura com efeitos de luz.",
+      "Modelo 3D pesado em mobile — não pode travar.",
+      "O copy tem que ficar legível sobre uma cena escura com efeito de luz.",
     ],
     solution: [
-      "Pipeline R3F + drei + postprocessing com loading controlado.",
-      "Seções claras de benefício e contato abaixo do hero 3D.",
+      "Pipeline R3F + drei + postprocessing com loading controlado. Seções de benefício e contato abaixo do hero.",
     ],
     results: [
-      "Landing publicada na Vercel com identidade premium.",
-      "Hero interativo que reforça posicionamento de seleção exclusiva.",
+      "Landing na Vercel com identidade premium.",
+      "O hero interativo já é o pitch — não precisa de texto longo.",
     ],
     liveUrl: "https://vision-iota-eight.vercel.app",
   },
@@ -459,9 +443,9 @@ export const projects: Project[] = [
     projectKind: "landing",
     title: "ViON",
     shortDescription:
-      "Site institucional 3D pra operadoras: van de instalação, scroll-driven e pitch de vendas.",
+      "Site institucional 3D pra operadoras. Van de instalação, scroll-driven, pitch do modelo desk + campo.",
     detailedDescription:
-      "ViON é o site de apresentação do modelo comercial pra operadoras parceiras: vendedores fixos no desk e equipe de instalação em campo, operando com a marca da operadora. A experiência é scroll-driven — câmera e cena 3D sincronizam com as seções, inspiradas em referências imersivas como igloo.inc. Tem van de serviço modelada, roteador procedural, partículas, grid de rede, intro animada e post-processing. Stack React + Vite + Three.js + Tailwind v4 + Zustand.",
+      "ViON é o site que eu fiz pra explicar o modelo comercial pra operadoras parceiras: vendedores no desk, equipe de instalação em campo, tudo com a marca da operadora. A experiência é scroll-driven — a câmera 3D sincroniza com as seções, inspirado em igloo.inc. Tem van de serviço modelada, roteador procedural, partículas, grid de rede, intro animada e post-processing. Stack: React + Vite + Three.js + Tailwind v4 + Zustand.",
     thumbnail: "/project-thumbs/captures/vion.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -471,18 +455,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["React Three Fiber", "Three.js", "Vite", "Tailwind"],
     context:
-      "Operadora precisa entender o modelo ViON — desk + instalação — antes de fechar parceria. PDF e slide não transmitiam a proposta.",
+      "A operadora não entendia o modelo ViON com PDF e slide. Precisava de algo que mostrasse desk + campo de forma que fizesse sentido em 30 segundos.",
     challenges: [
-      "Narrar vendas e instalação numa jornada contínua, sem parecer apresentação corporativa genérica.",
-      "Sincronizar scroll HTML com câmera 3D em várias cenas.",
+      "Narrar vendas e instalação numa jornada contínua — não parecer apresentação corporativa.",
+      "Sincronizar scroll HTML com câmera 3D em várias cenas sem dar bug.",
     ],
     solution: [
-      "Timeline de scroll com seções Hero, Serviços, Sobre e Contato.",
-      "Cena 3D com van, rede e efeitos visuais alinhados à identidade laranja ViON.",
+      "Timeline de scroll com seções Hero, Serviços, Sobre e Contato. Cena 3D com van, rede e efeitos alinhados à identidade laranja ViON.",
     ],
     results: [
-      "Site publicado na Vercel com experiência scroll-driven completa.",
-      "Demonstração clara do modelo desk + campo sem expor dados de clientes.",
+      "Site na Vercel com experiência scroll-driven completa.",
+      "A operadora entende o modelo sem precisar de reunião de 1 hora.",
     ],
     liveUrl: "https://vion-ashen.vercel.app",
   },
@@ -491,9 +474,9 @@ export const projects: Project[] = [
     projectKind: "consultoria",
     title: "Consultoria técnica e operacional",
     shortDescription:
-      "Diagnóstico, arquitetura e acompanhamento pra digitalizar processos com clareza e foco em resultado.",
+      "Consultoria: diagnóstico, arquitetura e acompanhamento pra digitalizar processo sem achismo.",
     detailedDescription:
-      "Consultoria pra empresas que precisam sair do improviso: entendemos o processo atual, mapeamos gargalos e propomos solução técnica alinhada ao que o time realmente usa. Atuamos do escopo até a orientação na implementação — integrações, automação, WhatsApp, cadastros e operação do dia a dia — sempre com linguagem acessível pra decisores e respeito a dados e confidencialidade.",
+      "Eu faço consultoria pra empresa que cresceu em planilha e grupo de WhatsApp e não sabe mais onde mexer. Entendo o processo atual, mapeio gargalo e proponho solução técnica alinhada ao que o time já usa. Atuo do escopo até a orientação na implementação — integração, automação, WhatsApp, cadastro. Sempre com linguagem acessível pra quem decide e respeito a dados e confidencialidade.",
     thumbnail: "/project-thumbs/consultoria.svg",
     category: "Consultoria",
     year: 2026,
@@ -501,18 +484,17 @@ export const projects: Project[] = [
     featured: false,
     stack: ["Diagnóstico", "Arquitetura", "Acompanhamento"],
     context:
-      "Muitas operações crescem em planilha, grupo e ferramenta solta até o custo de manter tudo ficar maior que o benefício.",
+      "Operação cresce em planilha e grupo até o custo de manter tudo ficar maior que o benefício. Aí me chamam.",
     challenges: [
-      "Traduzir dor de negócio em decisão técnica sem jargão desnecessário.",
-      "Priorizar o que traz retorno rápido sem criar dívida técnica evitável.",
+      "Traduzir dor de negócio em decisão técnica sem jargão.",
+      "Priorizar o que traz retorno rápido sem criar dívida técnica.",
     ],
     solution: [
-      "Entrevistas curtas, mapa do fluxo atual e proposta de evolução por etapas.",
-      "Recomendações práticas sobre stack, integrações e governança de dados.",
+      "Entrevista curta, mapa do fluxo atual e proposta de evolução por etapa.",
     ],
     results: [
-      "Cliente entende o caminho antes de investir em desenvolvimento.",
-      "Menos retrabalho e mais previsibilidade na entrega.",
+      "O cliente entende o caminho antes de investir em desenvolvimento.",
+      "Menos retrabalho e mais previsibilidade.",
     ],
   },
   {
@@ -520,9 +502,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Operação comercial — sigilo",
     shortDescription:
-      "Plataforma de vendas e backoffice em produção: funil, financeiro, documentos, equipe com papéis e pós-venda por mensagem — sem exposição pública.",
+      "Plataforma de vendas e backoffice em produção. Funil, financeiro, documentos, pós-venda por mensagem. Tudo sob sigilo.",
     detailedDescription:
-      "Sistema web que centraliza a rotina comercial de uma operação de serviços: cadastro de oportunidades com formulário completo, aprovação interna, painéis comparando períodos, visão por canal ou parceiro e upload de documentos organizados por tipo. Usuários, logs e permissões em banco relacional; parte do pipeline sincroniza com planilha operacional pra quem edita fora do painel; arquivos em nuvem com pastas por categoria. Tem financeiro, metas, antecipação, pós-venda com mensagens padronizadas, solicitações internas, grupos com permissões e visão em tempo real. Papéis distintos controlam quem vê número, quem aprova negócio e quem dispara mensagem. Por lidar com dados pessoais, contratos e pipeline real, a descrição aqui é só resumo — mostra entrega sem telas, integrações ou identidade do contratante.",
+      "Sistema web que centraliza a rotina comercial de uma operação de serviços. Cadastro de oportunidade com formulário completo, aprovação interna, painel comparando período, visão por canal e upload de documento por tipo. Usuário, log e permissão em banco relacional. Parte do pipeline sincroniza com planilha pra quem edita fora do painel. Arquivo em nuvem com pasta por categoria. Tem financeiro, meta, antecipação, pós-venda com mensagem, solicitação interna, grupo com permissão e visão em tempo real. Papel diferente controla quem vê número, quem aprova negócio e quem dispara mensagem. Por lidar com dado pessoal, contrato e pipeline real, a descrição aqui é resumo — mostra entrega sem telas, integração ou identidade do contratante.",
     thumbnail: "/project-thumbs/topsecret-comercial.svg",
     category: "Sob sigilo",
     year: 2025,
@@ -539,23 +521,20 @@ export const projects: Project[] = [
       "Mensageria",
     ],
     context:
-      "A operação vivia em planilha solta e grupo de mensagem. Precisava de um funil único, rastreável, com documentos, financeiro e pós-venda integrados — sem vazamento de dados de clientes ou pipeline.",
+      "A operação vivia em planilha solta e grupo de mensagem. Não tinha funil único, não tinha rastreio, documento espalhado.",
     challenges: [
-      "Manter cadastro rico consistente entre painel web, planilha operacional e repositório de documentos.",
-      "Separar permissões entre vendedor, backoffice, financeiro e pós-venda — inclusive envio de mensagens.",
-      "Rodar estável na nuvem com autenticação, recuperação de acesso e alertas em tempo real.",
-      "Documentar entrega sem publicar capturas, URLs, webhooks ou qualquer dado identificável.",
+      "Manter cadastro rico consistente entre painel web, planilha e repositório de documento.",
+      "Separar permissão entre vendedor, backoffice, financeiro e pós-venda — inclusive envio de mensagem.",
+      "Documentar a entrega sem publicar captura, URL, webhook ou dado identificável.",
     ],
     solution: [
-      "API REST com papéis explícitos e serviços dedicados pra planilha, arquivos e mensageria.",
-      "Interface responsiva com dashboard, listagens paginadas, cadastro unificado e módulos financeiros.",
-      "Mensagens operacionais integradas ao fluxo de pós-venda, com sessões restritas por permissão.",
-      "Deploy contínuo na nuvem; portfólio limitado ao acordo de sigilo — contexto, abordagem e resultado.",
+      "API REST com papel explícito e serviço dedicado pra planilha, arquivo e mensageria.",
+      "Mensagem operacional integrada ao pós-venda, com sessão restrita por permissão.",
     ],
     results: [
-      "Funil, documentos e financeiro no mesmo ambiente — menos retrabalho entre áreas.",
-      "Visibilidade interna de pipeline e desempenho sem export manual diário.",
-      "Dados de clientes e identidade da operação preservados fora do site público.",
+      "Funil, documento e financeiro no mesmo lugar. Menos retrabalho entre área.",
+      "Pipeline visível sem export manual diário.",
+      "Dado de cliente e identidade da operação preservados fora do site público.",
     ],
   },
   {
@@ -563,9 +542,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Gestão multiempresa — sigilo",
     shortDescription:
-      "CRM web onde cada empresa opera isolada: vendas, clientes, comissões, financeiro e pós-venda — código privado, dados redigidos.",
+      "CRM web multiempresa. Cada empresa opera isolada: venda, cliente, comissão, financeiro e pós-venda. Código privado.",
     detailedDescription:
-      "Plataforma comercial multiempresa: cada organização acessa ambiente próprio, com papéis de proprietário, administrador, gerente e vendedor. Cobre produtos, clientes, registro de vendas, comissões, movimentações financeiras, rotinas de pós-venda, visão gerencial por período e supervisão central pra operadores autorizados. Autenticação persistente, banco relacional com migrations, interface atual e gráficos de acompanhamento. Pode operar em modo demo somente leitura pra apresentações sem gravar dados sensíveis. Repositório privado; deploy preparado com migrações no arranque. Descrevo capacidade e abordagem — nunca CNPJs, credenciais ou capturas reais.",
+      "Plataforma comercial onde cada organização acessa ambiente próprio com papel de proprietário, admin, gerente e vendedor. Cobre produto, cliente, venda, comissão, financeiro, pós-venda, visão gerencial por período e supervisão central. Autenticação persistente, banco relacional com migration, gráfico de acompanhamento. Tem modo demo somente leitura pra apresentação sem gravar dado. Repositório privado. Descrevo capacidade — nunca CNPJ, credencial ou captura real.",
     thumbnail: "/project-thumbs/topsecret-multiempresa.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -581,21 +560,17 @@ export const projects: Project[] = [
       "Painéis analíticos",
     ],
     context:
-      "Depois de entregar operação vertical em produção, surgiu a necessidade de um produto comercial genérico — escalável por empresa, pronto pra diferentes segmentos.",
+      "Depois de entregar operação vertical em produção, surgiu a necessidade de um produto comercial genérico — escalável por empresa, pronto pra segmento diferente.",
     challenges: [
-      "Isolar empresas, membros e vendedores sem vazamento cruzado de dados.",
-      "Unificar vendas, comissões, financeiro e pós-venda num fluxo coerente.",
-      "Permitir demo ou apresentação sem expor gravações reais de clientes.",
+      "Isolar empresa, membro e vendedor sem vazamento cruzado de dado.",
+      "Unificar venda, comissão, financeiro e pós-venda num fluxo que faça sentido.",
     ],
     solution: [
-      "Modelo de dados com empresa, venda, comissão, cliente e atividades pós-venda.",
-      "Rotas por identificador de empresa, onboarding guiado e supervisão central.",
-      "Ambiente somente leitura pra demonstrações; métricas opcionais desacopladas.",
+      "Modelo de dados com empresa, venda, comissão, cliente e atividade de pós-venda. Rota por identificador de empresa e onboarding guiado.",
     ],
     results: [
-      "Base CRM completa pronta pra demo ou produção com cliente real.",
-      "Arquitetura reutilizável pra operações com equipe, comissões e financeiro.",
-      "Código e dados permanecem privados; portfólio mostra só o nível executivo.",
+      "Base CRM completa pronta pra demo ou produção.",
+      "Arquitetura reutilizável pra operação com equipe, comissão e financeiro.",
     ],
   },
   {
@@ -603,9 +578,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Mensageria integrada — sigilo",
     shortDescription:
-      "Camada própria de API pra WhatsApp corporativo: instâncias, webhooks, filas e integrações HTTPS — base de bots e automações em produção.",
+      "API própria de WhatsApp corporativo. Instância, webhook, fila e integração HTTPS. Base de bot e automação em produção.",
     detailedDescription:
-      "Infraestrutura de mensageria mantida em repositório privado: API REST em HTTPS pra criar e gerenciar instâncias, conectar sessões oficiais ou via web, receber eventos por webhooks e integrar bots, filas, armazenamento e ferramentas de atendimento. Persistência relacional, cache e deploy containerizado na nuvem. Alimenta produtos públicos do portfólio e sistemas confidenciais — mas tokens, números conectados, conversas, chaves de API e endpoints internos nunca entram no material aberto. Outras rotinas comerciais usam pilha complementar de envio operacional; mesma exigência de sigilo em ambas.",
+      "Infraestrutura de mensageria que mantenho em repositório privado. API REST em HTTPS pra criar e gerenciar instância, conectar sessão oficial ou via web, receber evento por webhook e integrar bot, fila, armazenamento e ferramenta de atendimento. Persistência relacional, cache e deploy containerizado na nuvem. Alimenta produto público do portfólio e sistema confidencial — mas token, número conectado, conversa, chave de API e endpoint interno nunca entram no material aberto.",
     thumbnail: "/project-thumbs/topsecret-mensageria.svg",
     category: "Sob sigilo",
     year: 2025,
@@ -622,21 +597,17 @@ export const projects: Project[] = [
       "HTTPS",
     ],
     context:
-      "Bots, disparadores e painéis precisavam de mensageria estável e centralizada — sem espalhar sessão em cada produto ou depender de serviço opaco.",
+      "Bot, disparador e painel precisavam de mensageria estável e centralizada. Cada produto não podia ter sessão de WhatsApp espalhada.",
     challenges: [
-      "Operar múltiplas instâncias e consumidores sem conflito de sessão ou vazamento entre produtos.",
-      "Proteger tokens, webhooks e conteúdo de conversa em produção real.",
-      "Manter infra atualizada e observável sem publicar arquitetura interna no portfólio.",
+      "Operar várias instância e consumidor sem conflito de sessão.",
+      "Proteger token, webhook e conteúdo de conversa em produção.",
     ],
     solution: [
-      "Deploy próprio com autenticação por chave, instâncias nomeadas e eventos por webhook.",
-      "Separação clara entre camada de mensageria e produtos de negócio.",
-      "Tráfego exclusivamente HTTPS; credenciais restritas ao ambiente autorizado.",
+      "Deploy próprio com autenticação por chave, instância nomeada e evento por webhook. Tráfego só em HTTPS.",
     ],
     results: [
-      "Canal previsível pra atendimento automatizado, disparos e integrações corporativas.",
-      "Base comprovada pra bots e operações confidenciais — sem evidência sensível pública.",
-      "Referência pra quem exige API própria e governança de instâncias.",
+      "Canal previsível pra atendimento automatizado, disparo e integração corporativa.",
+      "Base comprovada pra bot e operação confidencial — sem evidência sensível pública.",
     ],
   },
   {
@@ -644,9 +615,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Agendamento de consultas — sigilo",
     shortDescription:
-      "Site e fluxo de marcação pra clínicas e consultórios: agenda, confirmações e dados de pacientes tratados como confidenciais.",
+      "Site e fluxo de marcação pra clínica e consultório. Agenda, confirmação e lembrete. Dado de paciente sob sigilo.",
     detailedDescription:
-      "Sistemas de agendamento online pra área da saúde: escolha de especialidade ou profissional, horários disponíveis, confirmação por mensagem ou e-mail, lembretes automáticos e painel interno pra recepção remarcar ou bloquear slots. Lida com nome, contato, histórico de consultas e preferências — informação sensível sob LGPD e acordo com o contratante. Descrevo o tipo de entrega (marcação, confirmação, integração com operação) sem publicar marca, telas, URLs ou dados reais de pacientes.",
+      "Sistema de agendamento online pra área de saúde. Escolha de especialidade ou profissional, horário disponível, confirmação por mensagem ou e-mail, lembrete automático e painel interno pra recepção remarcar ou bloquear slot. Lida com nome, contato, histórico de consulta e preferência — tudo sob LGPD e acordo com o contratante. Descrevo o tipo de entrega sem publicar marca, tela, URL ou dado real de paciente.",
     thumbnail: "/project-thumbs/topsecret-saude.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -661,21 +632,17 @@ export const projects: Project[] = [
       "HTTPS",
     ],
     context:
-      "Consultórios e clínicas precisam reduzir ligação repetitiva e faltas — com agenda clara pro paciente e controle pra recepção.",
+      "Consultório e clínica perdiam tempo com ligação repetitiva e sofriam com no-show. A recepção não tinha visão da agenda.",
     challenges: [
-      "Conciliar disponibilidade real da equipe com autoatendimento simples pra quem marca.",
-      "Enviar confirmações e lembretes sem expor dados de pacientes em canal público.",
-      "Manter operação alinhada ao que a recepção vê no painel interno.",
+      "Conciliar disponibilidade real da equipe com autoatendimento simples.",
+      "Enviar lembrete sem expor dado de paciente em canal público.",
     ],
     solution: [
-      "Fluxo de marcação em etapas curtas, com validação de horário e confirmação imediata.",
-      "Lembretes automáticos e painel pra remarcar, cancelar ou bloquear horários.",
-      "Deploy seguro; portfólio limitado à descrição aprovada pelo contratante.",
+      "Fluxo de marcação em etapa curta com validação de horário. Lembrete automático e painel pra remarcar ou bloquear.",
     ],
     results: [
-      "Menos atrito na marcação e menos carga na recepção.",
-      "Agenda organizada com confirmações previsíveis.",
-      "Dados de pacientes e identidade da clínica fora do catálogo aberto.",
+      "Menos ligação repetitiva e menos no-show.",
+      "Recepção tem visão da agenda sem consolidar planilha.",
     ],
   },
   {
@@ -683,9 +650,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Locação de veículos — sigilo",
     shortDescription:
-      "Plataforma pra aluguel de carros e motos: frota, reservas, contratos e pagamentos — operação real sob acordo de sigilo.",
+      "Sistema pra locadora de carro e moto. Frota, reserva, contrato e pagamento. Operação real sob sigilo.",
     detailedDescription:
-      "Sistema pra locadoras de carros e motos: catálogo de veículos por categoria, consulta de disponibilidade, reserva com datas e retirada, registro de contrato, cobrança e status da frota (disponível, reservado, em manutenção). Pode incluir check-list de entrega e devolução, multas ou adicionais e painel operacional pra equipe interna. Trata documentos, pagamentos e dados de locatários como confidenciais. Descrição genérica — sem marca da locadora, placas, telas ou integrações expostas.",
+      "Sistema pra locadora: catálogo de veículo por categoria, consulta de disponibilidade, reserva com data e retirada, registro de contrato, cobrança e status da frota (disponível, reservado, em manutenção). Pode incluir check-list de entrega e devolução, multa ou adicional e painel operacional. Documento, pagamento e dado de locatário são confidenciais. Descrição genérica — sem marca, placa, tela ou integração exposta.",
     thumbnail: "/project-thumbs/topsecret-veiculos.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -700,21 +667,17 @@ export const projects: Project[] = [
       "Painel operacional",
     ],
     context:
-      "Locadoras que crescem em planilha e WhatsApp precisam de reserva confiável, frota visível e menos erro manual em alta temporada.",
+      "Locadora cresceu em planilha e WhatsApp. Em alta temporada alugava o mesmo carro duas vezes sem querer.",
     challenges: [
-      "Evitar double booking quando carro ou moto já está comprometido.",
+      "Evitar double booking quando o carro ou moto já está comprometido.",
       "Unificar site público de consulta com rotina interna de entrega e devolução.",
-      "Proteger dados de locatários e condições comerciais reais.",
     ],
     solution: [
-      "Cadastro de frota com status e calendário de ocupação.",
-      "Fluxo de reserva com confirmação e registro de contrato no painel.",
-      "Comunicação e pagamento integrados conforme acordo do cliente.",
+      "Cadastro de frota com status e calendário de ocupação. Reserva com confirmação e registro de contrato no painel.",
     ],
     results: [
-      "Reservas mais previsíveis e frota visível pra operação.",
-      "Menos retrabalho entre site, balcão e financeiro.",
-      "Identidade da locadora e dados de clientes preservados no portfólio.",
+      "Acabou o double booking.",
+      "Frota visível pra operação sem consolidar planilha.",
     ],
   },
   {
@@ -722,9 +685,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Portal imobiliário — sigilo",
     shortDescription:
-      "Site e backoffice pra imobiliárias: imóveis, leads, visitas e documentação — sem exposição de operação ou clientes.",
+      "Site e backoffice pra imobiliária. Imóvel, lead, visita e documento. Sem expor operação ou cliente.",
     detailedDescription:
-      "Ecossistema digital pra corretoras e imobiliárias: vitrine de imóveis com filtros, captura de leads, agendamento de visitas, acompanhamento de propostas e repositório de documentos por negócio. Painel interno pra corretores atualizarem status, registrar contatos e priorizar oportunidades. Informações de proprietários, valores negociados e documentos ficam sob sigilo comercial. Mostro capacidade de entrega no segmento — nunca endereços reais, fotos internas, CRM ou identidade do contratante.",
+      "Ecossistema pra corretora e imobiliária: vitrine de imóvel com filtro, captura de lead, agendamento de visita, acompanhamento de proposta e repositório de documento por negócio. Painel interno pra corretor atualizar status, registrar contato e priorizar oportunidade. Informação de proprietário, valor negociado e documento ficam sob sigilo comercial. Mostro capacidade de entrega — nunca endereço real, foto interna, CRM ou identidade do contratante.",
     thumbnail: "/project-thumbs/topsecret-imobiliaria.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -739,21 +702,17 @@ export const projects: Project[] = [
       "HTTPS",
     ],
     context:
-      "Imobiliárias dependem de vitrine atualizada e follow-up rápido — mas não podem expor proprietários, valores fechados ou documentos na web aberta.",
+      "Imobiliária dependia de vitrine desatualizada e follow-up no WhatsApp. Lead se perdia entre anúncio, grupo e planilha.",
     challenges: [
-      "Manter vitrine atraente sem vazar dados sensíveis de proprietário ou negociação.",
-      "Organizar leads e visitas pra equipe comercial dispersa.",
+      "Manter vitrine atraente sem vazar dado de proprietário ou negociação.",
       "Separar o que é público (anúncio) do que é interno (proposta, documento).",
     ],
     solution: [
-      "Site de captura com filtros claros e formulário de interesse.",
-      "Painel pra corretores com pipeline, visitas e histórico de contato.",
-      "Armazenamento de documentos restrito a quem tem permissão.",
+      "Site de captura com filtro e formulário. Painel pra corretor com pipeline, visita e histórico. Documento restrito por permissão.",
     ],
     results: [
-      "Vitrine profissional e leads centralizados.",
-      "Menos lead perdido entre anúncio, WhatsApp e planilha.",
-      "Operação e clientes preservados fora do portfólio aberto.",
+      "Lead centralizado — não se perde mais entre WhatsApp e planilha.",
+      "Vitrine profissional sem expor proprietário ou valor fechado.",
     ],
   },
   {
@@ -761,9 +720,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Autoatendimento digital — sigilo",
     shortDescription:
-      "Fluxos de autoatendimento web ou totem: filas, formulários, pagamentos e integrações — operação do cliente fora do catálogo público.",
+      "Fluxo de autoatendimento web ou totem. Fila, formulário, pagamento e integração. Operação do cliente fora do catálogo.",
     detailedDescription:
-      "Sistemas de autoatendimento pra reduzir fila presencial e liberar equipe: jornadas guiadas por etapas (escolha de serviço, preenchimento, confirmação, pagamento ou emissão de comprovante), integração com backoffice e, quando necessário, mensageria ou impressão. Serve setores como serviços, varejo, utilities ou atendimento público interno — sempre adaptado ao processo do contratante. Dados de quem usa o fluxo e regras comerciais reais permanecem confidenciais. Descrevo o padrão de entrega (fluxo, integração, operação) sem expor telas, totens, URLs ou identidade do cliente.",
+      "Sistema de autoatendimento pra reduzir fila presencial e liberar equipe. Jornada guiada por etapa: escolha de serviço, preenchimento, confirmação, pagamento ou emissão de comprovante. Integra com backoffice e, quando precisa, mensageria ou impressão. Serve serviço, varejo, utilities ou atendimento público interno — sempre adaptado ao processo do contratante. Dado de quem usa e regra comercial real são confidenciais. Descrevo o padrão de entrega sem expor tela, totem, URL ou identidade do cliente.",
     thumbnail: "/project-thumbs/topsecret-autoatendimento.svg",
     category: "Sob sigilo",
     year: 2026,
@@ -778,21 +737,17 @@ export const projects: Project[] = [
       "HTTPS",
     ],
     context:
-      "Operações com alto volume de pedido repetitivo precisam de autoatendimento claro — sem depender de atendente pra cada passo simples.",
+      "Operação com alto volume de pedido repetitivo. Atendente gastava tempo com coisa que o cliente podia fazer sozinho.",
     challenges: [
-      "Traduzir processo burocrático em etapas curtas que qualquer pessoa conclui.",
-      "Integrar com sistema legado ou planilha sem quebrar operação existente.",
-      "Registrar o que foi feito pra auditoria interna, sem expor isso publicamente.",
+      "Traduzir processo burocrático em etapa curta que qualquer pessoa conclui.",
+      "Integrar com sistema legado ou planilha sem quebrar o que já funciona.",
     ],
     solution: [
-      "Jornadas por etapas com validação e feedback imediato.",
-      "Painel interno pra acompanhar fila, exceções e reprocessamento.",
-      "Conexão com pagamento, mensagem ou emissão conforme o caso.",
+      "Jornada por etapa com validação e feedback imediato. Painel interno pra acompanhar fila e exceção.",
     ],
     results: [
-      "Menos fila e menos repetição pro time interno.",
+      "Menos fila presencial.",
       "Cliente resolve o básico sozinho, no ritmo dele.",
-      "Regras e dados da operação mantidos sob sigilo no portfólio.",
     ],
   },
   {
@@ -800,9 +755,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "ERP360",
     shortDescription:
-      "ERP integrado pra operações de médio porte: vendas, estoque, financeiro, RH e BI num só sistema.",
+      "ERP integrado pra médio porte. Venda, estoque, financeiro, RH e BI num sistema só.",
     detailedDescription:
-      "ERP360 junta vendas, compras, estoque, financeiro, RH e dashboards executivos num ambiente só. Cada departamento vê só o que precisa, mas a diretoria tem visão consolidada em tempo real. Feito pra empresa que cresceu usando ferramenta separada e perdia dado entre vendas, estoque e financeiro.",
+      "ERP360 junta venda, compra, estoque, financeiro, RH e dashboard executivo num ambiente só. Cada departamento vê só o que precisa, mas a diretoria tem visão consolidada em tempo real. Feito pra empresa que cresceu com ferramenta separada e perdia dado entre venda, estoque e financeiro.",
     thumbnail: "/project-thumbs/erp360.svg",
     category: "ERP",
     year: 2026,
@@ -810,20 +765,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Redis"],
     context:
-      "Empresa de médio porte usava planilhas e sistemas avulsos. Dados se perdiam entre vendas, estoque e financeiro.",
+      "Empresa de médio porte com planilha e sistema avulso. Dado se perdia entre venda, estoque e financeiro. Relatório demorava dia.",
     challenges: [
-      "Unificar processos sem parar a operação.",
-      "Criar permissões por departamento.",
-      "Gerar relatórios consolidados de forma rápida.",
+      "Unificar processo sem parar a operação.",
+      "Criar permissão por departamento.",
     ],
     solution: [
-      "ERP modular com módulos de vendas, compras, estoque, financeiro e RH.",
-      "Papéis e aprovações configuráveis por usuário.",
-      "Dashboards executivos com KPIs atualizados.",
+      "ERP modular com venda, compra, estoque, financeiro e RH. Papel e aprovação configurável por usuário. Dashboard com KPI atualizado.",
     ],
     results: [
-      "Relatórios que levavam dias gerados em segundos.",
-      "Menos retrabalho entre áreas e visão real do lucro.",
+      "Relatório que demorava dia agora sai em segundo.",
+      "Diretoria vê lucro real sem consolidar planilha.",
     ],
     liveUrl: "",
   },
@@ -832,9 +784,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Gestor Pro",
     shortDescription:
-      "ERP enxuto pra pequena empresa que precisa sair do caos do Excel e do WhatsApp.",
+      "ERP enxuto pra pequeno negócio. Sair do caos do Excel e do WhatsApp sem curva de aprendizado.",
     detailedDescription:
-      "Gestor Pro é um ERP leve pra pequeno negócio que precisa de controle sem curva de aprendizado. Fluxo de vendas, clientes, contas a pagar, contas a receber e alerta de estoque baixo numa interface direta.",
+      "Gestor Pro é um ERP leve que eu fiz pra pequeno negócio que precisa de controle mas não tem tempo pra aprender sistema complexo. Fluxo de venda, cliente, conta a pagar, conta a receber e alerta de estoque baixo. Interface direta, sem recurso que pequeno negócio não usa.",
     thumbnail: "/project-thumbs/gestor-pro.svg",
     category: "ERP leve",
     year: 2026,
@@ -842,18 +794,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "TypeScript", "PostgreSQL"],
     context:
-      "Pequenos negócios gerenciavam tudo em planilhas e grupos de mensagem, sem controle real.",
+      "Pequeno negócio gerenciava tudo em planilha e grupo de mensagem. Não tinha controle de nada, esquecia conta e prazo.",
     challenges: [
-      "Criar interface simples sem perder funcionalidade.",
-      "Substituir planilhas de forma natural.",
+      "Fazer interface simples sem perder funcionalidade essencial.",
+      "O dono não vai aprender sistema complexo — tem que ser óbvio.",
     ],
     solution: [
-      "ERP leve com fluxo de vendas, cadastro de clientes, contas e alertas de estoque.",
-      "Relatórios objetivos para o dono do negócio.",
+      "ERP leve com venda, cliente, conta e alerta de estoque. Relatório direto pra dono: quanto entrou, quanto saiu, quanto tem.",
     ],
     results: [
-      "Donos passaram a ter controle diário do caixa e do estoque.",
-      "Menos esquecimento de contas e prazos.",
+      "Dono passou a ter controle diário de caixa e estoque.",
+      "Acabou o esquecimento de conta e prazo.",
     ],
     liveUrl: "",
   },
@@ -862,9 +813,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "CRM Max",
     shortDescription:
-      "CRM com funil de vendas, follow-up automático, metas e acompanhamento de equipe em tempo real.",
+      "CRM com funil de venda, follow-up automático por WhatsApp, meta e dashboard de conversão.",
     detailedDescription:
-      "CRM Max organiza o time comercial com funil visual, follow-up automático por WhatsApp, metas individuais e dashboards de conversão. Cada oportunidade tem histórico, próxima ação e alerta de inatividade.",
+      "CRM Max organiza o time comercial com funil visual, follow-up automático por WhatsApp, meta individual e dashboard de conversão. Cada oportunidade tem histórico, próxima ação e alerta de inatividade. O vendedor não precisa lembrar de dar retorno — o sistema cobra.",
     thumbnail: "/project-thumbs/crm-max.svg",
     category: "CRM",
     year: 2025,
@@ -872,20 +823,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp"],
     context:
-      "Time comercial perdia oportunidades por falta de follow-up e não sabia onde estava cada negócio.",
+      "Time comercial perdia oportunidade porque ninguém dava follow-up. Não sabia onde estava cada negócio.",
     challenges: [
-      "Fazer vendedores atualizarem o funil.",
-      "Integrar WhatsApp no fluxo comercial.",
-      "Medir conversão por etapa e por vendedor.",
+      "Fazer vendedor atualizar o funil — eles odeiam isso.",
+      "Integrar WhatsApp no fluxo sem virar caos.",
     ],
     solution: [
-      "Funil kanban com follow-up automático por WhatsApp.",
-      "Metas individuais e dashboard de conversão.",
-      "Alertas de inatividade para próxima ação.",
+      "Funil kanban com follow-up automático por WhatsApp. Meta individual e alerta de inatividade. O sistema cobra o vendedor, não o contrário.",
     ],
     results: [
-      "Aumento na taxa de conversão.",
-      "Menos oportunidades esquecidas no funil.",
+      "Menos oportunidade esquecida no funil.",
+      "Conversão subiu porque o follow-up passou a acontecer.",
     ],
     liveUrl: "",
   },
@@ -894,9 +842,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Controla Financeiro",
     shortDescription:
-      "Controle de contas a pagar, receber, fluxo de caixa e DRE gerada automaticamente.",
+      "Sistema financeiro: conta a pagar, receber, conciliação, projeção de caixa e DRE automática.",
     detailedDescription:
-      "Sistema financeiro que junta contas a pagar, contas a receber, conciliação, projeção de caixa e DRE. Alerta conta vencida, categoriza receita e despesa e mostra o lucro real do negócio.",
+      "Controla Financeiro junta conta a pagar, conta a receber, conciliação, projeção de caixa e DRE. Alerta conta vencida, categoriza receita e despesa e mostra o lucro real — não o que o dono acha que é.",
     thumbnail: "/project-thumbs/topsecret-financeiro.svg",
     category: "Gestão financeira",
     year: 2026,
@@ -905,20 +853,17 @@ export const projects: Project[] = [
     confidential: true,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "Empresa tomava decisões sem saber o lucro real por atraso na conciliação financeira.",
+      "Empresa tomava decisão sem saber o lucro real. A conciliação financeira atrasava mês.",
     challenges: [
-      "Juntar entradas e saídas de várias fontes.",
-      "Gerar DRE confiável.",
-      "Alertar contas vencidas.",
+      "Juntar entrada e saída de várias fonte.",
+      "Gerar DRE confiável sem planilha manual.",
     ],
     solution: [
-      "Conciliação automática com categorização de receitas e despesas.",
-      "Projeção de caixa e DRE gerada instantaneamente.",
-      "Alertas de vencimento e inadimplência.",
+      "Conciliação automática com categorização. DRE gerada instantaneamente. Alerta de vencimento e inadimplência.",
     ],
     results: [
-      "Decisões baseadas em número reais.",
-      "Menos inadimplência e lucro líquido claro.",
+      "Decisão com número real, não com achismo.",
+      "Lucro líquido claro e inadimplência sob controle.",
     ],
     liveUrl: "",
   },
@@ -927,9 +872,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Stock Control",
     shortDescription:
-      "Controle de estoque com alerta de compra, curva ABC, perdas e integração com vendas.",
+      "Controle de estoque com curva ABC, ponto de pedido, perda e integração com venda.",
     detailedDescription:
-      "Stock Control dá visibilidade total do estoque: entradas, saídas, curva ABC, ponto de pedido, perdas e integração com vendas. Evita ruptura e também dinheiro parado em produto parado.",
+      "Stock Control dá visibilidade total do estoque: entrada, saída, curva ABC, ponto de pedido, perda e integração com venda. O problema clássico — deixava de vender por falta de produto mas tinha dinheiro parado em produto parado.",
     thumbnail: "/project-thumbs/stock-control.svg",
     category: "Gestão de estoque",
     year: 2025,
@@ -937,19 +882,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "Empresa deixava de vender por falta de produto, mas ao mesmo tempo tinha estoque parado.",
+      "Empresa deixava de vender por falta de produto. Ao mesmo tempo, tinha produto parado no estoque há mês.",
     challenges: [
-      "Prever demanda e ponto de compra.",
-      "Reduzir perdas e quebras.",
-      "Integrar estoque com vendas.",
+      "Prever demanda e ponto de compra sem achismo.",
+      "Reduzir perda e quebra.",
     ],
     solution: [
-      "Curva ABC, ponto de pedido automático e auditoria de perdas.",
-      "Integração com vendas para atualização em tempo real.",
+      "Curva ABC, ponto de pedido automático e auditoria de perda. Integração com venda pra atualizar em tempo real.",
     ],
     results: [
-      "Menos rupturas de venda.",
-      "Redução de capital parado em produtos parados.",
+      "Menos ruptura de venda.",
+      "Menos dinheiro parado em produto que não sai.",
     ],
     liveUrl: "",
   },
@@ -958,9 +901,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Ponto Digital",
     shortDescription:
-      "Controle de ponto, horas extras, banco de horas e exportação pra folha de pagamento.",
+      "Ponto digital com hora extra, banco de hora e exportação pra folha de pagamento.",
     detailedDescription:
-      "Sistema de ponto digital pra empresa que precisa registrar jornada, controlar horas extras, banco de horas e exportar dados pra folha. Registro por geolocalização e relatório por departamento.",
+      "Sistema de ponto digital pra registrar jornada, controlar hora extra e banco de hora e exportar pra folha. Registro por geolocalização e relatório por departamento.",
     thumbnail: "/project-thumbs/topsecret-rh.svg",
     category: "RH",
     year: 2026,
@@ -969,20 +912,17 @@ export const projects: Project[] = [
     confidential: true,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "RH perdia tempo consolidando ponto em planilhas e discutindo horas com funcionários.",
+      "RH perdia tempo consolidando ponto em planilha e discutia hora com funcionário todo mês.",
     challenges: [
       "Criar registro confiável de jornada.",
-      "Evitar fraudes no registro.",
-      "Integrar com folha de pagamento.",
+      "Evitar fraude no registro.",
     ],
     solution: [
-      "Registro de ponto por web com geolocalização.",
-      "Banco de horas e horas extras automáticos.",
-      "Exportação para folha de pagamento.",
+      "Registro de ponto por web com geolocalização. Banco de hora e hora extra automático. Exportação pra folha.",
     ],
     results: [
       "Fechamento de folha mais rápido.",
-      "Menos conflitos sobre horas trabalhadas.",
+      "Menos conflito sobre hora trabalhada.",
     ],
     liveUrl: "",
   },
@@ -991,9 +931,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Service OS",
     shortDescription:
-      "Gestão de ordens de serviço: técnicos, peças, garantia e acompanhamento em tempo real.",
+      "Gestão de ordem de serviço. Técnico, peça, garantia e acompanhamento em tempo real.",
     detailedDescription:
-      "Service OS rastreia cada ordem de serviço do recebimento até a entrega: atribuição de técnicos, controle de peças, garantia, status e aviso automático pro cliente.",
+      "Service OS rastreia cada O.S. do recebimento até a entrega: atribuição de técnico, controle de peça, garantia, status e aviso automático pro cliente. A empresa de manutenção não perde mais O.S. entre atendente, técnico e cliente.",
     thumbnail: "/project-thumbs/topsecret-ordemservico.svg",
     category: "Ordens de serviço",
     year: 2026,
@@ -1002,19 +942,17 @@ export const projects: Project[] = [
     confidential: true,
     stack: ["Next.js", "Node.js", "PostgreSQL", "WhatsApp"],
     context:
-      "Empresa de manutenção perdia O.S. entre atendente, técnico e cliente, sem visão do status.",
+      "Empresa de manutenção perdia O.S. entre atendente, técnico e cliente. Ninguém sabia o status de nada.",
     challenges: [
       "Rastrear cada O.S. do início ao fim.",
-      "Controlar peças usadas.",
-      "Comunicar cliente sobre andamento.",
+      "Comunicar cliente sobre andamento sem ligação manual.",
     ],
     solution: [
-      "O.S. com atribuição, status, peças e garantia.",
-      "Avisos automáticos por WhatsApp para o cliente.",
+      "O.S. com atribuição, status, peça e garantia. Aviso automático por WhatsApp pro cliente em cada etapa.",
     ],
     results: [
-      "Menos O.S. esquecidas.",
-      "Prazo de atendimento reduzido.",
+      "Menos O.S. esquecida.",
+      "Prazo de atendimento reduzido porque ninguém precisa ligar pra saber status.",
     ],
     liveUrl: "",
   },
@@ -1023,9 +961,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Fleet Manager",
     shortDescription:
-      "Controle de veículos, manutenções, combustível, rotas e documentação da frota.",
+      "Controle de frota: veículo, manutenção, combustível, rota e documentação.",
     detailedDescription:
-      "Fleet Manager centraliza a operação de frotas: abastecimento, manutenção preventiva, multas, licenciamento, rotas e custo por veículo. Alerta vencimento e ajuda a reduzir custo operacional.",
+      "Fleet Manager centraliza a operação de frota: abastecimento, manutenção preventiva, multa, licenciamento, rota e custo por veículo. Alerta vencimento e ajuda a reduzir custo operacional.",
     thumbnail: "/project-thumbs/fleet-manager.svg",
     category: "Gestão de frotas",
     year: 2025,
@@ -1033,19 +971,17 @@ export const projects: Project[] = [
     featured: false,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "Frota cresceu e faltava controle de custos, manutenções e documentação em dia.",
+      "Frota cresceu e perdeu controle. Multa por documento vencido, manutenção atrasada, custo por km invisível.",
     challenges: [
-      "Controlar abastecimento e manutenção.",
-      "Reduzir custo por km.",
-      "Alertar vencimentos de documentação.",
+      "Controlar abastecimento e manutenção sem planilha.",
+      "Alertar vencimento de documento antes da multa.",
     ],
     solution: [
-      "Cadastro de veículos com abastecimento, manutenções e custos.",
-      "Alertas de vencimento e manutenção preventiva.",
+      "Cadastro de veículo com abastecimento, manutenção e custo. Alerta de vencimento e manutenção preventiva.",
     ],
     results: [
-      "Redução de multas e atrasos.",
-      "Custo por veículo visível e controlado.",
+      "Menos multa e atraso de documento.",
+      "Custo por veículo visível — dá pra saber qual tá comendo dinheiro.",
     ],
     liveUrl: "",
   },
@@ -1054,9 +990,9 @@ export const projects: Project[] = [
     projectKind: "topsecret",
     title: "Contratos & Docs",
     shortDescription:
-      "Gestão de contratos com alerta de vencimento, aprovações e armazenamento seguro de documentos.",
+      "Repositório de contrato com alerta de vencimento, aprovação e versionamento.",
     detailedDescription:
-      "Repositório de contratos e documentos com alerta de vencimento, fluxo de aprovação, versionamento e acesso por permissão. Centraliza a documentação e reduz risco jurídico.",
+      "Contratos & Docs centraliza contrato e documento com alerta de vencimento, fluxo de aprovação, versionamento e acesso por permissão. A empresa não descobre mais contrato vencido na hora da cobrança.",
     thumbnail: "/project-thumbs/topsecret-contratos.svg",
     category: "Gestão de contratos",
     year: 2025,
@@ -1065,19 +1001,17 @@ export const projects: Project[] = [
     confidential: true,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "Empresa descobria contratos vencidos só na cobrança e tinha documentos espalhados.",
+      "Empresa descobria contrato vencido só na cobrança. Documento espalhado em e-mail, pasta e gaveta.",
     challenges: [
-      "Centralizar contratos.",
-      "Alertar vencimentos.",
-      "Controlar aprovações.",
+      "Centralizar contrato em lugar só.",
+      "Alertar vencimento antes de virar problema.",
     ],
     solution: [
-      "Repositório de contratos com alertas e aprovações.",
-      "Versionamento e lembretes automáticos.",
+      "Repositório com alerta e aprovação. Versionamento e lembrete automático.",
     ],
     results: [
-      "Renovações no prazo.",
-      "Documentos centralizados e acesso controlado.",
+      "Renovação no prazo.",
+      "Documento centralizado e acesso controlado.",
     ],
     liveUrl: "",
   },
@@ -1086,9 +1020,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Business View",
     shortDescription:
-      "Dashboards executivos com KPIs de vendas, financeiro, estoque e operação em tempo real.",
+      "Dashboard executivo com KPI de venda, financeiro, estoque e operação em tempo real.",
     detailedDescription:
-      "Business View reúne indicadores de vendas, financeiro, estoque e operação em dashboards claros. Ajuda gestor a tomar decisão com dados, não no achismo.",
+      "Business View reúne indicador de venda, financeiro, estoque e operação em dashboard claro. Ajuda gestor a decidir com dado, não no achismo.",
     thumbnail: "/project-thumbs/business-view.svg",
     category: "BI e dashboards",
     year: 2026,
@@ -1096,19 +1030,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
     context:
-      "Gestores tomavam decisões sem saber os números reais por falta de dashboards confiáveis.",
+      "Gestor tomava decisão sem saber o número real. Não tinha dashboard confiável, só planilha desatualizada.",
     challenges: [
-      "Juntar dados de várias fontes.",
-      "Apresentar indicadores de forma simples.",
-      "Atualizar dashboards em tempo real.",
+      "Juntar dado de várias fonte num dashboard só.",
+      "Atualizar em tempo real sem travar.",
     ],
     solution: [
-      "BI com dashboards por área e KPIs configuráveis.",
-      "Alertas de variação e tendências.",
+      "BI com dashboard por área e KPI configurável. Alerta de variação e tendência.",
     ],
     results: [
-      "Reuniões mais objetivas.",
-      "Gargalos detectados mais rápido.",
+      "Reunião mais objetiva — decisão com número, não com palpite.",
+      "Gargalo detectado mais rápido.",
     ],
     liveUrl: "",
   },
@@ -1117,9 +1049,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "PDV Cloud",
     shortDescription:
-      "Frente de caixa na nuvem com fiscal, controle de estoque e integração com e-commerce.",
+      "Frente de caixa na nuvem com fiscal, estoque e integração com e-commerce.",
     detailedDescription:
-      "PDV Cloud conecta loja física e e-commerce num catálogo só. Emite documento fiscal, atualiza estoque em tempo real e evita erro de preço entre canais.",
+      "PDV Cloud conecta loja física e e-commerce num catálogo só. Emite documento fiscal, atualiza estoque em tempo real e evita erro de preço entre canal.",
     thumbnail: "/project-thumbs/pdv-cloud.svg",
     category: "Ponto de venda",
     year: 2026,
@@ -1127,19 +1059,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL", "API fiscal"],
     context:
-      "Loja física e e-commerce usavam sistemas separados. Estoque e preços não conversavam.",
+      "Loja física e e-commerce usavam sistema separado. Estoque não conversava, preço era diferente entre canal.",
     challenges: [
-      "Integrar loja física e online.",
-      "Emitir documentos fiscais.",
-      "Manter estoque unificado.",
+      "Integrar loja física e online num catálogo só.",
+      "Emitir documento fiscal sem erro.",
     ],
     solution: [
-      "PDV cloud com catálogo unificado e emissão fiscal.",
-      "Estoque atualizado em tempo real para todos os canais.",
+      "PDV cloud com catálogo unificado e emissão fiscal. Estoque atualizado em tempo real pra todos os canal.",
     ],
     results: [
-      "Estoque integrado.",
-      "Menos erro de preço e operação unificada.",
+      "Estoque integrado — não vende mais o que não tem.",
+      "Preço igual entre loja física e online.",
     ],
     liveUrl: "",
   },
@@ -1148,9 +1078,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "Project Hub",
     shortDescription:
-      "Gestão de projetos com tarefas, equipe, horas, custos e entregas acompanhadas.",
+      "Gestão de projeto com tarefa, equipe, hora, custo e entrega.",
     detailedDescription:
-      "Project Hub acompanha projeto do planejamento à entrega: cronograma, tarefas, alocação de equipe, apontamento de horas e controle de custos. Pra empresa que entrega projeto e precisa saber o lucro de cada um.",
+      "Project Hub acompanha projeto do planejamento à entrega: cronograma, tarefa, alocação de equipe, apontamento de hora e controle de custo. Pra empresa que entrega projeto e precisa saber o lucro de cada um.",
     thumbnail: "/project-thumbs/project-hub.svg",
     category: "Gestão de projetos",
     year: 2026,
@@ -1158,19 +1088,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     context:
-      "Projetos atrasavam e estouravam orçamento por falta de controle de tarefas e horas.",
+      "Projeto atrasava e estourava orçamento porque ninguém controlava tarefa e hora.",
     challenges: [
-      "Acompanhar prazos e entregas.",
-      "Controlar horas e custos.",
-      "Manter visibilidade do status.",
+      "Acompanhar prazo e entrega sem planilha.",
+      "Controlar hora e custo do projeto.",
     ],
     solution: [
-      "Cronograma, tarefas, alocação e apontamento de horas.",
-      "Acompanhamento de custos e rentabilidade por projeto.",
+      "Cronograma, tarefa, alocação e apontamento de hora. Acompanhamento de custo e rentabilidade por projeto.",
     ],
     results: [
-      "Projetos entregues no prazo.",
-      "Controle de rentabilidade por projeto.",
+      "Projeto entregue no prazo.",
+      "Sabe o lucro de cada projeto — não só no fim do mês.",
     ],
     liveUrl: "",
   },
@@ -1179,9 +1107,9 @@ export const projects: Project[] = [
     projectKind: "software",
     title: "GPS Relevo",
     shortDescription:
-      "App Android que calcula rota com menos ladeira usando dados de elevação SRTM. Economiza combustível e facilita a vida de condutores.",
+      "App Android que calcula rota com menos ladeira usando dado de elevação SRTM. Pra caminhoneiro, van e moto.",
     detailedDescription:
-      "GPS Relevo é um app Android que faz algo que o GPS comum não faz: em vez de só mostrar a rota mais curta ou mais rápida, ele cruza dados de elevação SRTM com o motor de roteamento e calcula o perfil de relevo de cada trajeto. O condutor recebe três opções — verde (menor relevo), azul (equilibrada) e vermelha (mais curta) — com perfil de elevação visual, estimativa de economia de combustível e tempo. Feito pra caminhoneiro, entregador de van, motoboy e qualquer condutor que sofre com ladeira íngreme, desgaste de freio e consumo elevado. Funciona offline com tiles de elevação cacheados no dispositivo.",
+      "GPS Relevo é um app Android que faz algo que o GPS comum não faz: em vez de só mostrar a rota mais curta ou mais rápida, ele cruza dado de elevação SRTM com o motor de roteamento e calcula o perfil de relevo de cada trajeto. O condutor recebe três opção — verde (menor relevo), azul (equilibrada) e vermelha (mais curta) — com perfil de elevação visual, estimativa de economia de combustível e tempo. Eu fiz pra caminhoneiro, entregador de van, motoboy e qualquer condutor que sofre com ladeira íngreme, desgaste de freio e consumo elevado. Funciona offline com tile de elevação cacheado no dispositivo.",
     thumbnail: "/project-thumbs/gps-relevo.svg",
     category: "App Android · GPS por relevo",
     year: 2025,
@@ -1189,24 +1117,19 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Kotlin", "Jetpack Compose", "OSM", "SRTM", "GraphHopper"],
     context:
-      "Condutores de caminhão, van e moto precisavam de rota que evitasse ladeira íngreme — o GPS comum só oferece o mais curto ou o mais rápido.",
+      "Condutores de caminhão, van e moto não tinham opção de rota que evitasse ladeira. O GPS comum só oferece o mais curto ou o mais rápido.",
     challenges: [
-      "Processar dados de elevação (SRTM) no dispositivo com performance aceitável.",
+      "Processar dado de elevação (SRTM) no dispositivo sem travar.",
       "Calcular declividade real de cada segmento de rota, não só distância.",
       "Funcionar offline em estrada sem sinal.",
-      "Comparar rotas de forma clara pra o condutor decidir rápido.",
     ],
     solution: [
-      "Motor de roteamento com peso por declividade usando GraphHopper e tiles SRTM.",
-      "Três opções de rota (verde/azul/vermelha) com perfil de elevação visual.",
-      "Estimativa de economia de combustível comparando desnível total.",
-      "Cache offline de tiles de elevação pra uso em estrada sem conexão.",
+      "Motor de roteamento com peso por declividade usando GraphHopper e tile SRTM. Três opção de rota com perfil de elevação visual e cache offline.",
     ],
     results: [
-      "Condutores escolhem rota com até 60% menos desnível acumulado.",
+      "Condutor escolhe rota com até 60% menos desnível acumulado.",
       "Economia de combustível em trajeto com relevo acentuado.",
       "Menos desgaste de freio e embreagem em ladeira íngreme.",
-      "App Android nativo com funcionamento offline em estrada.",
     ],
     liveUrl: "",
   },
@@ -1215,9 +1138,9 @@ export const projects: Project[] = [
     projectKind: "landing",
     title: "Bottique do Vidro",
     shortDescription:
-      "Site institucional pra vidraçaria de alto padrão: serviços, diferenciais, portfólio de ambientes e canais de contato.",
+      "Site institucional pra vidraçaria de alto padrão. Serviço, portfólio de ambiente e WhatsApp.",
     detailedDescription:
-      "A Bottique do Vidro é uma vidraçaria de alto padrão que atende residência e comércio com vidro temperado, espelho, esquadria e manutenção. O site mostra serviços claros, diferenciais como experiência e garantia de instalação, portfólio de ambientes transformados e vários canais de atendimento via WhatsApp. Foco em converter visitante em orçamento, sem burocracia.",
+      "A Bottique do Vidro é vidraçaria de alto padrão que atende residência e comércio com vidro temperado, espelho, esquadria e manutenção. O site mostra serviço claro, diferencial como experiência e garantia de instalação, portfólio de ambiente transformado e canal de WhatsApp. Foco em converter visitante em orçamento, sem burocracia.",
     thumbnail: "/project-thumbs/captures/bottique-do-vidro.png",
     thumbnailWidth: 1200,
     thumbnailHeight: 630,
@@ -1227,21 +1150,17 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Next.js", "Landing page", "WhatsApp"],
     context:
-      "A vidraçaria precisava de presença digital profissional que mostrasse serviço, qualidade do acabamento e facilitasse o primeiro contato.",
+      "Vidraçaria de alto padrão não tinha site. Cliente chegava por indicação mas não tinha onde ver o trabalho antes de pedir orçamento.",
     challenges: [
-      "Criar landing page que transmita sofisticação e segurança de um serviço técnico.",
+      "Passar sofisticação e segurança de serviço técnico numa landing.",
       "Mostrar portfólio sem depender de foto própria de obra.",
-      "Deixar o contato por WhatsApp acessível em todos os pontos da página.",
     ],
     solution: [
-      "Site em Next.js com carregamento rápido e SEO amigável.",
-      "Estrutura de seções claras: serviços, diferenciais, portfólio, depoimentos e CTA.",
-      "Links diretos pra WhatsApp com opções de atendimento.",
+      "Site em Next.js com seção clara: serviço, diferencial, portfólio, depoimento e CTA. WhatsApp acessível em todo ponto da página.",
     ],
     results: [
       "Site no ar com identidade clean e foco em conversão.",
-      "Cliente entende o serviço e entra em contato em poucos segundos.",
-      "Presença digital alinhada com o posicionamento de alto padrão.",
+      "Cliente entende o serviço e pede orçamento em poucos segundo.",
     ],
     liveUrl: "https://bottiquedovidro.vercel.app/",
   },
