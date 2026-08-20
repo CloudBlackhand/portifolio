@@ -1,0 +1,76 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f121a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="20" fill="#181b22" stroke="#2a2e39" stroke-width="3"/>
+  <text x="88" y="100" fill="#9cc2ff" font-size="22" font-weight="bold" font-family="Arial, Helvetica, sans-serif">GPS RELEVO</text>
+  <text x="88" y="128" fill="#b2b8c7" font-size="16" font-family="Arial, Helvetica, sans-serif">Rotas com menos declividade para condutores</text>
+
+  <!-- Phone mockup -->
+  <rect x="420" y="150" width="320" height="540" rx="28" fill="#0b0d12" stroke="#2a2e39" stroke-width="3"/>
+  <rect x="436" y="180" width="288" height="480" rx="8" fill="#111217"/>
+
+  <!-- Status bar -->
+  <text x="450" y="200" fill="#94a3b8" font-size="10" font-family="Arial, Helvetica, sans-serif">9:41</text>
+  <text x="700" y="200" fill="#94a3b8" font-size="10" font-family="Arial, Helvetica, sans-serif">4G</text>
+
+  <!-- Map area -->
+  <rect x="448" y="214" width="264" height="240" rx="6" fill="#0d1014"/>
+
+  <!-- Elevation contour lines -->
+  <path d="M460 420 Q 500 380 540 390 T 620 360 T 700 340" stroke="#1f3a2a" stroke-width="2" fill="none"/>
+  <path d="M460 400 Q 510 350 560 360 T 650 320 T 700 300" stroke="#1f3a2a" stroke-width="2" fill="none"/>
+  <path d="M460 370 Q 520 310 580 320 T 660 280 T 700 260" stroke="#1f3a2a" stroke-width="2" fill="none"/>
+
+  <!-- Route options -->
+  <path d="M470 440 C 510 410, 540 400, 580 380 S 640 350, 690 330" stroke="#f87171" stroke-width="3" fill="none" stroke-dasharray="6 4"/>
+  <path d="M470 440 C 520 430, 560 420, 600 410 S 660 390, 690 370" stroke="#4b8dff" stroke-width="3" fill="none"/>
+  <path d="M470 440 C 530 445, 580 445, 620 440 S 670 430, 690 420" stroke="#25d366" stroke-width="4" fill="none"/>
+
+  <!-- Start/end pins -->
+  <circle cx="470" cy="440" r="7" fill="#25d366"/>
+  <circle cx="690" cy="370" r="7" fill="#f87171"/>
+
+  <!-- Route label -->
+  <rect x="456" y="464" width="248" height="40" rx="6" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="468" y="481" fill="#7fd99b" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Verde · menor relevo</text>
+  <text x="468" y="497" fill="#94a3b8" font-size="10" font-family="Arial, Helvetica, sans-serif">+180m · 12 min</text>
+
+  <!-- Elevation profile -->
+  <rect x="448" y="514" width="264" height="120" rx="6" fill="#0d1014"/>
+  <text x="460" y="532" fill="#e8ebf3" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Perfil de elevação</text>
+  <path d="M456 620 L 480 600 L 510 580 L 540 590 L 570 560 L 600 570 L 630 540 L 660 550 L 690 530 L 700 525" stroke="#25d366" stroke-width="2" fill="none"/>
+  <path d="M456 620 L 480 590 L 510 560 L 540 540 L 570 520 L 600 510 L 630 500 L 660 510 L 690 500 L 700 495" stroke="#f87171" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <text x="460" y="624" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">0m</text>
+  <text x="684" y="540" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">420m</text>
+
+  <!-- Side stat cards -->
+  <rect x="88" y="160" width="300" height="120" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="196" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">ECONOMIA DE COMBUSTÍVEL</text>
+  <text x="112" y="232" fill="#7fd99b" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">-18%</text>
+  <text x="112" y="256" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">vs. rota mais curta</text>
+
+  <rect x="88" y="300" width="300" height="120" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="112" y="336" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">MENOR DESNÍVEL</text>
+  <text x="112" y="372" fill="#4b8dff" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">180m</text>
+  <text x="112" y="396" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">rota verde vs. 420m</text>
+
+  <rect x="88" y="440" width="300" height="120" rx="12" fill="#111217" stroke="#f59e0b" stroke-width="2"/>
+  <text x="112" y="476" fill="#fbbf6b" font-size="11" font-family="Arial, Helvetica, sans-serif">USUÁRIOS ATIVOS</text>
+  <text x="112" y="512" fill="#e8ebf3" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Condutores</text>
+  <text x="112" y="536" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">caminhões, vans e motos</text>
+
+  <rect x="780" y="160" width="332" height="400" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
+  <text x="804" y="196" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Como funciona</text>
+  <text x="804" y="226" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">1. Origem e destino</text>
+  <text x="804" y="252" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">2. Dados de elevação (SRTM)</text>
+  <text x="804" y="278" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">3. Cálculo de declividade</text>
+  <text x="804" y="304" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">4. 3 rotas: verde, azul, vermelha</text>
+  <text x="804" y="330" fill="#94a3b8" font-size="12" font-family="Arial, Helvetica, sans-serif">5. Perfil e economia estimada</text>
+
+  <rect x="804" y="360" width="284" height="170" rx="8" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
+  <text x="820" y="388" fill="#7fd99b" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Stack Android</text>
+  <text x="820" y="414" fill="#e8ebf3" font-size="11" font-family="Arial, Helvetica, sans-serif">Kotlin · Jetpack Compose</text>
+  <text x="820" y="436" fill="#e8ebf3" font-size="11" font-family="Arial, Helvetica, sans-serif">OSM / Maps SDK</text>
+  <text x="820" y="458" fill="#e8ebf3" font-size="11" font-family="Arial, Helvetica, sans-serif">SRTM elevation tiles</text>
+  <text x="820" y="480" fill="#e8ebf3" font-size="11" font-family="Arial, Helvetica, sans-serif">GraphHopper routing</text>
+  <text x="820" y="502" fill="#e8ebf3" font-size="11" font-family="Arial, Helvetica, sans-serif">Offline-first</text>
+</svg>
