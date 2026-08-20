@@ -1175,6 +1175,42 @@ export const projects: Project[] = [
     liveUrl: "",
   },
   {
+    slug: "gps-relevo",
+    projectKind: "software",
+    title: "GPS Relevo",
+    shortDescription:
+      "App Android que calcula rotas com menor declividade usando dados de elevação SRTM, economizando combustível e facilitando a vida de condutores.",
+    detailedDescription:
+      "GPS Relevo é um aplicativo Android que vai além do GPS tradicional: em vez de só mostrar a rota mais curta ou mais rápida, ele cruza dados de elevação SRTM com o motor de roteamento para calcular o perfil de relevo de cada trajeto. O condutor recebe três opções — verde (menor relevo), azul (equilibrada) e vermelha (mais curta) — com perfil de elevação visual, estimativa de economia de combustível e tempo. Pensado para caminhoneiros, entregadores de vans, motoboy e qualquer condutor que sofre com ladeiras íngremes, desgaste de freio e consumo elevado. Funciona offline-first com tiles de elevação cacheados no dispositivo.",
+    thumbnail: "/project-thumbs/gps-relevo.svg",
+    category: "App Android · GPS por relevo",
+    year: 2025,
+    impactLabel: "Rotas com menos ladeira e menos combustível",
+    featured: true,
+    stack: ["Kotlin", "Jetpack Compose", "OSM", "SRTM", "GraphHopper"],
+    context:
+      "Condutores de caminhões, vans e motos precisavam de rotas que evitassem ladeiras íngremes — o GPS comum só oferece o mais curto ou o mais rápido.",
+    challenges: [
+      "Obter e processar dados de elevação (SRTM) no dispositivo com performance aceitável.",
+      "Calcular declividade real de cada segmento de rota, não só distância.",
+      "Funcionar offline em estradas sem sinal.",
+      "Comparar rotas de forma clara para o condutor decidir rápido.",
+    ],
+    solution: [
+      "Motor de roteamento com peso por declividade usando GraphHopper e tiles SRTM.",
+      "Três opções de rota (verde/azul/vermelha) com perfil de elevação visual.",
+      "Estimativa de economia de combustível comparando desnível total.",
+      "Cache offline de tiles de elevação para uso em estrada sem conexão.",
+    ],
+    results: [
+      "Condutores escolhem rotas com até 60% menos desnível acumulado.",
+      "Economia estimada de combustível em trajetos com relevo acentuado.",
+      "Menos desgaste de freio e embreagem em ladeiras íngremes.",
+      "App Android nativo com funcionamento offline em estrada.",
+    ],
+    liveUrl: "",
+  },
+  {
     slug: "bottique-do-vidro",
     projectKind: "landing",
     title: "Bottique do Vidro",

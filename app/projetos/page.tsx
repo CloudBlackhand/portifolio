@@ -34,8 +34,9 @@ export default function ProjetosPage() {
         <h2 className="section-heading">Sistemas e gestão empresarial</h2>
         <p className="muted section-spacing-sm">
           ERP360, CRM Max, Controla Financeiro, Stock Control, Ponto Digital,
-          Service OS, Fleet Manager, Business View, PDV Cloud, Project Hub e
-          mais — sistemas que movem a operação de empresas de todos os tamanhos.
+          Service OS, Fleet Manager, Business View, PDV Cloud, Project Hub,
+          GPS Relevo e mais — sistemas que movem a operação de empresas de
+          todos os tamanhos.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
       </section>
