@@ -403,7 +403,7 @@
 
 .ep-device-sidebar {
   padding: 1rem;
-  background: #12151c;
+  background: var(--background);
   border-right: 1px solid var(--border);
   font-size: 0.82rem;
   color: var(--muted);
