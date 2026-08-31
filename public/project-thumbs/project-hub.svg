@@ -24,11 +24,11 @@
 
   <rect x="112" y="400" width="240" height="60" rx="10" fill="#1a1f2a"/>
   <text x="132" y="424" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">HORAS APONTADAS</text>
-  <text x="132" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">312h / 400h</text>
+  <text x="132" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">por membro</text>
 
   <rect x="376" y="400" width="240" height="60" rx="10" fill="#1a1f2a"/>
   <text x="396" y="424" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">CUSTO ATÉ AGORA</text>
-  <text x="396" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">R$ 62.400</text>
+  <text x="396" y="448" fill="#e8ebf3" font-size="18" font-weight="bold" font-family="Arial, Helvetica, sans-serif">por etapa</text>
 
   <rect x="640" y="400" width="240" height="60" rx="10" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
   <text x="660" y="424" fill="#7fd99b" font-size="11" font-family="Arial, Helvetica, sans-serif">STATUS</text>

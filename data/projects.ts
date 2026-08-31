@@ -1127,7 +1127,7 @@ export const projects: Project[] = [
       "Motor de roteamento com peso por declividade usando GraphHopper e tile SRTM. Três opção de rota com perfil de elevação visual e cache offline.",
     ],
     results: [
-      "Condutor escolhe rota com até 60% menos desnível acumulado.",
+      "Condutor escolhe rota com menos desnível acumulado.",
       "Economia de combustível em trajeto com relevo acentuado.",
       "Menos desgaste de freio e embreagem em ladeira íngreme.",
     ],

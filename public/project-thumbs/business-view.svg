@@ -6,23 +6,19 @@
 
   <rect x="88" y="160" width="256" height="140" rx="12" fill="#111217" stroke="#4b8dff" stroke-width="1.5"/>
   <text x="108" y="192" fill="#7aa2ff" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">RECEITA</text>
-  <text x="108" y="234" fill="#e8ebf3" font-size="30" font-weight="bold" font-family="Arial, Helvetica, sans-serif">R$ 1,2M</text>
-  <text x="108" y="262" fill="#67e08a" font-size="13" font-family="Arial, Helvetica, sans-serif">+22% vs. mês anterior</text>
+  <text x="108" y="240" fill="#e8ebf3" font-size="20" font-family="Arial, Helvetica, sans-serif">últimos 30 dias</text>
 
   <rect x="360" y="160" width="256" height="140" rx="12" fill="#111217" stroke="#25d366" stroke-width="1.5"/>
   <text x="380" y="192" fill="#67e08a" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">MARGEM</text>
-  <text x="380" y="234" fill="#e8ebf3" font-size="30" font-weight="bold" font-family="Arial, Helvetica, sans-serif">31%</text>
-  <text x="380" y="262" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">Meta: 28%</text>
+  <text x="380" y="240" fill="#e8ebf3" font-size="20" font-family="Arial, Helvetica, sans-serif">por categoria</text>
 
   <rect x="632" y="160" width="256" height="140" rx="12" fill="#111217" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="652" y="192" fill="#fbbf6b" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">ESTOQUE</text>
-  <text x="652" y="234" fill="#e8ebf3" font-size="30" font-weight="bold" font-family="Arial, Helvetica, sans-serif">94%</text>
-  <text x="652" y="262" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">giro saudável</text>
+  <text x="652" y="240" fill="#e8ebf3" font-size="20" font-family="Arial, Helvetica, sans-serif">giro por SKU</text>
 
   <rect x="904" y="160" width="208" height="140" rx="12" fill="#111217" stroke="#c084fc" stroke-width="1.5"/>
   <text x="924" y="192" fill="#d8b4fe" font-size="12" font-weight="bold" font-family="Arial, Helvetica, sans-serif">EQUIPE</text>
-  <text x="924" y="234" fill="#e8ebf3" font-size="30" font-weight="bold" font-family="Arial, Helvetica, sans-serif">96%</text>
-  <text x="924" y="262" fill="#94a3b8" font-size="13" font-family="Arial, Helvetica, sans-serif">metas batidas</text>
+  <text x="924" y="240" fill="#e8ebf3" font-size="20" font-family="Arial, Helvetica, sans-serif">metas do mês</text>
 
   <rect x="88" y="320" width="1024" height="160" rx="16" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
   <text x="112" y="352" fill="#e8ebf3" font-size="14" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Faturamento por canal</text>
