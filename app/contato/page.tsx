@@ -2,22 +2,25 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contato | Cloud Service",
-  description: "Canal de contato profissional com exposição mínima de dados.",
+  description:
+    "Fale sobre seu projeto pelo WhatsApp — resposta rápida, sem formulário.",
 };
 
 export default function ContatoPage() {
   return (
     <section className="page-shell">
-      <h1 className="page-title">Contato</h1>
+      <span className="hire-chip">Disponível para freelas e contratos</span>
+      <h1 className="page-title">Vamos falar sobre o seu sistema</h1>
       <p className="page-subtitle">
-        Este espaço prioriza comunicação profissional com privacidade e resposta
-        rápida para alinhamento de projetos.
+        Sem formulário, sem triagem automática. Me manda uma mensagem direta
+        no WhatsApp com o contexto do projeto e eu respondo pessoalmente.
       </p>
 
       <div className="content-block section-spacing">
-        <h3>Canal recomendado</h3>
+        <h3>Canal direto</h3>
         <p className="muted">
-          WhatsApp: <strong>(21) 97136-4919</strong>
+          WhatsApp: <strong>(21) 97136-4919</strong> — atendimento em horário
+          comercial, resposta normalmente no mesmo dia.
         </p>
         <div className="section-spacing">
           <a
@@ -31,10 +34,22 @@ export default function ContatoPage() {
         </div>
       </div>
 
-      <div className="content-block">
-        <h3>Nota de privacidade</h3>
+      <div className="content-block section-spacing">
+        <h3>O que ajuda a agilizar a conversa</h3>
+        <ul className="plain-list">
+          <li>O que o sistema ou site precisa resolver hoje.</li>
+          <li>Prazo desejado e se já existe orçamento definido.</li>
+          <li>Se já tem algo no ar (planilha, sistema antigo, site atual).</li>
+        </ul>
+      </div>
+
+      <div className="content-block section-spacing">
+        <h3>Sigilo de projeto</h3>
         <p className="muted">
-          Evite publicar telefone pessoal, endereço residencial e links sensíveis.
+          Projetos sob NDA ou com dados sensíveis do cliente são tratados sem
+          expor código-fonte, capturas de tela ou informação que identifique a
+          operação — o portfólio já reflete isso nos cases marcados como
+          confidenciais.
         </p>
       </div>
     </section>

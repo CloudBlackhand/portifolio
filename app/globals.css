@@ -730,10 +730,27 @@ a {
 
 .card-body {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-body h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
 }
 
 .card p {
   color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.card-actions {
+  margin-top: 0.15rem;
 }
 
 .chip-list {
@@ -762,6 +779,10 @@ a {
   border: 1px solid var(--border);
   padding: 0 0.9rem;
   background: var(--surface-soft);
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--foreground);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -844,59 +865,6 @@ a {
 .detail-gallery--marketing .detail-gallery-figure {
   max-width: 420px;
   width: 100%;
-}
-
-.marketing-section {
-  padding: 3rem 0 2.5rem;
-  background: var(--surface-soft);
-  border-bottom: 1px solid var(--border);
-}
-
-.marketing-highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.marketing-highlight-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.marketing-highlight-media {
-  display: block;
-  background: var(--background);
-  padding: 0.75rem;
-  text-align: center;
-}
-
-.marketing-highlight-image {
-  width: auto;
-  max-width: min(100%, 400px);
-  height: auto;
-  max-height: 480px;
-  object-fit: contain;
-  margin-inline: auto;
-  border-radius: var(--radius);
-}
-
-.marketing-highlight-body {
-  padding: 1rem 1.1rem 1.15rem;
-}
-
-.marketing-highlight-body h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.45rem;
-}
-
-.marketing-highlight-body p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  margin-bottom: 0.85rem;
-  line-height: 1.45;
 }
 
 .detail-gallery {
@@ -998,6 +966,10 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.work-table thead tr {
+  background: var(--surface-soft);
+}
+
 .work-table tbody tr:hover {
   background: var(--surface-soft);
 }
@@ -1014,14 +986,23 @@ a {
 .table-sort-button {
   border: none;
   background: transparent;
-  color: var(--foreground);
-  font-weight: 600;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   display: inline-flex;
   gap: 0.35rem;
   cursor: pointer;
   min-height: 44px;
   align-items: center;
   padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.table-sort-button:hover {
+  color: var(--brand-strong);
 }
 
 .work-table-cards {
@@ -1351,10 +1332,6 @@ html {
 
   .about-photo-wrap {
     max-width: 320px;
-  }
-
-  .marketing-section {
-    padding: 2rem 0 1.75rem;
   }
 
   .detail-gallery {
