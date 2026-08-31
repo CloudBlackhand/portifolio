@@ -32,30 +32,30 @@
   <!-- Route label -->
   <rect x="456" y="464" width="248" height="40" rx="6" fill="#1a2e1f" stroke="#25d366" stroke-width="1"/>
   <text x="468" y="481" fill="#7fd99b" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Verde · menor relevo</text>
-  <text x="468" y="497" fill="#94a3b8" font-size="10" font-family="Arial, Helvetica, sans-serif">+180m · 12 min</text>
+  <text x="468" y="497" fill="#94a3b8" font-size="10" font-family="Arial, Helvetica, sans-serif">Menos ladeira no trajeto</text>
 
   <!-- Elevation profile -->
   <rect x="448" y="514" width="264" height="120" rx="6" fill="#0d1014"/>
   <text x="460" y="532" fill="#e8ebf3" font-size="11" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Perfil de elevação</text>
   <path d="M456 620 L 480 600 L 510 580 L 540 590 L 570 560 L 600 570 L 630 540 L 660 550 L 690 530 L 700 525" stroke="#25d366" stroke-width="2" fill="none"/>
   <path d="M456 620 L 480 590 L 510 560 L 540 540 L 570 520 L 600 510 L 630 500 L 660 510 L 690 500 L 700 495" stroke="#f87171" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
-  <text x="460" y="624" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">0m</text>
-  <text x="684" y="540" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">420m</text>
+  <text x="460" y="624" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">baixo</text>
+  <text x="670" y="540" fill="#64748b" font-size="9" font-family="Arial, Helvetica, sans-serif">alto</text>
 
-  <!-- Side stat cards -->
+  <!-- Side info cards -->
   <rect x="88" y="160" width="300" height="120" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
   <text x="112" y="196" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">ECONOMIA DE COMBUSTÍVEL</text>
-  <text x="112" y="232" fill="#7fd99b" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">-18%</text>
-  <text x="112" y="256" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">vs. rota mais curta</text>
+  <text x="112" y="228" fill="#e8ebf3" font-size="18" font-family="Arial, Helvetica, sans-serif">Rota com menos</text>
+  <text x="112" y="252" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">subida e frenagem</text>
 
   <rect x="88" y="300" width="300" height="120" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
   <text x="112" y="336" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">MENOR DESNÍVEL</text>
-  <text x="112" y="372" fill="#4b8dff" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">180m</text>
-  <text x="112" y="396" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">rota verde vs. 420m</text>
+  <text x="112" y="368" fill="#4b8dff" font-size="18" font-family="Arial, Helvetica, sans-serif">Comparação entre</text>
+  <text x="112" y="392" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">rota verde e rota curta</text>
 
   <rect x="88" y="440" width="300" height="120" rx="12" fill="#111217" stroke="#f59e0b" stroke-width="2"/>
-  <text x="112" y="476" fill="#fbbf6b" font-size="11" font-family="Arial, Helvetica, sans-serif">USUÁRIOS ATIVOS</text>
-  <text x="112" y="512" fill="#e8ebf3" font-size="28" font-weight="bold" font-family="Arial, Helvetica, sans-serif">Condutores</text>
+  <text x="112" y="476" fill="#fbbf6b" font-size="11" font-family="Arial, Helvetica, sans-serif">PARA QUEM É</text>
+  <text x="112" y="508" fill="#e8ebf3" font-size="18" font-family="Arial, Helvetica, sans-serif">Condutores</text>
   <text x="112" y="536" fill="#94a3b8" font-size="11" font-family="Arial, Helvetica, sans-serif">caminhões, vans e motos</text>
 
   <rect x="780" y="160" width="332" height="400" rx="12" fill="#111217" stroke="#2a2e39" stroke-width="2"/>
