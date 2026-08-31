@@ -55,7 +55,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
               </p>
               <h2>{project.title}</h2>
               <p>{project.shortDescription}</p>
-              <div className="section-spacing card-actions">
+              <div className="card-actions">
                 <Link className="button card-action-link" href={`/projetos/${project.slug}`}>
                   Ver projeto
                 </Link>
