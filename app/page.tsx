@@ -2,7 +2,11 @@ import Link from "next/link";
 import { projects, getCatalogProjects } from "@/data/projects";
 import { getProfilePhoto } from "@/lib/profile-photo";
 import { ShowcaseCarousel } from "./components/showcase-carousel";
-import { LandingPage } from "./components/landing/LandingPage";
+import {
+  IntroStrip,
+  AboutSection,
+  ClosingCta,
+} from "./components/landing/LandingPage";
 import { WorkTable } from "./components/work-table";
 
 export default function Home() {
@@ -12,11 +16,11 @@ export default function Home() {
   return (
     <>
       <ShowcaseCarousel projects={projects} />
-      <LandingPage projects={projects} profilePhoto={profilePhoto} />
+      <IntroStrip />
       <div className="container ep-table-section">
         <WorkTable projects={catalogProjects} />
         <p className="muted section-spacing">
-          Sistemas em produção e campanhas de marketing — abra cada projeto para
+          Sistemas em produção e campanhas de marketing. Abra cada projeto para
           ver capturas ou peças visuais quando disponíveis.
         </p>
         <p className="catalog-table-note">
@@ -24,6 +28,8 @@ export default function Home() {
           <Link href="/projetos#sob-sigilo">Ver na página de projetos</Link>
         </p>
       </div>
+      <AboutSection profilePhoto={profilePhoto} />
+      <ClosingCta />
     </>
   );
 }
