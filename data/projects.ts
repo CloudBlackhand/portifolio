@@ -107,7 +107,7 @@ export const projects: Project[] = [
     context:
       "Vendiam internet sem saber se o endereço tinha cobertura. Cliente ligava, vendedor dizia 'deixa eu verificar', demorava, às vezes cancelava depois de instalar.",
     challenges: [
-      "Cruzar KML de cobertura com consulta rápida no mapa — o polígono é pesado.",
+      "Cruzar KML de cobertura com consulta rápida no mapa, mesmo com polígono pesado.",
     ],
     solution: [
       "Backend com Prisma e Redis de cache. O mapa carrega só o polígono da região consultada, não tudo.",
@@ -135,7 +135,7 @@ export const projects: Project[] = [
     context:
       "Volume grande de WhatsApp, pouca gente. Metade das mensagens era a mesma pergunta sobre cobertura.",
     challenges: [
-      "O cliente às vezes manda o CEP errado ou incompleto — o bot tem que validar e pedir de novo sem ficar chato.",
+      "O cliente às vezes manda o CEP errado ou incompleto, então o bot precisa validar e pedir de novo sem ficar chato.",
       "Passar pra humano sem perder o que o bot já conversou.",
     ],
     solution: [
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     context:
       "Provedor queria vender velocidade sem jogar tabela de mega na imagem. Número assusta, visual não.",
     challenges: [
-      "Comunicar velocidade sem usar número — todo mundo faz isso e vira poluição.",
+      "Comunicar velocidade sem usar número, porque todo mundo faz isso e vira poluição visual.",
     ],
     solution: [
       "Roteador 3D com ondas de sinal como metáfora. CTA vermelho com WhatsApp embaixo.",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
     context:
       "Copa estava chegando e o provedor queria surfar o clima sem parecer que estava forçando.",
     challenges: [
-      "Cabe muita informação regulamentada num post de feed — preço, benefícios, condições. Tem que ler em 3 segundos.",
+      "Cabe muita informação regulamentada num post de feed: preço, benefícios, condições. Tem que ler em 3 segundos.",
       "Manter a identidade do provedor sem brigar com o tema da Copa.",
     ],
     solution: [
@@ -261,7 +261,7 @@ export const projects: Project[] = [
       "Provedor precisava de volume de post mas sem parecer que cada um foi feito por uma agência diferente.",
     challenges: [
       "Variar o argumento sem perder a identidade visual.",
-      "Tabela de plano legível em tela de celular — é pequena.",
+      "Tabela de plano legível numa tela de celular pequena.",
     ],
     solution: [
       "Template fixo de CTA, cor e tipografia. Só muda o gancho e a imagem principal.",
@@ -335,7 +335,7 @@ export const projects: Project[] = [
     context:
       "Operação de crédito não tinha página. Mandava PDF no WhatsApp e perdia lead.",
     challenges: [
-      "Explicar o benefício sem virar texto de banco — crédito pessoal assusta.",
+      "Explicar o benefício sem virar texto de banco, porque crédito pessoal assusta.",
     ],
     solution: [
       "Copy curta com foco em velocidade. Bloco de confiança e formulário de contato.",
@@ -426,7 +426,7 @@ export const projects: Project[] = [
     context:
       "Concessionária premium não queria site de lista de carro. Queriam algo que passasse a sensação de entrar num showroom.",
     challenges: [
-      "Modelo 3D pesado em mobile — não pode travar.",
+      "Modelo 3D pesado em mobile sem travar.",
       "O copy tem que ficar legível sobre uma cena escura com efeito de luz.",
     ],
     solution: [
@@ -434,7 +434,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Landing na Vercel com identidade premium.",
-      "O hero interativo já é o pitch — não precisa de texto longo.",
+      "O hero interativo já é o pitch, sem precisar de texto longo.",
     ],
     liveUrl: "https://vision-iota-eight.vercel.app",
   },
@@ -457,7 +457,7 @@ export const projects: Project[] = [
     context:
       "A operadora não entendia o modelo ViON com PDF e slide. Precisava de algo que mostrasse desk + campo de forma que fizesse sentido em 30 segundos.",
     challenges: [
-      "Narrar vendas e instalação numa jornada contínua — não parecer apresentação corporativa.",
+      "Narrar vendas e instalação numa jornada contínua, sem parecer apresentação corporativa.",
       "Sincronizar scroll HTML com câmera 3D em várias cenas sem dar bug.",
     ],
     solution: [
@@ -524,7 +524,7 @@ export const projects: Project[] = [
       "A operação vivia em planilha solta e grupo de mensagem. Não tinha funil único, não tinha rastreio, documento espalhado.",
     challenges: [
       "Manter cadastro rico consistente entre painel web, planilha e repositório de documento.",
-      "Separar permissão entre vendedor, backoffice, financeiro e pós-venda — inclusive envio de mensagem.",
+      "Separar permissão entre vendedor, backoffice, financeiro e pós-venda, inclusive pra envio de mensagem.",
       "Documentar a entrega sem publicar captura, URL, webhook ou dado identificável.",
     ],
     solution: [
@@ -607,7 +607,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Canal previsível pra atendimento automatizado, disparo e integração corporativa.",
-      "Base comprovada pra bot e operação confidencial — sem evidência sensível pública.",
+      "Base comprovada pra bot e operação confidencial, sem evidência sensível pública.",
     ],
   },
   {
@@ -711,7 +711,7 @@ export const projects: Project[] = [
       "Site de captura com filtro e formulário. Painel pra corretor com pipeline, visita e histórico. Documento restrito por permissão.",
     ],
     results: [
-      "Lead centralizado — não se perde mais entre WhatsApp e planilha.",
+      "Lead centralizado, sem se perder mais entre WhatsApp e planilha.",
       "Vitrine profissional sem expor proprietário ou valor fechado.",
     ],
   },
@@ -797,7 +797,7 @@ export const projects: Project[] = [
       "Pequeno negócio gerenciava tudo em planilha e grupo de mensagem. Não tinha controle de nada, esquecia conta e prazo.",
     challenges: [
       "Fazer interface simples sem perder funcionalidade essencial.",
-      "O dono não vai aprender sistema complexo — tem que ser óbvio.",
+      "O dono não vai aprender sistema complexo: tem que ser óbvio.",
     ],
     solution: [
       "ERP leve com venda, cliente, conta e alerta de estoque. Relatório direto pra dono: quanto entrou, quanto saiu, quanto tem.",
@@ -815,7 +815,7 @@ export const projects: Project[] = [
     shortDescription:
       "CRM com funil de venda, follow-up automático por WhatsApp, meta e dashboard de conversão.",
     detailedDescription:
-      "CRM Max organiza o time comercial com funil visual, follow-up automático por WhatsApp, meta individual e dashboard de conversão. Cada oportunidade tem histórico, próxima ação e alerta de inatividade. O vendedor não precisa lembrar de dar retorno — o sistema cobra.",
+      "CRM Max organiza o time comercial com funil visual, follow-up automático por WhatsApp, meta individual e dashboard de conversão. Cada oportunidade tem histórico, próxima ação e alerta de inatividade. O vendedor não precisa lembrar de dar retorno, o sistema cobra por ele.",
     thumbnail: "/project-thumbs/crm-max.svg",
     category: "CRM",
     year: 2025,
@@ -825,7 +825,7 @@ export const projects: Project[] = [
     context:
       "Time comercial perdia oportunidade porque ninguém dava follow-up. Não sabia onde estava cada negócio.",
     challenges: [
-      "Fazer vendedor atualizar o funil — eles odeiam isso.",
+      "Fazer vendedor atualizar o funil, tarefa que eles odeiam.",
       "Integrar WhatsApp no fluxo sem virar caos.",
     ],
     solution: [
@@ -844,7 +844,7 @@ export const projects: Project[] = [
     shortDescription:
       "Sistema financeiro: conta a pagar, receber, conciliação, projeção de caixa e DRE automática.",
     detailedDescription:
-      "Controla Financeiro junta conta a pagar, conta a receber, conciliação, projeção de caixa e DRE. Alerta conta vencida, categoriza receita e despesa e mostra o lucro real — não o que o dono acha que é.",
+      "Controla Financeiro junta conta a pagar, conta a receber, conciliação, projeção de caixa e DRE. Alerta conta vencida, categoriza receita e despesa e mostra o lucro real, não o que o dono acha que é.",
     thumbnail: "/project-thumbs/topsecret-financeiro.svg",
     category: "Gestão financeira",
     year: 2026,
@@ -874,7 +874,7 @@ export const projects: Project[] = [
     shortDescription:
       "Controle de estoque com curva ABC, ponto de pedido, perda e integração com venda.",
     detailedDescription:
-      "Stock Control dá visibilidade total do estoque: entrada, saída, curva ABC, ponto de pedido, perda e integração com venda. O problema clássico — deixava de vender por falta de produto mas tinha dinheiro parado em produto parado.",
+      "Stock Control dá visibilidade total do estoque: entrada, saída, curva ABC, ponto de pedido, perda e integração com venda. Resolve o problema clássico de deixar de vender por falta de produto e ainda ter dinheiro parado em produto parado.",
     thumbnail: "/project-thumbs/stock-control.svg",
     category: "Gestão de estoque",
     year: 2025,
@@ -981,7 +981,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Menos multa e atraso de documento.",
-      "Custo por veículo visível — dá pra saber qual tá comendo dinheiro.",
+      "Custo por veículo visível, dá pra saber qual tá comendo dinheiro.",
     ],
     liveUrl: "",
   },
@@ -1039,7 +1039,7 @@ export const projects: Project[] = [
       "BI com dashboard por área e KPI configurável. Alerta de variação e tendência.",
     ],
     results: [
-      "Reunião mais objetiva — decisão com número, não com palpite.",
+      "Reunião mais objetiva, decisão com número, não com palpite.",
       "Gargalo detectado mais rápido.",
     ],
     liveUrl: "",
@@ -1068,7 +1068,7 @@ export const projects: Project[] = [
       "PDV cloud com catálogo unificado e emissão fiscal. Estoque atualizado em tempo real pra todos os canal.",
     ],
     results: [
-      "Estoque integrado — não vende mais o que não tem.",
+      "Estoque integrado, não vende mais o que não tem.",
       "Preço igual entre loja física e online.",
     ],
     liveUrl: "",
@@ -1098,7 +1098,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Projeto entregue no prazo.",
-      "Sabe o lucro de cada projeto — não só no fim do mês.",
+      "Sabe o lucro de cada projeto, não só no fim do mês.",
     ],
     liveUrl: "",
   },

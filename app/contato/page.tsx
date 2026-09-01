@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contato | Cloud Service",
   description:
-    "Fale sobre seu projeto pelo WhatsApp — resposta rápida, sem formulário.",
+    "Fale sobre seu projeto pelo WhatsApp. Resposta rápida, sem formulário.",
 };
 
 export default function ContatoPage() {
@@ -19,7 +19,7 @@ export default function ContatoPage() {
       <div className="content-block section-spacing">
         <h3>Canal direto</h3>
         <p className="muted">
-          WhatsApp: <strong>(21) 97136-4919</strong> — atendimento em horário
+          WhatsApp: <strong>(21) 97136-4919</strong>, atendimento em horário
           comercial, resposta normalmente no mesmo dia.
         </p>
         <div className="section-spacing">
@@ -48,7 +48,7 @@ export default function ContatoPage() {
         <p className="muted">
           Projetos sob NDA ou com dados sensíveis do cliente são tratados sem
           expor código-fonte, capturas de tela ou informação que identifique a
-          operação — o portfólio já reflete isso nos cases marcados como
+          operação. O portfólio já reflete isso nos cases marcados como
           confidenciais.
         </p>
       </div>

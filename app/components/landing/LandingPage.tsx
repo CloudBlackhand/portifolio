@@ -51,12 +51,12 @@ const pillars = [
   {
     title: "Clareza sem vazar segredo",
     body:
-      "Contexto, solução e resultado — sem expor código proprietário ou dados sensíveis do cliente.",
+      "Contexto, solução e resultado, sem precisar expor código proprietário ou dado sensível do cliente.",
   },
   {
     title: "Gestão empresarial de ponta a ponta",
     body:
-      "ERP, CRM, financeiro, estoque, RH, frotas e BI — sistemas que conectam departamentos e dão controle real para a diretoria.",
+      "ERP, CRM, financeiro, estoque, RH, frotas e BI: sistemas que conectam departamentos e dão controle real para a diretoria.",
   },
 ];
 
@@ -88,8 +88,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
               Sistemas que administram empresas
             </h2>
             <p className="ep-section-lead ep-section-lead-left">
-              ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos
-              — portfólio direto para quem precisa contratar dev com entrega real
+              ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos.
+              Portfólio direto para quem precisa contratar dev com entrega real
               e experiência em gestão empresarial.
             </p>
             <div className="ep-skills-row">
@@ -104,9 +104,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
             <div className="ep-device">
               <div className="ep-device-chrome">
                 <span className="ep-device-dot" />
-                <span className="ep-device-dot" />
-                <span className="ep-device-dot" />
-                <span className="ep-device-url">cloudservice / projetos</span>
+                <span className="ep-device-url">cloudservice/projetos</span>
               </div>
               <div className="ep-device-body">
                 <div className="ep-device-sidebar">
@@ -122,7 +120,7 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
                   <p className="ep-device-kicker">Resumo executivo</p>
                   <p className="ep-device-text">
                     ERP, CRM, controle financeiro, estoque, BI e gestão de
-                    projetos — cases de gestão empresarial para empresas de
+                    projetos. Cases de gestão empresarial para empresas de
                     todos os tamanhos.
                   </p>
                   <Link className="ep-btn ep-btn-primary ep-btn-sm" href="/projetos">
@@ -143,8 +141,8 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
               A forma mais direta de evoluir o stack
             </h2>
             <p className="ep-section-lead ep-section-lead-left">
-              Menos ferramenta solta, mais produto integrado — é o que aplicamos
-              nos sistemas que você vê aqui.
+              Menos ferramenta solta, mais produto integrado. É o critério que
+              aplico em todo sistema que aparece aqui.
             </p>
           </Reveal>
           <div className="ep-pillars-list">
@@ -188,15 +186,14 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
           </Reveal>
           <Reveal delay={0.06}>
             <div className="ep-about-copy">
-              <p className="ep-eyebrow ep-eyebrow-dark">Antes de tudo</p>
               <h2 className="ep-section-title ep-section-title-left">
-                Uma conversa clara sobre o seu projeto
+                Antes de propor solução técnica, entendo o objetivo do negócio
               </h2>
               <p className="ep-body">
-                Meu foco é entender seu objetivo de negócio antes de propor
-                qualquer solução técnica. Cada entrega nasce com direção,
-                prioridade e critério de resultado desde o início — sem expor
-                código proprietário ou dados sensíveis do cliente.
+                Trabalho assim há anos: primeiro alinho direção, prioridade e
+                critério de resultado com quem contrata, depois desenho a
+                arquitetura. Sem expor código proprietário nem dado sensível
+                do cliente.
               </p>
               <div className="ep-hero-cta">
                 <a
@@ -217,29 +214,22 @@ export function LandingPage({ projects, profilePhoto }: LandingPageProps) {
       </section>
 
       <section className="ep-section">
-        <div className="container ep-cta-block ep-cta-block--split">
-          <Reveal className="ep-cta-label">
-            <p className="ep-eyebrow ep-eyebrow-dark">Vamos conversar</p>
-          </Reveal>
-          <Reveal delay={0.05} className="ep-cta-body">
-            <h2 className="ep-section-title ep-section-title-left">
-              Pronto para o próximo sistema?
-            </h2>
-            <p className="ep-section-lead ep-section-lead-left">
-              Precisa de dev full-stack, automação WhatsApp ou site que converte?
-              Conte objetivo, prazo e orçamento — respondemos pelo WhatsApp ou
-              pela página de contato.
-            </p>
-            <div className="ep-hero-cta">
-              <Link className="ep-btn ep-btn-primary" href="/contato">
-                Ir para contato
-              </Link>
-              <Link className="ep-btn ep-btn-ghost" href="/projetos">
-                Ver projetos
-              </Link>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal className="container ep-cta-block">
+          <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
+          <p className="ep-section-lead">
+            Dev full-stack, automação de WhatsApp ou site que converte: conte
+            objetivo, prazo e orçamento. Respondo pelo WhatsApp ou pela página
+            de contato.
+          </p>
+          <div className="ep-hero-cta">
+            <Link className="ep-btn ep-btn-primary" href="/contato">
+              Ir para contato
+            </Link>
+            <Link className="ep-btn ep-btn-ghost" href="/projetos">
+              Ver projetos
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </>
   );

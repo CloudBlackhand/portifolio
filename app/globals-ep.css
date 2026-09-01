@@ -370,11 +370,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--border);
-}
-
-.ep-device-dot:nth-child(3) {
   background: var(--brand);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--brand) 60%, transparent);
 }
 
 .ep-device-url {
@@ -461,7 +458,6 @@
   border-radius: var(--radius);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 2px solid var(--brand);
 }
 
 .ep-cta-block .ep-section-title {
@@ -470,28 +466,6 @@
 
 .ep-cta-block .ep-hero-cta {
   justify-content: center;
-}
-
-.ep-cta-block--split {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  text-align: left;
-  align-items: start;
-}
-
-@media (max-width: 720px) {
-  .ep-cta-block--split {
-    grid-template-columns: 1fr;
-  }
-}
-
-.ep-cta-block--split .ep-section-title {
-  text-align: left;
-}
-
-.ep-cta-block--split .ep-hero-cta {
-  justify-content: flex-start;
 }
 
 .ep-about-grid {
