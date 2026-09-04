@@ -3,9 +3,8 @@ import { projects, getCatalogProjects } from "@/data/projects";
 import { getProfilePhoto } from "@/lib/profile-photo";
 import { ShowcaseCarousel } from "./components/showcase-carousel";
 import {
-  IntroStrip,
+  IntroHeading,
   AboutSection,
-  ClosingCta,
 } from "./components/landing/LandingPage";
 import { WorkTable } from "./components/work-table";
 
@@ -16,8 +15,8 @@ export default function Home() {
   return (
     <>
       <ShowcaseCarousel projects={projects} />
-      <IntroStrip />
-      <div className="container ep-table-section">
+      <div className="container ep-table-section ep-after-showcase">
+        <IntroHeading />
         <WorkTable projects={catalogProjects} />
         <p className="muted section-spacing">
           Sistemas em produção e campanhas de marketing. Abra cada projeto para
@@ -29,7 +28,6 @@ export default function Home() {
         </p>
       </div>
       <AboutSection profilePhoto={profilePhoto} />
-      <ClosingCta />
     </>
   );
 }

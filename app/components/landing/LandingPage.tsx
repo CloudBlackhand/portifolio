@@ -44,29 +44,25 @@ const skills = [
   "Consultoria técnica",
 ];
 
-export function IntroStrip() {
+export function IntroHeading() {
   return (
-    <section className="ep-section ep-after-showcase">
-      <div className="container ep-intro-compact">
-        <Reveal>
-          <span className="hire-chip">Disponível para freelas e contratos</span>
-          <h2 className="ep-section-title ep-section-title-left">
-            Sistemas que administram empresas
-          </h2>
-          <p className="ep-section-lead ep-section-lead-left">
-            ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos.
-            Portfólio direto pra quem precisa contratar dev com entrega real.
-          </p>
-          <div className="ep-skills-row">
-            {skills.map((skill) => (
-              <span key={skill} className="ep-skill-tag">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </Reveal>
+    <Reveal className="ep-intro-compact">
+      <span className="hire-chip">Disponível para freelas e contratos</span>
+      <h2 className="ep-section-title ep-section-title-left">
+        Sistemas que administram empresas
+      </h2>
+      <p className="ep-section-lead ep-section-lead-left">
+        ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos.
+        Portfólio direto pra quem precisa contratar dev com entrega real.
+      </p>
+      <div className="ep-skills-row">
+        {skills.map((skill) => (
+          <span key={skill} className="ep-skill-tag">
+            {skill}
+          </span>
+        ))}
       </div>
-    </section>
+    </Reveal>
   );
 }
 
@@ -112,6 +108,10 @@ export function AboutSection({ profilePhoto }: AboutSectionProps) {
               arquitetura. Sem expor código proprietário nem dado sensível
               do cliente.
             </p>
+            <p className="ep-body">
+              Tem um sistema, site ou automação em mente? Me manda o cenário
+              pelo WhatsApp ou pela página de contato.
+            </p>
             <div className="ep-hero-cta">
               <a
                 className="ep-btn ep-btn-primary"
@@ -128,29 +128,6 @@ export function AboutSection({ profilePhoto }: AboutSectionProps) {
           </div>
         </Reveal>
       </div>
-    </section>
-  );
-}
-
-export function ClosingCta() {
-  return (
-    <section className="ep-section">
-      <Reveal className="container ep-cta-block">
-        <h2 className="ep-section-title">Pronto para o próximo sistema?</h2>
-        <p className="ep-section-lead">
-          Dev full-stack, automação de WhatsApp ou site que converte: conte
-          objetivo, prazo e orçamento. Respondo pelo WhatsApp ou pela página
-          de contato.
-        </p>
-        <div className="ep-hero-cta">
-          <Link className="ep-btn ep-btn-primary" href="/contato">
-            Ir para contato
-          </Link>
-          <Link className="ep-btn ep-btn-ghost" href="/projetos">
-            Ver projetos
-          </Link>
-        </div>
-      </Reveal>
     </section>
   );
 }

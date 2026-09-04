@@ -283,22 +283,6 @@
   margin-top: 0.75rem;
 }
 
-.ep-cta-block {
-  text-align: center;
-  padding: clamp(2.5rem, 5vw, 4rem);
-  border-radius: var(--radius);
-  background: var(--surface);
-  border: 1px solid var(--border);
-}
-
-.ep-cta-block .ep-section-title {
-  margin-bottom: 0.75rem;
-}
-
-.ep-cta-block .ep-hero-cta {
-  justify-content: center;
-}
-
 .ep-about-grid {
   display: grid;
   grid-template-columns: minmax(240px, 360px) 1fr;
