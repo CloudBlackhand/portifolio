@@ -660,10 +660,6 @@
   border-color: rgb(82 214 142 / 45%);
 }
 
-.marathon-tablet--card:hover {
-  transform: translateY(-2px);
-}
-
 .marathon-tablet-grid {
   list-style: none;
   display: grid;
@@ -960,11 +956,6 @@
   border-radius: 4px;
   padding: 0.3rem 0.6rem;
   border: 1px solid rgb(28 28 36 / 18%);
-  transition: transform 0.2s ease;
-}
-
-.marathon-tablet--card:hover .marathon-tablet-cta {
-  transform: translateX(2px);
 }
 
 .marathon-tablet-cta-pulse {
@@ -1083,7 +1074,7 @@
 }
 
 .marathon-tablet--card {
-  transition: transform 0.25s ease;
+  transition: border-color 0.2s ease;
 }
 
 .card-kind--confidential {
@@ -1710,14 +1701,6 @@ body.marathon-immersive-mode .site-main {
 
   .marathon-screen-boot {
     display: none;
-  }
-
-  .marathon-tablet--card:hover {
-    transform: none;
-  }
-
-  .marathon-dossier-row:hover {
-    transform: none;
   }
 }
 

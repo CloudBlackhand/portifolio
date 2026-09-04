@@ -144,11 +144,12 @@ a {
   background: var(--brand);
   border: 1px solid var(--brand);
   color: #05130c !important;
-  transition: transform 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-cta:hover {
-  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--brand) 88%, black);
+  border-color: color-mix(in srgb, var(--brand) 88%, black);
 }
 
 .site-main {
@@ -687,10 +688,6 @@ a {
   .interactive-card {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
-
-  .interactive-card:hover {
-    transform: none;
-  }
 }
 
 .section-heading {
@@ -781,11 +778,12 @@ a {
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--foreground);
-  transition: transform 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .button:hover {
-  transform: translateY(-1px);
+  background: var(--surface);
+  border-color: var(--muted);
 }
 
 .button.primary {
@@ -795,13 +793,15 @@ a {
   font-weight: 600;
 }
 
+.button.primary:hover {
+  background: color-mix(in srgb, var(--brand) 88%, black);
+  border-color: color-mix(in srgb, var(--brand) 88%, black);
+}
+
 .button.primary.showcase-cta {
   min-height: 44px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition:
-    transform 0.15s ease,
-    border-color 0.2s ease;
 }
 
 .content-block {
