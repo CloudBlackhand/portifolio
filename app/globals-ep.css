@@ -110,8 +110,8 @@
 }
 
 .ep-btn-primary:hover {
-  background: color-mix(in srgb, var(--brand) 88%, black);
-  border-color: color-mix(in srgb, var(--brand) 88%, black);
+  background: color-mix(in srgb, var(--brand) 96%, black);
+  border-color: color-mix(in srgb, var(--brand) 96%, black);
 }
 
 .ep-btn-ghost {
@@ -121,7 +121,7 @@
 }
 
 .ep-btn-ghost:hover {
-  border-color: var(--muted);
+  border-color: color-mix(in srgb, var(--border) 80%, white);
 }
 
 .ep-btn-sm {
