@@ -148,8 +148,8 @@ a {
 }
 
 .nav-cta:hover {
-  background: color-mix(in srgb, var(--brand) 88%, black);
-  border-color: color-mix(in srgb, var(--brand) 88%, black);
+  background: color-mix(in srgb, var(--brand) 96%, black);
+  border-color: color-mix(in srgb, var(--brand) 96%, black);
 }
 
 .site-main {
@@ -782,8 +782,7 @@ a {
 }
 
 .button:hover {
-  background: var(--surface);
-  border-color: var(--muted);
+  border-color: color-mix(in srgb, var(--border) 85%, white);
 }
 
 .button.primary {
@@ -794,8 +793,8 @@ a {
 }
 
 .button.primary:hover {
-  background: color-mix(in srgb, var(--brand) 88%, black);
-  border-color: color-mix(in srgb, var(--brand) 88%, black);
+  background: color-mix(in srgb, var(--brand) 96%, black);
+  border-color: color-mix(in srgb, var(--brand) 96%, black);
 }
 
 .button.primary.showcase-cta {
