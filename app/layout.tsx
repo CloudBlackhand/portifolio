@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cloud Service",
   description:
-    "Projetos digitais em produção com foco em resultado, clareza e conforto para o cliente.",
+    "Dev full-stack: sistemas de gestão empresarial, automação de WhatsApp e sites que convertem, em produção.",
 };
 
 export const viewport: Viewport = {
@@ -59,7 +59,7 @@ export default function RootLayout({
             <div className="footer-brand">
               <strong>Cloud Service</strong>
               <p className="footer-tagline">
-                Sistemas em produção com foco em resultado e clareza.
+                Sistemas de gestão empresarial e automação em produção.
               </p>
             </div>
             <nav className="footer-nav" aria-label="Rodapé">
@@ -68,8 +68,8 @@ export default function RootLayout({
               <Link href="/contato">Contato</Link>
             </nav>
             <p className="footer-note">
-              Sistemas em produção e trabalhos de marketing e criativo — links para ver no ar ou falar com o
-              bot quando disponível.
+              Sistemas em produção e trabalhos de marketing e criativo. Abra
+              cada projeto para ver no ar quando disponível.
             </p>
           </div>
         </footer>

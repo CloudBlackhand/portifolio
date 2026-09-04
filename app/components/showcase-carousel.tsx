@@ -141,14 +141,14 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
             <p>{activeProject.shortDescription}</p>
             <div className="showcase-actions">
               <Link
-                className="button primary gfn-like-cta card-action-link"
+                className="button primary showcase-cta card-action-link"
                 href={`/projetos/${activeProject.slug}`}
               >
                 VER PROJETO
               </Link>
               {activeProject.liveUrl ? (
                 <a
-                  className="button gfn-like-cta card-action-link"
+                  className="button showcase-cta card-action-link"
                   href={activeProject.liveUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -173,7 +173,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         </div>
       </div>
       <div className="favorites-strip">
-        <h3>Destaques — sistemas e landing pages</h3>
+        <h3>Destaques: sistemas e landing pages</h3>
         <div className="favorites-track">
           <button
             type="button"

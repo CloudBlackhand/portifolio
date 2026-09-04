@@ -7,7 +7,7 @@ import { getCatalogProjectsByKind } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Sistemas de gestão empresarial | Cloud Service",
   description:
-    "ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos — cases reais da Cloud Service para empresas de todos os tamanhos.",
+    "ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos: cases reais da Cloud Service para empresas de todos os tamanhos.",
 };
 
 export default function ProjetosPage() {
@@ -24,7 +24,7 @@ export default function ProjetosPage() {
     <section className="page-shell">
       <h1 className="page-title">Sistemas de gestão empresarial</h1>
       <p className="page-subtitle">
-        ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos —
+        ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos:
         catálogo de cases reais para administradores, gestores e empresários.
       </p>
 
@@ -35,7 +35,7 @@ export default function ProjetosPage() {
         <p className="muted section-spacing-sm">
           ERP360, CRM Max, Controla Financeiro, Stock Control, Ponto Digital,
           Service OS, Fleet Manager, Business View, PDV Cloud, Project Hub,
-          GPS Relevo e mais — sistemas que movem a operação de empresas de
+          GPS Relevo e mais: sistemas que movem a operação de empresas de
           todos os tamanhos.
         </p>
         <ProjectCardGrid projects={softwareProjects} />
@@ -44,7 +44,7 @@ export default function ProjetosPage() {
       <section id="landing-pages" className="section-spacing">
         <h2 className="section-heading">Landing pages</h2>
         <p className="muted section-spacing-sm">
-          VISION, ViON, RapidCred e CN Construtora — páginas com hero 3D ou captura
+          VISION, ViON, RapidCred e CN Construtora: páginas com hero 3D ou captura
           publicadas, com link para ver no ar quando disponível.
         </p>
         <ProjectCardGrid projects={landingProjects} />
