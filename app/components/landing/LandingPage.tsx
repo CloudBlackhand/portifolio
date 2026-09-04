@@ -35,15 +35,6 @@ function Reveal({
   );
 }
 
-const skills = [
-  "Next.js",
-  "TypeScript",
-  "APIs & integrações",
-  "WhatsApp / automação",
-  "Landing pages",
-  "Consultoria técnica",
-];
-
 export function IntroHeading() {
   return (
     <Reveal className="ep-intro-compact">
@@ -55,13 +46,6 @@ export function IntroHeading() {
         ERP, CRM, financeiro, estoque, RH, frotas, BI e gestão de projetos.
         Portfólio direto pra quem precisa contratar dev com entrega real.
       </p>
-      <div className="ep-skills-row">
-        {skills.map((skill) => (
-          <span key={skill} className="ep-skill-tag">
-            {skill}
-          </span>
-        ))}
-      </div>
     </Reveal>
   );
 }

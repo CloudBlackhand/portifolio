@@ -1118,25 +1118,6 @@
   height: 6px;
   border-radius: 50%;
   background: var(--brand);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--brand) 70%, transparent);
-}
-
-.ep-skills-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.ep-skill-tag {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  background: var(--surface-soft);
-  padding: 0.35rem 0.65rem;
-  border-radius: 4px;
 }
 
 .catalog-table-note {
