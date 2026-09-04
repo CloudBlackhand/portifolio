@@ -802,7 +802,7 @@ a {
   border-color: var(--brand-strong);
 }
 
-.button.primary.gfn-like-cta {
+.button.primary.showcase-cta {
   min-height: 44px;
   font-weight: 700;
   letter-spacing: 0.02em;

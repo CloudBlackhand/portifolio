@@ -73,9 +73,9 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
   const thumbAlt =
     marketing
-      ? `Peça principal — ${project.title}`
+      ? `Peça principal: ${project.title}`
       : confidential
-        ? `Representação ilustrativa — ${project.title}`
+        ? `Representação ilustrativa: ${project.title}`
         : `Captura principal do ${project.title}`;
 
   return (
@@ -184,7 +184,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
           <p className="muted privacy-note">
             Por acordo com o cliente ou por natureza interna do produto, não
             publicamos capturas de tela, código, links de acesso ou dados
-            sensíveis. O foco aqui é contexto, solução e resultado — o mesmo
+            sensíveis. O foco aqui é contexto, solução e resultado, o mesmo
             critério usado nos projetos sob sigilo.
           </p>
         </section>
@@ -194,7 +194,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
         <section className="content-block">
           <h3>Quer algo parecido?</h3>
           <p className="muted">
-            Conte seu cenário, prazo e restrições — alinhamos consultoria ou
+            Conte seu cenário, prazo e restrições. Alinhamos consultoria ou
             implementação conforme a necessidade.
           </p>
           <div className="link-row">

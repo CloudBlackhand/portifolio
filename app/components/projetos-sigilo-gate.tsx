@@ -21,7 +21,7 @@ export function ProjetosSigiloGate() {
           Projetos sob sigilo
         </h2>
         <p className="projetos-sigilo-lead">
-          Trabalhos de clientes que pediram discrição — comercial, mensageria, saúde,
+          Trabalhos de clientes que pediram discrição: comercial, mensageria, saúde,
           locação, imóveis e autoatendimento. Explico o que foi feito e o resultado,
           sem marcas, telas ou dados sensíveis.
         </p>

@@ -83,7 +83,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         <div className="marathon-session-preview-frame">
           <MarathonThumb
             src={project.thumbnail}
-            alt={`Ilustração — ${project.title}`}
+            alt={`Ilustração: ${project.title}`}
             className="marathon-session-preview-img"
             priority
           />
@@ -109,7 +109,7 @@ export function MarathonTopSecretDetail({ project }: MarathonTopSecretDetailProp
         <p className="marathon-session-panel-body">
           Por acordo com o cliente, não mostro telas, código, links, credenciais
           ou qualquer dado que identifique a operação. Aqui fica só o contexto,
-          a forma de resolver e o resultado — o suficiente para você avaliar o
+          a forma de resolver e o resultado, o suficiente para você avaliar o
           trabalho sem expor quem contratou.
         </p>
       </section>
