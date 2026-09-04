@@ -173,7 +173,7 @@ export function ShowcaseCarousel({ projects }: ShowcaseCarouselProps) {
         </div>
       </div>
       <div className="favorites-strip">
-        <h3>Destaques: sistemas e landing pages</h3>
+        <h3>Projetos que mais entregaram resultado</h3>
         <div className="favorites-track">
           <button
             type="button"
