@@ -172,8 +172,7 @@ export function StatsSection() {
           </h2>
           <div className="lnd-rule" aria-hidden="true" />
           <p className="lnd-season-intro">
-            Cada sistema entregue virou rotina de empresa real. É assim que o
-            portfólio está se formando.
+            Números do que está no ar hoje.
           </p>
         </Reveal>
         <Reveal delay={0.08}>
