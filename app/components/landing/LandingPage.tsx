@@ -54,16 +54,30 @@ export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <div className="lnd-hero-contours" aria-hidden="true" />
-      <div className="lnd-radar" aria-hidden="true">
-        <span className="lnd-radar-ring lnd-radar-ring--1" />
-        <span className="lnd-radar-ring lnd-radar-ring--2" />
-        <span className="lnd-radar-ring lnd-radar-ring--3" />
-        <span className="lnd-radar-tick lnd-radar-tick--n" />
-        <span className="lnd-radar-tick lnd-radar-tick--e" />
-        <span className="lnd-radar-tick lnd-radar-tick--s" />
-        <span className="lnd-radar-tick lnd-radar-tick--w" />
-        <span className="lnd-radar-sweep" />
-        <span className="lnd-radar-core" />
+      <div className="lnd-hud" aria-hidden="true">
+        <div className="lnd-hud-box">
+          <span className="lnd-bracket lnd-bracket--tl" />
+          <span className="lnd-bracket lnd-bracket--tr" />
+          <span className="lnd-bracket lnd-bracket--bl" />
+          <span className="lnd-bracket lnd-bracket--br" />
+          <span className="lnd-hud-cross lnd-hud-cross--h" />
+          <span className="lnd-hud-cross lnd-hud-cross--v" />
+          <span className="lnd-hud-box-label">target lock</span>
+        </div>
+        <ul className="lnd-hud-readout">
+          <li>
+            <span>hdg</span>
+            <b>087°</b>
+          </li>
+          <li>
+            <span>alt</span>
+            <b>12.400</b>
+          </li>
+          <li>
+            <span>mach</span>
+            <b>1.4</b>
+          </li>
+        </ul>
       </div>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">

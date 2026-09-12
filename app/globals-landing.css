@@ -44,105 +44,104 @@
   }
 }
 
-/* Radar / HUD aeronáutico: aros, marcas cardeais e varredura giratória, monocromático */
+/* HUD aeronáutico (F22): mira de alvo travando + readout de voo, monocromático */
 
-.lnd-radar {
+.lnd-hud {
   position: absolute;
-  top: 50%;
-  right: clamp(-14rem, -8vw, -6rem);
-  width: clamp(28rem, 46vw, 46rem);
-  height: clamp(28rem, 46vw, 46rem);
-  transform: translateY(-50%);
+  top: clamp(4.5rem, 11vh, 7rem);
+  right: clamp(1.5rem, 6vw, 6rem);
+  width: clamp(120px, 12vw, 168px);
   pointer-events: none;
 }
 
-.lnd-radar-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgb(9 10 11 / 9%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+.lnd-hud-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  animation: lnd-hud-lock 4.5s ease-in-out infinite;
 }
 
-.lnd-radar-ring--1 { width: 34%; height: 34%; }
-.lnd-radar-ring--2 { width: 64%; height: 64%; }
-.lnd-radar-ring--3 { width: 96%; height: 96%; border-color: rgb(9 10 11 / 12%); }
-
-.lnd-radar-tick {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: rgb(9 10 11 / 22%);
-}
-
-.lnd-radar-tick--n,
-.lnd-radar-tick--s {
-  width: 1px;
-  height: 10px;
-  margin-left: -0.5px;
-}
-
-.lnd-radar-tick--e,
-.lnd-radar-tick--w {
-  width: 10px;
-  height: 1px;
-  margin-top: -0.5px;
-}
-
-.lnd-radar-tick--n { transform: translateY(calc(-48% - 5px)); }
-.lnd-radar-tick--s { transform: translateY(calc(48% - 5px)); }
-.lnd-radar-tick--e { transform: translateX(calc(48% - 5px)); }
-.lnd-radar-tick--w { transform: translateX(calc(-48% - 5px)); }
-
-.lnd-radar-sweep {
-  position: absolute;
-  inset: 2%;
-  border-radius: 50%;
-  overflow: hidden;
-  animation: lnd-radar-spin 8s linear infinite;
-}
-
-.lnd-radar-sweep::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 298deg,
-    rgb(9 10 11 / 5%) 336deg,
-    rgb(9 10 11 / 14%) 358deg,
-    transparent 360deg
-  );
-}
-
-@keyframes lnd-radar-spin {
-  to {
-    transform: rotate(360deg);
+@keyframes lnd-hud-lock {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
   }
 }
 
-.lnd-radar-core {
+.lnd-hud .lnd-bracket {
+  width: 12px;
+  height: 12px;
+  opacity: 0.55;
+}
+
+.lnd-hud-cross {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 5px;
-  height: 5px;
   background: rgb(9 10 11 / 30%);
-  border-radius: 50%;
+}
+
+.lnd-hud-cross--h {
+  width: 22%;
+  height: 1px;
   transform: translate(-50%, -50%);
 }
 
+.lnd-hud-cross--v {
+  width: 1px;
+  height: 22%;
+  transform: translate(-50%, -50%);
+}
+
+.lnd-hud-box-label {
+  position: absolute;
+  bottom: -1.35rem;
+  left: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 32%);
+  white-space: nowrap;
+}
+
+.lnd-hud-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 2.75rem;
+  list-style: none;
+  padding: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+
+.lnd-hud-readout li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: rgb(9 10 11 / 30%);
+  text-transform: uppercase;
+}
+
+.lnd-hud-readout b {
+  font-weight: 500;
+  color: rgb(9 10 11 / 45%);
+}
+
 @media (max-width: 900px) {
-  .lnd-radar {
-    right: clamp(-12rem, -20vw, -8rem);
+  .lnd-hud {
     opacity: 0.7;
   }
 }
 
 @media (max-width: 640px) {
-  .lnd-radar {
+  .lnd-hud {
     display: none;
   }
 }
@@ -169,7 +168,7 @@
     animation: none;
   }
 
-  .lnd-radar-sweep {
+  .lnd-hud-box {
     animation: none;
   }
 
