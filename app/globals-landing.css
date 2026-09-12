@@ -114,7 +114,9 @@
   margin-left: 0.15em;
   vertical-align: -0.12em;
   background: var(--brand-strong);
+  opacity: 0;
   animation: lnd-caret-blink 1.1s steps(1) infinite;
+  animation-delay: 0.6s;
 }
 
 @keyframes lnd-caret-blink {
@@ -173,6 +175,58 @@
   font-size: clamp(3.2rem, 11vw, 6rem);
   margin: 0;
   color: var(--foreground);
+}
+
+/* Entrada tipo terminal: texto "digitado" via reveal em steps */
+
+.lnd-type-in {
+  clip-path: inset(0 100% 0 0);
+  animation: lnd-type-reveal 0.5s steps(14, end) forwards;
+  animation-fill-mode: both;
+}
+
+.lnd-type-in--id,
+.lnd-type-in--l1,
+.lnd-type-in--l2 {
+  display: inline-block;
+}
+
+.lnd-type-in--id {
+  animation-delay: 0.1s;
+}
+
+.lnd-type-in--l1 {
+  animation-duration: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.lnd-type-in--l2 {
+  animation-duration: 0.5s;
+  animation-delay: 0.65s;
+}
+
+.lnd-type-in--l3 {
+  animation-duration: 0.35s;
+}
+
+.lnd-hero-meta-item.lnd-type-in--l3:nth-of-type(1) { animation-delay: 1.05s; }
+.lnd-hero-meta-item.lnd-type-in--l3:nth-of-type(2) { animation-delay: 1.2s; }
+.lnd-hero-meta-item.lnd-type-in--l3:nth-of-type(3) { animation-delay: 1.35s; }
+
+@keyframes lnd-type-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lnd-type-in {
+    animation: none;
+    clip-path: none;
+  }
 }
 
 .lnd-hero-meta {

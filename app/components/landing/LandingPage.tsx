@@ -63,15 +63,24 @@ export function LandingHero() {
         <div className="lnd-hero-middle">
           <Reveal className="lnd-hero-identity">
             <div className="lnd-hero-id">
-              dev_012<span className="lnd-caret" aria-hidden="true" />
+              <span className="lnd-type-in lnd-type-in--id">dev_012</span>
+              <span className="lnd-caret" aria-hidden="true" />
             </div>
             <h1 className="lnd-hero-name" id="lnd-hero-name">
-              cloud service
+              <span className="lnd-type-in lnd-type-in--l1">cloud</span>
+              <br />
+              <span className="lnd-type-in lnd-type-in--l2">service</span>
             </h1>
             <ul className="lnd-hero-meta">
-              <li className="lnd-hero-meta-item">Brasil</li>
-              <li className="lnd-hero-meta-item">disponível_2026</li>
-              <li className="lnd-hero-meta-item">full-stack + automação</li>
+              <li className="lnd-hero-meta-item lnd-type-in lnd-type-in--l3">
+                Brasil
+              </li>
+              <li className="lnd-hero-meta-item lnd-type-in lnd-type-in--l3">
+                disponível_2026
+              </li>
+              <li className="lnd-hero-meta-item lnd-type-in lnd-type-in--l3">
+                full-stack + automação
+              </li>
             </ul>
           </Reveal>
           <Reveal className="lnd-hero-panels" delay={0.08}>
