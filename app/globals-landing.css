@@ -69,6 +69,17 @@
   top: clamp(4.5rem, 11vh, 7rem);
   left: clamp(1.5rem, 6vw, 6rem);
   pointer-events: none;
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: lnd-fx-fade-in 0.6s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes lnd-fx-fade-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -90,6 +101,8 @@
   position: absolute;
   height: 1px;
   background: rgb(9 10 11 / 10%);
+  opacity: 0;
+  animation: lnd-fx-fade-in 0.6s ease-out forwards;
 }
 
 .lnd-dim-line::before,
@@ -127,12 +140,14 @@
   top: 32%;
   left: 6%;
   width: clamp(120px, 16vw, 220px);
+  animation-delay: 1.65s;
 }
 
 .lnd-dim-line--b {
   top: 70%;
   left: 42%;
   width: clamp(100px, 13vw, 180px);
+  animation-delay: 1.85s;
 }
 
 @media (max-width: 900px) {
@@ -155,7 +170,21 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  animation: lnd-hud-lock 4.5s ease-in-out infinite;
+  opacity: 0;
+  animation:
+    lnd-hud-enter 0.5s ease-out 1.55s forwards,
+    lnd-hud-lock 4.5s ease-in-out 2.05s infinite;
+}
+
+@keyframes lnd-hud-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0.45;
+    transform: scale(1);
+  }
 }
 
 @keyframes lnd-hud-lock {
@@ -224,7 +253,14 @@
   gap: 0.75rem;
   color: rgb(9 10 11 / 30%);
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(6px);
+  animation: lnd-fx-fade-in 0.45s ease-out forwards;
 }
+
+.lnd-hud-readout li:nth-child(1) { animation-delay: 2.15s; }
+.lnd-hud-readout li:nth-child(2) { animation-delay: 2.3s; }
+.lnd-hud-readout li:nth-child(3) { animation-delay: 2.45s; }
 
 .lnd-hud-readout b {
   font-weight: 500;
@@ -267,6 +303,16 @@
 
   .lnd-hud-box {
     animation: none;
+    opacity: 0.45;
+    transform: none;
+  }
+
+  .lnd-spec-plate--hero,
+  .lnd-dim-line,
+  .lnd-hud-readout li {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .lnd-caret {
