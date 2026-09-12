@@ -51,59 +51,94 @@
   }
 }
 
-.lnd-hero-pings {
+.lnd-radar {
   position: absolute;
-  inset: 0;
+  top: clamp(4.5rem, 11vh, 7rem);
+  right: clamp(1rem, 6vw, 6rem);
+  width: clamp(140px, 15vw, 220px);
+  height: clamp(140px, 15vw, 220px);
   pointer-events: none;
-  overflow: hidden;
 }
 
-.lnd-ping {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--brand-strong);
-}
-
-.lnd-ping::before {
-  content: "";
+.lnd-radar-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: var(--brand-strong);
-  animation: lnd-ping-wave 3.6s ease-out infinite;
+  border: 1px solid rgb(9 10 11 / 12%);
 }
 
-.lnd-ping--a { top: 18%; right: 22%; }
-.lnd-ping--b { top: 84%; left: 10%; }
-.lnd-ping--c { top: 52%; left: 46%; }
+.lnd-radar-ring--2 {
+  inset: 22%;
+}
 
-.lnd-ping--a::before { animation-delay: 0s; }
-.lnd-ping--b::before { animation-delay: 1.2s; }
-.lnd-ping--c::before { animation-delay: 2.4s; }
+.lnd-radar-ring--3 {
+  inset: 44%;
+}
 
-@keyframes lnd-ping-wave {
-  0% {
-    transform: scale(1);
-    opacity: 0.55;
+.lnd-radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in srgb, var(--brand-strong) 55%, transparent) 0deg,
+    transparent 55deg,
+    transparent 360deg
+  );
+  animation: lnd-radar-spin 4s linear infinite;
+}
+
+@keyframes lnd-radar-spin {
+  to {
+    transform: rotate(360deg);
   }
-  100% {
-    transform: scale(9);
-    opacity: 0;
-  }
+}
+
+.lnd-radar-blip {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-strong);
+  opacity: 0;
+  animation: lnd-radar-blip-flash 4s linear infinite;
+}
+
+.lnd-radar-blip--a {
+  top: 28%;
+  left: 62%;
+  animation-delay: 0.15s;
+}
+
+.lnd-radar-blip--b {
+  top: 66%;
+  left: 32%;
+  animation-delay: 2.55s;
+}
+
+@keyframes lnd-radar-blip-flash {
+  0%, 4% { opacity: 0.9; }
+  16%, 100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lnd-ping::before {
+  .lnd-radar-sweep {
     animation: none;
-    opacity: 0;
+    opacity: 0.35;
+  }
+
+  .lnd-radar-blip {
+    animation: none;
+    opacity: 0.6;
   }
 }
 
 @media (max-width: 720px) {
-  .lnd-ping--c {
-    display: none;
+  .lnd-radar {
+    top: 1rem;
+    right: 1rem;
+    width: 96px;
+    height: 96px;
   }
 }
 
