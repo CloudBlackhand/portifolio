@@ -53,33 +53,28 @@
 
 .lnd-hero-portrait-wrap {
   position: absolute;
-  right: clamp(1rem, 6vw, 7rem);
+  right: clamp(1rem, 4vw, 4rem);
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(240px, 32vw, 460px);
+  width: clamp(220px, 24vw, 340px);
   z-index: 1;
   pointer-events: none;
 }
 
 .lnd-hero-portrait {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   display: block;
-  filter: grayscale(0.2) contrast(1.02);
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 10%,
-    #000 82%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 10%,
-    #000 82%,
-    transparent 100%
-  );
+  filter: grayscale(0.25) contrast(1.02);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 12%, #000 84%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 22%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 12%, #000 84%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 22%);
+  mask-composite: intersect;
 }
 
 .lnd-caret {
@@ -191,7 +186,8 @@
 .lnd-bracket-panel {
   position: relative;
   padding: 1rem 1.1rem;
-  background: rgb(255 255 255 / 55%);
+  background: rgb(247 250 251 / 82%);
+  backdrop-filter: blur(6px);
 }
 
 .lnd-dark .lnd-bracket-panel,
@@ -697,21 +693,10 @@
 
 @media (max-width: 720px) {
   .lnd-hero-portrait-wrap {
-    right: -4%;
-    top: 6%;
+    right: 0;
+    top: 0.5rem;
     transform: none;
-    width: min(52vw, 240px);
-  }
-
-  .lnd-hero-portrait {
-    -webkit-mask-image:
-      linear-gradient(to bottom, transparent 0, #000 14%, #000 78%, transparent 100%),
-      linear-gradient(to left, transparent 0, #000 18%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to bottom, transparent 0, #000 14%, #000 78%, transparent 100%),
-      linear-gradient(to left, transparent 0, #000 18%);
-    mask-composite: intersect;
+    width: min(46vw, 220px);
   }
 
   .lnd-hero-middle {
