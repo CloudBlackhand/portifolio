@@ -1,13 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Oswald, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SiteHeaderNav } from "@/app/components/site-header-nav";
 import "./globals.css";
-import "./globals-ep.css";
+import "./globals-landing.css";
 import "./globals-classified.css";
 
-const geistSans = Geist({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-display",
   subsets: ["latin"],
 });
 
@@ -34,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${spaceGrotesk.variable} ${oswald.variable} ${geistMono.variable}`}
+    >
       <body>
         <header className="site-header">
           <div className="container header-content">
@@ -55,22 +63,43 @@ export default function RootLayout({
           WhatsApp
         </a>
         <footer className="site-footer">
-          <div className="container footer-ep">
-            <div className="footer-brand">
-              <strong>Cloud Service</strong>
-              <p className="footer-tagline">
-                Sistemas de gestão empresarial e automação em produção.
-              </p>
-            </div>
+          <div className="footer-panel">
+            <h2 className="footer-masthead">
+              sistemas que administram empresas<span className="footer-masthead-dot">.</span>
+            </h2>
             <nav className="footer-nav" aria-label="Rodapé">
-              <Link href="/">Início</Link>
-              <Link href="/projetos">Projetos</Link>
-              <Link href="/contato">Contato</Link>
+              <Link href="/">início</Link>
+              <Link href="/projetos">projetos</Link>
+              <Link href="/classificados">classificados</Link>
+              <Link href="/contato">contato</Link>
             </nav>
-            <p className="footer-note">
-              Sistemas em produção e trabalhos de marketing e criativo. Abra
-              cada projeto para ver no ar quando disponível.
-            </p>
+            <div className="footer-foot-row">
+              <div className="footer-copyright">
+                © 2026 Cloud Service. Todos os direitos reservados.
+              </div>
+              <a
+                className="footer-cta"
+                href="https://wa.me/5521971364919"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span aria-hidden="true">[ </span>
+                <span>começar um projeto</span>
+                <span aria-hidden="true"> → ]</span>
+              </a>
+              <ul className="footer-socials">
+                <li>
+                  <a
+                    className="footer-social-link"
+                    href="https://wa.me/5521971364919"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    wa
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </footer>
       </body>

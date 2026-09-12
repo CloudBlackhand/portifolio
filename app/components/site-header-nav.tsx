@@ -67,7 +67,8 @@ export function SiteHeaderNav() {
           </Link>
         ))}
         <Link className="nav-cta" href="/contato" onClick={() => setOpen(false)}>
-          Contratar
+          <span aria-hidden="true">[ </span>contratar
+          <span aria-hidden="true"> → ]</span>
         </Link>
       </nav>
 
