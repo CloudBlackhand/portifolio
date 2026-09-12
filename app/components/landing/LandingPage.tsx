@@ -50,9 +50,28 @@ function BracketCorners() {
 
 const WHATSAPP_URL = "https://wa.me/5521971364919";
 
-export function LandingHero() {
+type LandingHeroProps = {
+  profilePhoto: ProfilePhoto;
+};
+
+export function LandingHero({ profilePhoto }: LandingHeroProps) {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
+      <div className="lnd-hero-figure" aria-hidden="true">
+        <div className="lnd-hero-figure-img">
+          <Image
+            src={profilePhoto.src}
+            alt=""
+            width={profilePhoto.width}
+            height={profilePhoto.height}
+            priority
+          />
+        </div>
+        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--left" />
+        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--right" />
+        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--top" />
+        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--bottom" />
+      </div>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">
           <Reveal className="lnd-hero-identity">
@@ -90,7 +109,7 @@ export function LandingHero() {
                 </div>
                 <div className="lnd-stat-cell">
                   <dt className="lnd-stat-label">anos</dt>
-                  <dd className="lnd-stat-value">03</dd>
+                  <dd className="lnd-stat-value">05</dd>
                 </div>
               </dl>
             </div>
@@ -173,7 +192,7 @@ export function StatsSection() {
                 <dd className="lnd-plate-dd">projetos entregues</dd>
               </div>
               <div className="lnd-plate-row">
-                <dt className="lnd-plate-dt">03</dt>
+                <dt className="lnd-plate-dt">05</dt>
                 <dd className="lnd-plate-dd">anos de estrada.</dd>
               </div>
             </dl>
