@@ -53,28 +53,21 @@
 
 .lnd-hero-portrait-wrap {
   position: absolute;
-  right: clamp(1rem, 4vw, 4rem);
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(220px, 24vw, 340px);
+  right: clamp(1.5rem, 5vw, 5rem);
+  top: clamp(4.5rem, 10vh, 6.5rem);
+  width: clamp(140px, 15vw, 210px);
   z-index: 1;
   pointer-events: none;
 }
 
 .lnd-hero-portrait {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  filter: grayscale(0.25) contrast(1.02);
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0, #000 12%, #000 84%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 22%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, transparent 0, #000 12%, #000 84%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 22%);
-  mask-composite: intersect;
+  border-radius: 50%;
+  filter: grayscale(0.3) contrast(1.02);
+  opacity: 0.9;
 }
 
 .lnd-caret {
@@ -693,10 +686,9 @@
 
 @media (max-width: 720px) {
   .lnd-hero-portrait-wrap {
-    right: 0;
-    top: 0.5rem;
-    transform: none;
-    width: min(46vw, 220px);
+    right: 1rem;
+    top: 1rem;
+    width: min(22vw, 96px);
   }
 
   .lnd-hero-middle {
