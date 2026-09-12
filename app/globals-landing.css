@@ -44,6 +44,93 @@
   }
 }
 
+/* Malha de papel de engenharia (blueprint grid) por baixo de cada secao */
+
+.lnd-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgb(9 10 11 / 5%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(9 10 11 / 5%) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.lnd-dark .lnd-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 5%) 1px, transparent 1px);
+}
+
+/* Cantos de registro + etiqueta de folha, como um desenho tecnico numerado */
+
+.lnd-sheet-frame {
+  position: absolute;
+  inset: clamp(0.9rem, 2.4vw, 1.75rem);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lnd-sheet-tick {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+}
+
+.lnd-sheet-tick::before,
+.lnd-sheet-tick::after {
+  content: "";
+  position: absolute;
+  background: rgb(9 10 11 / 20%);
+}
+
+.lnd-sheet-tick::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.lnd-sheet-tick::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+}
+
+.lnd-dark .lnd-sheet-tick::before,
+.lnd-dark .lnd-sheet-tick::after {
+  background: rgb(255 255 255 / 16%);
+}
+
+.lnd-sheet-tick--tl { top: 0; left: 0; }
+.lnd-sheet-tick--tr { top: 0; right: 0; }
+.lnd-sheet-tick--bl { bottom: 0; left: 0; }
+.lnd-sheet-tick--br { bottom: 0; right: 0; }
+
+.lnd-sheet-tag {
+  position: absolute;
+  top: -0.05rem;
+  right: 1.05rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgb(9 10 11 / 28%);
+}
+
+.lnd-dark .lnd-sheet-tag {
+  color: rgb(255 255 255 / 24%);
+}
+
+@media (max-width: 640px) {
+  .lnd-sheet-frame {
+    display: none;
+  }
+}
+
 /* Placa de especificação estilo veículo militar (M1A3 / Eurofighter data plate) */
 
 .lnd-spec-plate {
@@ -787,6 +874,8 @@
 /* ---------- Dark sections ---------- */
 
 .lnd-dark {
+  position: relative;
+  overflow: hidden;
   background: var(--ink);
   color: var(--on-dark);
   padding-block: clamp(3.5rem, 8vw, 6.5rem);
@@ -1004,6 +1093,8 @@
 /* ---------- Oficina / paddock (light) ---------- */
 
 .lnd-paddock {
+  position: relative;
+  overflow: hidden;
   background: var(--background);
   padding-block: clamp(3.5rem, 8vw, 6.5rem);
 }
@@ -1016,6 +1107,7 @@
 }
 
 .lnd-paddock-portrait-wrap {
+  position: relative;
   margin: 0;
 }
 
@@ -1024,6 +1116,50 @@
   height: auto;
   display: block;
   border: 1px solid var(--border);
+}
+
+/* Legenda estilo cota de blueprint sob o retrato */
+
+.lnd-photo-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.lnd-photo-caption-track {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: rgb(9 10 11 / 16%);
+}
+
+.lnd-photo-caption-track::before,
+.lnd-photo-caption-track::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: rgb(9 10 11 / 16%);
+}
+
+.lnd-photo-caption-track::before {
+  left: 0;
+}
+
+.lnd-photo-caption-track::after {
+  right: 0;
+}
+
+.lnd-photo-caption-label {
+  flex-shrink: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 32%);
+  white-space: nowrap;
 }
 
 .lnd-paddock-copy {
@@ -1062,9 +1198,19 @@
 }
 
 @media (max-width: 720px) {
+  .lnd-hero-inner {
+    min-height: auto;
+    padding-block: clamp(1.25rem, 6vh, 2.25rem) 2.5rem;
+    gap: 2rem;
+  }
+
   .lnd-hero-middle {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .lnd-hero-identity {
+    max-width: 100%;
   }
 
   .lnd-hero-panels {
@@ -1084,6 +1230,7 @@
 
   .lnd-view-cta {
     justify-self: start;
+    width: 100%;
   }
 
   .lnd-hero-socials {
@@ -1093,5 +1240,56 @@
   .lnd-timeline-row {
     grid-template-columns: 4rem 1fr;
     gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lnd-hero-panels {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .lnd-hero-panels .lnd-bracket-panel {
+    flex: none;
+    width: 100%;
+  }
+
+  .lnd-stats-dl {
+    gap: 1.1rem;
+  }
+
+  .lnd-stat-value {
+    font-size: 1.65rem;
+  }
+
+  .lnd-hero-meta-item {
+    font-size: 0.95rem;
+  }
+
+  .lnd-trailer-btn {
+    width: 100%;
+  }
+
+  .lnd-hero-socials {
+    flex-wrap: wrap;
+    gap: 0.85rem 1rem;
+  }
+
+  .lnd-plate {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lnd-plate-stats {
+    margin-left: 0;
+    gap: 1.5rem 1.75rem;
+  }
+
+  .lnd-plate-dt {
+    font-size: 2.4rem;
+  }
+
+  .lnd-paddock-panels {
+    max-width: none;
   }
 }
