@@ -64,14 +64,10 @@ export default function RootLayout({
         </a>
         <footer className="site-footer">
           <div className="footer-panel">
-            <h2 className="footer-masthead">
-              sistemas que administram empresas<span className="footer-masthead-dot">.</span>
-            </h2>
             <nav className="footer-nav" aria-label="Rodapé">
               <Link href="/">início</Link>
               <Link href="/projetos">projetos</Link>
               <Link href="/classificados">classificados</Link>
-              <Link href="/contato">contato</Link>
             </nav>
             <div className="footer-foot-row">
               <div className="footer-copyright">
