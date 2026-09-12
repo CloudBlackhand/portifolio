@@ -51,6 +51,62 @@
   }
 }
 
+.lnd-hero-pings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lnd-ping {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-strong);
+}
+
+.lnd-ping::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--brand-strong);
+  animation: lnd-ping-wave 3.6s ease-out infinite;
+}
+
+.lnd-ping--a { top: 18%; right: 22%; }
+.lnd-ping--b { top: 84%; left: 10%; }
+.lnd-ping--c { top: 52%; left: 46%; }
+
+.lnd-ping--a::before { animation-delay: 0s; }
+.lnd-ping--b::before { animation-delay: 1.2s; }
+.lnd-ping--c::before { animation-delay: 2.4s; }
+
+@keyframes lnd-ping-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(9);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lnd-ping::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .lnd-ping--c {
+    display: none;
+  }
+}
+
 .lnd-caret {
   display: inline-block;
   width: 0.55em;

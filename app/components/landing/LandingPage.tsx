@@ -54,6 +54,11 @@ export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <div className="lnd-hero-contours" aria-hidden="true" />
+      <div className="lnd-hero-pings" aria-hidden="true">
+        <span className="lnd-ping lnd-ping--a" />
+        <span className="lnd-ping lnd-ping--b" />
+        <span className="lnd-ping lnd-ping--c" />
+      </div>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">
           <Reveal className="lnd-hero-identity">
