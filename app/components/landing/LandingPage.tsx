@@ -57,25 +57,24 @@ type LandingHeroProps = {
 export function LandingHero({ profilePhoto }: LandingHeroProps) {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
-      <div className="lnd-hero-figure" aria-hidden="true">
-        <div className="lnd-hero-figure-img">
-          <Image
-            src={profilePhoto.src}
-            alt=""
-            width={profilePhoto.width}
-            height={profilePhoto.height}
-            priority
-          />
-        </div>
-        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--left" />
-        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--right" />
-        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--top" />
-        <div className="lnd-hero-figure-fade lnd-hero-figure-fade--bottom" />
-      </div>
+      <div className="lnd-hero-contours" aria-hidden="true" />
+      <Reveal className="lnd-hero-portrait-wrap">
+        <Image
+          src={profilePhoto.src}
+          alt={profilePhoto.alt}
+          width={profilePhoto.width}
+          height={profilePhoto.height}
+          className="lnd-hero-portrait"
+          sizes="(max-width: 720px) 60vw, 38vw"
+          priority
+        />
+      </Reveal>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">
           <Reveal className="lnd-hero-identity">
-            <div className="lnd-hero-id">dev_012</div>
+            <div className="lnd-hero-id">
+              dev_012<span className="lnd-caret" aria-hidden="true" />
+            </div>
             <h1 className="lnd-hero-name" id="lnd-hero-name">
               cloud service
             </h1>
@@ -230,13 +229,10 @@ export function TimelineSection({ projects }: TimelineSectionProps) {
             const rest = items.length - shown.length;
             return (
               <Reveal key={year} delay={index * 0.06}>
-                <div
-                  className={`lnd-timeline-row${
-                    index % 2 === 1 ? " lnd-timeline-row--right" : ""
-                  }`}
-                >
-                  <div className="lnd-timeline-plate">
-                    <div className="lnd-timeline-year">{year}</div>
+                <div className="lnd-timeline-row">
+                  <div className="lnd-timeline-dot" aria-hidden="true" />
+                  <div className="lnd-timeline-year">{year}</div>
+                  <div className="lnd-timeline-body">
                     <ul className="lnd-timeline-list">
                       {shown.map((p) => (
                         <li key={p.slug}>
@@ -244,9 +240,7 @@ export function TimelineSection({ projects }: TimelineSectionProps) {
                         </li>
                       ))}
                       {rest > 0 ? (
-                        <li className="lnd-timeline-more">
-                          +{rest} projeto{rest > 1 ? "s" : ""}
-                        </li>
+                        <li className="lnd-timeline-more">+{rest} projetos</li>
                       ) : null}
                     </ul>
                   </div>
@@ -265,90 +259,74 @@ type OficinaSectionProps = {
   profilePhoto: ProfilePhoto;
 };
 
-const AREAS = [
-  "erp",
-  "crm",
-  "financeiro",
-  "estoque",
-  "frotas",
-  "bi",
-  "automação",
-  "landing pages",
-];
-
 export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
   return (
     <section className="lnd-paddock" aria-labelledby="lnd-paddock-h2">
-      <Reveal className="lnd-paddock-portrait-wrap">
-        <Image
-          src={profilePhoto.src}
-          alt={profilePhoto.alt}
-          width={profilePhoto.width}
-          height={profilePhoto.height}
-          className="lnd-paddock-portrait"
-          sizes="(max-width: 720px) 85vw, 560px"
-        />
-      </Reveal>
-      <Reveal className="lnd-paddock-head-wrap">
-        <h2 className="lnd-h2 lnd-h2--ink" id="lnd-paddock-h2">
-          <span className="lnd-h2-line">da</span>
-          <span className="lnd-h2-line">
-            oficina<span className="lnd-h2-dot lnd-h2-dot--accent">.</span>
-          </span>
-        </h2>
-      </Reveal>
-      <Reveal className="lnd-paddock-intro" delay={0.06}>
-        <p className="lnd-paddock-copy">
-          Todo sistema sai daqui do mesmo jeito: primeiro eu entendo a
-          operação, depois desenho a solução. O último a entrar em
-          produção foi o {project.title}.
-        </p>
-        <Link
-          className="lnd-view-cta lnd-view-cta--ink"
-          href={`/projetos/${project.slug}`}
-        >
-          <BracketCorners />
-          <span className="lnd-view-cta-text">ver projeto</span>
-          <span className="lnd-view-cta-arrow" aria-hidden="true">
-            →
-          </span>
-        </Link>
-      </Reveal>
-      <Reveal className="lnd-paddock-panels" delay={0.12}>
-        <div className="lnd-bracket-panel">
-          <BracketCorners />
-          <div className="lnd-panel-eyebrow">último case</div>
-          <dl className="lnd-panel-dl">
-            <dt className="lnd-panel-dt">{project.title}</dt>
-            <dd className="lnd-panel-dd">{project.category}</dd>
-            <dd className="lnd-panel-dd">{project.year}</dd>
-          </dl>
+      <div className="lnd-container">
+        <div className="lnd-paddock-grid">
+          <Reveal className="lnd-paddock-portrait-wrap">
+            <Image
+              src={profilePhoto.src}
+              alt={profilePhoto.alt}
+              width={profilePhoto.width}
+              height={profilePhoto.height}
+              className="lnd-paddock-portrait"
+              sizes="(max-width: 720px) 85vw, 380px"
+            />
+          </Reveal>
+          <Reveal className="lnd-paddock-intro" delay={0.06}>
+            <h2 className="lnd-h2 lnd-h2--ink" id="lnd-paddock-h2">
+              <span className="lnd-h2-line">da</span>
+              <span className="lnd-h2-line">
+                oficina<span className="lnd-h2-dot lnd-h2-dot--accent">.</span>
+              </span>
+            </h2>
+            <p className="lnd-paddock-copy">
+              Todo sistema sai daqui do mesmo jeito: primeiro eu entendo a
+              operação, depois desenho a solução. O último a entrar em
+              produção foi o {project.title}.
+            </p>
+            <Link
+              className="lnd-view-cta lnd-view-cta--ink"
+              href={`/projetos/${project.slug}`}
+            >
+              <BracketCorners />
+              <span className="lnd-view-cta-text">ver projeto</span>
+              <span className="lnd-view-cta-arrow" aria-hidden="true">
+                →
+              </span>
+            </Link>
+          </Reveal>
+          <Reveal className="lnd-paddock-panels" delay={0.12}>
+            <div className="lnd-bracket-panel">
+              <BracketCorners />
+              <div className="lnd-panel-eyebrow">último case</div>
+              <dl className="lnd-panel-dl">
+                <dt className="lnd-panel-dt">{project.title}</dt>
+                <dd className="lnd-panel-dd">{project.category}</dd>
+                <dd className="lnd-panel-dd">{project.year}</dd>
+              </dl>
+            </div>
+            <div className="lnd-bracket-panel">
+              <BracketCorners />
+              <div className="lnd-panel-eyebrow">como trabalho</div>
+              <dl className="lnd-panel-dl">
+                <div className="lnd-mini-stat">
+                  <dt className="lnd-stat-label">escopo</dt>
+                  <dd className="lnd-mini-value">ponta a ponta</dd>
+                </div>
+                <div className="lnd-mini-stat">
+                  <dt className="lnd-stat-label">comunicação</dt>
+                  <dd className="lnd-mini-value">direto comigo</dd>
+                </div>
+                <div className="lnd-mini-stat">
+                  <dt className="lnd-stat-label">sigilo</dt>
+                  <dd className="lnd-mini-value">nda quando preciso</dd>
+                </div>
+              </dl>
+            </div>
+          </Reveal>
         </div>
-        <div className="lnd-bracket-panel">
-          <BracketCorners />
-          <div className="lnd-panel-eyebrow">como trabalho</div>
-          <dl className="lnd-panel-dl">
-            <div className="lnd-mini-stat">
-              <dt className="lnd-stat-label">escopo</dt>
-              <dd className="lnd-mini-value">ponta a ponta</dd>
-            </div>
-            <div className="lnd-mini-stat">
-              <dt className="lnd-stat-label">comunicação</dt>
-              <dd className="lnd-mini-value">direto comigo</dd>
-            </div>
-            <div className="lnd-mini-stat">
-              <dt className="lnd-stat-label">sigilo</dt>
-              <dd className="lnd-mini-value">nda quando preciso</dd>
-            </div>
-          </dl>
-        </div>
-      </Reveal>
-      <div className="lnd-paddock-band" aria-hidden="true">
-        <ul className="lnd-band-list">
-          {AREAS.map((area) => (
-            <li key={area}>{area}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );
