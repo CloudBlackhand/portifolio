@@ -27,7 +27,72 @@
     var(--background);
 }
 
+.lnd-hero-figure {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lnd-hero-figure-img {
+  position: absolute;
+  right: clamp(2rem, 10vw, 9rem);
+  bottom: 0;
+  height: min(82%, 560px);
+  aspect-ratio: 1;
+}
+
+.lnd-hero-figure-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.82) contrast(1.04);
+}
+
+.lnd-hero-figure-fade {
+  position: absolute;
+  inset: 0;
+}
+
+.lnd-hero-figure-fade--left {
+  background: linear-gradient(
+    to right,
+    var(--background) 32%,
+    color-mix(in srgb, var(--background) 55%, transparent) 55%,
+    transparent 72%
+  );
+}
+
+.lnd-hero-figure-fade--right {
+  background: linear-gradient(
+    to left,
+    var(--background) 0%,
+    transparent 12%
+  );
+}
+
+.lnd-hero-figure-fade--top {
+  background: linear-gradient(
+    to bottom,
+    var(--background) 0%,
+    transparent 14%
+  );
+}
+
+.lnd-hero-figure-fade--bottom {
+  background: linear-gradient(
+    to top,
+    var(--background) 4%,
+    color-mix(in srgb, var(--background) 65%, transparent) 22%,
+    transparent 45%
+  );
+}
+
 .lnd-hero-inner {
+  position: relative;
+  z-index: 1;
   width: min(100% - 2.5rem, 1180px);
   margin-inline: auto;
   min-height: calc(100svh - 69px);
@@ -614,6 +679,29 @@
 }
 
 @media (max-width: 720px) {
+  .lnd-hero-figure-img {
+    right: 0;
+    height: 46%;
+  }
+
+  .lnd-hero-figure-fade--left {
+    background: linear-gradient(
+      to right,
+      var(--background) 45%,
+      color-mix(in srgb, var(--background) 70%, transparent) 68%,
+      transparent 88%
+    );
+  }
+
+  .lnd-hero-figure-fade--bottom {
+    background: linear-gradient(
+      to top,
+      var(--background) 30%,
+      color-mix(in srgb, var(--background) 70%, transparent) 48%,
+      transparent 62%
+    );
+  }
+
   .lnd-hero-middle {
     flex-direction: column;
     align-items: flex-start;
