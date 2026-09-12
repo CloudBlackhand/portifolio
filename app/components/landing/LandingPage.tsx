@@ -50,25 +50,10 @@ function BracketCorners() {
 
 const WHATSAPP_URL = "https://wa.me/5521971364919";
 
-type LandingHeroProps = {
-  profilePhoto: ProfilePhoto;
-};
-
-export function LandingHero({ profilePhoto }: LandingHeroProps) {
+export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <div className="lnd-hero-contours" aria-hidden="true" />
-      <Reveal className="lnd-hero-portrait-wrap">
-        <Image
-          src={profilePhoto.src}
-          alt={profilePhoto.alt}
-          width={profilePhoto.width}
-          height={profilePhoto.height}
-          className="lnd-hero-portrait"
-          sizes="(max-width: 720px) 60vw, 38vw"
-          priority
-        />
-      </Reveal>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">
           <Reveal className="lnd-hero-identity">
