@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { CornerBrackets } from "@/app/components/corner-brackets";
 import type { Project } from "@/data/projects";
 import { getCatalogProjects } from "@/data/projects";
 import type { ProfilePhoto } from "@/lib/profile-photo";
@@ -34,17 +35,6 @@ function Reveal({
     >
       {children}
     </motion.div>
-  );
-}
-
-function BracketCorners() {
-  return (
-    <>
-      <span className="lnd-bracket lnd-bracket--tl" aria-hidden="true" />
-      <span className="lnd-bracket lnd-bracket--tr" aria-hidden="true" />
-      <span className="lnd-bracket lnd-bracket--bl" aria-hidden="true" />
-      <span className="lnd-bracket lnd-bracket--br" aria-hidden="true" />
-    </>
   );
 }
 
@@ -177,7 +167,7 @@ export function LandingHero() {
           </Reveal>
           <Reveal className="lnd-hero-panels" delay={0.08}>
             <div className="lnd-bracket-panel">
-              <BracketCorners />
+              <CornerBrackets />
               <div className="lnd-panel-eyebrow">
                 <span>disponibilidade</span>
                 <RefCode>cs-01</RefCode>
@@ -189,7 +179,7 @@ export function LandingHero() {
               </dl>
             </div>
             <div className="lnd-bracket-panel">
-              <BracketCorners />
+              <CornerBrackets />
               <div className="lnd-panel-eyebrow">
                 <span>números</span>
                 <RefCode>cs-02</RefCode>
@@ -227,7 +217,7 @@ export function LandingHero() {
             </span>
           </a>
           <Link className="lnd-view-cta" href="/projetos">
-            <BracketCorners />
+            <CornerBrackets />
             <span className="lnd-view-cta-text">ver projetos</span>
             <span className="lnd-view-cta-arrow" aria-hidden="true">
               →
@@ -396,7 +386,7 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
               className="lnd-view-cta lnd-view-cta--ink"
               href={`/projetos/${project.slug}`}
             >
-              <BracketCorners />
+              <CornerBrackets />
               <span className="lnd-view-cta-text">ver projeto</span>
               <span className="lnd-view-cta-arrow" aria-hidden="true">
                 →
@@ -405,7 +395,7 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
           </Reveal>
           <Reveal className="lnd-paddock-panels" delay={0.12}>
             <div className="lnd-bracket-panel">
-              <BracketCorners />
+              <CornerBrackets />
               <div className="lnd-panel-eyebrow">
                 <span>último case</span>
                 <RefCode>cs-03</RefCode>
@@ -417,7 +407,7 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
               </dl>
             </div>
             <div className="lnd-bracket-panel">
-              <BracketCorners />
+              <CornerBrackets />
               <div className="lnd-panel-eyebrow">
                 <span>como trabalho</span>
                 <RefCode>cs-04</RefCode>
