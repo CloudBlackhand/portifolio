@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CornerBrackets } from "@/app/components/corner-brackets";
 
 export const metadata: Metadata = {
   title: "Contato | Cloud Service",
@@ -17,6 +18,7 @@ export default function ContatoPage() {
       </p>
 
       <div className="content-block section-spacing">
+        <CornerBrackets />
         <h3>Canal direto</h3>
         <p className="muted">
           WhatsApp: <strong>(21) 97136-4919</strong>, atendimento em horário
@@ -35,6 +37,7 @@ export default function ContatoPage() {
       </div>
 
       <div className="content-block section-spacing">
+        <CornerBrackets />
         <h3>O que ajuda a agilizar a conversa</h3>
         <ul className="plain-list">
           <li>O que o sistema ou site precisa resolver hoje.</li>
@@ -44,6 +47,7 @@ export default function ContatoPage() {
       </div>
 
       <div className="content-block section-spacing">
+        <CornerBrackets />
         <h3>Sigilo de projeto</h3>
         <p className="muted">
           Projetos sob NDA ou com dados sensíveis do cliente são tratados sem

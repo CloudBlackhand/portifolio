@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CornerBrackets } from "@/app/components/corner-brackets";
 import { ProjectCardGrid } from "@/app/components/project-card-grid";
 import { ProjetosSigiloGate } from "@/app/components/projetos-sigilo-gate";
 import { getCatalogProjectsByKind } from "@/data/projects";
@@ -69,6 +70,7 @@ export default function ProjetosPage() {
       </section>
 
       <section className="content-block section-spacing" aria-labelledby="projetos-cta-title">
+        <CornerBrackets />
         <h2 id="projetos-cta-title" className="section-heading">
           Pronto para organizar sua operação?
         </h2>

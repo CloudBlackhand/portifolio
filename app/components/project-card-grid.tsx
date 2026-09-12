@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CornerBrackets } from "@/app/components/corner-brackets";
 import {
   getProjectLiveLinkLabel,
   getProjectKindLabel,
@@ -29,6 +30,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
 
         return (
           <article className="card interactive-card card--clickable" key={project.slug}>
+            <CornerBrackets />
             <Link
               className="card-stretched-link"
               href={`/projetos/${project.slug}`}

@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CornerBrackets } from "@/app/components/corner-brackets";
 import { MarathonTopSecretDetail } from "@/app/components/marathon/marathon-top-secret-detail";
 import {
   getProjectBySlug,
@@ -119,6 +120,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {project.gallery && project.gallery.length > 0 && !confidential ? (
         <section className="content-block section-spacing">
+          <CornerBrackets />
           <h3>{marketing ? "Outras peças" : "Outras telas"}</h3>
           <p className="muted privacy-note">
             {marketing
@@ -168,6 +170,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
       ) : null}
 
       <section className="content-block section-spacing">
+        <CornerBrackets />
         <h3>
           {marketing
             ? "Sobre o trabalho"
@@ -180,6 +183,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {confidential ? (
         <section className="content-block section-spacing classified-privacy-block">
+          <CornerBrackets />
           <h3>Privacidade e confidencialidade</h3>
           <p className="muted privacy-note">
             Por acordo com o cliente ou por natureza interna do produto, não
@@ -192,6 +196,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {consultoria ? (
         <section className="content-block">
+          <CornerBrackets />
           <h3>Quer algo parecido?</h3>
           <p className="muted">
             Conte seu cenário, prazo e restrições. Alinhamos consultoria ou
@@ -207,6 +212,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {!marketing && !consultoria && !confidential ? (
         <section className="content-block">
+          <CornerBrackets />
           <h3>Experimente</h3>
           {!hasLiveLink ? (
             <p className="muted">
@@ -229,6 +235,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
 
       {!marketing && !consultoria && confidential && hasLiveLink ? (
         <section className="content-block">
+          <CornerBrackets />
           <h3>Experimente</h3>
           <div className="link-row">
             <a
