@@ -1,33 +1,23 @@
-import Link from "next/link";
 import { projects, getCatalogProjects } from "@/data/projects";
 import { getProfilePhoto } from "@/lib/profile-photo";
-import { ShowcaseCarousel } from "./components/showcase-carousel";
 import {
-  IntroHeading,
-  AboutSection,
+  LandingHero,
+  StatsSection,
+  TimelineSection,
+  OficinaSection,
 } from "./components/landing/LandingPage";
-import { WorkTable } from "./components/work-table";
 
 export default function Home() {
   const profilePhoto = getProfilePhoto();
-  const catalogProjects = getCatalogProjects(projects);
+  const catalog = getCatalogProjects(projects);
+  const latest = [...catalog].sort((a, b) => b.year - a.year)[0];
 
   return (
     <>
-      <ShowcaseCarousel projects={projects} />
-      <div className="container ep-table-section ep-after-showcase">
-        <IntroHeading />
-        <WorkTable projects={catalogProjects} />
-        <p className="muted section-spacing">
-          Sistemas em produção e campanhas de marketing. Abra cada projeto para
-          ver capturas ou peças visuais quando disponíveis.
-        </p>
-        <p className="catalog-table-note">
-          Projetos sob sigilo não entram nesta tabela.{" "}
-          <Link href="/projetos#sob-sigilo">Ver na página de projetos</Link>
-        </p>
-      </div>
-      <AboutSection profilePhoto={profilePhoto} />
+      <LandingHero />
+      <StatsSection />
+      <TimelineSection projects={projects} />
+      <OficinaSection project={latest} profilePhoto={profilePhoto} />
     </>
   );
 }
