@@ -51,25 +51,6 @@
   }
 }
 
-.lnd-hero-portrait-wrap {
-  position: absolute;
-  right: clamp(1.5rem, 5vw, 5rem);
-  top: clamp(4.5rem, 10vh, 6.5rem);
-  width: clamp(140px, 15vw, 210px);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.lnd-hero-portrait {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 50%;
-  filter: grayscale(0.3) contrast(1.02);
-  opacity: 0.9;
-}
-
 .lnd-caret {
   display: inline-block;
   width: 0.55em;
@@ -685,12 +666,6 @@
 }
 
 @media (max-width: 720px) {
-  .lnd-hero-portrait-wrap {
-    right: 1rem;
-    top: 1rem;
-    width: min(22vw, 96px);
-  }
-
   .lnd-hero-middle {
     flex-direction: column;
     align-items: flex-start;

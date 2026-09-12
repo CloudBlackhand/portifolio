@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <LandingHero profilePhoto={profilePhoto} />
+      <LandingHero />
       <StatsSection />
       <TimelineSection projects={projects} />
       <OficinaSection project={latest} profilePhoto={profilePhoto} />
