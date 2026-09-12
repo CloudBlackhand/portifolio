@@ -58,9 +58,12 @@ export function LandingHero() {
         <span className="lnd-radar-ring lnd-radar-ring--1" />
         <span className="lnd-radar-ring lnd-radar-ring--2" />
         <span className="lnd-radar-ring lnd-radar-ring--3" />
+        <span className="lnd-radar-tick lnd-radar-tick--n" />
+        <span className="lnd-radar-tick lnd-radar-tick--e" />
+        <span className="lnd-radar-tick lnd-radar-tick--s" />
+        <span className="lnd-radar-tick lnd-radar-tick--w" />
         <span className="lnd-radar-sweep" />
-        <span className="lnd-radar-blip lnd-radar-blip--a" />
-        <span className="lnd-radar-blip lnd-radar-blip--b" />
+        <span className="lnd-radar-core" />
       </div>
       <div className="lnd-hero-inner">
         <div className="lnd-hero-middle">
