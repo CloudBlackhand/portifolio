@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTopSecretProjects } from "@/data/projects";
 
-export function ProjetosSigiloGate() {
+export function ClassifiedGate() {
   const topSecretProjects = getTopSecretProjects();
   const count = topSecretProjects.length;
 
@@ -12,23 +12,23 @@ export function ProjetosSigiloGate() {
   return (
     <section
       id="sob-sigilo"
-      className="projetos-sigilo-gate"
-      aria-labelledby="projetos-sigilo-heading"
+      className="classified-gate"
+      aria-labelledby="classified-gate-heading"
     >
-      <div className="projetos-sigilo-gate-inner">
-        <p className="projetos-sigilo-kicker">fora do catálogo aberto</p>
-        <h2 id="projetos-sigilo-heading" className="projetos-sigilo-title">
+      <div className="classified-gate-inner">
+        <p className="classified-gate-kicker">fora do catálogo aberto</p>
+        <h2 id="classified-gate-heading" className="classified-gate-title">
           Projetos sob sigilo
         </h2>
-        <p className="projetos-sigilo-lead">
+        <p className="classified-gate-lead">
           Trabalhos de clientes que pediram discrição: comercial, mensageria, saúde,
           locação, imóveis e autoatendimento. Explico o que foi feito e o resultado,
           sem marcas, telas ou dados sensíveis.
         </p>
-        <p className="projetos-sigilo-meta">
+        <p className="classified-gate-meta">
           {count} {projectLabel} nesta lista
         </p>
-        <Link className="projetos-sigilo-link" href="/classificados">
+        <Link className="classified-gate-link" href="/classificados">
           Ver projetos sob sigilo →
         </Link>
       </div>

@@ -2,19 +2,19 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-type MarathonStatusTickerProps = {
+type ClassifiedStatusTickerProps = {
   messages: string[];
 };
 
-export function MarathonStatusTicker({ messages }: MarathonStatusTickerProps) {
+export function ClassifiedStatusTicker({ messages }: ClassifiedStatusTickerProps) {
   const reduceMotion = useReducedMotion();
   const message = messages[0] ?? "";
 
   return (
-    <div className="marathon-status-ticker" aria-live="polite">
-      <span className="marathon-status-dot" aria-hidden="true" />
+    <div className="classified-status-ticker" aria-live="polite">
+      <span className="classified-status-dot" aria-hidden="true" />
       <motion.span
-        className="marathon-status-text"
+        className="classified-status-text"
         initial={reduceMotion ? false : { opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}

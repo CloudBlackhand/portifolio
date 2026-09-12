@@ -3,8 +3,8 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CornerBrackets } from "@/app/components/corner-brackets";
-import { MarathonTopSecretDetail } from "@/app/components/marathon/marathon-top-secret-detail";
+import { CornerBrackets } from "@/components/corner-brackets";
+import { TopSecretDetail } from "@/components/classified/top-secret-detail";
 import {
   getProjectBySlug,
   getProjectKindLabel,
@@ -69,7 +69,7 @@ export default async function ProjetoDetalhePage({ params }: Params) {
     : undefined;
 
   if (topsecret) {
-    return <MarathonTopSecretDetail project={project} />;
+    return <TopSecretDetail project={project} />;
   }
 
   const thumbAlt =

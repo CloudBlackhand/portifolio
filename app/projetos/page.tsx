@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CornerBrackets } from "@/app/components/corner-brackets";
-import { ProjectCardGrid } from "@/app/components/project-card-grid";
-import { ProjetosSigiloGate } from "@/app/components/projetos-sigilo-gate";
+import { CornerBrackets } from "@/components/corner-brackets";
+import { ProjectCardGrid } from "@/components/project-card-grid";
+import { ClassifiedGate } from "@/components/classified/gate";
 import { getCatalogProjectsByKind } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function ProjetosPage() {
         catálogo de cases reais para administradores, gestores e empresários.
       </p>
 
-      <ProjetosSigiloGate />
+      <ClassifiedGate />
 
       <section className="section-spacing">
         <h2 className="section-heading">Sistemas e gestão empresarial</h2>

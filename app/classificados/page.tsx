@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { TopSecretSection } from "@/app/components/top-secret-section";
+import { ClassifiedSection } from "@/components/classified/section";
 import { getTopSecretProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 export default function ClassificadosPage() {
   const topSecretProjects = getTopSecretProjects();
 
-  return <TopSecretSection projects={topSecretProjects} standalone />;
+  return <ClassifiedSection projects={topSecretProjects} standalone />;
 }

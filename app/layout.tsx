@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Oswald, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { SiteHeaderNav } from "@/app/components/site-header-nav";
+import { SiteHeaderNav } from "@/components/site-header-nav";
 import "./globals.css";
-import "./globals-landing.css";
-import "./globals-classified.css";
+import "./landing.css";
+import "./classified.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",

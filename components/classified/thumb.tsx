@@ -1,4 +1,4 @@
-type MarathonThumbProps = {
+type ClassifiedThumbProps = {
   src: string;
   alt: string;
   className?: string;
@@ -6,7 +6,7 @@ type MarathonThumbProps = {
 };
 
 /** SVG e previews do tablet usam img nativo — next/image quebra layout nos cards. */
-export function MarathonThumb({ src, alt, className, priority = false }: MarathonThumbProps) {
+export function ClassifiedThumb({ src, alt, className, priority = false }: ClassifiedThumbProps) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
