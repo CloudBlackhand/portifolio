@@ -44,6 +44,103 @@
   }
 }
 
+/* Placa de especificação estilo veículo militar (M1A3 / Eurofighter data plate) */
+
+.lnd-spec-plate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border: 1px solid rgb(9 10 11 / 12%);
+  padding: 0.5rem 0.7rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 38%);
+}
+
+.lnd-dark .lnd-spec-plate {
+  border-color: var(--border-on-dark);
+  color: var(--on-dark-muted);
+}
+
+.lnd-spec-plate--hero {
+  position: absolute;
+  top: clamp(4.5rem, 11vh, 7rem);
+  left: clamp(1.5rem, 6vw, 6rem);
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .lnd-spec-plate--hero {
+    display: none;
+  }
+}
+
+/* Linhas de blueprint técnico (dimensionamento estilo desenho de engenharia) */
+
+.lnd-blueprint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.lnd-dim-line {
+  position: absolute;
+  height: 1px;
+  background: rgb(9 10 11 / 10%);
+}
+
+.lnd-dim-line::before,
+.lnd-dim-line::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: rgb(9 10 11 / 16%);
+}
+
+.lnd-dim-line::before {
+  left: 0;
+}
+
+.lnd-dim-line::after {
+  right: 0;
+}
+
+.lnd-dim-label {
+  position: absolute;
+  top: -1.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 28%);
+  white-space: nowrap;
+}
+
+.lnd-dim-line--a {
+  top: 32%;
+  left: 6%;
+  width: clamp(120px, 16vw, 220px);
+}
+
+.lnd-dim-line--b {
+  top: 70%;
+  left: 42%;
+  width: clamp(100px, 13vw, 180px);
+}
+
+@media (max-width: 900px) {
+  .lnd-blueprint {
+    display: none;
+  }
+}
+
 /* HUD aeronáutico (F22): mira de alvo travando + readout de voo, monocromático */
 
 .lnd-hud {
@@ -340,6 +437,10 @@
 .lnd-bracket--br { bottom: 0; right: 0; border-bottom: 2px solid currentColor; border-right: 2px solid currentColor; }
 
 .lnd-panel-eyebrow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -350,6 +451,18 @@
 
 .lnd-dark .lnd-panel-eyebrow {
   color: var(--brand-on-dark);
+}
+
+.lnd-ref-code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: rgb(9 10 11 / 25%);
+}
+
+.lnd-dark .lnd-ref-code {
+  color: rgb(255 255 255 / 22%);
 }
 
 .lnd-panel-dl {
@@ -628,6 +741,12 @@
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
+.lnd-plate-id {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .lnd-plate-badge {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.85rem;
@@ -640,6 +759,14 @@
 
 .lnd-plate-badge span {
   color: var(--brand-on-dark);
+}
+
+.lnd-plate-serial {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 22%);
 }
 
 .lnd-plate-stats {

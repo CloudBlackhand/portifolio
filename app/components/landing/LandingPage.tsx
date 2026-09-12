@@ -48,12 +48,51 @@ function BracketCorners() {
   );
 }
 
+function SpecPlate({
+  lines,
+  className,
+}: {
+  lines: string[];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`lnd-spec-plate${className ? ` ${className}` : ""}`}
+      aria-hidden="true"
+    >
+      {lines.map((line) => (
+        <span key={line}>{line}</span>
+      ))}
+    </div>
+  );
+}
+
+function RefCode({ children }: { children: ReactNode }) {
+  return (
+    <span className="lnd-ref-code" aria-hidden="true">
+      {children}
+    </span>
+  );
+}
+
 const WHATSAPP_URL = "https://wa.me/5521971364919";
 
 export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <div className="lnd-hero-contours" aria-hidden="true" />
+      <div className="lnd-blueprint" aria-hidden="true">
+        <span className="lnd-dim-line lnd-dim-line--a">
+          <span className="lnd-dim-label">wingspan · 10.95m</span>
+        </span>
+        <span className="lnd-dim-line lnd-dim-line--b">
+          <span className="lnd-dim-label">length · 19.43m</span>
+        </span>
+      </div>
+      <SpecPlate
+        className="lnd-spec-plate--hero"
+        lines={["unit cs-012", "mdl cloud-01", "rev 2026.1"]}
+      />
       <div className="lnd-hud" aria-hidden="true">
         <div className="lnd-hud-box">
           <span className="lnd-bracket lnd-bracket--tl" />
@@ -106,7 +145,10 @@ export function LandingHero() {
           <Reveal className="lnd-hero-panels" delay={0.08}>
             <div className="lnd-bracket-panel">
               <BracketCorners />
-              <div className="lnd-panel-eyebrow">disponibilidade</div>
+              <div className="lnd-panel-eyebrow">
+                <span>disponibilidade</span>
+                <RefCode>cs-01</RefCode>
+              </div>
               <dl className="lnd-panel-dl">
                 <dt className="lnd-panel-dt">freelas e contratos</dt>
                 <dd className="lnd-panel-dd">início imediato</dd>
@@ -115,7 +157,10 @@ export function LandingHero() {
             </div>
             <div className="lnd-bracket-panel">
               <BracketCorners />
-              <div className="lnd-panel-eyebrow">números</div>
+              <div className="lnd-panel-eyebrow">
+                <span>números</span>
+                <RefCode>cs-02</RefCode>
+              </div>
               <dl className="lnd-stats-dl">
                 <div className="lnd-stat-cell">
                   <dt className="lnd-stat-label">projetos</dt>
@@ -196,8 +241,11 @@ export function StatsSection() {
         </Reveal>
         <Reveal delay={0.08}>
           <div className="lnd-plate">
-            <div className="lnd-plate-badge">
-              CS <span>/ 2026</span>
+            <div className="lnd-plate-id">
+              <div className="lnd-plate-badge">
+                CS <span>/ 2026</span>
+              </div>
+              <div className="lnd-plate-serial">serial // cs-2026-014</div>
             </div>
             <dl className="lnd-plate-stats">
               <div className="lnd-plate-row">
@@ -318,7 +366,10 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
           <Reveal className="lnd-paddock-panels" delay={0.12}>
             <div className="lnd-bracket-panel">
               <BracketCorners />
-              <div className="lnd-panel-eyebrow">último case</div>
+              <div className="lnd-panel-eyebrow">
+                <span>último case</span>
+                <RefCode>cs-03</RefCode>
+              </div>
               <dl className="lnd-panel-dl">
                 <dt className="lnd-panel-dt">{project.title}</dt>
                 <dd className="lnd-panel-dd">{project.category}</dd>
@@ -327,7 +378,10 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
             </div>
             <div className="lnd-bracket-panel">
               <BracketCorners />
-              <div className="lnd-panel-eyebrow">como trabalho</div>
+              <div className="lnd-panel-eyebrow">
+                <span>como trabalho</span>
+                <RefCode>cs-04</RefCode>
+              </div>
               <dl className="lnd-panel-dl">
                 <div className="lnd-mini-stat">
                   <dt className="lnd-stat-label">escopo</dt>
