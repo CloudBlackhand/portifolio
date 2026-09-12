@@ -75,13 +75,28 @@ function RefCode({ children }: { children: ReactNode }) {
   );
 }
 
+function SheetFrame({ index, total }: { index: number; total: number }) {
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return (
+    <>
+      <span className="lnd-reg-mark lnd-reg-mark--tl" aria-hidden="true" />
+      <span className="lnd-reg-mark lnd-reg-mark--tr" aria-hidden="true" />
+      <span className="lnd-reg-mark lnd-reg-mark--bl" aria-hidden="true" />
+      <span className="lnd-reg-mark lnd-reg-mark--br" aria-hidden="true" />
+      <span className="lnd-sheet-index" aria-hidden="true">
+        sheet {pad(index)}/{pad(total)}
+      </span>
+    </>
+  );
+}
+
 const WHATSAPP_URL = "https://wa.me/5521971364919";
 
 export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
+      <SheetFrame index={1} total={4} />
       <div className="lnd-hero-contours" aria-hidden="true" />
-      <div className="lnd-grid" aria-hidden="true" />
       <div className="lnd-blueprint" aria-hidden="true">
         <div className="lnd-dim-line lnd-dim-line--a">
           <span className="lnd-dim-track" />
@@ -99,15 +114,6 @@ export function LandingHero() {
             style={{ animationDelay: "2.4s" }}
           >
             length · 19.43m
-          </span>
-        </div>
-        <div className="lnd-dim-line lnd-dim-line--vertical lnd-dim-line--c">
-          <span className="lnd-dim-track" />
-          <span
-            className="lnd-dim-label lnd-type-in"
-            style={{ animationDelay: "2.6s" }}
-          >
-            height · 5.29m
           </span>
         </div>
       </div>
@@ -253,10 +259,9 @@ export function LandingHero() {
 export function StatsSection() {
   return (
     <section className="lnd-dark lnd-season" aria-labelledby="lnd-season-h2">
-      <div className="lnd-grid" aria-hidden="true" />
+      <SheetFrame index={2} total={4} />
       <div className="lnd-container">
         <Reveal>
-          <span className="lnd-coord">ref // b1</span>
           <h2 className="lnd-h2 lnd-h2--accent" id="lnd-season-h2">
             <span className="lnd-h2-line">o trabalho</span>
             <span className="lnd-h2-line">
@@ -307,10 +312,9 @@ export function TimelineSection({ projects }: TimelineSectionProps) {
 
   return (
     <section className="lnd-dark lnd-timeline" aria-labelledby="lnd-timeline-h2">
-      <div className="lnd-grid" aria-hidden="true" />
+      <SheetFrame index={3} total={4} />
       <div className="lnd-container">
         <Reveal>
-          <span className="lnd-coord">ref // b2</span>
           <h2 className="lnd-h2" id="lnd-timeline-h2">
             <span className="lnd-h2-line">da planilha</span>
             <span className="lnd-h2-line">
@@ -359,7 +363,7 @@ type OficinaSectionProps = {
 export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
   return (
     <section className="lnd-paddock" aria-labelledby="lnd-paddock-h2">
-      <div className="lnd-grid" aria-hidden="true" />
+      <SheetFrame index={4} total={4} />
       <div className="lnd-container">
         <div className="lnd-paddock-grid">
           <Reveal className="lnd-paddock-portrait-wrap">
@@ -371,9 +375,12 @@ export function OficinaSection({ project, profilePhoto }: OficinaSectionProps) {
               className="lnd-paddock-portrait"
               sizes="(max-width: 720px) 85vw, 380px"
             />
+            <div className="lnd-fig-caption" aria-hidden="true">
+              <span className="lnd-fig-caption-rule" />
+              fig. 01 — operator
+            </div>
           </Reveal>
           <Reveal className="lnd-paddock-intro" delay={0.06}>
-            <span className="lnd-coord">ref // b3</span>
             <h2 className="lnd-h2 lnd-h2--ink" id="lnd-paddock-h2">
               <span className="lnd-h2-line">da</span>
               <span className="lnd-h2-line">
