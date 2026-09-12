@@ -6,7 +6,6 @@ import { useEffect, useId, useState } from "react";
 const NAV_LINKS = [
   { href: "/", label: "Início" },
   { href: "/projetos", label: "Projetos" },
-  { href: "/contato", label: "Contato" },
 ] as const;
 
 export function SiteHeaderNav() {
@@ -67,7 +66,7 @@ export function SiteHeaderNav() {
           </Link>
         ))}
         <Link className="nav-cta" href="/contato" onClick={() => setOpen(false)}>
-          <span aria-hidden="true">[ </span>contratar
+          <span aria-hidden="true">[ </span>contatar
           <span aria-hidden="true"> → ]</span>
         </Link>
       </nav>
