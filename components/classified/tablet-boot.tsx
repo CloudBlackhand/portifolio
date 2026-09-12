@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { CLOUD_BOOT_HEAD } from "@/app/components/marathon/marathon-boot-lines";
+import { CLOUD_BOOT_HEAD } from "@/components/classified/boot-lines";
 
 const BLOCK_COUNT = 18;
 
-type MarathonTabletBootProps = {
+type ClassifiedTabletBootProps = {
   lines?: string[];
   head?: string;
   target?: number;
@@ -20,7 +20,7 @@ function blockBar(value: number, target: number): string {
   return `[${"█".repeat(filled)}${"░".repeat(BLOCK_COUNT - filled)}]`;
 }
 
-export function MarathonTabletBoot({
+export function ClassifiedTabletBoot({
   lines = [
     "> conectando...",
     "> carregando...",
@@ -31,7 +31,7 @@ export function MarathonTabletBoot({
   target = 100,
   duration = 2.4,
   onComplete,
-}: MarathonTabletBootProps) {
+}: ClassifiedTabletBootProps) {
   const reduceMotion = useReducedMotion();
   const [value, setValue] = useState(reduceMotion ? target : 0);
   const [exiting, setExiting] = useState(false);
@@ -84,7 +84,7 @@ export function MarathonTabletBoot({
 
   return (
     <motion.div
-      className="marathon-tablet-boot marathon-tablet-boot--cmd"
+      className="classified-tablet-boot classified-tablet-boot--cmd"
       role="status"
       aria-live="polite"
       aria-label={`Carregando ${value}%`}
@@ -95,14 +95,14 @@ export function MarathonTabletBoot({
         if (exiting) onComplete?.();
       }}
     >
-      <span className="marathon-boot-frame marathon-boot-frame--tl" aria-hidden="true" />
-      <span className="marathon-boot-frame marathon-boot-frame--tr" aria-hidden="true" />
-      <span className="marathon-boot-frame marathon-boot-frame--bl" aria-hidden="true" />
-      <span className="marathon-boot-frame marathon-boot-frame--br" aria-hidden="true" />
+      <span className="classified-boot-frame classified-boot-frame--tl" aria-hidden="true" />
+      <span className="classified-boot-frame classified-boot-frame--tr" aria-hidden="true" />
+      <span className="classified-boot-frame classified-boot-frame--bl" aria-hidden="true" />
+      <span className="classified-boot-frame classified-boot-frame--br" aria-hidden="true" />
 
       {showX ? (
         <motion.span
-          className="marathon-boot-x"
+          className="classified-boot-x"
           aria-hidden="true"
           initial={reduceMotion ? false : { opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -112,21 +112,21 @@ export function MarathonTabletBoot({
         </motion.span>
       ) : null}
 
-      <div className="marathon-boot-cmd">
-        <p className="marathon-boot-cmd-head">{head}</p>
+      <div className="classified-boot-cmd">
+        <p className="classified-boot-cmd-head">{head}</p>
 
-        <div className="marathon-boot-cmd-lines">
+        <div className="classified-boot-cmd-lines">
           {lines.slice(0, visibleCount).map((line, index) => (
             <motion.p
               key={`${line}-${index}`}
-              className="marathon-boot-cmd-line"
+              className="classified-boot-cmd-line"
               initial={reduceMotion ? false : { opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
             >
               {line}
               {index === visibleCount - 1 && !showOk ? (
-                <span className="marathon-boot-cursor" aria-hidden="true">
+                <span className="classified-boot-cursor" aria-hidden="true">
                   _
                 </span>
               ) : null}
@@ -135,7 +135,7 @@ export function MarathonTabletBoot({
 
           {showOk ? (
             <motion.p
-              className="marathon-boot-cmd-line marathon-boot-cmd-line--ok"
+              className="classified-boot-cmd-line classified-boot-cmd-line--ok"
               initial={reduceMotion ? false : { opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
@@ -145,7 +145,7 @@ export function MarathonTabletBoot({
           ) : null}
         </div>
 
-        <p className="marathon-boot-cmd-progress">{progressLabel}</p>
+        <p className="classified-boot-cmd-progress">{progressLabel}</p>
       </div>
     </motion.div>
   );

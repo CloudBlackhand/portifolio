@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CornerBrackets } from "@/app/components/corner-brackets";
+import { CornerBrackets } from "@/components/corner-brackets";
 
 export const metadata: Metadata = {
   title: "Contato | Cloud Service",

@@ -5,7 +5,7 @@ import {
   StatsSection,
   TimelineSection,
   OficinaSection,
-} from "./components/landing/LandingPage";
+} from "@/components/landing";
 
 export default function Home() {
   const profilePhoto = getProfilePhoto();

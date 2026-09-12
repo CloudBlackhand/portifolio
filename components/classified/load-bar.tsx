@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-type MarathonLoadBarProps = {
+type ClassifiedLoadBarProps = {
   label: string;
   target: number;
   delay?: number;
@@ -11,13 +11,13 @@ type MarathonLoadBarProps = {
   animate?: boolean;
 };
 
-export function MarathonLoadBar({
+export function ClassifiedLoadBar({
   label,
   target,
   delay = 0,
   duration = 1.8,
   animate = true,
-}: MarathonLoadBarProps) {
+}: ClassifiedLoadBarProps) {
   const reduceMotion = useReducedMotion();
   const shouldAnimate = animate && !reduceMotion;
   const [value, setValue] = useState(shouldAnimate ? 0 : target);
@@ -54,25 +54,25 @@ export function MarathonLoadBar({
   }, [delay, duration, shouldAnimate, target]);
 
   return (
-    <div className={`marathon-load${settled ? " marathon-load--settled" : ""}`}>
-      <div className="marathon-load-label">
+    <div className={`classified-load${settled ? " classified-load--settled" : ""}`}>
+      <div className="classified-load-label">
         <span>{label}</span>
-        <span className="marathon-load-pct">{value}%</span>
+        <span className="classified-load-pct">{value}%</span>
       </div>
       <div
-        className="marathon-load-track"
+        className="classified-load-track"
         role="progressbar"
         aria-valuenow={value}
         aria-valuemin={0}
         aria-valuemax={100}
       >
         <motion.span
-          className="marathon-load-fill"
+          className="classified-load-fill"
           initial={shouldAnimate ? { width: "0%" } : { width: `${target}%` }}
           animate={{ width: `${value}%` }}
           transition={{ duration: 0.35, ease: "easeOut" }}
         />
-        {!settled ? <span className="marathon-load-shimmer" aria-hidden="true" /> : null}
+        {!settled ? <span className="classified-load-shimmer" aria-hidden="true" /> : null}
       </div>
     </div>
   );

@@ -2,12 +2,12 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { MarathonRegMarks } from "@/app/components/marathon/marathon-tablet-chrome";
-import { MarathonTabletBoot } from "@/app/components/marathon/marathon-tablet-boot";
+import { ClassifiedRegMarks } from "@/components/classified/tablet-chrome";
+import { ClassifiedTabletBoot } from "@/components/classified/tablet-boot";
 
-const IMMERSIVE_BODY_CLASS = "marathon-immersive-mode";
+const IMMERSIVE_BODY_CLASS = "classified-immersive-mode";
 
-type MarathonSessionProps = {
+type ClassifiedSessionProps = {
   headerLeft: string;
   headerRight: string;
   children: ReactNode;
@@ -20,7 +20,7 @@ type MarathonSessionProps = {
   bootDuration?: number;
 };
 
-export function MarathonSession({
+export function ClassifiedSession({
   headerLeft,
   headerRight,
   children,
@@ -31,7 +31,7 @@ export function MarathonSession({
   bootHead,
   bootTarget = 100,
   bootDuration = 2.4,
-}: MarathonSessionProps) {
+}: ClassifiedSessionProps) {
   const reduceMotion = useReducedMotion();
   const shouldBoot = bootSequence ?? fillViewport;
   const [bootComplete, setBootComplete] = useState(!shouldBoot || Boolean(reduceMotion));
@@ -55,34 +55,34 @@ export function MarathonSession({
     <div
       className={
         fillViewport
-          ? "marathon-session marathon-session--fill"
-          : "marathon-session"
+          ? "classified-session classified-session--fill"
+          : "classified-session"
       }
     >
-      <div className="marathon-session-bg" aria-hidden="true">
-        <div className="marathon-session-gradient" />
-        <div className="marathon-session-dither" />
+      <div className="classified-session-bg" aria-hidden="true">
+        <div className="classified-session-gradient" />
+        <div className="classified-session-dither" />
       </div>
 
-      <div className="marathon-session-wrap">
+      <div className="classified-session-wrap">
         <motion.div
-          className="marathon-session-device"
+          className="classified-session-device"
           initial={reduceMotion ? false : { opacity: 0, y: 32, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <MarathonRegMarks />
-          <div className="marathon-session-bezel">
-            <div className="marathon-session-notch" aria-hidden="true" />
-            <div className="marathon-session-header">
+          <ClassifiedRegMarks />
+          <div className="classified-session-bezel">
+            <div className="classified-session-notch" aria-hidden="true" />
+            <div className="classified-session-header">
               <span>{headerLeft}</span>
               <span>{headerRight}</span>
             </div>
-            <div className="marathon-session-screen">
-              <span className="marathon-screen-boot" aria-hidden="true" />
+            <div className="classified-session-screen">
+              <span className="classified-screen-boot" aria-hidden="true" />
               <AnimatePresence mode="wait">
                 {shouldBoot && !bootComplete ? (
-                  <MarathonTabletBoot
+                  <ClassifiedTabletBoot
                     key="tablet-boot"
                     lines={bootLines}
                     head={bootHead}
@@ -93,7 +93,7 @@ export function MarathonSession({
                 ) : null}
               </AnimatePresence>
               <motion.div
-                className="marathon-session-scroll"
+                className="classified-session-scroll"
                 initial={false}
                 animate={
                   bootComplete
@@ -104,7 +104,7 @@ export function MarathonSession({
               >
                 {children}
               </motion.div>
-              {showBarcode ? <span className="marathon-barcode" aria-hidden="true" /> : null}
+              {showBarcode ? <span className="classified-barcode" aria-hidden="true" /> : null}
             </div>
           </div>
         </motion.div>

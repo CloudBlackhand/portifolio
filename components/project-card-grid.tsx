@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CornerBrackets } from "@/app/components/corner-brackets";
+import { CornerBrackets } from "@/components/corner-brackets";
 import {
   getProjectLiveLinkLabel,
   getProjectKindLabel,
