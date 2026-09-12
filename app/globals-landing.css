@@ -70,15 +70,24 @@
   left: clamp(1.5rem, 6vw, 6rem);
   pointer-events: none;
   opacity: 0;
-  transform: translateX(-8px);
-  animation: lnd-fx-fade-in 0.6s ease-out forwards;
+  transform: scale(1.3);
+  animation: lnd-plate-stamp 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
   animation-delay: 1.5s;
 }
 
-@keyframes lnd-fx-fade-in {
-  to {
+/* Placa "carimbada" no lugar: escala rápida de fora pra dentro */
+@keyframes lnd-plate-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  60% {
     opacity: 1;
-    transform: none;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -100,13 +109,20 @@
 .lnd-dim-line {
   position: absolute;
   height: 1px;
-  background: rgb(9 10 11 / 10%);
-  opacity: 0;
-  animation: lnd-fx-fade-in 0.6s ease-out forwards;
 }
 
-.lnd-dim-line::before,
-.lnd-dim-line::after {
+.lnd-dim-track {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: rgb(9 10 11 / 10%);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: lnd-dim-draw 0.6s cubic-bezier(0.3, 0, 0.15, 1) forwards;
+}
+
+.lnd-dim-track::before,
+.lnd-dim-track::after {
   content: "";
   position: absolute;
   top: -4px;
@@ -115,12 +131,18 @@
   background: rgb(9 10 11 / 16%);
 }
 
-.lnd-dim-line::before {
+.lnd-dim-track::before {
   left: 0;
 }
 
-.lnd-dim-line::after {
+.lnd-dim-track::after {
   right: 0;
+}
+
+@keyframes lnd-dim-draw {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .lnd-dim-label {
@@ -140,14 +162,20 @@
   top: 32%;
   left: 6%;
   width: clamp(120px, 16vw, 220px);
-  animation-delay: 1.65s;
+}
+
+.lnd-dim-line--a .lnd-dim-track {
+  animation-delay: 1.7s;
 }
 
 .lnd-dim-line--b {
   top: 70%;
   left: 42%;
   width: clamp(100px, 13vw, 180px);
-  animation-delay: 1.85s;
+}
+
+.lnd-dim-line--b .lnd-dim-track {
+  animation-delay: 1.9s;
 }
 
 @media (max-width: 900px) {
@@ -172,19 +200,20 @@
   aspect-ratio: 1 / 1;
   opacity: 0;
   animation:
-    lnd-hud-enter 0.5s ease-out 1.55s forwards,
-    lnd-hud-lock 4.5s ease-in-out 2.05s infinite;
+    lnd-hud-power-on 0.75s linear 1.75s forwards,
+    lnd-hud-lock 4.5s ease-in-out 2.5s infinite;
 }
 
-@keyframes lnd-hud-enter {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 0.45;
-    transform: scale(1);
-  }
+/* Tela de avionics ligando: flicker antes de estabilizar */
+@keyframes lnd-hud-power-on {
+  0% { opacity: 0; transform: scale(0.9); }
+  12% { opacity: 0.5; transform: scale(1.01); }
+  24% { opacity: 0.08; transform: scale(1); }
+  38% { opacity: 0.55; }
+  50% { opacity: 0.15; }
+  65% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0.45; transform: scale(1); }
 }
 
 @keyframes lnd-hud-lock {
@@ -202,6 +231,31 @@
   width: 12px;
   height: 12px;
   opacity: 0.55;
+}
+
+/* Cantos travam a partir de fora, como mira de alvo fechando */
+.lnd-hud .lnd-bracket--tl,
+.lnd-hud .lnd-bracket--tr,
+.lnd-hud .lnd-bracket--bl,
+.lnd-hud .lnd-bracket--br {
+  opacity: 0;
+  animation: lnd-bracket-lock 0.4s ease-out forwards;
+}
+
+.lnd-hud .lnd-bracket--tl { animation-delay: 1.3s; --lock-x: -12px; --lock-y: -12px; }
+.lnd-hud .lnd-bracket--tr { animation-delay: 1.37s; --lock-x: 12px; --lock-y: -12px; }
+.lnd-hud .lnd-bracket--bl { animation-delay: 1.44s; --lock-x: -12px; --lock-y: 12px; }
+.lnd-hud .lnd-bracket--br { animation-delay: 1.51s; --lock-x: 12px; --lock-y: 12px; }
+
+@keyframes lnd-bracket-lock {
+  from {
+    opacity: 0;
+    transform: translate(var(--lock-x), var(--lock-y));
+  }
+  to {
+    opacity: 0.55;
+    transform: translate(0, 0);
+  }
 }
 
 .lnd-hud-cross {
@@ -253,14 +307,13 @@
   gap: 0.75rem;
   color: rgb(9 10 11 / 30%);
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateX(6px);
-  animation: lnd-fx-fade-in 0.45s ease-out forwards;
+  clip-path: inset(0 100% 0 0);
+  animation: lnd-type-reveal 0.4s steps(10, end) forwards;
 }
 
-.lnd-hud-readout li:nth-child(1) { animation-delay: 2.15s; }
-.lnd-hud-readout li:nth-child(2) { animation-delay: 2.3s; }
-.lnd-hud-readout li:nth-child(3) { animation-delay: 2.45s; }
+.lnd-hud-readout li:nth-child(1) { animation-delay: 2.65s; }
+.lnd-hud-readout li:nth-child(2) { animation-delay: 2.85s; }
+.lnd-hud-readout li:nth-child(3) { animation-delay: 3.05s; }
 
 .lnd-hud-readout b {
   font-weight: 500;
@@ -307,9 +360,26 @@
     transform: none;
   }
 
-  .lnd-spec-plate--hero,
-  .lnd-dim-line,
+  .lnd-hud .lnd-bracket--tl,
+  .lnd-hud .lnd-bracket--tr,
+  .lnd-hud .lnd-bracket--bl,
+  .lnd-hud .lnd-bracket--br {
+    animation: none;
+    opacity: 0.55;
+    transform: none;
+  }
+
+  .lnd-dim-track {
+    animation: none;
+    transform: none;
+  }
+
   .lnd-hud-readout li {
+    animation: none;
+    clip-path: none;
+  }
+
+  .lnd-spec-plate--hero {
     animation: none;
     opacity: 1;
     transform: none;
