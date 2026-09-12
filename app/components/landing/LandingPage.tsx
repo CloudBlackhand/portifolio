@@ -82,12 +82,24 @@ export function LandingHero() {
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <div className="lnd-hero-contours" aria-hidden="true" />
       <div className="lnd-blueprint" aria-hidden="true">
-        <span className="lnd-dim-line lnd-dim-line--a">
-          <span className="lnd-dim-label">wingspan · 10.95m</span>
-        </span>
-        <span className="lnd-dim-line lnd-dim-line--b">
-          <span className="lnd-dim-label">length · 19.43m</span>
-        </span>
+        <div className="lnd-dim-line lnd-dim-line--a">
+          <span className="lnd-dim-track" />
+          <span
+            className="lnd-dim-label lnd-type-in"
+            style={{ animationDelay: "2.2s" }}
+          >
+            wingspan · 10.95m
+          </span>
+        </div>
+        <div className="lnd-dim-line lnd-dim-line--b">
+          <span className="lnd-dim-track" />
+          <span
+            className="lnd-dim-label lnd-type-in"
+            style={{ animationDelay: "2.4s" }}
+          >
+            length · 19.43m
+          </span>
+        </div>
       </div>
       <SpecPlate
         className="lnd-spec-plate--hero"
@@ -101,7 +113,12 @@ export function LandingHero() {
           <span className="lnd-bracket lnd-bracket--br" />
           <span className="lnd-hud-cross lnd-hud-cross--h" />
           <span className="lnd-hud-cross lnd-hud-cross--v" />
-          <span className="lnd-hud-box-label">target lock</span>
+          <span
+            className="lnd-hud-box-label lnd-type-in"
+            style={{ animationDelay: "2.5s" }}
+          >
+            target lock
+          </span>
         </div>
         <ul className="lnd-hud-readout">
           <li>
