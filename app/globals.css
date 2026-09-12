@@ -572,6 +572,98 @@ a {
   color: var(--muted);
 }
 
+/* Moldura de prancheta técnica: cantos + legenda, tipo folha de desenho de engenharia */
+
+.site-blueprint-frame {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+}
+
+.site-blueprint-tick {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  opacity: 0.16;
+}
+
+.site-blueprint-tick::before,
+.site-blueprint-tick::after {
+  content: "";
+  position: absolute;
+  background: var(--foreground);
+}
+
+.site-blueprint-tick::before {
+  width: 100%;
+  height: 1px;
+}
+
+.site-blueprint-tick::after {
+  width: 1px;
+  height: 100%;
+}
+
+.site-blueprint-tick--tl {
+  top: calc(0.85rem + var(--safe-top));
+  left: calc(0.85rem + var(--safe-left));
+}
+
+.site-blueprint-tick--tl::before { top: 0; left: 0; }
+.site-blueprint-tick--tl::after { top: 0; left: 0; }
+
+.site-blueprint-tick--tr {
+  top: calc(0.85rem + var(--safe-top));
+  right: calc(0.85rem + var(--safe-right));
+}
+
+.site-blueprint-tick--tr::before { top: 0; right: 0; }
+.site-blueprint-tick--tr::after { top: 0; right: 0; }
+
+.site-blueprint-tick--bl {
+  bottom: calc(0.85rem + var(--safe-bottom));
+  left: calc(0.85rem + var(--safe-left));
+}
+
+.site-blueprint-tick--bl::before { bottom: 0; left: 0; }
+.site-blueprint-tick--bl::after { bottom: 0; left: 0; }
+
+.site-blueprint-tick--br {
+  bottom: calc(0.85rem + var(--safe-bottom));
+  right: calc(0.85rem + var(--safe-right));
+}
+
+.site-blueprint-tick--br::before { bottom: 0; right: 0; }
+.site-blueprint-tick--br::after { bottom: 0; right: 0; }
+
+.site-blueprint-coord {
+  position: fixed;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  opacity: 0.16;
+  white-space: nowrap;
+}
+
+.site-blueprint-coord--tl {
+  top: calc(1.35rem + var(--safe-top));
+  left: calc(2rem + var(--safe-left));
+}
+
+.site-blueprint-coord--br {
+  bottom: calc(1.35rem + var(--safe-bottom));
+  right: calc(2rem + var(--safe-right));
+}
+
+@media (max-width: 720px) {
+  .site-blueprint-frame {
+    display: none;
+  }
+}
+
 html {
   color-scheme: dark;
 }

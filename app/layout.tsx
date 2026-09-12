@@ -44,6 +44,18 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${oswald.variable} ${geistMono.variable}`}
     >
       <body>
+        <div className="site-blueprint-frame" aria-hidden="true">
+          <span className="site-blueprint-tick site-blueprint-tick--tl" />
+          <span className="site-blueprint-tick site-blueprint-tick--tr" />
+          <span className="site-blueprint-tick site-blueprint-tick--bl" />
+          <span className="site-blueprint-tick site-blueprint-tick--br" />
+          <span className="site-blueprint-coord site-blueprint-coord--tl">
+            proj. cs-012
+          </span>
+          <span className="site-blueprint-coord site-blueprint-coord--br">
+            scale 1:1 · rev 2026.1
+          </span>
+        </div>
         <header className="site-header">
           <div className="container header-content">
             <Link className="logo" href="/">
