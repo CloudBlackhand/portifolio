@@ -14,7 +14,11 @@ export function LandingHero() {
   return (
     <section className="lnd-hero" aria-labelledby="lnd-hero-name">
       <SheetFrame index={1} total={4} />
-      <div className="lnd-hero-contours" aria-hidden="true" />
+      <div className="lnd-hero-contours" aria-hidden="true">
+        <span className="lnd-pulse lnd-pulse--a" />
+        <span className="lnd-pulse lnd-pulse--b" />
+        <span className="lnd-pulse lnd-pulse--c" />
+      </div>
       <div className="lnd-blueprint" aria-hidden="true">
         <div className="lnd-dim-line lnd-dim-line--a">
           <span className="lnd-dim-track" />
