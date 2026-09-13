@@ -287,6 +287,125 @@
   animation-delay: 1.9s;
 }
 
+/* Cota vertical (altura) — desenhada de cima pra baixo */
+
+.lnd-dim-line--c {
+  top: 14%;
+  left: 38%;
+  width: auto;
+  height: clamp(110px, 17vh, 170px);
+}
+
+.lnd-dim-track--v {
+  transform: scaleY(0);
+  transform-origin: top;
+  animation-name: lnd-dim-draw-v;
+  animation-delay: 2.05s;
+  width: 1px;
+}
+
+.lnd-dim-line--c .lnd-dim-track--v::before,
+.lnd-dim-line--c .lnd-dim-track--v::after {
+  top: auto;
+  left: -4px;
+  width: 9px;
+  height: 1px;
+}
+
+.lnd-dim-line--c .lnd-dim-track--v::before {
+  top: 0;
+}
+
+.lnd-dim-line--c .lnd-dim-track--v::after {
+  bottom: 0;
+}
+
+@keyframes lnd-dim-draw-v {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.lnd-dim-label--v {
+  top: 50%;
+  left: 0.55rem;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+}
+
+/* Marca de centro de gravidade (cg) — convenção de desenho aeronáutico */
+
+.lnd-cg-mark {
+  position: absolute;
+  top: 46%;
+  left: 47%;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.lnd-cg-circle {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgb(9 10 11 / 30%);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.lnd-cg-circle::before,
+.lnd-cg-circle::after {
+  content: "";
+  position: absolute;
+  background: rgb(9 10 11 / 30%);
+}
+
+.lnd-cg-circle::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.lnd-cg-circle::after {
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.lnd-cg-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 34%);
+}
+
+/* Notas gerais da prancheta (general notes de desenho técnico) */
+
+.lnd-blueprint-notes {
+  position: absolute;
+  top: 52%;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 28%);
+  white-space: nowrap;
+}
+
+.lnd-blueprint-notes span:first-child {
+  color: rgb(9 10 11 / 40%);
+  margin-bottom: 0.1rem;
+}
+
 @media (max-width: 900px) {
   .lnd-blueprint {
     display: none;

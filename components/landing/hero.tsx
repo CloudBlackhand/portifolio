@@ -50,6 +50,30 @@ export function LandingHero() {
           <span className="lnd-callout-leader" />
           <span>out · produção</span>
         </div>
+        <div className="lnd-dim-line lnd-dim-line--c">
+          <span className="lnd-dim-track lnd-dim-track--v" />
+          <span
+            className="lnd-dim-label lnd-dim-label--v lnd-type-in"
+            style={{ animationDelay: "2.5s" }}
+          >
+            height · 5.28m
+          </span>
+        </div>
+        <div
+          className="lnd-cg-mark lnd-type-in"
+          style={{ animationDelay: "2.9s" }}
+        >
+          <span className="lnd-cg-circle" />
+          <span className="lnd-cg-label">cg</span>
+        </div>
+        <div
+          className="lnd-blueprint-notes lnd-type-in"
+          style={{ animationDelay: "3.1s" }}
+        >
+          <span>notes //</span>
+          <span>1. all dims in m unless noted</span>
+          <span>2. rev c — approved for production</span>
+        </div>
       </div>
       <SpecPlate
         className="lnd-spec-plate--hero"
