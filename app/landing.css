@@ -44,6 +44,49 @@
   }
 }
 
+/* Pulsos monocromáticos saindo dos centros dos contornos (onda de pressão) */
+
+.lnd-pulse {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(9 10 11 / 40%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: lnd-pulse-expand 5.5s cubic-bezier(0.15, 0.55, 0.35, 1) infinite;
+}
+
+.lnd-pulse--a {
+  top: 18%;
+  left: 78%;
+}
+
+.lnd-pulse--b {
+  top: 18%;
+  left: 78%;
+  animation-delay: 2.75s;
+}
+
+.lnd-pulse--c {
+  top: 84%;
+  left: 12%;
+  animation-delay: 1.4s;
+}
+
+@keyframes lnd-pulse-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(11);
+    opacity: 0;
+  }
+}
+
 /* Placa de especificação estilo veículo militar (M1A3 / Eurofighter data plate) */
 
 .lnd-spec-plate {
@@ -611,6 +654,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .lnd-hero-contours {
+    animation: none;
+  }
+
+  .lnd-pulse {
     animation: none;
   }
 
