@@ -47,6 +47,7 @@
 /* Placa de especificação estilo veículo militar (M1A3 / Eurofighter data plate) */
 
 .lnd-spec-plate {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -58,6 +59,21 @@
   text-transform: uppercase;
   color: rgb(9 10 11 / 38%);
 }
+
+/* Rebites nos cantos da placa (chassi de prototipo) */
+
+.lnd-rivet {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgb(9 10 11 / 28%);
+}
+
+.lnd-rivet--tl { top: 3px; left: 3px; }
+.lnd-rivet--tr { top: 3px; right: 3px; }
+.lnd-rivet--bl { bottom: 3px; left: 3px; }
+.lnd-rivet--br { bottom: 3px; right: 3px; }
 
 .lnd-dark .lnd-spec-plate {
   border-color: var(--border-on-dark);
@@ -95,6 +111,99 @@
   .lnd-spec-plate--hero {
     display: none;
   }
+}
+
+/* Codigo de barras de embalagem (rotulo de prototipo) */
+
+.lnd-barcode {
+  position: absolute;
+  top: clamp(9rem, 23vh, 12.5rem);
+  left: clamp(1.5rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  pointer-events: none;
+}
+
+.lnd-barcode-bars {
+  display: block;
+  width: 84px;
+  height: 22px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(9 10 11 / 48%) 0 1px,
+    transparent 1px 3px,
+    rgb(9 10 11 / 48%) 3px 6px,
+    transparent 6px 7px,
+    rgb(9 10 11 / 48%) 7px 8px,
+    transparent 8px 11px,
+    rgb(9 10 11 / 48%) 11px 12px,
+    transparent 12px 14px,
+    rgb(9 10 11 / 48%) 14px 17px,
+    transparent 17px 18px,
+    rgb(9 10 11 / 48%) 18px 19px,
+    transparent 19px 22px
+  );
+}
+
+.lnd-barcode-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 34%);
+}
+
+@media (max-width: 640px) {
+  .lnd-barcode {
+    display: none;
+  }
+}
+
+/* Callouts numerados com leader tracejada (diagrama de montagem/exploded view) */
+
+.lnd-callout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(9 10 11 / 34%);
+  white-space: nowrap;
+}
+
+.lnd-callout-node {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(9 10 11 / 32%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  color: rgb(9 10 11 / 45%);
+  flex-shrink: 0;
+}
+
+.lnd-callout-leader {
+  width: 26px;
+  border-top: 1px dashed rgb(9 10 11 / 26%);
+  flex-shrink: 0;
+}
+
+.lnd-callout--a {
+  top: 41%;
+  right: 9%;
+  flex-direction: row-reverse;
+}
+
+.lnd-callout--b {
+  top: 48%;
+  right: 13%;
+  flex-direction: row-reverse;
 }
 
 /* Linhas de blueprint técnico (dimensionamento estilo desenho de engenharia) */

@@ -34,11 +34,39 @@ export function LandingHero() {
             length · 19.43m
           </span>
         </div>
+        <div
+          className="lnd-callout lnd-callout--a lnd-type-in"
+          style={{ animationDelay: "2.55s" }}
+        >
+          <span className="lnd-callout-node">01</span>
+          <span className="lnd-callout-leader" />
+          <span>in · planilha</span>
+        </div>
+        <div
+          className="lnd-callout lnd-callout--b lnd-type-in"
+          style={{ animationDelay: "2.75s" }}
+        >
+          <span className="lnd-callout-node">02</span>
+          <span className="lnd-callout-leader" />
+          <span>out · produção</span>
+        </div>
       </div>
       <SpecPlate
         className="lnd-spec-plate--hero"
-        lines={["unit cs-012", "mdl cloud-01", "rev 2026.1"]}
+        lines={["unit cs-012", "mdl cloud-01", "rev 2026.1", "qc · pass"]}
       />
+      <div className="lnd-barcode" aria-hidden="true">
+        <span
+          className="lnd-barcode-bars lnd-type-in"
+          style={{ animationDelay: "1.9s" }}
+        />
+        <span
+          className="lnd-barcode-label lnd-type-in"
+          style={{ animationDelay: "2.05s" }}
+        >
+          cs-012 / br-rj
+        </span>
+      </div>
       <div className="lnd-hud" aria-hidden="true">
         <div className="lnd-hud-box">
           <span className="lnd-bracket lnd-bracket--tl" />
