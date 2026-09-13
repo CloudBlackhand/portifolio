@@ -64,7 +64,7 @@ export function LandingHero() {
           className="lnd-barcode-label lnd-type-in"
           style={{ animationDelay: "2.05s" }}
         >
-          cs-012 / br-rj
+          cs-012 / br
         </span>
       </div>
       <div className="lnd-hud" aria-hidden="true">
