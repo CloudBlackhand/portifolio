@@ -59,6 +59,7 @@ export function LandingHero() {
             height · 5.28m
           </span>
         </div>
+        <div className="lnd-horizon" aria-hidden="true" />
         <div
           className="lnd-cg-mark lnd-type-in"
           style={{ animationDelay: "2.9s" }}
