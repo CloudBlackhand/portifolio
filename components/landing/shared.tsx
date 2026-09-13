@@ -46,6 +46,10 @@ export function SpecPlate({
       className={`lnd-spec-plate${className ? ` ${className}` : ""}`}
       aria-hidden="true"
     >
+      <span className="lnd-rivet lnd-rivet--tl" />
+      <span className="lnd-rivet lnd-rivet--tr" />
+      <span className="lnd-rivet lnd-rivet--bl" />
+      <span className="lnd-rivet lnd-rivet--br" />
       {lines.map((line) => (
         <span key={line}>{line}</span>
       ))}
