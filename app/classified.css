@@ -193,32 +193,6 @@
   padding: 0 !important;
 }
 
-.classified-status-ticker {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 1.25rem;
-  margin-bottom: 0.65rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
-  color: var(--tablet-muted);
-}
-
-.classified-status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--tablet-orange);
-  flex-shrink: 0;
-}
-
-.classified-status-text {
-  display: block;
-  min-width: 0;
-}
-
 /* —— Página /classificados —— */
 .classified-world-page {
   background: var(--tablet-world-deep);
@@ -306,61 +280,6 @@
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' fill='%23fff'/%3E%3C/svg%3E");
   background-size: 3px 3px;
-}
-
-.classified-world-ambient {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.classified-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.classified-orb--cyan {
-  width: 280px;
-  height: 280px;
-  top: 8%;
-  left: 5%;
-  background: rgb(82 214 142 / 25%);
-}
-
-.classified-orb--pink {
-  width: 240px;
-  height: 240px;
-  bottom: 10%;
-  right: 8%;
-  background: rgb(82 214 142 / 18%);
-}
-
-.classified-orb--yellow {
-  width: 200px;
-  height: 200px;
-  top: 45%;
-  right: 30%;
-  background: rgb(242 161 84 / 16%);
-}
-
-.classified-orb--sm {
-  width: 140px;
-  height: 140px;
-  filter: blur(32px);
-  opacity: 0.15;
-}
-
-.classified-world-grid-drift {
-  position: absolute;
-  inset: -20%;
-  background:
-    linear-gradient(rgb(131 141 137 / 4%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(131 141 137 / 4%) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, rgb(0 0 0 / 50%), transparent);
 }
 
 .classified-world-inner {
@@ -700,71 +619,6 @@
   bottom: 14px;
   right: 14px;
   background: var(--tablet-blue);
-}
-
-/* Loading bar (sense-mem sync) */
-.classified-load {
-  margin-bottom: 0.85rem;
-}
-
-.classified-load-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: var(--tablet-muted);
-  margin-bottom: 0.35rem;
-}
-
-.classified-load-pct {
-  font-variant-numeric: tabular-nums;
-  color: var(--tablet-orange);
-}
-
-.classified-load-track {
-  position: relative;
-  height: 6px;
-  border-radius: 3px;
-  background: rgb(28 28 36 / 8%);
-  border: 1px solid rgb(28 28 36 / 10%);
-  overflow: hidden;
-}
-
-.classified-load-fill {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--tablet-cyan);
-}
-
-.classified-load-shimmer {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgb(255 255 255 / 35%) 50%,
-    transparent 100%
-  );
-  width: 40%;
-  pointer-events: none;
-  animation: classifiedLoadShimmerOnce 0.9s ease-out forwards;
-}
-
-@keyframes classifiedLoadShimmerOnce {
-  from {
-    transform: translateX(-120%);
-    opacity: 0.6;
-  }
-
-  to {
-    transform: translateX(280%);
-    opacity: 0;
-  }
 }
 
 .classified-tablet-kicker {
@@ -1662,7 +1516,6 @@ body.classified-immersive-mode .site-main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .classified-load-shimmer,
   .classified-screen-boot,
   .classified-boot-frame,
   .classified-boot-cursor,
